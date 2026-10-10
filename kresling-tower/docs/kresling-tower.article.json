@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/kresling-tower",
+  "title": {"en": "Kresling tower", "es": "Torre Kresling", "fr": "Tour de Kresling", "pt": "Torre Kresling"},
+  "summary": {
+    "en": "A strip of sheared triangles rolled into a polygonal tower that snaps between two stable states, tall and folded flat. Both are exact; between them the paper must stretch, so the tower has no rigid motion.",
+    "es": "Una tira de triángulos sesgados enrollada en una torre poligonal que salta entre dos estados estables, alta y plegada en plano. Los dos son exactos; entre ellos el papel tiene que estirarse, así que la torre no tiene movimiento rígido.",
+    "fr": "Une bande de triangles cisaillés roulée en une tour polygonale qui bascule entre deux états stables, haute et repliée à plat. Les deux sont exacts ; entre eux, le papier doit s'étirer, si bien que la tour n'a aucun mouvement rigide.",
+    "pt": "Uma tira de triângulos inclinados enrolada numa torre poligonal que salta entre dois estados estáveis, alta e dobrada rente. Os dois são exatos; entre eles o papel precisa esticar, por isso a torre não tem movimento rígido."
+  },
+  "article": {
+    "path": "kresling-tower/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "late 20th century (twist-buckling pattern studied by Biruta Kresling)",
+  "heritage": false,
+  "sources": [
+    "B. Kresling, Natural twist buckling in shells: from the hawkmoth's bellies to the deployable Kresling-pattern and cylindrical Miura-ori, IASS-IACM 2008",
+    "S. D. Guest, S. Pellegrino, The folding of triangulated cylinders, Part I: geometric considerations, Journal of Applied Mechanics 61 (1994) 773–777",
+    "G. W. Hunt, I. Ario, Twist buckling and the foldable cylinder: an exercise in origami, International Journal of Non-Linear Mechanics 40 (2005) 833–843",
+    "J. Cai, X. Deng, Y. Zhou, J. Feng, Y. Tu, Bistable behavior of the cylindrical origami structure with Kresling pattern, Journal of Mechanical Design 137 (2015) 061406"
+  ],
+  "related": {"objects": ["pliego/yoshimura", "pliego/miura-ori"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}
