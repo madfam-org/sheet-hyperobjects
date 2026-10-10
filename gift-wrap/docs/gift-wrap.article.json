@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/gift-wrap",
+  "title": {"en": "Gift wrap", "es": "Envoltura de regalo", "fr": "Emballage cadeau", "pt": "Embrulho de presente"},
+  "summary": {
+    "en": "Wrapping a box in paper, standard or diagonal, as an exact fold program round a rigid box, with the minimum paper size computed.",
+    "es": "Envolver una caja en papel, a la manera clásica o en diagonal, como una secuencia de pliegues exacta alrededor de una caja rígida, con el tamaño mínimo de papel calculado.",
+    "fr": "Emballer une boîte dans du papier, de façon classique ou en diagonale, par une séquence de pliage exacte autour d'une boîte rigide, avec le format de papier minimal calculé.",
+    "pt": "Embrulhar uma caixa em papel, do jeito clássico ou na diagonal, como uma sequência de dobras exata em volta de uma caixa rígida, com o tamanho mínimo de papel calculado."
+  },
+  "article": {
+    "path": "gift-wrap/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "present-day practice",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Gift wrapping», https://en.wikipedia.org/wiki/Gift_wrapping",
+    "Musubi Kiln, «How to wrap a present like a Japanese gifting pro», https://musubikiln.com/blogs/journal/how-to-wrap-a-present-like-a-japanese-gifting-pro"
+  ],
+  "related": {"objects": ["pliego/paper-bag", "pliego/folding-carton", "pliego/envelope"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·D); awaiting a human editorial pass."}
+}
