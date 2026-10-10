@@ -1,0 +1,28 @@
+{
+  "spec_version": 1,
+  "object": "pliego/flip-book",
+  "title": {"en": "Flip book", "es": "Folioscopio", "fr": "Folioscope", "pt": "Flip book"},
+  "summary": {
+    "en": "A padded stack of 12 to 48 hinged pages thumbed by one control in a staggered cascade, riffled or flicked, with a computed frame plan that says which page carries each frame and where to draw it.",
+    "es": "Un taco de 12 a 48 páginas con bisagra, encolado por el lomo, que se hojea con un solo control en cascada escalonada, en abanico o desde la portada, con un plan de cuadros calculado que dice qué página lleva cada cuadro y dónde dibujarlo.",
+    "fr": "Un bloc de 12 à 48 pages articulées, encollé au dos, feuilleté par une seule commande en cascade décalée, en défilement ou depuis la couverture, avec un plan d'images calculé qui indique quelle page porte chaque image et où la dessiner.",
+    "pt": "Um bloco de 12 a 48 páginas articuladas, colado pela lombada, folheado por um único controle em cascata escalonada, soltando as páginas ou a partir da capa, com um plano de quadros calculado que diz que página leva cada quadro e onde desenhá-lo."
+  },
+  "article": {
+    "path": "flip-book/docs/README.md",
+    "sections": ["What it is", "Geometry", "The thumbing program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "patented in 1868 (kineograph) to the present; a library and classroom animation exercise",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Flip book», https://en.wikipedia.org/wiki/Flip_book",
+    "Wikipedia, «John Barnes Linnett», https://en.wikipedia.org/wiki/John_Barnes_Linnett",
+    "Wikipedia, «1868 in animation», https://en.wikipedia.org/wiki/1868_in_animation",
+    "Flatpack Festival, «Home of the flipbook», https://flatpackfestival.org.uk/posts/home-of-the-flipbook",
+    "College of San Mateo, Family Science Day 2021, «Flip Books!», https://collegeofsanmateo.edu/familyscienceday/docs/FlipBookHandout.pdf"
+  ],
+  "related": {
+    "objects": ["pliego/page-turn", "pliego/reveal-block", "pliego/pocket-zine", "pliego/leporello"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}
