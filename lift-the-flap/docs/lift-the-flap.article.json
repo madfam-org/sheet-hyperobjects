@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/lift-the-flap",
+  "title": {"en": "Lift-the-flap", "es": "Solapa para levantar", "fr": "Rabat à soulever", "pt": "Aba para levantar"},
+  "summary": {
+    "en": "A flap over a page that lifts to show what is under it: rectangle, rounded, arch or two doors, as a rigid flap on a hinge or as paper with a glued tab.",
+    "es": "Una solapa sobre una página que se levanta para mostrar lo que hay debajo: rectangular, redondeada, en arco o en dos puertas, rígida con bisagra o de papel con pestaña pegada.",
+    "fr": "Un rabat sur une page qui se soulève pour montrer ce qu'il cache : rectangle, arrondi, arc ou deux volets, rigide sur charnière ou en papier à patte collée.",
+    "pt": "Uma aba sobre uma página que se levanta para mostrar o que há embaixo: retangular, arredondada, em arco ou em duas portas, rígida com dobradiça ou de papel com aba de cola."
+  },
+  "article": {
+    "path": "lift-the-flap/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism and the fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "movable books from their beginnings; in continuous use",
+  "heritage": false,
+  "sources": ["Wikipedia, «Pop-up book», https://en.wikipedia.org/wiki/Pop-up_book"],
+  "related": {"objects": ["pliego/page-turn", "pliego/glue-flap", "pliego/pull-tab-slider"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}
