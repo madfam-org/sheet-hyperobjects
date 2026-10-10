@@ -246,7 +246,7 @@ bottom = world_of(bl_arr, bl_pose, B_BOT)               # the blossom's bottom p
 INSERT = 0.25 * d                                       # how far the stem goes into the blossom
 goal = (tip[0], tip[1] + 0.5, tip[2] + INSERT)          # world: down the stem is +z
 start = (bottom[0] + e + d + GAP, bottom[1], bottom[2])
-move = tuple(g - s_ for g, s_ in zip(goal, start))
+move = tuple(g - s_ for g, s_ in zip(goal, start, strict=True))
 travel = math.sqrt(sum(c * c for c in move))
 print(f"flatfold: {flat_line(stem)} {flat_line(blossom)} maekawa=ok kawasaki=ok "
       "big_little_big=ok")
