@@ -1,0 +1,27 @@
+# sheet-hyperobjects
+
+> The open commons (CERN-OHL-W-2.0) of sheet hyperobjects — origami, kirigami, papercut traditions,
+> pop-up and paper engineering, book structures, flexagons and paper dioramas — as parametric
+> cartridges. Mounted by Pliego at `projects/`; validated by `pliego-spec` (hyperobjects-spec).
+> Status: incubating; first cartridges being built.
+
+Boundary: public repository. Operational detail lives in MADFAM's private ops repository under the
+repo-boundary contract (docs/PUBLIC_REPO_BOUNDARY.md).
+
+## Invariants
+
+- One `<slug>/` per object at the root: `main.py`, `project.json`, `docs/README.md`; strict kebab slugs.
+- Licence in two agreeing fields (`project.attribution.license`, `hyperobject.commons_license`) = CERN-OHL-W-2.0.
+- `attribution.lineage[]` is required; heritage objects cite sources and credit their communities.
+- Born quadrilingual: en, es, fr, pt. No machine-only translation.
+- Never a copied designer crease pattern; every object generates its own geometry.
+- No platform code, no prices, no client names, no per-cartridge licence files.
+
+## Docs
+
+- [AGENTS.md](AGENTS.md): canonical instructions, cartridge contract, wave protocol
+- [README.md](README.md): what the commons is, the ten classes, how Pliego mounts it
+- [NOTICE.md](NOTICE.md): licence, provenance, carve-outs
+- [GOVERNANCE.md](GOVERNANCE.md): roles and who decides what
+- [CONTRIBUTING.md](CONTRIBUTING.md): how to propose and build an object
+- [ECOSYSTEM.md](ECOSYSTEM.md): the platform, the keystone and the sibling commons
