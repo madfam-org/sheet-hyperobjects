@@ -1,0 +1,14 @@
+{
+  "object": "pliego/rabbit-ear",
+  "title": {"en": "Rabbit ear", "es": "Oreja de conejo", "fr": "Oreille de lapin", "pt": "Orelha de coelho"},
+  "summary": {
+    "en": "Three angle bisectors and a swivel crease meet at a triangle's incentre; the corner rises as a flap and lies down to one side. A single degree-4 vertex, folded exactly along its first rigid mode.",
+    "es": "Tres bisectrices y un pliegue de giro se encuentran en el incentro de un triángulo; la esquina se levanta como una solapa y se acuesta hacia un lado. Un solo vértice de grado 4, doblado con exactitud a lo largo de su primer modo rígido.",
+    "fr": "Trois bissectrices et un pli de pivot se rejoignent au centre du cercle inscrit d'un triangle ; le coin se dresse en rabat et se couche sur le côté. Un seul sommet de degré 4, plié exactement selon son premier mode rigide.",
+    "pt": "Três bissetrizes e um vinco de giro encontram-se no incentro de um triângulo; o canto ergue-se como uma aba e deita-se para um lado. Um único vértice de grau 4, dobrado com exatidão ao longo do seu primeiro modo rígido."
+  },
+  "article": {"path": "rabbit-ear/docs/README.md", "sections": ["The geometry: bisectors, incentre and swivel", "How to fold it by hand", "What the engine simulates"]},
+  "era": "traditional technique, in continuous use",
+  "sources": ["F. Foschi, T. Hull, J. S. Ku, Explicit kinematic equations for degree-4 rigid origami vertices, arXiv:2206.12691", "R. J. Lang, Origami Design Secrets (2nd ed., CRC Press, 2011): the rabbit-ear molecule, whose creases are a triangle's angle bisectors meeting at its incentre"],
+  "related": {"objects": ["pliego/inside-reverse-fold", "pliego/squash-fold"]}
+}
