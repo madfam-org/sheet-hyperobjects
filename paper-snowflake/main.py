@@ -122,7 +122,8 @@ if not report.ok:
     raise ValueError("paper-snowflake papercut check failed: "
                      + "; ".join(i["detail"] for i in report.issues if i["level"] == "error"))
 
-# ── fold program: re-fold along the creases in order, then release them all (unfold) ──
+# ── fold program: re-fold along the creases in order, then unfold them all flat by hand ──
+# (Releasing a crease folded flat would not unfold it: paper springs back only by its yield angle.)
 sheet = cut.sheet
 creases = [m for m in sheet.marks if m.assignment in ("M", "V")]
 groups, start = [], 0
@@ -145,7 +146,7 @@ steps.append(pliego.Step(
     "unfold", {"en": "Cut through every layer, then unfold", "es": "Corta todas las capas y desdobla",
                "fr": "Découper toutes les couches, puis déplier",
                "pt": "Corte todas as camadas e desdobre"},
-    release=[m for m in creases if m.edges()], duration_ms=3000))
+    [(m, 0.0) for m in creases if m.edges()], duration_ms=3000))
 
 result = pliego.Assembly(
     [sheet],

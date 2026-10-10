@@ -26,46 +26,56 @@ A square of side `size` (150 mm by default). The `creases` parameter chooses the
 Every line is a valley crease (`V`, `+180`). Where lines cross at the centre, the arrangement
 splits each of them into two edges, and a fold step drives both halves of its line together.
 
-## The fold program: fold, press, release
+## The fold program: fold, press, let go, unfold
 
 The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
 cartridge writes the document, and the engine is specified to compute the motion from it.
 
-For each crease, in order, the program has three `physical` steps:
+For each crease, in order, the program has four `physical` steps:
 
 1. **Valley-fold** the line to 180° (1.5 s). The engine drives the hinge with the crease stiffness
    raised by the hand factor.
 2. **Press the crease flat**, holding the same target for `hold` seconds (2 s by default).
-3. **Unfold**: the hinge is listed in the step's `release`. Its target is removed, and it relaxes
-   toward its plastic rest angle (spec v1 §5.6).
+3. **Let go**: the hinge is listed in the step's `release`. Its target is removed, and it relaxes
+   toward its plastic rest angle (spec v1 §5.6). It opens only a little.
+4. **Unfold it flat**: the hand drives the hinge back to 0° and keeps it there while the next
+   crease is made. Driving it that far past its rest angle moves the rest angle back as well,
+   though not all the way to flat.
 
-Step 3 is what this object exists to show. The stock snapshot in the document carries the
-plasticity parameters the engine uses (spec v1 §5.2):
+A last step lets go of every crease at once. Steps 3 and the last step are what this object exists
+to show. The stock snapshot in the document carries the plasticity parameters the engine uses
+(spec v1 §5.2):
 
 - `crease_yield_deg`: the elastic range of a hinge before its rest angle starts to move;
 - `crease_set_rate`: the fraction of the excess beyond yield that becomes permanent per second of
   hold.
 
 So a crease held flat at 180° for `hold` seconds moves its rest angle a long way from 0. When it is
-released it springs back only part of the way and comes to rest open. A longer press leaves a
-deeper memory, and so does a stock with a small yield angle:
+let go it springs back only part of the way and stays mostly folded. Unfolded flat and let go
+again, it springs back the other way and comes to rest open: the tent every unfolded crease makes.
+A longer press leaves a deeper memory, and so does a stock with a small yield angle:
 
-| Stock | `crease_yield_deg` (stock card) | What the model predicts after release |
+| Stock | `crease_yield_deg` (stock card) | What the model predicts when the creases are let go |
 |---|---|---|
-| Kami | 35° (estimate) | a crease that rests visibly open |
+| Kami | 35° (estimate) | it springs back a little; unfolded, the crease stands visibly open |
 | Copy paper 80 g/m² | 35° (estimate) | similar, in a heavier sheet |
 | Kozo washi 30 g/m² | 35° (estimate) | similar, in a much lighter sheet |
-| Foil paper | 2° (estimate) | the fold stays almost where it was left |
+| Foil paper | 2° (estimate) | the fold stays almost where it was left, folded or unfolded |
 
 These are predictions of the model, not measurements. The 35° default on the paper stock cards is
 an estimate. The cards base it on the rest openings of 27–43° reported after creasing by
 Lechenault, Thiria and Adda-Bedia, *Mechanical response of a creased sheet*, Physical Review
 Letters 112, 244301 (2014), https://arxiv.org/abs/1404.1243.
 
-The final state of the program is the released, slightly open sheet that the engine computes. The
-document does not claim an exact rest angle. Its `edges_foldAngle` stays at `+180`, the design
-angle each crease was made with, and its `target:first-crease-folded` frame is the exact rigid
-pose of the first fold at 180°, for reference.
+With `diagonals` or `star`, the last step lets crossing creases relax together. Rigid faces cannot
+hold two crossing creases open at once, so the sheet bends between them: the physics engine
+computes that bending. The studio's preview without the engine draws every face rigid, so it shows
+small gaps there.
+
+The final state of the program is the unfolded sheet with its creases standing open, as the engine
+computes it. The document does not claim an exact rest angle. Its `edges_foldAngle` stays at
+`+180`, the design angle each crease was made with, and its `target:first-crease-folded` frame is
+the exact rigid pose of the first fold at 180°, for reference.
 
 ## Making one
 
