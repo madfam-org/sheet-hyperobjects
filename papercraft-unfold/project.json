@@ -1,0 +1,551 @@
+{
+  "project": {
+    "name": {
+      "en": "Papercraft unfold",
+      "es": "Despliegue de papercraft",
+      "fr": "Dépliage de papercraft",
+      "pt": "Desdobramento de papercraft"
+    },
+    "slug": "papercraft-unfold",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "Any low-poly mesh unfolded into papercraft nets: numbered, tabbed pieces packed onto A4 or Letter pages, and a program that folds every piece from the page into its place on the model. Icosphere, torus and an embedded mesh.",
+      "es": "Cualquier malla low-poly desplegada en plantillas de papercraft: piezas numeradas y con pestañas, acomodadas en hojas A4 o carta, y una secuencia que dobla cada pieza desde la hoja hasta su lugar en el modelo. Icosfera, toro y una malla incrustada.",
+      "fr": "N'importe quel maillage low-poly déplié en patrons de papercraft : pièces numérotées, à languettes, rangées sur des pages A4 ou Lettre, et un programme qui plie chaque pièce depuis la page jusqu'à sa place sur le modèle. Icosphère, tore et un maillage intégré.",
+      "pt": "Qualquer malha low-poly desdobrada em moldes de papercraft: peças numeradas e com abas, arrumadas em folhas A4 ou Carta, e uma sequência que dobra cada peça da folha até o seu lugar no modelo. Icosfera, toro e uma malha embutida."
+    },
+    "thumbnail": "/projects/papercraft-unfold.svg",
+    "difficulty": "intermediate",
+    "tags": [
+      "papercraft",
+      "low-poly",
+      "unfolding",
+      "polyhedra",
+      "glue",
+      "tab",
+      "paper-engineering",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM work: the unfolding is computed by pliego.unfold (kernel), the crystal mesh is authored in main.py, the icosphere and torus are generated; no published net, template or papercraft file is copied",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "fold",
+      "label": {
+        "en": "Fold up (exact kinematics)",
+        "es": "Armar (cinemática exacta)",
+        "fr": "Montage (cinématique exacte)",
+        "pt": "Montagem (cinemática exata)"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "piece-1"
+      ]
+    },
+    {
+      "id": "glued",
+      "label": {
+        "en": "Glued model (paper physics)",
+        "es": "Modelo pegado (física del papel)",
+        "fr": "Modèle collé (physique du papier)",
+        "pt": "Modelo colado (física do papel)"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "piece-1"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "piece-1",
+      "label": {
+        "en": "Piece 1 (the net adds piece-2, piece-3… as it needs)",
+        "es": "Pieza 1 (la plantilla añade piece-2, piece-3… según haga falta)",
+        "fr": "Pièce 1 (le patron ajoute piece-2, piece-3… selon les besoins)",
+        "pt": "Peça 1 (o molde acrescenta piece-2, piece-3… conforme precisar)"
+      },
+      "stock": "cardstock-250"
+    }
+  ],
+  "parameter_groups": [
+    {
+      "id": "shape",
+      "label": {
+        "en": "Shape",
+        "es": "Forma",
+        "fr": "Forme",
+        "pt": "Forma"
+      }
+    },
+    {
+      "id": "net",
+      "label": {
+        "en": "Net and page",
+        "es": "Plantilla y hoja",
+        "fr": "Patron et page",
+        "pt": "Molde e folha"
+      }
+    },
+    {
+      "id": "tabs",
+      "label": {
+        "en": "Tabs",
+        "es": "Pestañas",
+        "fr": "Languettes",
+        "pt": "Abas"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "shape",
+      "type": "select",
+      "group": "shape",
+      "label": {
+        "en": "Mesh",
+        "es": "Malla",
+        "fr": "Maillage",
+        "pt": "Malha"
+      },
+      "tooltip": {
+        "en": "The model to unfold. The crystal is an embedded mesh, written out as vertex and face lists in main.py: the form a mesh exported from any other tool takes.",
+        "es": "El modelo que se despliega. El cristal es una malla incrustada, escrita como listas de vértices y caras en main.py: la forma que tiene una malla exportada desde cualquier otra herramienta.",
+        "fr": "Le modèle à déplier. Le cristal est un maillage intégré, écrit en listes de sommets et de faces dans main.py : la forme que prend un maillage exporté depuis n'importe quel autre outil.",
+        "pt": "O modelo a desdobrar. O cristal é uma malha embutida, escrita como listas de vértices e faces em main.py: a forma de uma malha exportada de qualquer outra ferramenta."
+      },
+      "default": "icosphere",
+      "options": [
+        {
+          "value": "icosphere",
+          "label": {
+            "en": "Icosphere (geodesic sphere)",
+            "es": "Icosfera (esfera geodésica)",
+            "fr": "Icosphère (sphère géodésique)",
+            "pt": "Icosfera (esfera geodésica)"
+          }
+        },
+        {
+          "value": "torus",
+          "label": {
+            "en": "Torus (ring)",
+            "es": "Toro (anillo)",
+            "fr": "Tore (anneau)",
+            "pt": "Toro (anel)"
+          }
+        },
+        {
+          "value": "crystal",
+          "label": {
+            "en": "Crystal (embedded mesh)",
+            "es": "Cristal (malla incrustada)",
+            "fr": "Cristal (maillage intégré)",
+            "pt": "Cristal (malha embutida)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "subdivisions",
+      "type": "slider",
+      "group": "shape",
+      "label": {
+        "en": "Icosphere subdivisions",
+        "es": "Subdivisiones de la icosfera",
+        "fr": "Subdivisions de l'icosphère",
+        "pt": "Subdivisões da icosfera"
+      },
+      "tooltip": {
+        "en": "0 is the icosahedron (20 faces); each step splits every triangle in four (80, then 320 faces).",
+        "es": "0 es el icosaedro (20 caras); cada paso divide cada triángulo en cuatro (80 y luego 320 caras).",
+        "fr": "0 donne l'icosaèdre (20 faces) ; chaque niveau divise chaque triangle en quatre (80, puis 320 faces).",
+        "pt": "0 é o icosaedro (20 faces); cada passo divide cada triângulo em quatro (80, depois 320 faces)."
+      },
+      "default": 1,
+      "min": 0,
+      "max": 2,
+      "step": 1
+    },
+    {
+      "id": "torus_segments",
+      "type": "slider",
+      "group": "shape",
+      "label": {
+        "en": "Torus: segments around the ring",
+        "es": "Toro: segmentos alrededor del anillo",
+        "fr": "Tore : segments autour de l'anneau",
+        "pt": "Toro: segmentos ao redor do anel"
+      },
+      "default": 12,
+      "min": 8,
+      "max": 16,
+      "step": 1
+    },
+    {
+      "id": "torus_sides",
+      "type": "slider",
+      "group": "shape",
+      "label": {
+        "en": "Torus: sides around the tube",
+        "es": "Toro: lados alrededor del tubo",
+        "fr": "Tore : côtés autour du tube",
+        "pt": "Toro: lados ao redor do tubo"
+      },
+      "default": 6,
+      "min": 4,
+      "max": 8,
+      "step": 1
+    },
+    {
+      "id": "torus_tube",
+      "type": "slider",
+      "group": "shape",
+      "label": {
+        "en": "Torus: tube radius / ring radius",
+        "es": "Toro: radio del tubo / radio del anillo",
+        "fr": "Tore : rayon du tube / rayon de l'anneau",
+        "pt": "Toro: raio do tubo / raio do anel"
+      },
+      "default": 0.38,
+      "min": 0.25,
+      "max": 0.5,
+      "step": 0.01
+    },
+    {
+      "id": "size",
+      "type": "slider",
+      "group": "net",
+      "unit": "mm",
+      "label": {
+        "en": "Model size (mm)",
+        "es": "Tamaño del modelo (mm)",
+        "fr": "Taille du modèle (mm)",
+        "pt": "Tamanho do modelo (mm)"
+      },
+      "tooltip": {
+        "en": "Largest dimension of the finished model. The mesh is scaled uniformly to it.",
+        "es": "Dimensión mayor del modelo terminado. La malla se escala de manera uniforme hasta alcanzarla.",
+        "fr": "Plus grande dimension du modèle fini. Le maillage est mis à l'échelle uniformément.",
+        "pt": "Maior dimensão do modelo pronto. A malha é escalada de modo uniforme até ela."
+      },
+      "default": 120,
+      "min": 70,
+      "max": 220,
+      "step": 5
+    },
+    {
+      "id": "page",
+      "type": "select",
+      "group": "net",
+      "label": {
+        "en": "Page size",
+        "es": "Tamaño de hoja",
+        "fr": "Format de page",
+        "pt": "Tamanho da folha"
+      },
+      "default": "a4",
+      "options": [
+        {
+          "value": "a4",
+          "label": {
+            "en": "A4",
+            "es": "A4",
+            "fr": "A4",
+            "pt": "A4"
+          }
+        },
+        {
+          "value": "letter",
+          "label": {
+            "en": "US Letter",
+            "es": "Carta",
+            "fr": "Lettre US",
+            "pt": "Carta (US Letter)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "type": "select",
+      "group": "net",
+      "label": {
+        "en": "Cutting strategy",
+        "es": "Estrategia de corte",
+        "fr": "Stratégie de découpe",
+        "pt": "Estratégia de corte"
+      },
+      "tooltip": {
+        "en": "Which edges the unfolder tries to keep as folds first. Shortest cuts keeps long edges folded, so there is less to glue; steepest edge cuts, at every corner, the edge that climbs most steeply.",
+        "es": "Qué aristas intenta conservar primero como pliegues. «Cortes más cortos» deja dobladas las aristas largas, así hay menos que pegar; «arista más empinada» corta, en cada vértice, la arista que sube con más pendiente.",
+        "fr": "Quelles arêtes le dépliage garde d'abord en plis. « Coupes les plus courtes » garde pliées les longues arêtes, il reste moins à coller ; « arête la plus raide » coupe, à chaque sommet, l'arête qui monte le plus fort.",
+        "pt": "Quais arestas o desdobramento tenta manter primeiro como dobras. «Cortes mais curtos» mantém dobradas as arestas longas, e sobra menos para colar; «aresta mais íngreme» corta, em cada vértice, a aresta que sobe com mais inclinação."
+      },
+      "default": "min-perimeter",
+      "options": [
+        {
+          "value": "min-perimeter",
+          "label": {
+            "en": "Shortest cuts",
+            "es": "Cortes más cortos",
+            "fr": "Coupes les plus courtes",
+            "pt": "Cortes mais curtos"
+          }
+        },
+        {
+          "value": "steepest-edge",
+          "label": {
+            "en": "Steepest edge",
+            "es": "Arista más empinada",
+            "fr": "Arête la plus raide",
+            "pt": "Aresta mais íngreme"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tab_style",
+      "type": "select",
+      "group": "tabs",
+      "label": {
+        "en": "Glue tabs",
+        "es": "Pestañas de pegado",
+        "fr": "Languettes de collage",
+        "pt": "Abas de colagem"
+      },
+      "default": "trapezoid",
+      "options": [
+        {
+          "value": "trapezoid",
+          "label": {
+            "en": "Trapezoid",
+            "es": "Trapecio",
+            "fr": "Trapèze",
+            "pt": "Trapézio"
+          }
+        },
+        {
+          "value": "triangle",
+          "label": {
+            "en": "Triangle",
+            "es": "Triángulo",
+            "fr": "Triangle",
+            "pt": "Triângulo"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "en": "None (edge to edge, taped)",
+            "es": "Ninguna (canto con canto, con cinta)",
+            "fr": "Aucune (bord à bord, au ruban adhésif)",
+            "pt": "Nenhuma (borda com borda, com fita)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tab_angle",
+      "type": "slider",
+      "group": "tabs",
+      "unit": "deg",
+      "label": {
+        "en": "Tab side angle (°)",
+        "es": "Ángulo lateral de la pestaña (°)",
+        "fr": "Angle des côtés de la languette (°)",
+        "pt": "Ângulo lateral da aba (°)"
+      },
+      "tooltip": {
+        "en": "Angle between a tab's sides and its fold. Smaller angles keep tabs clear of the neighbouring faces in tight corners.",
+        "es": "Ángulo entre los lados de la pestaña y su doblez. Con ángulos menores, las pestañas no estorban a las caras vecinas en las esquinas cerradas.",
+        "fr": "Angle entre les côtés d'une languette et son pli. Un angle plus petit dégage les languettes des faces voisines dans les coins serrés.",
+        "pt": "Ângulo entre os lados da aba e a sua dobra. Ângulos menores afastam as abas das faces vizinhas nos cantos apertados."
+      },
+      "default": 45,
+      "min": 25,
+      "max": 60,
+      "step": 1
+    },
+    {
+      "id": "tab_height",
+      "type": "slider",
+      "group": "tabs",
+      "unit": "mm",
+      "label": {
+        "en": "Tab height (mm)",
+        "es": "Alto de la pestaña (mm)",
+        "fr": "Hauteur de la languette (mm)",
+        "pt": "Altura da aba (mm)"
+      },
+      "tooltip": {
+        "en": "The tallest a tab may be; tabs shrink where the space under the matching face is short.",
+        "es": "Altura máxima de una pestaña; se acorta donde falta espacio bajo la cara que le corresponde.",
+        "fr": "Hauteur maximale d'une languette ; elle raccourcit là où la face correspondante manque de place.",
+        "pt": "Altura máxima da aba; ela encolhe onde falta espaço sob a face correspondente."
+      },
+      "default": 6,
+      "min": 3,
+      "max": 10,
+      "step": 0.5
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "group": "net",
+      "label": {
+        "en": "Card",
+        "es": "Cartulina",
+        "fr": "Bristol",
+        "pt": "Cartolina"
+      },
+      "default": "cardstock-250",
+      "options": [
+        {
+          "value": "cardstock-160",
+          "label": {
+            "en": "Cardstock 160 g/m²",
+            "es": "Cartulina 160 g/m²",
+            "fr": "Bristol 160 g/m²",
+            "pt": "Cartolina 160 g/m²"
+          }
+        },
+        {
+          "value": "cardstock-250",
+          "label": {
+            "en": "Cardstock 250 g/m²",
+            "es": "Cartulina 250 g/m²",
+            "fr": "Bristol 250 g/m²",
+            "pt": "Cartolina 250 g/m²"
+          }
+        },
+        {
+          "value": "cardstock-300",
+          "label": {
+            "en": "Cardstock 300 g/m²",
+            "es": "Cartulina 300 g/m²",
+            "fr": "Bristol 300 g/m²",
+            "pt": "Cartolina 300 g/m²"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "icosahedron",
+      "label": {
+        "en": "Icosahedron",
+        "es": "Icosaedro",
+        "fr": "Icosaèdre",
+        "pt": "Icosaedro"
+      },
+      "values": {
+        "shape": "icosphere",
+        "subdivisions": 0,
+        "size": 90
+      }
+    },
+    {
+      "id": "geodesic-ball",
+      "label": {
+        "en": "Geodesic ball (320 faces)",
+        "es": "Balón geodésico (320 caras)",
+        "fr": "Boule géodésique (320 faces)",
+        "pt": "Bola geodésica (320 faces)"
+      },
+      "values": {
+        "shape": "icosphere",
+        "subdivisions": 2,
+        "size": 150,
+        "method": "steepest-edge"
+      }
+    },
+    {
+      "id": "donut",
+      "label": {
+        "en": "Donut",
+        "es": "Dona",
+        "fr": "Beignet",
+        "pt": "Rosquinha"
+      },
+      "values": {
+        "shape": "torus",
+        "torus_segments": 12,
+        "torus_sides": 6,
+        "size": 140
+      }
+    },
+    {
+      "id": "crystal",
+      "label": {
+        "en": "Crystal",
+        "es": "Cristal",
+        "fr": "Cristal",
+        "pt": "Cristal"
+      },
+      "values": {
+        "shape": "crystal",
+        "size": 110,
+        "tab_style": "triangle"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Assemble",
+        "es": "Armar",
+        "fr": "Monter",
+        "pt": "Montar"
+      },
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "glb",
+    "fold"
+  ],
+  "stock": {
+    "default": "cardstock-250",
+    "alternatives": [
+      "cardstock-160",
+      "cardstock-300"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "model",
+    "kernel": "sheet",
+    "capabilities": {
+      "unfolds_meshes": true,
+      "prints_on_pages": true,
+      "kinematic_fold_up": true,
+      "glue_joins": true
+    },
+    "societal_benefit": {
+      "en": "Turns any low-poly model into something a person can print, cut, fold and hold, with nothing but card, a blade and glue: a bridge from the screen to the hand.",
+      "es": "Convierte cualquier modelo low-poly en algo que una persona puede imprimir, recortar, doblar y tener en la mano, con solo cartulina, una navaja y pegamento: un puente de la pantalla a las manos.",
+      "fr": "Transforme n'importe quel modèle low-poly en un objet qu'on peut imprimer, découper, plier et tenir, avec du bristol, une lame et de la colle : un pont entre l'écran et la main.",
+      "pt": "Transforma qualquer modelo low-poly em algo que uma pessoa pode imprimir, recortar, dobrar e segurar, só com cartolina, um estilete e cola: uma ponte da tela para as mãos."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "spec_version": 1,
+  "object": "pliego/papercraft-unfold",
+  "title": {
+    "en": "Papercraft unfold",
+    "es": "Despliegue de papercraft",
+    "fr": "Dépliage de papercraft",
+    "pt": "Desdobramento de papercraft"
+  },
+  "summary": {
+    "en": "Any low-poly mesh unfolded into papercraft nets: numbered, tabbed pieces packed onto A4 or Letter pages, and a program that folds every piece from the page into its place on the model. Icosphere, torus and an embedded mesh.",
+    "es": "Cualquier malla low-poly desplegada en plantillas de papercraft: piezas numeradas y con pestañas, acomodadas en hojas A4 o carta, y una secuencia que dobla cada pieza desde la hoja hasta su lugar en el modelo. Icosfera, toro y una malla incrustada.",
+    "fr": "N'importe quel maillage low-poly déplié en patrons de papercraft : pièces numérotées, à languettes, rangées sur des pages A4 ou Lettre, et un programme qui plie chaque pièce depuis la page jusqu'à sa place sur le modèle. Icosphère, tore et un maillage intégré.",
+    "pt": "Qualquer malha low-poly desdobrada em moldes de papercraft: peças numeradas e com abas, arrumadas em folhas A4 ou Carta, e uma sequência que dobra cada peça da folha até o seu lugar no modelo. Icosfera, toro e uma malha embutida."
+  },
+  "article": {
+    "path": "papercraft-unfold/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary; nets of polyhedra since 1525",
+  "excludes": [
+    "Any published papercraft net, template or pattern file: every net is computed by pliego.unfold from a generated or authored mesh"
+  ],
+  "sources": [
+    "A. Dürer, Underweysung der Messung, 1525",
+    "E. D. Demaine, J. O'Rourke, Geometric Folding Algorithms: Linkages, Origami, Polyhedra, Cambridge University Press, 2007",
+    "M. Bern, E. D. Demaine, D. Eppstein, E. Kuo, A. Mantler, J. Snoeyink, Ununfoldable polyhedra with convex faces, Computational Geometry 24 (2003)",
+    "W. Schlickenrieder, Nets of Polyhedra, Diplomarbeit, TU Berlin, 1997",
+    "J. B. Kruskal, On the shortest spanning subtree of a graph and the traveling salesman problem, Proc. AMS 7 (1956)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/low-poly-papercraft",
+      "pliego/glue-flap",
+      "pliego/tab-and-slot"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
