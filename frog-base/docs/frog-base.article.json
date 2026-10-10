@@ -1,0 +1,48 @@
+{
+  "spec_version": 1,
+  "object": "pliego/frog-base",
+  "title": {
+    "en": "Frog base",
+    "es": "Base de rana",
+    "fr": "Base de la grenouille",
+    "pt": "Base do sapo"
+  },
+  "summary": {
+    "en": "The traditional frog base: a preliminary base with its four flaps squashed and petal-folded, folded move by move on layer-ordered flat states. Every state is checked, every step of the preview is a rigid motion, and the unfolded pattern has the base's four-fold symmetry.",
+    "es": "La base de rana tradicional: una base preliminar con sus cuatro solapas aplastadas y plegadas en pétalo, plegada paso a paso sobre estados planos con orden de capas. Cada estado se comprueba, cada paso de la vista previa es un movimiento rígido y el patrón desplegado tiene la simetría de cuatro vías de la base.",
+    "fr": "La base de la grenouille traditionnelle : une base préliminaire dont les quatre rabats sont écrasés puis pliés en pétale, pliée geste par geste sur des états à plat avec ordre des couches. Chaque état est vérifié, chaque pas de l'aperçu est un mouvement rigide et le motif déplié a la symétrie d'ordre quatre de la base.",
+    "pt": "A base do sapo tradicional: uma base preliminar com as quatro abas esmagadas e dobradas em pétala, dobrada passo a passo sobre estados planos com ordem de camadas. Cada estado é verificado, cada passo da pré-visualização é um movimento rígido e o padrão desdobrado tem a simetria de ordem quatro da base."
+  },
+  "article": {
+    "path": "frog-base/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Marshall Bern and Barry Hayes, The complexity of flat origami, Proc. 7th ACM-SIAM Symposium on Discrete Algorithms, 1996",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/preliminary-base",
+      "pliego/squash-fold",
+      "pliego/petal-fold",
+      "pliego/bird-base",
+      "pliego/lily"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
