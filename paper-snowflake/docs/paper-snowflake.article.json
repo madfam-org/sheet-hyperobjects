@@ -1,0 +1,31 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-snowflake",
+  "title": {
+    "en": "Paper snowflake",
+    "es": "Copo de nieve de papel",
+    "fr": "Flocon de neige en papier",
+    "pt": "Floco de neve de papel"
+  },
+  "summary": {
+    "en": "A square folded into a twelve-layer wedge, cut once and unfolded: every cut appears twelve times, with the six-fold mirror symmetry of a snow crystal.",
+    "es": "Un cuadrado doblado en una cuña de doce capas, cortado una sola vez y desdoblado: cada corte aparece doce veces, con la simetría de seis espejos de un cristal de nieve.",
+    "fr": "Un carré plié en un coin de douze couches, découpé une seule fois puis déplié : chaque découpe apparaît douze fois, avec la symétrie d'ordre six à miroirs d'un cristal de neige.",
+    "pt": "Um quadrado dobrado numa cunha de doze camadas, cortado uma só vez e desdobrado: cada corte aparece doze vezes, com a simetria de seis espelhos de um cristal de neve."
+  },
+  "article": {
+    "path": "paper-snowflake/docs/README.md"
+  },
+  "sources": [
+    "E. D. Demaine, M. L. Demaine and A. Lubiw, Folding and cutting paper, JCDCG '98, LNCS 1763 (2000)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/papel-picado-banner"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

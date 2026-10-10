@@ -1,0 +1,33 @@
+{
+  "spec_version": 1,
+  "object": "pliego/miura-ori",
+  "title": {
+    "en": "Miura-ori",
+    "es": "Miura-ori",
+    "fr": "Miura-ori",
+    "pt": "Miura-ori"
+  },
+  "summary": {
+    "en": "A sheet of identical parallelogram panels that folds rigidly with one degree of freedom; every crease follows one closed-form angle law and the sheet contracts in both directions at once.",
+    "es": "Una hoja de paneles en paralelogramo idénticos que se pliega de forma rígida con un solo grado de libertad; todos los pliegues obedecen una misma ley angular cerrada y la hoja se contrae en ambas direcciones a la vez.",
+    "fr": "Une feuille de panneaux en parallélogramme identiques qui se plie de façon rigide à un seul degré de liberté ; chaque pli suit une même loi angulaire explicite et la feuille se contracte dans les deux directions à la fois.",
+    "pt": "Uma folha de painéis em paralelogramo idênticos que dobra de forma rígida com um único grau de liberdade; todas as dobras seguem uma mesma lei angular fechada e a folha se contrai nas duas direções ao mesmo tempo."
+  },
+  "article": {
+    "path": "miura-ori/docs/README.md"
+  },
+  "era": "20th century (proposed by Koryo Miura for deployable space membranes)",
+  "sources": [
+    "K. Miura, Method of packaging and deployment of large membranes in space, ISAS Report 618 (1985)",
+    "M. Schenk and S. D. Guest, Geometry of Miura-folded metamaterials, PNAS 110 (2013) — https://pmc.ncbi.nlm.nih.gov/articles/PMC3587190"
+  ],
+  "related": {
+    "objects": [
+      "pliego/rotating-squares"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
