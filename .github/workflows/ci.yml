@@ -30,7 +30,7 @@ env:
   SPEC_PIN: "643117f49102520ebb11796761760d01561187d9"
   # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
   # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
-  PLIEGO_PIN: "6aefd93e5c9ecf383e7ff5c55c889a85648b3601"
+  PLIEGO_PIN: "679bd5a8f814169500b0d000e36a15b448154d97"
 
 jobs:
   triple:
