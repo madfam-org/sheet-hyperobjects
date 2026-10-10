@@ -1,0 +1,47 @@
+{
+  "spec_version": 1,
+  "object": "pliego/flapping-bird",
+  "title": {
+    "en": "Flapping bird",
+    "es": "Pájaro que aletea",
+    "fr": "Oiseau qui bat des ailes",
+    "pt": "Pássaro que bate as asas"
+  },
+  "summary": {
+    "en": "The traditional action model from the bird base: a long neck and a tail reversed up inside, a head, and wings opened into a V. Fold mode folds it move by move on checked layer-ordered states; flap mode starts from the finished bird, and its flap control beats the wings on their hinges in the preview.",
+    "es": "El modelo de acción tradicional desde la base de pájaro: un cuello largo y una cola invertidos hacia dentro, una cabeza y las alas abiertas en V. El modo de plegado lo pliega paso a paso sobre estados con orden de capas comprobados; el modo de aleteo parte del pájaro terminado y su control bate las alas sobre sus bisagras en la vista previa.",
+    "fr": "Le modèle d'action traditionnel depuis la base de l'oiseau : un long cou et une queue inversés vers l'intérieur, une tête et des ailes ouvertes en V. Le mode pliage le plie geste par geste sur des états vérifiés avec ordre des couches ; le mode battement part de l'oiseau terminé et sa commande bat des ailes sur leurs charnières dans l'aperçu.",
+    "pt": "O modelo de ação tradicional a partir da base do pássaro: um pescoço comprido e uma cauda invertidos para dentro, uma cabeça e as asas abertas em V. O modo de dobragem dobra-o passo a passo sobre estados verificados com ordem de camadas; o modo de bater parte do pássaro acabado e o seu controlo bate as asas nas dobradiças na pré-visualização."
+  },
+  "article": {
+    "path": "flapping-bird/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional action model",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Marshall Bern and Barry Hayes, The complexity of flat origami, Proc. 7th ACM-SIAM Symposium on Discrete Algorithms, 1996",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.5, §5.6, §6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/bird-base",
+      "pliego/paper-crane",
+      "pliego/inside-reverse-fold",
+      "pliego/petal-fold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
