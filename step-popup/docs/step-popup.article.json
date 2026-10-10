@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/step-popup",
+  "title": {"en": "Step pop-up", "es": "Pop-up de escalones", "fr": "Pop-up à marches", "pt": "Pop-up de degraus"},
+  "summary": {
+    "en": "A staircase cut and scored into one card: nested step folds that stand when the card opens and fold flat inside when it shuts. No glue.",
+    "es": "Una escalera cortada y hendida en una sola tarjeta: escalones anidados que se levantan al abrir la tarjeta y quedan planos por dentro al cerrarla. Sin pegamento.",
+    "fr": "Un escalier découpé et rainé dans une seule carte : des marches emboîtées qui se dressent à l'ouverture et se rangent à plat à la fermeture. Sans colle.",
+    "pt": "Uma escada cortada e vincada num único cartão: degraus aninhados que se erguem ao abrir o cartão e ficam planos por dentro ao fechá-lo. Sem cola."
+  },
+  "article": {
+    "path": "step-popup/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary paper engineering; the cut-and-fold step is a general technique in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Origamic architecture», https://en.wikipedia.org/wiki/Origamic_architecture",
+    "Paul Jackson, Cut and Fold Techniques for Pop-Up Designs, Laurence King, 2014",
+    "Duncan Birmingham, Pop-Up Design and Paper Mechanics, GMC Publications, 2010"
+  ],
+  "related": {
+    "objects": ["pliego/parallel-fold-popup", "pliego/greeting-card", "pliego/floating-layer-popup", "pliego/score-vs-crease"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}

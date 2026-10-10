@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/greeting-card",
+  "title": {"en": "Greeting card", "es": "Tarjeta de felicitación", "fr": "Carte de vœux", "pt": "Cartão de felicitações"},
+  "summary": {
+    "en": "Every common folded card in one object: single fold, tent, gatefold, z-fold, tri-fold and a card with an insert, in A6, A5, US A2 and US A7, scored for cardstock.",
+    "es": "Todas las tarjetas plegadas comunes en un solo objeto: un doblez, tienda, díptico de puertas, zigzag, tríptico y tarjeta con hoja interior, en A6, A5, A2 y A7 de EE. UU., hendidas para cartulina.",
+    "fr": "Toutes les cartes pliées courantes en un seul objet : pli simple, chevalet, volets, pli en Z, trois volets et carte avec feuillet, en A6, A5, A2 et A7 américains, rainées pour le bristol.",
+    "pt": "Todos os cartões dobrados comuns num só objeto: dobra simples, tenda, portas, sanfona em Z, três dobras e cartão com folha interna, em A6, A5, A2 e A7 americanos, vincados para cartão."
+  },
+  "article": {
+    "path": "greeting-card/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary stationery; folded cards in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Greeting card», https://en.wikipedia.org/wiki/Greeting_card",
+    "Wikipedia, «ISO 216», https://en.wikipedia.org/wiki/ISO_216",
+    "Wikipedia, «Envelope», https://en.wikipedia.org/wiki/Envelope"
+  ],
+  "related": {
+    "objects": ["pliego/score-vs-crease", "pliego/step-popup", "pliego/leporello"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}

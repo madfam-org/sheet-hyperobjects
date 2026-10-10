@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/pull-tab-slider",
+  "title": {"en": "Pull-tab slider", "es": "Lengüeta deslizante", "fr": "Tirette coulissante", "pt": "Puxador deslizante"},
+  "summary": {
+    "en": "A pull tab that moves a part: a picture strip sliding in a glued channel behind a window, or a lever on a brad that swings a paddle.",
+    "es": "Una lengüeta que mueve una pieza: una tira de imágenes que se desliza por un canal pegado detrás de una ventana, o una palanca sobre un broche que hace girar una paleta.",
+    "fr": "Une tirette qui fait bouger une pièce : une bande d'images qui coulisse dans un canal collé derrière une fenêtre, ou un levier sur une attache parisienne qui fait pivoter une palette.",
+    "pt": "Um puxador que move uma peça: uma tira de imagens que desliza num canal colado atrás de uma janela, ou uma alavanca num colchete que faz uma paleta girar."
+  },
+  "article": {
+    "path": "pull-tab-slider/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "nineteenth-century movable books to present",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Pop-up book», https://en.wikipedia.org/wiki/Pop-up_book",
+    "David A. Carter and James Diaz, The Elements of Pop-Up, Little Simon, 1999"
+  ],
+  "related": {"objects": ["pliego/volvelle", "pliego/dissolve-scene", "pliego/lift-the-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}

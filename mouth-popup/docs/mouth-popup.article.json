@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/mouth-popup",
+  "title": {"en": "Mouth pop-up", "es": "Pop-up de boca", "fr": "Pop-up bouche", "pt": "Pop-up de boca"},
+  "summary": {
+    "en": "The talking mouth: one slit and six scored folds in a card make two lips that open and shut with the card. One sheet, no glue.",
+    "es": "La boca que habla: un corte y seis dobleces hendidos en una tarjeta forman dos labios que se abren y se cierran con ella. Una sola hoja, sin pegamento.",
+    "fr": "La bouche qui parle : une fente et six plis rainés dans une carte forment deux lèvres qui s'ouvrent et se ferment avec elle. Une seule feuille, sans colle.",
+    "pt": "A boca que fala: um corte e seis dobras vincadas num cartão formam dois lábios que se abrem e se fecham com ele. Uma só folha, sem cola."
+  },
+  "article": {
+    "path": "mouth-popup/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary paper engineering; a general cut-and-fold technique in continuous use",
+  "heritage": false,
+  "sources": [
+    "Paul Jackson, Cut and Fold Techniques for Pop-Up Designs, Laurence King, 2014",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020"
+  ],
+  "related": {
+    "objects": ["pliego/step-popup", "pliego/greeting-card", "pliego/rabbit-ear"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}

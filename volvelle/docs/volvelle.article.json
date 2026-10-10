@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/volvelle",
+  "title": {"en": "Volvelle", "es": "Volvela", "fr": "Volvelle", "pt": "Volvela"},
+  "summary": {
+    "en": "A wheel chart: paper discs turning on a pivot through a base, under a cover with windows or as a stack of independent rings.",
+    "es": "Una rueda de papel: discos que giran sobre un eje que atraviesa una base, bajo una tapa con ventanas o como una pila de anillos independientes.",
+    "fr": "Une roue à calcul : des disques de papier qui tournent sur un axe traversant une base, sous un couvercle à fenêtres ou en pile d'anneaux indépendants.",
+    "pt": "Uma roda de papel: discos que giram num eixo que atravessa uma base, sob uma tampa com janelas ou como uma pilha de anéis independentes."
+  },
+  "article": {
+    "path": "volvelle/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "medieval to present; a historical paper device in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Pop-up book», https://en.wikipedia.org/wiki/Pop-up_book",
+    "Wikipedia, «Volvelle», https://en.wikipedia.org/wiki/Volvelle"
+  ],
+  "related": {"objects": ["pliego/pull-tab-slider", "pliego/lift-the-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}

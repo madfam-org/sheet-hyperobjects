@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/dissolve-scene",
+  "title": {"en": "Dissolve scene", "es": "Escena que se transforma", "fr": "Scène changeante", "pt": "Cena que se transforma"},
+  "summary": {
+    "en": "A venetian-blind picture change: a window of slats, picture A on their fronts and picture B on their backs; turn them all half a turn and A becomes B.",
+    "es": "Un cambio de imagen de persiana veneciana: una ventana de lamas con la imagen A al frente y la B al reverso; al girarlas todas media vuelta, A se vuelve B.",
+    "fr": "Un changement d'image à jalousie : une fenêtre de lamelles, l'image A au recto et l'image B au verso ; un demi-tour de toutes et A devient B.",
+    "pt": "Uma troca de imagem de persiana: uma janela de lâminas com a imagem A na frente e a B no verso; ao girá-las todas meia volta, A vira B."
+  },
+  "article": {
+    "path": "dissolve-scene/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "nineteenth-century movable books to present",
+  "heritage": false,
+  "sources": ["Wikipedia, «Pop-up book», https://en.wikipedia.org/wiki/Pop-up_book"],
+  "related": {"objects": ["pliego/pull-tab-slider", "pliego/volvelle", "pliego/lift-the-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}
