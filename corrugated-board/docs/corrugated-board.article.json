@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/corrugated-board",
+  "title": {"en": "Corrugated board", "es": "Cartón corrugado", "fr": "Carton ondulé", "pt": "Papelão ondulado"},
+  "summary": {
+    "en": "Corrugation itself — fluted media between liners in single face, single, double and triple wall, A/B/C/E/F flutes, craft corrugated paper and a cross-section template — formed flute by flute.",
+    "es": "La corrugación misma —médiums ondulados entre liners en una cara, pared sencilla, doble y triple, flautas A/B/C/E/F, papel corrugado de manualidades y una plantilla del corte— formada flauta por flauta.",
+    "fr": "L'ondulation elle-même — cannelures entre couvertures en simple face, double face, double-double et triple, profils A/B/C/E/F, papier ondulé de loisirs et gabarit de coupe — formée onde après onde.",
+    "pt": "A própria ondulação — miolos ondulados entre capas em face simples, parede simples, dupla e tripla, ondas A/B/C/E/F, papel ondulado de artesanato e um gabarito do corte — formada onda a onda."
+  },
+  "article": {
+    "path": "corrugated-board/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "patented 1856–1874; industrial since the early twentieth century",
+  "sources": ["Wikipedia, Corrugated fiberboard (after Foster 1997)", "Rogalka, Grabski & Garbowski 2023, Sensors 23:6242"],
+  "related": {"objects": ["pliego/corrugated-shipper", "pliego/mailer-box", "pliego/pleat-and-crimp"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
