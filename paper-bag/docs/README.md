@@ -12,8 +12,8 @@
 The everyday kraft bag: a front, a back, two side gussets that let it fold flat, and a flat
 rectangular bottom on which it stands open. This is the self-opening sack (SOS) form, made here
 by hand from a single sheet. The tube is closed by one glue flap, and the bottom by folding and one
-glued overlap. The sheet is not cut at the corners: the excess paper at each bottom corner folds
-back into an ear.
+glued overlap. The sheet is not cut at the corners: the gusset's bottom folds into a triangle, and
+its corners fold back as ears tucked under the front and back flaps.
 
 ## Geometry
 
@@ -22,30 +22,31 @@ back into an ear.
 scored down its centre (a flat score) so the made bag can pleat in. The blank is
 2 × (`width` + `gusset`) + 15 mm wide.
 
-**The bottom.** Below the bottom score every panel continues by an extension
-`e` = `gusset`/2 + `overlap`/2. Folded in:
+**The bottom.** Below the bottom score the front and the back continue by an extension
+`e` = `gusset`/2 + `overlap`/2, and each gusset by `gusset`/2. Folded in:
 
-- the gusset extensions lie flat and cover the sides of the bottom, `e` deep;
-- the back and front extensions cover the bottom from the back and from the front, each `e`
-  deep, so they overlap by `overlap` in the middle, where they are glued;
-- where a front or back extension meets a gusset extension, a 45° crease runs from the bag's
-  corner across the front or back extension. The corner of the flap folds back on itself along
-  it into an ear, tucked between the gusset extension and the flap, and the corner line between
-  the two extensions folds flat.
+- each gusset extension carries two 45° creases from the bag's corners to its middle. It folds in
+  flat as a triangle whose tip reaches the middle of the bottom, and the two corners outside the
+  creases (the ears) fold back over the triangle;
+- the back and front extensions fold over the triangles and the ears. They are full rectangles,
+  `e` deep, so they overlap by `overlap` in the middle, where they are glued.
 
-Seen from below, the two flaps overlap across the middle and each gusset extension shows as a
-triangle between their 45° edges. At the glue-flap corner the front extension and the gusset
-extension are separate pieces of paper, so there the front flap's corner is simply cut at 45°,
-and its extension starts 1 mm in from the corner. The gusset extensions must not meet in the middle
-of the bottom: `gusset` + `overlap` must stay under `width` − 4 mm, or the script stops.
+So the bottom has three layers at each corner: the gusset triangle inside, the ear, and the flap
+outside. The flaps cover the whole bottom; from inside the bag each gusset shows as a triangle
+(the diamond fold). At the glue-flap corner, the second gusset's ear has no front panel to join,
+so it is a free flap that folds over its triangle like the others. The front's extension starts
+1 mm in from that corner. The gusset triangles must not meet in the middle (`gusset` at most
+`width` − 2 mm), and the overlap must stay under the gusset minus 4 mm, or the script stops.
 
 **Corners as mechanisms.** A bottom corner is a degree-5 vertex. Around it lie the gusset, the
-front (or back), the flap, the ear and the gusset extension (90°, 90°, 45°, 45°, 90°). With the
-bag's corner held at 90° it keeps two degrees of freedom. From the tube state, which is singular
-(the corner line and the extension line form one straight fold), the motion solver could take
-either of two branches. One tucks the ear inside the bottom; the other would turn the back flap
-outward. The script solves the right branch once on a single corner (its angles do not depend on
-the bag's size) and drives every corner of the bag along it.
+front (or back), the flap (90° each), the ear and the gusset triangle (45° each). With the bag's
+corner held at 90° it keeps two degrees of freedom. From the tube state, which is singular (the
+corner line and the extension line form one straight fold), the motion solver could take either of
+two branches. On one, the flap folds in and the ear ends between the gusset triangle and the flap.
+On the other, the flap would turn outward. The script solves the first branch once on a single
+corner (its angles do not depend on the bag's size) and drives every corner of the bag along it.
+With the 45° creases in the front flap instead, the reachable branch would leave the ears on the
+outside of the flaps; that is why they are in the gussets.
 
 ## The fold program
 
@@ -54,22 +55,23 @@ exact rigid state (26 substeps from three key poses):
 
 1. **tube:** fold the four corners to 90° and the glue flap inside the front;
 2. **gussets in:** the gusset flaps fold halfway in; the front and back flaps rise with them and
-   their corners fold back into ears;
+   the gussets' ears fold back;
 3. **bottom:** press the bottom flat and glue the overlap.
 
-The bottom is shown 0.4° short of flat (gusset flaps at 89.6°, front and back flaps at 89.8°, as
+The bottom is shown just short of flat (gusset flaps at 89.6°, front and back flaps at 89.2°, as
 the branch requires). That keeps the layers from coinciding; in a zero-thickness rigid model the
 ears cannot fold past flat. Before it writes the document the script checks the erected bag: the
 glue flap meets the front edge, the panels close round the bottom, the flaps overlap by `overlap`,
-and every crease closes (`kinematics.closure_residual`, about 1e-13 mm). The erected state is the
+the ear lies between the gusset triangle and the flap, and every crease closes
+(`kinematics.closure_residual`, about 1e-11 mm). The erected state is the
 `target:erected` frame. **The preview** plays the whole program, from the flat sheet (standing in
 the front panel's plane) to the open bag on the table.
 
 **Limits: what is not modelled, or needs the physics engine.**
 
 - The glued closure (the seam and the bottom overlap) is given as interfaces, not as `glue` joins.
-- The order of the layers in the bottom is a thickness question for the engine: gusset flaps,
-  then ears, then the back flap, and the front flap outermost.
+- The front and back flaps reach the same angle, so where they overlap they cross; which one lies
+  outside is a thickness question for the engine.
 - The bag is not folded flat again, and its self-opening snap is not modelled.
 - The gussets stay flat in the open bag: the pleat in the gusset centre bends the paper, which is
   the engine's job.
@@ -79,8 +81,8 @@ the front panel's plane) to the open bag on the table.
 1. Export the blank (`svg`, `dxf`, `pdf` or `hpgl`) and cut it from kraft.
 2. Score every line, including the 45° ear creases and the gusset centres.
 3. Fold the four corners and glue the flap inside the front edge: a tube.
-4. Push the two gusset flaps in. The front and back flaps rise, and their corners fold back into
-   ears along the 45° creases.
+4. Push the two gusset flaps in. Their corners fold back along the 45° creases into ears, and the
+   front and back flaps rise.
 5. Fold the back flap down, then the front flap over it, and glue the overlap.
 6. Open the bag on its bottom. To store it flat, push the gussets in along their centre scores.
 
