@@ -18,9 +18,9 @@ and the upper half tilts back by γ, so the top ring moves straight down by (yt 
 Every strip does the same, so the loops around the slits close; the script checks it with
 `pliego.kinematics.closure_residual`. The bowed state is not written as a frame: where a slit
 crosses the middle crease, the two strips share one vertex in a v1 document, and bowed strips
-would need two positions for it (the cut-separation gap of v1 frames). Paper between the scores still bends a little (the strips
-bow in a curve rather than as two flat panels), which needs the physics engine; the preview shows
-the rigid model.
+would need two positions for it (the cut-separation gap of v1 frames). Paper between the
+scores still bends a little (the strips bow in a curve rather than as two flat panels), which
+needs the physics engine; the preview shows the rigid model.
 """
 
 import math

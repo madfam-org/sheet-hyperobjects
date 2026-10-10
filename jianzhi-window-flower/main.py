@@ -91,13 +91,6 @@ def P(r, phi):
     return (cx + r * math.cos(theta0 + phi), cy + r * math.sin(theta0 + phi))
 
 
-def ring(r_in, r_out, phi_a, phi_b, k=12):
-    """An annular-sector hole from phi_a to phi_b."""
-    out = [P(r_out, phi_a + (phi_b - phi_a) * i / k) for i in range(k + 1)]
-    inn = [P(r_in, phi_b - (phi_b - phi_a) * i / k) for i in range(k + 1)]
-    return out + inn
-
-
 def petal(r_a, r_b, phi, half_width):
     """A pointed petal along the ray phi, from r_a to r_b, half-width at its widest."""
     pts = []

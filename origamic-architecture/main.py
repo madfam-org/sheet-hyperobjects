@@ -91,7 +91,7 @@ else:  # facade
     heights = [0.55, 0.8, 1.0, 0.7, 0.45]
     depths = [0.7, 0.85, 1.0, 0.85, 0.7]
     v = (H - sum(widths) * H) / 2
-    for k, (bw, bh, bd) in enumerate(zip(widths, heights, depths)):
+    for k, (bw, bh, bd) in enumerate(zip(widths, heights, depths, strict=True)):
         bw, r, d = bw * H, bh * rise, bd * depth
         holes = []
         win, gap = 0.2 * bw, 0.2 * bw

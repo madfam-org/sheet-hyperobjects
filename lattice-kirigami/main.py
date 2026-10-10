@@ -20,8 +20,6 @@ geometric estimate (every slit row opened by a quarter of the slit length); the 
 far it really goes. The two modes are separate because pinned grip bands would fight the pleats.
 """
 
-import math
-
 import pliego
 
 
