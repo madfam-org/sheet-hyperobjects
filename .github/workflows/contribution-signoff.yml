@@ -1,0 +1,76 @@
+# Contribution sign-off — the third-party contribution gate.
+#
+# [RULING PENDING: CLA vs DCO]
+# How a contributor signs work into the sheet commons is an OWNER ruling (GOVERNANCE.md, "Rulings this commons
+# is waiting on"). It is not a maintainer's call and not an agent's. Until it is ruled this workflow is INERT:
+# every job is gated on the repository variable SHEET_CONTRIBUTION_SIGNOFF, which is unset.
+#
+#   unset (today) -> nothing runs. Third-party merges are blocked by policy.
+#   'dco'         -> the DCO job below runs and blocks on a missing or mismatched Signed-off-by.
+#   'cla'         -> not implemented: the CLA text, licence-vs-assignment and where signatures live must be
+#                    decided first; a job that goes green or red against undecided terms would be worse than none.
+#
+# To rule DCO: set the repository variable SHEET_CONTRIBUTION_SIGNOFF=dco and add the check
+# "Contribution sign-off / DCO — every commit is signed off" to main's required status checks.
+
+name: Contribution sign-off
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  dco:
+    name: DCO — every commit is signed off
+    # Inert until the owner rules: `vars` is empty on a repository that has not set it, so this is false.
+    if: vars.SHEET_CONTRIBUTION_SIGNOFF == 'dco'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Every non-merge commit carries a Signed-off-by matching its author
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          # Developer Certificate of Origin 1.1. Read-proof and fail-closed: prints how many commits it checked;
+          # checking zero commits is a failure.
+          import os, re, subprocess, sys
+
+          base, head = os.environ["BASE_SHA"], os.environ["HEAD_SHA"]
+          sep, rec = "\x1e", "\x1f"
+          trailer = re.compile(r"^\s*Signed-off-by:\s*(.+?)\s*<([^<>]+)>\s*$", re.I | re.M)
+          fmt = rec.join(["%H", "%an", "%ae", "%P", "%B"]) + sep
+          try:
+              raw = subprocess.run(["git", "log", f"--format={fmt}", f"{base}..{head}"],
+                                   check=True, capture_output=True, text=True).stdout
+          except subprocess.CalledProcessError as exc:
+              print(f"dco: commits=0 — could not walk {base}..{head}: {exc.stderr.strip()}")
+              sys.exit(1)
+          problems, checked = [], 0
+          for chunk in raw.split(sep):
+              if not chunk.strip():
+                  continue
+              sha, author, email, parents, body = chunk.lstrip("\n").split(rec, 4)
+              if len(parents.split()) > 1:
+                  continue
+              checked += 1
+              signers = [e.strip().lower() for _, e in trailer.findall(body)]
+              if email.strip().lower() not in signers:
+                  problems.append(f"{sha[:8]} authored by {author} <{email}>: no matching Signed-off-by")
+          if checked == 0:
+              problems.append("checked=0 commits — refusing to report success on an empty read")
+          print(f"dco: commits={checked} unsigned={len(problems)}")
+          for p in problems:
+              print(f"  FAIL {p}")
+          if problems:
+              print("Fix: `git rebase --signoff origin/main` then `git push --force-with-lease`.")
+              sys.exit(1)
+          PY

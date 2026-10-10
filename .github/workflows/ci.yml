@@ -1,0 +1,179 @@
+# CI for the sheet commons (public repository).
+#
+# GitHub-hosted runners only, pinned to ubuntu-24.04 (ruling R116): fork pull requests must never reach MADFAM's
+# self-hosted runners. Do NOT copy the sibling commons' runner expression or their tag-pinned actions. Every
+# action is pinned to a full commit SHA (tag in the comment); top-level permissions are read-only.
+#
+# Read-proof, fail-closed: every lane prints how many cartridges it read. A lane whose pin is not set yet prints
+# `skip: <PIN> not set` and exits 0 — that printed line is the proof, never a silent pass. Every lane runs over
+# root directories that hold a project.json (scoped glob, never recursive).
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA. PLACEHOLDER: empty until the keystone's
+  # `pliego-spec` package lands on its main; the coordinator sets the SHA in the same PR that first needs it.
+  SPEC_PIN: ""
+  # The platform (madfam-org/pliego) at a full commit SHA, for pliego-kernel. PLACEHOLDER: empty until the kernel
+  # and its cartridge runner (`python -m pliego.cartridge <dir>`) land on Pliego's main.
+  PLIEGO_PIN: ""
+
+jobs:
+  triple:
+    name: Cartridge triple, slugs, no stray licence files
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Lane tests
+        run: python -m unittest discover -s .github/scripts/tests -v
+      - name: Triple check
+        run: python .github/scripts/check_triple.py
+      - name: Licence text is the weakly reciprocal variant
+        run: |
+          set -euo pipefail
+          head -1 LICENSE | grep -qx 'CERN Open Hardware Licence Version 2 - Weakly Reciprocal'
+          grep -q 'this licence,' LICENSE && grep -q 'CERN-OHL-W (weakly reciprocal)' LICENSE
+          echo "licence: CERN-OHL-W-2.0 text OK"
+
+  manifests:
+    name: Manifests (pliego-spec at SPEC_PIN)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Check every cartridge
+        run: |
+          set -euo pipefail
+          if [ -z "${SPEC_PIN}" ]; then echo "skip: SPEC_PIN not set"; exit 0; fi
+          [[ "${SPEC_PIN}" =~ ^[0-9a-f]{40}$ ]] || { echo "manifests: FAIL SPEC_PIN is not a full 40-hex SHA"; exit 1; }
+          python -m pip install --quiet "hyperobjects-spec @ git+https://github.com/madfam-org/hyperobjects-spec@${SPEC_PIN}"
+          mapfile -t dirs < <(for f in */project.json; do [ -f "$f" ] && dirname "$f"; done)
+          echo "manifests: cartridges=${#dirs[@]} spec=${SPEC_PIN:0:12}"
+          if [ "${#dirs[@]}" -eq 0 ]; then echo "skip: 0 cartridges in the commons yet"; exit 0; fi
+          pliego-spec check cartridge "${dirs[@]}" -v
+
+  render:
+    name: Render (every cartridge through pliego-kernel at PLIEGO_PIN)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Run every cartridge
+        run: |
+          set -euo pipefail
+          if [ -z "${PLIEGO_PIN}" ]; then echo "skip: PLIEGO_PIN not set"; exit 0; fi
+          [[ "${PLIEGO_PIN}" =~ ^[0-9a-f]{40}$ ]] || { echo "render: FAIL PLIEGO_PIN is not a full 40-hex SHA"; exit 1; }
+          python -m pip install --quiet "pliego-kernel @ git+https://github.com/madfam-org/pliego@${PLIEGO_PIN}#subdirectory=packages/kernel"
+          python -c "import importlib.util, sys; sys.exit(0 if importlib.util.find_spec('pliego.cartridge') else 1)" \
+            || { echo "render: FAIL the pinned kernel has no pliego.cartridge runner"; exit 1; }
+          mapfile -t dirs < <(for f in */project.json; do [ -f "$f" ] && dirname "$f"; done)
+          echo "render: cartridges=${#dirs[@]} kernel=${PLIEGO_PIN:0:12}"
+          if [ "${#dirs[@]}" -eq 0 ]; then echo "skip: 0 cartridges in the commons yet"; exit 0; fi
+          failed=0
+          for d in "${dirs[@]}"; do
+            echo "::group::$d"
+            python -m pliego.cartridge "$d" || { echo "render: FAIL $d"; failed=$((failed + 1)); }
+            echo "::endgroup::"
+          done
+          echo "render: cartridges=${#dirs[@]} failed=${failed}"
+          [ "$failed" -eq 0 ]
+
+  quality-gates:
+    name: Org quality gates (byte and file-size)
+    # The org reusable workflow uses tag-pinned actions, which SHA-pinning refuses; this job runs the SAME gate
+    # scripts from a pinned commit of madfam-org/.github with the same thresholds.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GATES_SHA: 2085b34de1268f4c4351d2af7a60b38de9297b64 # madfam-org/.github main (2026-10-04)
+      TSX_VERSION: 4.23.15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: madfam-org/.github
+          ref: ${{ env.GATES_SHA }}
+          path: .madfam-gates
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+      - name: Byte gate (control bytes, BOM, U+2028/U+2029)
+        run: |
+          node .madfam-gates/scripts/check-source-bytes.mjs \
+            --text-exts ".py,.json,.md,.yml,.yaml,.txt,.toml,.svg" \
+            --code-exts ".py"
+      - name: File-size gate (warn over 600 lines, fail over 800; empty baseline)
+        # Cartridges sit at the root under arbitrary slugs, so the rules are one `<dir>/:.py` per root directory.
+        run: |
+          set -euo pipefail
+          rules=".github/:.py"
+          for d in */; do [ "$d" = "docs/" ] || rules="${rules},${d}:.py"; done
+          echo "size-gate rules: ${rules}"
+          npx --yes "tsx@${TSX_VERSION}" .madfam-gates/scripts/check-file-size.ts \
+            --baseline scripts/size-limit-baseline.json \
+            --include "${rules}" \
+            --warn-at 600 \
+            --fail-at 800
+
+  secrets:
+    name: Secret scan (full history)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      # sha256 of gitleaks_8.30.1_linux_x64.tar.gz, from the release's checksums file. The step checks the tarball
+      # against this pin AND against the checksums file it downloads.
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install gitleaks (pinned, checksum-verified)
+        run: |
+          set -euo pipefail
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          tgz="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          work="$RUNNER_TEMP/gitleaks" && mkdir -p "$work" && cd "$work"
+          curl -fsSL -o "$tgz" "$base/$tgz"
+          curl -fsSL -o checksums.txt "$base/gitleaks_${GITLEAKS_VERSION}_checksums.txt"
+          echo "${GITLEAKS_SHA256}  $tgz" | sha256sum -c -
+          grep -F "  $tgz" checksums.txt | sha256sum -c -
+          tar -xzf "$tgz" gitleaks
+          mkdir -p "$HOME/.local/bin" && install -m 0755 gitleaks "$HOME/.local/bin/gitleaks"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Scan every commit reachable from any fetched ref (values redacted)
+        # A finding prints the rule, the path and the commit, never the value. Rotate first, then decide on history.
+        run: gitleaks git --config .gitleaks.toml --redact --no-banner --log-opts="--all" .

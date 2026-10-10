@@ -1,0 +1,13 @@
+# The commons ships no Python dependencies of its own; only the workflow actions are updated.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: America/Mexico_City
+    groups:
+      actions:
+        patterns: ["*"]

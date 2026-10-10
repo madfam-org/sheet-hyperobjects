@@ -1,0 +1,23 @@
+# gitleaks configuration for the sheet commons (run with --redact so a finding never prints the value).
+# The default ruleset plus the MADFAM shapes a public commons must never carry. A hit means the value was
+# exposed: rotate it first. Never "fix" a finding by widening an allowlist.
+
+title = "sheet-hyperobjects"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "janua-client-id-literal"
+description = "Janua OAuth client id literal (jnc_...)"
+regex = '''\b(jnc_[A-Za-z0-9_-]{8,})\b'''
+secretGroup = 1
+keywords = ["jnc_"]
+
+[[rules]]
+id = "janua-client-secret"
+description = "Janua OAuth client secret (jns_ + 64 URL-safe characters)"
+regex = '''\b(jns_[A-Za-z0-9_-]{64})(?:[^A-Za-z0-9_-]|$)'''
+secretGroup = 1
+entropy = 3.5
+keywords = ["jns_"]
