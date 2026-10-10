@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/folding-carton",
+  "title": {"en": "Folding carton", "es": "Estuche plegadizo", "fr": "Étui pliant", "pt": "Cartucho dobrável"},
+  "summary": {
+    "en": "The folding cartons as one family — straight and reverse tuck end, seal end, crash-lock and 1-2-3 bottoms — generated from inside dimensions, with window and brand artwork on the print side.",
+    "es": "Los estuches plegadizos como una sola familia —cierre recto e invertido, cierre por pegado, fondo automático y fondo 1-2-3— generados a partir de las medidas interiores, con ventana y arte de marca en la cara impresa.",
+    "fr": "Les étuis pliants en une seule famille — patte rentrante droite et inversée, fermeture collée, fonds automatique et 1-2-3 — générés à partir des dimensions intérieures, avec fenêtre et illustration de marque sur la face imprimée.",
+    "pt": "Os cartuchos dobráveis como uma só família — fecho reto e invertido, fecho colado, fundos automático e 1-2-3 — gerados a partir das medidas internas, com janela e arte de marca na face impressa."
+  },
+  "article": {
+    "path": "folding-carton/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "industrial packaging, late nineteenth century to the present",
+  "sources": ["ECMA Code of Folding Carton Design Styles (style families)"],
+  "related": {"objects": ["pliego/corrugated-shipper", "pliego/mailer-box", "pliego/embossed-stationery", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
