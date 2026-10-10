@@ -1,0 +1,118 @@
+{
+  "project": {
+    "name": {"en": "Glue flap", "es": "Pestaña de pegado", "fr": "Patte de collage", "pt": "Aba de colagem"},
+    "slug": "glue-flap",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "A strip of equal panels folded into a closed tube — square by default — and closed with a tapered glue tab stuck inside the first panel: the technique behind every glued box, sleeve and pop-up piece.",
+      "es": "Una tira de paneles iguales doblada en un tubo cerrado —cuadrado, de origen— y cerrada con una pestaña de pegado en trapecio adherida por dentro del primer panel: la técnica detrás de toda caja, funda o pieza pop-up pegada.",
+      "fr": "Une bande de panneaux égaux pliée en tube fermé — carré par défaut — et fermée par une patte de collage biseautée collée à l'intérieur du premier panneau : la technique de toute boîte, de tout fourreau et de toute pièce pop-up collés.",
+      "pt": "Uma tira de painéis iguais dobrada em um tubo fechado — quadrado, por padrão — e fechada com uma aba de colagem chanfrada colada por dentro do primeiro painel: a técnica por trás de toda caixa, luva ou peça pop-up colada."
+    },
+    "thumbnail": "/projects/glue-flap.svg",
+    "difficulty": "beginner",
+    "tags": ["technique", "glue", "tab", "tube", "box", "paper-engineering", "hyperobject", "commons"],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM geometry, computed in this cartridge's main.py; the glued tab is a general technique of paper engineering and box making, attributed to that tradition rather than to any designer",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "tube",
+      "label": {"en": "Closed tube", "es": "Tubo cerrado", "fr": "Tube fermé", "pt": "Tubo fechado"},
+      "sheets": ["strip"]
+    }
+  ],
+  "sheets": [
+    {"id": "strip", "label": {"en": "Tube strip", "es": "Tira del tubo", "fr": "Bande du tube", "pt": "Tira do tubo"}, "stock": "cardstock-250"}
+  ],
+  "parameter_groups": [
+    {"id": "tube", "label": {"en": "Tube", "es": "Tubo", "fr": "Tube", "pt": "Tubo"}},
+    {"id": "tab", "label": {"en": "Glue tab", "es": "Pestaña de pegado", "fr": "Patte de collage", "pt": "Aba de colagem"}}
+  ],
+  "parameters": [
+    {
+      "id": "sides", "type": "slider", "group": "tube", "unit": "count",
+      "label": {"en": "Sides", "es": "Lados", "fr": "Côtés", "pt": "Lados"},
+      "tooltip": {"en": "Number of faces of the tube; 4 makes a square tube, and each fold turns 360° divided by this number.", "es": "Número de caras del tubo; con 4 sale un tubo cuadrado, y cada doblez gira 360° entre este número.", "fr": "Nombre de faces du tube ; 4 donne un tube carré, et chaque pli tourne de 360° divisés par ce nombre.", "pt": "Número de faces do tubo; 4 dá um tubo quadrado, e cada dobra gira 360° dividido por esse número."},
+      "default": 4, "min": 3, "max": 8, "step": 1
+    },
+    {
+      "id": "side_width", "type": "slider", "group": "tube", "unit": "mm",
+      "label": {"en": "Face width (mm)", "es": "Ancho de cara (mm)", "fr": "Largeur de face (mm)", "pt": "Largura da face (mm)"},
+      "default": 50, "min": 20, "max": 80, "step": 1
+    },
+    {
+      "id": "tube_length", "type": "slider", "group": "tube", "unit": "mm",
+      "label": {"en": "Tube length (mm)", "es": "Largo del tubo (mm)", "fr": "Longueur du tube (mm)", "pt": "Comprimento do tubo (mm)"},
+      "default": 120, "min": 40, "max": 200, "step": 1
+    },
+    {
+      "id": "tab_width", "type": "slider", "group": "tab", "unit": "mm",
+      "label": {"en": "Tab width (mm)", "es": "Ancho de la pestaña (mm)", "fr": "Largeur de la patte (mm)", "pt": "Largura da aba (mm)"},
+      "default": 12, "min": 6, "max": 15, "step": 1
+    },
+    {
+      "id": "tab_taper", "type": "slider", "group": "tab", "unit": "deg",
+      "label": {"en": "Tab taper (°)", "es": "Bisel de la pestaña (°)", "fr": "Biseau de la patte (°)", "pt": "Chanfro da aba (°)"},
+      "tooltip": {"en": "Angle of the tab's slanted ends; the taper keeps the tab clear of the folds at the tube's ends.", "es": "Ángulo de los extremos inclinados de la pestaña; el bisel evita que la pestaña choque con los dobleces en los extremos del tubo.", "fr": "Angle des extrémités biaises de la patte ; le biseau l'écarte des plis aux extrémités du tube.", "pt": "Ângulo das pontas inclinadas da aba; o chanfro a mantém longe das dobras nas pontas do tubo."},
+      "default": 45, "min": 40, "max": 75, "step": 1
+    },
+    {
+      "id": "stock", "type": "select", "group": "tube",
+      "label": {"en": "Paper", "es": "Papel", "fr": "Papier", "pt": "Papel"},
+      "default": "cardstock-250",
+      "options": [
+        {"value": "cardstock-160", "label": {"en": "Cardstock 160 g/m²", "es": "Cartulina 160 g/m²", "fr": "Bristol 160 g/m²", "pt": "Cartolina 160 g/m²"}},
+        {"value": "cardstock-250", "label": {"en": "Cardstock 250 g/m²", "es": "Cartulina 250 g/m²", "fr": "Bristol 250 g/m²", "pt": "Cartolina 250 g/m²"}},
+        {"value": "cardstock-300", "label": {"en": "Cardstock 300 g/m²", "es": "Cartulina 300 g/m²", "fr": "Bristol 300 g/m²", "pt": "Cartolina 300 g/m²"}},
+        {"value": "kraft-120", "label": {"en": "Kraft paper 120 g/m²", "es": "Papel kraft 120 g/m²", "fr": "Papier kraft 120 g/m²", "pt": "Papel kraft 120 g/m²"}}
+      ]
+    }
+  ],
+  "presets": [
+    {"id": "triangle", "label": {"en": "Triangular prism", "es": "Prisma triangular", "fr": "Prisme triangulaire", "pt": "Prisma triangular"}, "values": {"sides": 3, "side_width": 60}},
+    {"id": "hexagon", "label": {"en": "Hexagonal sleeve", "es": "Funda hexagonal", "fr": "Fourreau hexagonal", "pt": "Luva hexagonal"}, "values": {"sides": 6, "side_width": 30, "tube_length": 160, "stock": "cardstock-160"}}
+  ],
+  "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],
+  "stock": {"default": "cardstock-250", "alternatives": ["cardstock-160", "cardstock-300", "kraft-120"]},
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "technique",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "glue_flap",
+        "type": "glue_flap",
+        "label": {"en": "Glue tab", "es": "Pestaña de pegado", "fr": "Patte de collage", "pt": "Aba de colagem"},
+        "edges": [{"sheet": "strip", "edge": "tab"}],
+        "parameters": ["tab_width", "tab_taper", "tube_length"],
+        "polarity": "male"
+      },
+      {
+        "id": "glue_zone",
+        "type": "glue_zone",
+        "label": {"en": "Glue zone inside the first face", "es": "Zona de pegado por dentro de la primera cara", "fr": "Zone de collage à l'intérieur de la première face", "pt": "Zona de colagem por dentro da primeira face"},
+        "edges": [{"sheet": "strip", "edge": "glue-zone"}],
+        "parameters": ["tab_width", "tab_taper", "tube_length"],
+        "polarity": "female"
+      }
+    ],
+    "capabilities": {"glued": true, "folded_initial_state": true},
+    "societal_benefit": {
+      "en": "The first joint anyone needs to build in paper: once a tab and its glue zone are understood, boxes, sleeves and pop-up pieces follow.",
+      "es": "La primera unión que hace falta para construir en papel: una vez que se entienden la pestaña y su zona de pegado, siguen las cajas, las fundas y las piezas pop-up.",
+      "fr": "Le premier assemblage dont on a besoin pour construire en papier : une fois la patte et sa zone de collage comprises, viennent les boîtes, les fourreaux et les pièces pop-up.",
+      "pt": "A primeira junta de que se precisa para construir em papel: entendidas a aba e sua zona de colagem, vêm as caixas, as luvas e as peças pop-up."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}
