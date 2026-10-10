@@ -67,8 +67,8 @@ What the program does **not** model:
   cartridge could not derive its crease pattern from geometry it can verify (a flat-folded state
   with the two lower flaps pulled apart that also passes the checks above), and it does not copy a
   published one.
-- **No layer contact.** The kite flaps tuck under the petal. Zero-thickness kinematics does not check
-  that they pass cleanly; contact belongs to the physics engine.
+- **No layer contact.** The kite flaps fold in as the petal rises. Zero-thickness kinematics does
+  not check that they pass cleanly; contact belongs to the physics engine.
 - **No crease memory.** In kinematic mode the unfolded precreases are exactly flat again.
 
 ## Making one
