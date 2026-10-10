@@ -150,7 +150,8 @@ SEGS = {  # name: (other end, kind, label)
         "Linha do quarto, parte exterior (pré-vinco)")),
     "diag-out": ((s, s), "mountain", L4(
         "Diagonal, outer part (the flap's spine)", "Diagonal, parte exterior (lomo de la solapa)",
-        "Diagonale, partie extérieure (dos du rabat)", "Diagonal, parte exterior (lombada da aba)")),
+        "Diagonale, partie extérieure (dos du rabat)",
+        "Diagonal, parte exterior (lombada da aba)")),
     "diag-in": (C, "mountain", L4(
         "Diagonal, inner part (precrease)", "Diagonal, parte interior (premarcado)",
         "Diagonale, partie intérieure (prémarquage)", "Diagonal, parte interior (pré-vinco)")),
@@ -159,7 +160,8 @@ SEGS = {  # name: (other end, kind, label)
         "Ligne du blintz, moitié du pivot", "Linha do blintz, metade do giro")),
     "blintz-flat": ((2 * q, s), "valley", L4(
         "Blintz line, other half (precrease)", "Línea de blintz, otra mitad (premarcado)",
-        "Ligne du blintz, autre moitié (prémarquage)", "Linha do blintz, outra metade (pré-vinco)")),
+        "Ligne du blintz, autre moitié (prémarquage)",
+        "Linha do blintz, outra metade (pré-vinco)")),
 }
 CORNER = (L4("top right", "superior derecha", "en haut à droite", "superior direita"),
           L4("top left", "superior izquierda", "en haut à gauche", "superior esquerda"),
