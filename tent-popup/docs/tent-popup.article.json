@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/tent-popup",
+  "title": {"en": "Tent pop-up", "es": "Pop-up en tienda", "fr": "Pop-up en tente", "pt": "Pop-up em tenda"},
+  "summary": {
+    "en": "A strip folded in the middle and glued across the gutter stands as a tent when the card lies open flat, and folds flat inside when it closes.",
+    "es": "Una tira doblada a la mitad y pegada sobre el pliegue central se levanta como una tienda cuando la tarjeta está abierta del todo, y queda plana por dentro al cerrarla.",
+    "fr": "Une bande pliée en son milieu et collée de part et d'autre de la pliure se dresse en tente quand la carte est ouverte à plat, et se range à plat à la fermeture.",
+    "pt": "Uma tira dobrada ao meio e colada sobre a dobra central se ergue como uma tenda quando o cartão está aberto por completo, e fica plana por dentro ao fechá-lo."
+  },
+  "article": {
+    "path": "tent-popup/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary paper engineering; a general mechanism in continuous use",
+  "heritage": false,
+  "sources": [
+    "David A. Carter and James Diaz, The Elements of Pop-Up, Little Simon, 1999",
+    "Duncan Birmingham, Pop-Up Design and Paper Mechanics, GMC Publications, 2010"
+  ],
+  "related": {
+    "objects": ["pliego/v-fold-popup", "pliego/parallel-fold-popup", "pliego/glue-flap"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}
