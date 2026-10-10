@@ -102,9 +102,10 @@ for kind, count, length, centres, from_top, label in (
         ("long", rows - 1, Lb, xs, True, LONG), ("cross", columns - 1, Wb, zs, False, CROSS)):
     for k in range(count):
         sid = f"{kind}-{k + 1}"
+        side = "slots from the top" if from_top else "slots from the bottom"
         d = pliego.dieline.Dieline(
-            sid, f"slotted partition ({'slots from the top' if from_top else 'slots from the bottom'})",
-            family, {"length": cell_length, "width": cell_width, "depth": H}, stock, t,
+            sid, f"slotted partition ({side})", family,
+            {"length": cell_length, "width": cell_width, "depth": H}, stock, t,
             label={g: f"{v} {k + 1}" for g, v in label.items()}, grain_deg=0.0)
         d.panel("strip", strip_outline(length, centres, from_top), "panel",
                 {g: f"{v} {k + 1}" for g, v in label.items()}, print_area=False)
