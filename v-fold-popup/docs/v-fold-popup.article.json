@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/v-fold-popup",
+  "title": {"en": "V-fold pop-up", "es": "Pop-up en V", "fr": "Pop-up en V", "pt": "Pop-up em V"},
+  "summary": {
+    "en": "The basic pop-up: a folded kite glued across the gutter rises as the spread opens and folds flat when it closes.",
+    "es": "El pop-up básico: una cometa doblada, pegada sobre el pliegue central, se levanta al abrir el pliego y queda plana al cerrarlo.",
+    "fr": "Le pop-up de base : un cerf-volant plié, collé de part et d'autre de la pliure, se dresse à l'ouverture et se range à plat à la fermeture.",
+    "pt": "O pop-up básico: uma pipa dobrada, colada sobre a dobra central, levanta-se ao abrir a página dupla e fica plana ao fechá-la."
+  },
+  "article": {
+    "path": "v-fold-popup/docs/README.md",
+    "sections": ["The mechanism", "Fabrication", "What the engine simulates", "Parameters", "Interfaces", "Provenance"]
+  },
+  "era": "contemporary paper engineering, a general mechanism in continuous use",
+  "related": {
+    "objects": ["pliego/parallel-fold-popup", "pliego/leporello"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
