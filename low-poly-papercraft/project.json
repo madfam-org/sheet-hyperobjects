@@ -1,0 +1,541 @@
+{
+  "project": {
+    "name": {
+      "en": "Low-poly papercraft",
+      "es": "Papercraft low-poly",
+      "fr": "Papercraft low-poly",
+      "pt": "Papercraft low-poly"
+    },
+    "slug": "low-poly-papercraft",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "A family of original low-poly paper models (a heart, a ringed planet, a vase, a gem, a fox head, a mask and a car), each unfolded into numbered, tabbed pieces on pages, with a program that folds the pieces into the model.",
+      "es": "Una familia de modelos de papel low-poly originales (un corazón, un planeta con anillos, un jarrón, una gema, una cabeza de zorro, una máscara y un coche), cada uno desplegado en piezas numeradas y con pestañas sobre hojas, con una secuencia que dobla las piezas hasta formar el modelo.",
+      "fr": "Une famille de modèles en papier low-poly originaux (un cœur, une planète à anneaux, un vase, une gemme, une tête de renard, un masque et une voiture), chacun déplié en pièces numérotées à languettes sur des pages, avec un programme qui plie les pièces jusqu'au modèle.",
+      "pt": "Uma família de modelos de papel low-poly originais (um coração, um planeta com anéis, um vaso, uma gema, uma cabeça de raposa, uma máscara e um carro), cada um desdobrado em peças numeradas e com abas em folhas, com uma sequência que dobra as peças até formar o modelo."
+    },
+    "thumbnail": "/projects/low-poly-papercraft.svg",
+    "difficulty": "intermediate",
+    "tags": [
+      "papercraft",
+      "low-poly",
+      "paper-model",
+      "unfolding",
+      "glue",
+      "tab",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM designs: every model is generated in main.py from pliego.mesh primitives and unfolded by pliego.unfold; no commercial papercraft model, pattern or pepakura file is copied or traced",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "fold",
+      "label": {
+        "en": "Fold up (exact kinematics)",
+        "es": "Armar (cinemática exacta)",
+        "fr": "Montage (cinématique exacte)",
+        "pt": "Montagem (cinemática exata)"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "piece-1"
+      ]
+    },
+    {
+      "id": "glued",
+      "label": {
+        "en": "Glued model (paper physics)",
+        "es": "Modelo pegado (física del papel)",
+        "fr": "Modèle collé (physique du papier)",
+        "pt": "Modelo colado (física do papel)"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "piece-1"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "piece-1",
+      "label": {
+        "en": "Piece 1 (the net adds piece-2, piece-3… as it needs)",
+        "es": "Pieza 1 (la plantilla añade piece-2, piece-3… según haga falta)",
+        "fr": "Pièce 1 (le patron ajoute piece-2, piece-3… selon les besoins)",
+        "pt": "Peça 1 (o molde acrescenta piece-2, piece-3… conforme precisar)"
+      },
+      "stock": "cardstock-250"
+    }
+  ],
+  "parameter_groups": [
+    {
+      "id": "model",
+      "label": {
+        "en": "Model",
+        "es": "Modelo",
+        "fr": "Modèle",
+        "pt": "Modelo"
+      }
+    },
+    {
+      "id": "net",
+      "label": {
+        "en": "Net and page",
+        "es": "Plantilla y hoja",
+        "fr": "Patron et page",
+        "pt": "Molde e folha"
+      }
+    },
+    {
+      "id": "tabs",
+      "label": {
+        "en": "Tabs",
+        "es": "Pestañas",
+        "fr": "Languettes",
+        "pt": "Abas"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "design",
+      "type": "select",
+      "group": "model",
+      "label": {
+        "en": "Design",
+        "es": "Diseño",
+        "fr": "Modèle",
+        "pt": "Modelo"
+      },
+      "tooltip": {
+        "en": "The model to build. Every design is an original MADFAM low-poly model, generated in main.py.",
+        "es": "El modelo que se arma. Cada diseño es un modelo low-poly original de MADFAM, generado en main.py.",
+        "fr": "Le modèle à construire. Chaque modèle est un low-poly original de MADFAM, généré dans main.py.",
+        "pt": "O modelo a montar. Cada um é um modelo low-poly original da MADFAM, gerado em main.py."
+      },
+      "default": "fox",
+      "options": [
+        {
+          "value": "heart",
+          "label": {
+            "en": "Heart",
+            "es": "Corazón",
+            "fr": "Cœur",
+            "pt": "Coração"
+          }
+        },
+        {
+          "value": "planet",
+          "label": {
+            "en": "Ringed planet",
+            "es": "Planeta con anillos",
+            "fr": "Planète à anneaux",
+            "pt": "Planeta com anéis"
+          }
+        },
+        {
+          "value": "vase",
+          "label": {
+            "en": "Vase",
+            "es": "Jarrón",
+            "fr": "Vase",
+            "pt": "Vaso"
+          }
+        },
+        {
+          "value": "gem",
+          "label": {
+            "en": "Gem",
+            "es": "Gema",
+            "fr": "Gemme",
+            "pt": "Gema"
+          }
+        },
+        {
+          "value": "fox",
+          "label": {
+            "en": "Fox head",
+            "es": "Cabeza de zorro",
+            "fr": "Tête de renard",
+            "pt": "Cabeça de raposa"
+          }
+        },
+        {
+          "value": "mask",
+          "label": {
+            "en": "Mask",
+            "es": "Máscara",
+            "fr": "Masque",
+            "pt": "Máscara"
+          }
+        },
+        {
+          "value": "car",
+          "label": {
+            "en": "Car",
+            "es": "Coche",
+            "fr": "Voiture",
+            "pt": "Carro"
+          }
+        }
+      ]
+    },
+    {
+      "id": "size",
+      "type": "slider",
+      "group": "net",
+      "unit": "mm",
+      "label": {
+        "en": "Model size (mm)",
+        "es": "Tamaño del modelo (mm)",
+        "fr": "Taille du modèle (mm)",
+        "pt": "Tamanho do modelo (mm)"
+      },
+      "tooltip": {
+        "en": "Largest dimension of the finished model. The mesh is scaled uniformly to it.",
+        "es": "Dimensión mayor del modelo terminado. La malla se escala de manera uniforme hasta alcanzarla.",
+        "fr": "Plus grande dimension du modèle fini. Le maillage est mis à l'échelle uniformément.",
+        "pt": "Maior dimensão do modelo pronto. A malha é escalada de modo uniforme até ela."
+      },
+      "default": 150,
+      "min": 90,
+      "max": 240,
+      "step": 5
+    },
+    {
+      "id": "page",
+      "type": "select",
+      "group": "net",
+      "label": {
+        "en": "Page size",
+        "es": "Tamaño de hoja",
+        "fr": "Format de page",
+        "pt": "Tamanho da folha"
+      },
+      "default": "a4",
+      "options": [
+        {
+          "value": "a4",
+          "label": {
+            "en": "A4",
+            "es": "A4",
+            "fr": "A4",
+            "pt": "A4"
+          }
+        },
+        {
+          "value": "letter",
+          "label": {
+            "en": "US Letter",
+            "es": "Carta",
+            "fr": "Lettre US",
+            "pt": "Carta (US Letter)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "type": "select",
+      "group": "net",
+      "label": {
+        "en": "Cutting strategy",
+        "es": "Estrategia de corte",
+        "fr": "Stratégie de découpe",
+        "pt": "Estratégia de corte"
+      },
+      "tooltip": {
+        "en": "Which edges the unfolder tries to keep as folds first. Shortest cuts keeps long edges folded, so there is less to glue; steepest edge cuts, at every corner, the edge that climbs most steeply.",
+        "es": "Qué aristas intenta conservar primero como pliegues. «Cortes más cortos» deja dobladas las aristas largas, así hay menos que pegar; «arista más empinada» corta, en cada vértice, la arista que sube con más pendiente.",
+        "fr": "Quelles arêtes le dépliage garde d'abord en plis. « Coupes les plus courtes » garde pliées les longues arêtes, il reste moins à coller ; « arête la plus raide » coupe, à chaque sommet, l'arête qui monte le plus fort.",
+        "pt": "Quais arestas o desdobramento tenta manter primeiro como dobras. «Cortes mais curtos» mantém dobradas as arestas longas, e sobra menos para colar; «aresta mais íngreme» corta, em cada vértice, a aresta que sobe com mais inclinação."
+      },
+      "default": "min-perimeter",
+      "options": [
+        {
+          "value": "min-perimeter",
+          "label": {
+            "en": "Shortest cuts",
+            "es": "Cortes más cortos",
+            "fr": "Coupes les plus courtes",
+            "pt": "Cortes mais curtos"
+          }
+        },
+        {
+          "value": "steepest-edge",
+          "label": {
+            "en": "Steepest edge",
+            "es": "Arista más empinada",
+            "fr": "Arête la plus raide",
+            "pt": "Aresta mais íngreme"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tab_style",
+      "type": "select",
+      "group": "tabs",
+      "label": {
+        "en": "Glue tabs",
+        "es": "Pestañas de pegado",
+        "fr": "Languettes de collage",
+        "pt": "Abas de colagem"
+      },
+      "default": "trapezoid",
+      "options": [
+        {
+          "value": "trapezoid",
+          "label": {
+            "en": "Trapezoid",
+            "es": "Trapecio",
+            "fr": "Trapèze",
+            "pt": "Trapézio"
+          }
+        },
+        {
+          "value": "triangle",
+          "label": {
+            "en": "Triangle",
+            "es": "Triángulo",
+            "fr": "Triangle",
+            "pt": "Triângulo"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "en": "None (edge to edge, taped)",
+            "es": "Ninguna (canto con canto, con cinta)",
+            "fr": "Aucune (bord à bord, au ruban adhésif)",
+            "pt": "Nenhuma (borda com borda, com fita)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tab_angle",
+      "type": "slider",
+      "group": "tabs",
+      "unit": "deg",
+      "label": {
+        "en": "Tab side angle (°)",
+        "es": "Ángulo lateral de la pestaña (°)",
+        "fr": "Angle des côtés de la languette (°)",
+        "pt": "Ângulo lateral da aba (°)"
+      },
+      "tooltip": {
+        "en": "Angle between a tab's sides and its fold. Smaller angles keep tabs clear of the neighbouring faces in tight corners.",
+        "es": "Ángulo entre los lados de la pestaña y su doblez. Con ángulos menores, las pestañas no estorban a las caras vecinas en las esquinas cerradas.",
+        "fr": "Angle entre les côtés d'une languette et son pli. Un angle plus petit dégage les languettes des faces voisines dans les coins serrés.",
+        "pt": "Ângulo entre os lados da aba e a sua dobra. Ângulos menores afastam as abas das faces vizinhas nos cantos apertados."
+      },
+      "default": 45,
+      "min": 25,
+      "max": 60,
+      "step": 1
+    },
+    {
+      "id": "tab_height",
+      "type": "slider",
+      "group": "tabs",
+      "unit": "mm",
+      "label": {
+        "en": "Tab height (mm)",
+        "es": "Alto de la pestaña (mm)",
+        "fr": "Hauteur de la languette (mm)",
+        "pt": "Altura da aba (mm)"
+      },
+      "tooltip": {
+        "en": "The tallest a tab may be; tabs shrink where the space under the matching face is short.",
+        "es": "Altura máxima de una pestaña; se acorta donde falta espacio bajo la cara que le corresponde.",
+        "fr": "Hauteur maximale d'une languette ; elle raccourcit là où la face correspondante manque de place.",
+        "pt": "Altura máxima da aba; ela encolhe onde falta espaço sob a face correspondente."
+      },
+      "default": 6,
+      "min": 3,
+      "max": 10,
+      "step": 0.5
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "group": "net",
+      "label": {
+        "en": "Card",
+        "es": "Cartulina",
+        "fr": "Bristol",
+        "pt": "Cartolina"
+      },
+      "default": "cardstock-250",
+      "options": [
+        {
+          "value": "cardstock-160",
+          "label": {
+            "en": "Cardstock 160 g/m²",
+            "es": "Cartulina 160 g/m²",
+            "fr": "Bristol 160 g/m²",
+            "pt": "Cartolina 160 g/m²"
+          }
+        },
+        {
+          "value": "cardstock-250",
+          "label": {
+            "en": "Cardstock 250 g/m²",
+            "es": "Cartulina 250 g/m²",
+            "fr": "Bristol 250 g/m²",
+            "pt": "Cartolina 250 g/m²"
+          }
+        },
+        {
+          "value": "cardstock-300",
+          "label": {
+            "en": "Cardstock 300 g/m²",
+            "es": "Cartulina 300 g/m²",
+            "fr": "Bristol 300 g/m²",
+            "pt": "Cartolina 300 g/m²"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "heart",
+      "label": {
+        "en": "Heart",
+        "es": "Corazón",
+        "fr": "Cœur",
+        "pt": "Coração"
+      },
+      "values": {
+        "design": "heart",
+        "size": 130
+      }
+    },
+    {
+      "id": "planet",
+      "label": {
+        "en": "Ringed planet",
+        "es": "Planeta con anillos",
+        "fr": "Planète à anneaux",
+        "pt": "Planeta com anéis"
+      },
+      "values": {
+        "design": "planet",
+        "size": 160
+      }
+    },
+    {
+      "id": "vase",
+      "label": {
+        "en": "Vase",
+        "es": "Jarrón",
+        "fr": "Vase",
+        "pt": "Vaso"
+      },
+      "values": {
+        "design": "vase",
+        "size": 150,
+        "method": "steepest-edge"
+      }
+    },
+    {
+      "id": "gem",
+      "label": {
+        "en": "Gem",
+        "es": "Gema",
+        "fr": "Gemme",
+        "pt": "Gema"
+      },
+      "values": {
+        "design": "gem",
+        "size": 110
+      }
+    },
+    {
+      "id": "mask",
+      "label": {
+        "en": "Mask (wearable size, Letter)",
+        "es": "Máscara (tamaño para usarse, carta)",
+        "fr": "Masque (taille portable, Lettre)",
+        "pt": "Máscara (tamanho para usar, Carta)"
+      },
+      "values": {
+        "design": "mask",
+        "size": 200,
+        "page": "letter"
+      }
+    },
+    {
+      "id": "car",
+      "label": {
+        "en": "Car",
+        "es": "Coche",
+        "fr": "Voiture",
+        "pt": "Carro"
+      },
+      "values": {
+        "design": "car",
+        "size": 170
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Assemble",
+        "es": "Armar",
+        "fr": "Monter",
+        "pt": "Montar"
+      },
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "glb",
+    "fold"
+  ],
+  "stock": {
+    "default": "cardstock-250",
+    "alternatives": [
+      "cardstock-160",
+      "cardstock-300"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "model",
+    "kernel": "sheet",
+    "capabilities": {
+      "prints_on_pages": true,
+      "kinematic_fold_up": true,
+      "glue_joins": true
+    },
+    "societal_benefit": {
+      "en": "Seven models a family or a classroom can print on card at home and build with a blade and glue, each one a lesson in how flat paper becomes a solid.",
+      "es": "Siete modelos que una familia o un salón de clases puede imprimir en cartulina en casa y armar con una navaja y pegamento; cada uno enseña cómo el papel plano se vuelve un sólido.",
+      "fr": "Sept modèles qu'une famille ou une classe peut imprimer sur du bristol et construire avec une lame et de la colle, chacun une leçon sur la façon dont le papier plat devient un volume.",
+      "pt": "Sete modelos que uma família ou uma turma pode imprimir em cartolina em casa e montar com estilete e cola; cada um ensina como o papel plano vira um sólido."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}

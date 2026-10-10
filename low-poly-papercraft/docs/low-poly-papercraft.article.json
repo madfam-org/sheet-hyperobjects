@@ -1,0 +1,48 @@
+{
+  "spec_version": 1,
+  "object": "pliego/low-poly-papercraft",
+  "title": {
+    "en": "Low-poly papercraft",
+    "es": "Papercraft low-poly",
+    "fr": "Papercraft low-poly",
+    "pt": "Papercraft low-poly"
+  },
+  "summary": {
+    "en": "A family of original low-poly paper models (a heart, a ringed planet, a vase, a gem, a fox head, a mask and a car), each unfolded into numbered, tabbed pieces on pages, with a program that folds the pieces into the model.",
+    "es": "Una familia de modelos de papel low-poly originales (un corazón, un planeta con anillos, un jarrón, una gema, una cabeza de zorro, una máscara y un coche), cada uno desplegado en piezas numeradas y con pestañas sobre hojas, con una secuencia que dobla las piezas hasta formar el modelo.",
+    "fr": "Une famille de modèles en papier low-poly originaux (un cœur, une planète à anneaux, un vase, une gemme, une tête de renard, un masque et une voiture), chacun déplié en pièces numérotées à languettes sur des pages, avec un programme qui plie les pièces jusqu'au modèle.",
+    "pt": "Uma família de modelos de papel low-poly originais (um coração, um planeta com anéis, um vaso, uma gema, uma cabeça de raposa, uma máscara e um carro), cada um desdobrado em peças numeradas e com abas em folhas, com uma sequência que dobra as peças até formar o modelo."
+  },
+  "article": {
+    "path": "low-poly-papercraft/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary",
+  "excludes": [
+    "Any commercial papercraft model, pattern or Pepakura file: every model is an original MADFAM design generated in main.py",
+    "Printed artwork on the faces: the models are plain card; colour comes from the card"
+  ],
+  "sources": [
+    "A. Dürer, Underweysung der Messung, 1525",
+    "E. D. Demaine, J. O'Rourke, Geometric Folding Algorithms: Linkages, Origami, Polyhedra, Cambridge University Press, 2007",
+    "E. W. Weisstein, Heart Curve, MathWorld, https://mathworld.wolfram.com/HeartCurve.html"
+  ],
+  "related": {
+    "objects": [
+      "pliego/papercraft-unfold",
+      "pliego/glue-flap"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
