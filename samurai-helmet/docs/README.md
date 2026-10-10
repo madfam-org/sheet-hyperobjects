@@ -27,11 +27,14 @@ The square is turned 45° (a diamond); `d` is half its diagonal and the diamond'
    `(0, −d/2)`. The line makes `horn` degrees with the horizontal; at the default 67.5° the point
    comes out at 45°, up and out.
 5. The front bottom corner folds up to height `−d/2`, then up again along the line at `−0.62 d`:
-   the brim. The back corner folds up inside the helmet.
+   the brim. The back corner folds up behind the helmet: a mountain fold, under every layer.
+   Tucking it up inside instead, between the layers, is a common alternative; that is an
+   insertion, which the kernel's fold operations do not express yet, so it is not modelled.
 
 ## The fold program
 
-The program is `kinematic`, 7 steps, all simple folds; every state is an exact rigid state (closure
+The program is `kinematic`, 7 steps, all simple folds. Each fold is an operation of `pliego.FoldProgram` on a layer-ordered flat state. After every fold the kernel checks the layer order (taco and tortilla conditions, transitivity) and Kawasaki and Maekawa at every vertex, and the crease pattern is the final state unfolded. Folds the diagram shows as one step (both corners, both flaps, both horns) move
+together. Every state, and every halfway state the preview blends, is an exact rigid state (closure
 below 10⁻¹² mm). The studio shows the flat helmet standing upright. **Wearing it** means opening the
 bottom into a rounded crown, which curves the paper and needs the physics engine.
 
@@ -42,7 +45,7 @@ bottom into a rounded crown, which curves the paper and needs the physics engine
 3. Fold the two front flaps up so their points meet the top.
 4. Fold those points outwards and up: the horns.
 5. Fold the front bottom corner up to just under the horns, then fold it up again.
-6. Fold the back corner up inside, and open the helmet from below.
+6. Fold the back corner up behind (or tuck it up inside), and open the helmet from below.
 
 ## Parameters
 
