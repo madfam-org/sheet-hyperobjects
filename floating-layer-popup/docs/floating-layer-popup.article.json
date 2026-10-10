@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/floating-layer-popup",
+  "title": {"en": "Floating-layer pop-up", "es": "Pop-up de capa flotante", "fr": "Pop-up à couche flottante", "pt": "Pop-up de camada flutuante"},
+  "summary": {
+    "en": "A layer carried only by two side supports, cut and scored from one card: it floats clear of the page, upright or as a shelf. No glue.",
+    "es": "Una capa sostenida solo por dos soportes laterales, cortada y hendida en una sola tarjeta: flota separada de la página, vertical o como repisa. Sin pegamento.",
+    "fr": "Une couche portée seulement par deux supports latéraux, découpée et rainée dans une seule carte : elle flotte à l'écart de la page, debout ou en étagère. Sans colle.",
+    "pt": "Uma camada sustentada só por dois suportes laterais, cortada e vincada num único cartão: flutua afastada da página, em pé ou como prateleira. Sem cola."
+  },
+  "article": {
+    "path": "floating-layer-popup/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary paper engineering; a general technique in continuous use",
+  "heritage": false,
+  "sources": [
+    "David A. Carter and James Diaz, The Elements of Pop-Up, Little Simon, 1999",
+    "Duncan Birmingham, Pop-Up Design and Paper Mechanics, GMC Publications, 2010",
+    "Wikipedia, «Origamic architecture», https://en.wikipedia.org/wiki/Origamic_architecture"
+  ],
+  "related": {
+    "objects": ["pliego/step-popup", "pliego/parallel-fold-popup", "pliego/tent-popup"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}
