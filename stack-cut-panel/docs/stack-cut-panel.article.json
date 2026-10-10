@@ -1,0 +1,63 @@
+{
+  "spec_version": 1,
+  "object": "pliego/stack-cut-panel",
+  "title": {
+    "en": "Stack-cut panel",
+    "es": "Picado en pila",
+    "fr": "Découpe en pile",
+    "pt": "Recorte em pilha"
+  },
+  "summary": {
+    "en": "One cut through a stack of tissue sheets, the way papel picado workshops cut many sheets at once: every panel comes out with the same openings, in a run of colours. Original rosette and lattice motifs; the tradition is credited to San Salvador Huixcolotla, Puebla.",
+    "es": "Un solo corte a través de una pila de hojas de papel de china, como cortan muchas hojas a la vez los talleres de papel picado: cada banderita sale con los mismos huecos, en una serie de colores. Motivos originales de roseta y retícula; la tradición se atribuye a San Salvador Huixcolotla, Puebla.",
+    "fr": "Une seule découpe à travers une pile de feuilles de papier de soie, comme les ateliers de papel picado découpent de nombreuses feuilles à la fois : chaque fanion sort avec les mêmes jours, dans une série de couleurs. Motifs originaux de rosace et de treillis ; la tradition est attribuée à San Salvador Huixcolotla, Puebla.",
+    "pt": "Um único corte através de uma pilha de folhas de papel de seda, como as oficinas de papel picado cortam muitas folhas de uma vez: cada bandeirinha sai com os mesmos vazados, numa série de cores. Motivos originais de roseta e treliça; a tradição é atribuída a San Salvador Huixcolotla, Puebla."
+  },
+  "article": {
+    "path": "stack-cut-panel/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary, in continuous use",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Papel picado",
+    "regions": [
+      "San Salvador Huixcolotla, Puebla, México"
+    ],
+    "custodians": [
+      "The papel picado artisans of San Salvador Huixcolotla"
+    ],
+    "note": {
+      "en": "The motifs are original MADFAM geometry cut flat through a stack; the tradition and its credit belong to the artisans of Huixcolotla.",
+      "es": "Los motivos son geometría original de MADFAM cortada en plano a través de una pila; la tradición y su crédito pertenecen a las y los artesanos de Huixcolotla.",
+      "fr": "Les motifs sont une géométrie originale de MADFAM découpée à plat à travers une pile ; la tradition et son crédit appartiennent aux artisans de Huixcolotla.",
+      "pt": "Os motivos são geometria original da MADFAM cortada estendida através de uma pilha; a tradição e o seu crédito pertencem aos artesãos de Huixcolotla."
+    }
+  },
+  "excludes": [
+    "Any artisan's or workshop's papel picado design: every motif is generated geometry",
+    "Cutting with fierritos and a mallet: described in the article, not simulated"
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Papel_picado",
+    "https://www.mexicodesconocido.com.mx/papel-picado-huixcolotla.html"
+  ],
+  "related": {
+    "objects": [
+      "pliego/papel-picado-banner",
+      "pliego/stencil"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
