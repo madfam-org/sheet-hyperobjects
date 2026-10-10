@@ -1,0 +1,43 @@
+{
+  "spec_version": 1,
+  "object": "pliego/mountain-fold",
+  "title": {
+    "en": "Mountain fold",
+    "es": "Pliegue en montaña",
+    "fr": "Pli montagne",
+    "pt": "Dobra em montanha"
+  },
+  "summary": {
+    "en": "The same square folded the other way: the halves turn toward the back, the crease rises like a ridge, and the fold angle is negative.",
+    "es": "El mismo cuadrado doblado al revés: las mitades giran hacia el reverso, el pliegue se levanta como una cresta y su ángulo es negativo.",
+    "fr": "Le même carré plié dans l'autre sens : les moitiés tournent vers le verso, le pli se dresse comme une crête et son angle est négatif.",
+    "pt": "O mesmo quadrado dobrado ao contrário: as metades giram em direção ao verso, o vinco se ergue como uma crista e seu ângulo é negativo."
+  },
+  "article": {
+    "path": "mountain-fold/docs/README.md",
+    "sections": [
+      "Geometry and sign convention",
+      "What the engine is asked to simulate",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional technique, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Yoshizawa–Randlett system», https://en.wikipedia.org/wiki/Yoshizawa%E2%80%93Randlett_system",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §4 and §5"
+  ],
+  "related": {
+    "objects": [
+      "pliego/valley-fold",
+      "pliego/crease-and-unfold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/perforated-tear",
+  "title": {
+    "en": "Perforated tear-off stub",
+    "es": "Talón desprendible perforado",
+    "fr": "Talon détachable perforé",
+    "pt": "Canhoto destacável picotado"
+  },
+  "summary": {
+    "en": "A card with a perforated stub, like a ticket: pull the stub and the strain gathers at the bridges until they tear.",
+    "es": "Una tarjeta con un talón perforado, como un boleto: al jalar el talón, la deformación se concentra en los puentes hasta que se rompen.",
+    "fr": "Une carte avec un talon perforé, comme un billet : on tire sur le talon et la déformation se concentre sur les ponts jusqu'à ce qu'ils se déchirent.",
+    "pt": "Um cartão com um canhoto picotado, como um ingresso: ao puxar o canhoto, a deformação se concentra nas pontes até que se rompam."
+  },
+  "article": {
+    "path": "perforated-tear/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The tear: joins, driver and control",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional technique, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Postage stamp separation», https://en.wikipedia.org/wiki/Postage_stamp_separation",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §4 and §5"
+  ],
+  "related": {
+    "objects": [
+      "pliego/score-vs-crease"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

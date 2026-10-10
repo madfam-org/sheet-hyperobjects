@@ -1,0 +1,101 @@
+# Crease and unfold
+
+| | Title | Summary |
+|---|---|---|
+| en | Crease and unfold | Fold a line flat, press it, open it again: the paper does not return flat. It keeps a crease memory. |
+| es | Marcar y desdoblar | Se dobla una línea en plano, se marca y se vuelve a abrir: el papel no regresa a plano. Guarda la memoria del pliegue. |
+| fr | Marquer et déplier | On plie une ligne à plat, on la marque, on la rouvre : le papier ne revient pas à plat. Il garde la mémoire du pli. |
+| pt | Vincar e desdobrar | Dobra-se uma linha rente, vinca-se e abre-se de novo: o papel não volta a ficar plano. Ele guarda a memória do vinco. |
+
+"Crease and unfold" is the most frequent instruction in origami diagrams. A line is folded, pressed
+flat and opened again, and the sheet goes back to lying on the table, but not quite flat. The line
+now stands open at some angle, and it will fold there again first, more easily than anywhere else.
+Every precreased base and every tessellation depends on this. Paper is not elastic: past a certain
+angle it is permanently deformed, and that permanent deformation is the crease.
+
+## Geometry
+
+A square of side `size` (150 mm by default). The `creases` parameter chooses the set:
+
+| `creases` | Lines | Faces |
+|---|---|---|
+| `one` | the diagonal `(0, 0)–(size, size)` | 2 |
+| `diagonals` | both diagonals | 4 |
+| `star` | both diagonals and both book folds (the eight-pointed star of a precreased square) | 8 |
+
+Every line is a valley crease (`V`, `+180`). Where lines cross at the centre, the arrangement
+splits each of them into two edges, and a fold step drives both halves of its line together.
+
+## The fold program: fold, press, release
+
+The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
+cartridge writes the document, and the engine is specified to compute the motion from it.
+
+For each crease, in order, the program has three `physical` steps:
+
+1. **Valley-fold** the line to 180° (1.5 s). The engine drives the hinge with the crease stiffness
+   raised by the hand factor.
+2. **Press the crease flat**, holding the same target for `hold` seconds (2 s by default).
+3. **Unfold**: the hinge is listed in the step's `release`. Its target is removed, and it relaxes
+   toward its plastic rest angle (spec v1 §5.6).
+
+Step 3 is what this object exists to show. The stock snapshot in the document carries the
+plasticity parameters the engine uses (spec v1 §5.2):
+
+- `crease_yield_deg`: the elastic range of a hinge before its rest angle starts to move;
+- `crease_set_rate`: the fraction of the excess beyond yield that becomes permanent per second of
+  hold.
+
+So a crease held flat at 180° for `hold` seconds moves its rest angle a long way from 0. When it is
+released it springs back only part of the way and comes to rest open. A longer press leaves a
+deeper memory, and so does a stock with a small yield angle:
+
+| Stock | `crease_yield_deg` (stock card) | What the model predicts after release |
+|---|---|---|
+| Kami | 35° (estimate) | a crease that rests visibly open |
+| Copy paper 80 g/m² | 35° (estimate) | similar, in a heavier sheet |
+| Kozo washi 30 g/m² | 35° (estimate) | similar, in a much lighter sheet |
+| Foil paper | 2° (estimate) | the fold stays almost where it was left |
+
+These are predictions of the model, not measurements. The 35° default on the paper stock cards is
+an estimate. The cards base it on the rest openings of 27–43° reported after creasing by
+Lechenault, Thiria and Adda-Bedia, *Mechanical response of a creased sheet*, Physical Review
+Letters 112, 244301 (2014), https://arxiv.org/abs/1404.1243.
+
+The final state of the program is the released, slightly open sheet that the engine computes. The
+document does not claim an exact rest angle. Its `edges_foldAngle` stays at `+180`, the design
+angle each crease was made with, and its `target:first-crease-folded` frame is the exact rigid
+pose of the first fold at 180°, for reference.
+
+## Making one
+
+1. Cut a square (export `svg`, `dxf`, `pdf` or `hpgl`).
+2. Fold along the first line, coloured side up, and run a thumbnail along it two or three times.
+3. Open the paper and lay it down. Look at the crease from the side: it stands open.
+4. Repeat for every line of the chosen set.
+
+Foil paper keeps folds so well that it is hard to flatten again. Fold any of the other papers a
+second time along the same line and it goes where the crease already is.
+
+## Parameters
+
+| Parameter | Meaning | Default |
+|---|---|---|
+| `size` | side of the square (mm) | 150 |
+| `stock` | `kami`, `copy-80`, `foil-paper`, `washi-kozo-30` | `kami` |
+| `creases` | `one`, `diagonals`, `star` | `one` |
+| `hold` | how long each crease is pressed flat (s) | 2 |
+
+Presets: `foil` (foil paper), `precrease-star` (all four lines, 1 s each).
+
+## History and sources
+
+Crease-and-unfold is a traditional origami technique. Its diagram symbol, a fold-and-unfold
+arrow, belongs to the Yoshizawa–Randlett system (Wikipedia, «Yoshizawa–Randlett system»,
+https://en.wikipedia.org/wiki/Yoshizawa%E2%80%93Randlett_system). The plasticity figures above are
+cited where they appear. No diagram is reproduced; the geometry is generated by this cartridge.
+
+## Provenance and licence
+
+Traditional technique (public domain); original geometry. Published under CERN-OHL-W-2.0 like
+every object in the commons (see the commons root `LICENSE`).

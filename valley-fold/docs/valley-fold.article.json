@@ -1,0 +1,43 @@
+{
+  "spec_version": 1,
+  "object": "pliego/valley-fold",
+  "title": {
+    "en": "Valley fold",
+    "es": "Pliegue en valle",
+    "fr": "Pli vallée",
+    "pt": "Dobra em vale"
+  },
+  "summary": {
+    "en": "A square folded once toward its front. The crease sinks like a valley, and the fold angle is positive.",
+    "es": "Un cuadrado doblado una vez hacia su frente. El pliegue se hunde como un valle y su ángulo es positivo.",
+    "fr": "Un carré plié une fois vers son recto. Le pli se creuse comme une vallée et son angle est positif.",
+    "pt": "Um quadrado dobrado uma vez em direção à frente. O vinco afunda como um vale e seu ângulo é positivo."
+  },
+  "article": {
+    "path": "valley-fold/docs/README.md",
+    "sections": [
+      "Geometry and sign convention",
+      "What the engine is asked to simulate",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional technique, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Yoshizawa–Randlett system», https://en.wikipedia.org/wiki/Yoshizawa%E2%80%93Randlett_system",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §4 and §5"
+  ],
+  "related": {
+    "objects": [
+      "pliego/mountain-fold",
+      "pliego/crease-and-unfold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
