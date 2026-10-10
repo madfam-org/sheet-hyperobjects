@@ -1,0 +1,24 @@
+{
+  "spec_version": 1,
+  "object": "pliego/pleated-hypar",
+  "title": {"en": "Pleated hypar", "es": "Paraboloide hiperbólico plisado", "fr": "Paraboloïde hyperbolique plissé", "pt": "Paraboloide hiperbólico plissado"},
+  "summary": {
+    "en": "Concentric squares and both diagonals collapsed into a flat bundle that springs open into a saddle when let go, and the circular variant in concentric circles. A Bauhaus exercise; the saddle is the paper bending.",
+    "es": "Cuadrados concéntricos y las dos diagonales cerrados en un paquete plano que se abre en una silla de montar al soltarlo, y la variante circular en círculos concéntricos. Un ejercicio de la Bauhaus; la silla es el papel que se curva.",
+    "fr": "Des carrés concentriques et les deux diagonales refermés en un paquet plat qui s'ouvre en selle de cheval quand on le lâche, et la variante circulaire en cercles concentriques. Un exercice du Bauhaus ; la selle, c'est le papier qui se courbe.",
+    "pt": "Quadrados concêntricos e as duas diagonais fechados num pacote plano que se abre numa sela ao ser solto, e a variante circular em círculos concêntricos. Um exercício da Bauhaus; a sela é o papel a curvar-se."
+  },
+  "article": {
+    "path": "pleated-hypar/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "1927–28 (Bauhaus preliminary course, Josef Albers)",
+  "heritage": true,
+  "sources": [
+    "E. D. Demaine, M. L. Demaine, V. Hart, G. N. Price, T. Tachi, (Non)existence of pleated folds: how paper folds between creases, Graphs and Combinatorics 27 (2011) 377–397",
+    "E. D. Demaine, M. L. Demaine, D. Koschitz, T. Tachi, Curved crease folding: a review on art, design and mathematics, IABSE-IASS Symposium, London 2011",
+    "H. M. Wingler, The Bauhaus: Weimar, Dessau, Berlin, Chicago, MIT Press, 1969"
+  ],
+  "related": {"objects": ["pliego/curved-crease-sculpture", "pliego/crease-and-unfold", "pliego/pleat-and-crimp"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}
