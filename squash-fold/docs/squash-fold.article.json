@@ -1,0 +1,14 @@
+{
+  "object": "pliego/squash-fold",
+  "title": {"en": "Squash fold", "es": "Pliegue aplastado", "fr": "Pli écrasé", "pt": "Dobra esmagada"},
+  "summary": {
+    "en": "A two-layer flap is lifted, opened and squashed flat into a square, making half a preliminary base. One degree-6 vertex, moved along an exact mirror-symmetric rigid path.",
+    "es": "Una solapa de dos capas se levanta, se abre y se aplasta en un cuadrado, formando media base preliminar. Un solo vértice de grado 6, movido por una trayectoria rígida exacta y simétrica.",
+    "fr": "Un rabat à deux couches est relevé, ouvert et écrasé en carré, ce qui donne une moitié de base préliminaire. Un seul sommet de degré 6, déplacé le long d'une trajectoire rigide exacte et symétrique.",
+    "pt": "Uma aba de duas camadas é levantada, aberta e esmagada num quadrado, formando meia base preliminar. Um único vértice de grau 6, movido por uma trajetória rígida exata e simétrica."
+  },
+  "article": {"path": "squash-fold/docs/README.md", "sections": ["The geometry: one vertex, three degrees of freedom", "How to fold it by hand", "What the engine simulates"]},
+  "era": "traditional technique, in continuous use",
+  "sources": ["T. Hull, Origametry: Mathematical Methods in Paper Folding (Cambridge University Press, 2020): single-vertex flat foldability (Kawasaki, Maekawa)", "I. Streinu, W. Whiteley, Single-vertex origami and spherical expansive motions, JCDCG 2004 (LNCS 3742): single-vertex crease patterns fold rigidly from flat"],
+  "related": {"objects": ["pliego/petal-fold", "pliego/rabbit-ear"]}
+}

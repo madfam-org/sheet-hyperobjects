@@ -1,0 +1,14 @@
+{
+  "object": "pliego/inside-reverse-fold",
+  "title": {"en": "Inside reverse fold", "es": "Pliegue invertido interior", "fr": "Pli inversé intérieur", "pt": "Dobra invertida interna"},
+  "summary": {
+    "en": "One end of a folded strip is turned back between its own layers. A single degree-4 vertex, folded exactly along its second rigid mode.",
+    "es": "Un extremo de una tira doblada se invierte hacia dentro, entre sus propias capas. Un solo vértice de grado 4, doblado con exactitud a lo largo de su segundo modo rígido.",
+    "fr": "Une extrémité d'une bande pliée est retournée entre ses propres couches. Un seul sommet de degré 4, plié exactement selon son second mode rigide.",
+    "pt": "Uma ponta de uma tira dobrada é invertida para dentro, entre as suas próprias camadas. Um único vértice de grau 4, dobrado com exatidão ao longo do seu segundo modo rígido."
+  },
+  "article": {"path": "inside-reverse-fold/docs/README.md", "sections": ["The geometry: one degree-4 vertex", "How to fold it by hand", "What the engine simulates"]},
+  "era": "traditional technique, in continuous use",
+  "sources": ["F. Foschi, T. Hull, J. S. Ku, Explicit kinematic equations for degree-4 rigid origami vertices, arXiv:2206.12691"],
+  "related": {"objects": ["pliego/outside-reverse-fold", "pliego/valley-fold"]}
+}
