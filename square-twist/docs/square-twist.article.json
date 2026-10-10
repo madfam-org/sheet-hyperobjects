@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/square-twist",
+  "title": {"en": "Square twist", "es": "Torsión cuadrada", "fr": "Twist carré", "pt": "Torção quadrada"},
+  "summary": {
+    "en": "A central square ringed by four pleats; folded flat, the square turns as the pleats close round it. One twist, or a grid of twists of alternating hand.",
+    "es": "Un cuadrado central rodeado por cuatro pliegues; al plegarlo en plano, el cuadrado gira mientras los pliegues se cierran a su alrededor. Una torsión sola o una cuadrícula de torsiones que alternan el sentido de giro.",
+    "fr": "Un carré central entouré de quatre plis ; replié à plat, le carré tourne pendant que les plis se referment autour de lui. Un twist seul, ou une grille de twists qui alternent le sens de rotation.",
+    "pt": "Um quadrado central rodeado por quatro pregas; dobrado rente, o quadrado gira enquanto as pregas se fecham à sua volta. Uma torção única, ou uma grade de torções que alternam o sentido de giro."
+  },
+  "article": {
+    "path": "square-twist/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "20th century (twist folds explored by Shuzo Fujimoto in the 1970s)",
+  "heritage": false,
+  "sources": [
+    "S. Fujimoto, Sōzōsei o kaihatsu suru rittai origami (Creative invention by 3-D origami), self-published, 1976",
+    "R. J. Lang, Twists, Tilings, and Tessellations: Mathematical Methods for Geometric Origami, CRC Press, 2018",
+    "T. A. Evans, R. J. Lang, S. P. Magleby, L. L. Howell, Rigidly foldable origami twists, Origami 6 (AMS, 2015)",
+    "T. C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020"
+  ],
+  "related": {"objects": ["pliego/hexagonal-twist", "pliego/miura-ori", "pliego/pleat-and-crimp"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}

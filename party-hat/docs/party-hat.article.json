@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/party-hat",
+  "title": {"en": "Party hat", "es": "Gorro de fiesta", "fr": "Chapeau de fête", "pt": "Chapéu de festa"},
+  "summary": {
+    "en": "A cone hat rolled from a flat sector of card and closed with a glue tab; the sector angle follows from the hat's height and base diameter.",
+    "es": "Un gorro cónico enrollado a partir de un sector plano de cartulina y cerrado con una pestaña de pegado; el ángulo del sector se deduce de la altura y del diámetro de la base.",
+    "fr": "Un chapeau conique roulé dans un secteur plat de bristol et fermé par une languette de collage ; l'angle du secteur découle de la hauteur et du diamètre de la base.",
+    "pt": "Um chapéu cônico enrolado a partir de um setor plano de cartão e fechado com uma aba de colagem; o ângulo do setor decorre da altura e do diâmetro da base."
+  },
+  "article": {
+    "path": "party-hat/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary celebration object, in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Party_hat",
+    "https://en.wikipedia.org/wiki/Cone"
+  ],
+  "related": {"objects": ["pliego/glue-flap", "pliego/paper-crown"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}

@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-lantern",
+  "title": {
+    "en": "Paper lantern",
+    "es": "Farol de papel",
+    "fr": "Lanterne en papier",
+    "pt": "Lanterna de papel"
+  },
+  "summary": {
+    "en": "The slit lantern: a sheet folded in half, cut from the fold, opened, rolled into a cylinder and glued. Push the top down and the strips between the slits bow outward. Make it step by step, or shape the finished lantern.",
+    "es": "El farol de ranuras: una hoja doblada por la mitad, cortada desde el doblez, abierta, enrollada en un cilindro y pegada. Al empujar la parte de arriba, las tiras entre las ranuras se arquean hacia fuera. Hazlo paso a paso o dale forma al farol terminado.",
+    "fr": "La lanterne à fentes : une feuille pliée en deux, découpée depuis le pli, ouverte, roulée en cylindre et collée. Appuyez sur le haut et les bandes entre les fentes se bombent vers l'extérieur. Fabriquez-la pas à pas, ou donnez forme à la lanterne finie.",
+    "pt": "A lanterna de fendas: uma folha dobrada ao meio, cortada a partir da dobra, aberta, enrolada num cilindro e colada. Empurre o topo e as tiras entre as fendas arqueiam para fora. Faça-a passo a passo ou dê forma à lanterna pronta."
+  },
+  "article": {
+    "path": "paper-lantern/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional craft, in continuous use",
+  "sources": [
+    "https://www.firstpalette.com/craft/paper-lantern.html"
+  ],
+  "related": {
+    "objects": [
+      "pliego/lattice-kirigami",
+      "pliego/glue-flap"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

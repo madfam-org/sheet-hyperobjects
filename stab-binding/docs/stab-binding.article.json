@@ -1,0 +1,51 @@
+{
+  "spec_version": 1,
+  "object": "pliego/stab-binding",
+  "title": {"en": "Japanese stab binding", "es": "Encuadernación japonesa cosida", "fr": "Reliure japonaise cousue", "pt": "Encadernação japonesa costurada"},
+  "summary": {
+    "en": "A stab-bound book in the fukuro-toji tradition: folded or single leaves between two covers, holes stabbed beside the spine and a thread sewn round the spine, head and tail, in four patterns with generated hole layouts and computed sewing routes.",
+    "es": "Un libro cosido a la japonesa, en la tradición del fukuro-toji: hojas dobladas o sencillas entre dos tapas, agujeros junto al lomo y un hilo cosido alrededor del lomo, la cabeza y el pie, en cuatro patrones con agujeros calculados y recorridos de costura calculados.",
+    "fr": "Un livre cousu à la japonaise, dans la tradition du fukuro-toji : feuillets pliés ou simples entre deux couvertures, trous percés le long du dos et fil cousu autour du dos, de la tête et de la queue, en quatre motifs aux trous et aux parcours de couture calculés.",
+    "pt": "Um livro costurado à japonesa, na tradição do fukuro-toji: folhas dobradas ou simples entre duas capas, furos junto à lombada e uma linha costurada em volta da lombada, da cabeça e do pé, em quatro padrões com furos e percursos de costura calculados."
+  },
+  "article": {
+    "path": "stab-binding/docs/README.md",
+    "sections": ["What it is", "Geometry", "The stitch patterns", "The sewing route and the preview", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "Ming China (1368–1644) onward; in Japan from the Muromachi period, widespread in the Edo period; in continuous use",
+  "heritage": true,
+  "provenance": {
+    "tradition": "East Asian stab binding (fukuro-toji, pouch binding)",
+    "regions": ["China", "Japan", "Korea"],
+    "custodians": ["The bookbinders of China, Japan and Korea"],
+    "note": {
+      "en": "The hole layouts, stitch graphs and sewing routes are original MADFAM geometry in the spirit of each pattern; the binding and its credit belong to the East Asian bookbinding tradition.",
+      "es": "La disposición de los agujeros, los grafos de puntadas y los recorridos de costura son geometría original de MADFAM en el espíritu de cada patrón; la encuadernación y su crédito pertenecen a la tradición de encuadernación de Asia oriental.",
+      "fr": "La disposition des trous, les graphes de points et les parcours de couture sont une géométrie originale de MADFAM dans l'esprit de chaque motif ; la reliure et son crédit appartiennent à la tradition de reliure d'Asie orientale.",
+      "pt": "A disposição dos furos, os grafos de pontos e os percursos de costura são geometria original da MADFAM no espírito de cada padrão; a encadernação e o seu crédito pertencem à tradição de encadernação da Ásia Oriental."
+    }
+  },
+  "excludes": [
+    "Any binder's or book's hole diagram: every hole position comes from the rules in main.py",
+    "Historical hole counts for the hemp-leaf and tortoise-shell patterns: the sources describe them in words only, so the counts here are the cartridge's choice",
+    "The koyori (twisted-paper) inner binding and the folded-in cover edges of the Tokyo guide: described, not modelled",
+    "The thread drawn on any fabrication layer: it is recorded as string joins and in the step notes"
+  ],
+  "sources": [
+    "Vanderbilt University Library, «Threads of Tradition: Pouch Binding in East Asia», https://exhibitions.library.vanderbilt.edu/book-as-art/section/pouch-binding/",
+    "Smithsonian National Museum of Asian Art, «Terminology List for Illustrated Woodblock-Printed Books of the Edo Period» (2021), https://asia-archive.si.edu/wp-content/uploads/2021/08/1.-Terminology-List-for-Illustrated-Woodblock-Printed-Books.pdf",
+    "Tokyo Metropolitan Library, «Text 7: making a yotsume-toji Japanese-style book» (2005, revised 2020), https://www.library.metro.tokyo.lg.jp/guide/uploads/07_yotume2020.pdf",
+    "University of Kansas Libraries, bookbinding exhibition, case 3, https://exhibits.lib.ku.edu/exhibits/show/bookbinding/case-3",
+    "University of Utah Library, Opening Artists' Books, «Asian stab binding», https://oab.lib.utah.edu/?p=700",
+    "University of Utah Library, Opening Artists' Books, «kikko-toji», https://oab.lib.utah.edu/?p=1250",
+    "University of Utah Library, Opening Artists' Books, «asa-no-ha-toji», https://oab.lib.utah.edu/?p=1241",
+    "Dorset History Centre, «Bookbinding DIY – Japanese Stab-Stitch binding», https://news.dorsetcouncil.gov.uk/dorset-history-centre-blog/?p=1389",
+    "PaperSpecs, «Japanese stab binding», https://www.paperspecs.com/glossary/japanese-stab-binding/",
+    "Wikipedia (ja), «袋とじ», https://ja.wikipedia.org/wiki/袋綴じ",
+    "Wikipedia (ja), «和装本», https://ja.wikipedia.org/wiki/和装本"
+  ],
+  "related": {
+    "objects": ["pliego/page-turn", "pliego/codex-signatures", "pliego/saddle-stitch", "pliego/pocket-zine", "pliego/case-binding"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}

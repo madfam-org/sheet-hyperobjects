@@ -1,0 +1,45 @@
+{
+  "spec_version": 1,
+  "object": "pliego/blintz-base",
+  "title": {
+    "en": "Blintz base",
+    "es": "Base blintz",
+    "fr": "Base blintz",
+    "pt": "Base blintz"
+  },
+  "summary": {
+    "en": "The four corners folded to the centre, once (single blintz) or twice (double blintz). The second blintz folds through two layers, so its creases line up into the quarter lines and meet the first at four exact degree-6 vertices.",
+    "es": "Las cuatro esquinas dobladas al centro, una vez (blintz sencillo) o dos (blintz doble). El segundo blintz dobla a través de dos capas, así que sus pliegues se alinean en las líneas de los cuartos y se encuentran con los primeros en cuatro vértices exactos de grado 6.",
+    "fr": "Les quatre coins rabattus au centre, une fois (blintz simple) ou deux (blintz double). Le second blintz plie à travers deux couches, si bien que ses plis s'alignent sur les lignes des quarts et rencontrent les premiers en quatre sommets exacts de degré 6.",
+    "pt": "Os quatro cantos dobrados ao centro, uma vez (blintz simples) ou duas (blintz duplo). O segundo blintz dobra através de duas camadas, por isso os seus vincos alinham-se nas linhas dos quartos e encontram os primeiros em quatro vértices exatos de grau 6."
+  },
+  "article": {
+    "path": "blintz-base/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020: Kawasaki's and Maekawa's theorems",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/preliminary-base",
+      "pliego/windmill-base",
+      "pliego/valley-fold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

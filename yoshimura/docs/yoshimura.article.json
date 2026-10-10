@@ -1,0 +1,45 @@
+{
+  "spec_version": 1,
+  "object": "pliego/yoshimura",
+  "title": {
+    "en": "Yoshimura pattern",
+    "es": "Patrón Yoshimura",
+    "fr": "Motif de Yoshimura",
+    "pt": "Padrão Yoshimura"
+  },
+  "summary": {
+    "en": "The diamond pattern a crushed thin cylinder buckles into, folded on purpose. The sheet curls rigidly until its rings close into regular polygons, an exact tube; squashing the closed tube needs the paper to bend.",
+    "es": "El patrón de rombos en el que se pandea un cilindro delgado al aplastarlo, plegado a propósito. La hoja se enrolla de forma rígida hasta que sus anillos se cierran en polígonos regulares, un tubo exacto; para aplastar el tubo cerrado, el papel tiene que curvarse.",
+    "fr": "Le motif de losanges que prend un cylindre mince écrasé, plié volontairement. La feuille s'enroule de façon rigide jusqu'à ce que ses anneaux se referment en polygones réguliers, un tube exact ; pour écraser le tube fermé, le papier doit se courber.",
+    "pt": "O padrão de losangos em que um cilindro fino esmagado flamba, dobrado de propósito. A folha enrola-se de forma rígida até os anéis se fecharem em polígonos regulares, um tubo exato; para esmagar o tubo fechado, o papel precisa curvar-se."
+  },
+  "article": {
+    "path": "yoshimura/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "20th century (buckling pattern analysed by Yoshimaru Yoshimura, 1951)",
+  "heritage": false,
+  "sources": [
+    "Y. Yoshimura, On the mechanism of buckling of a circular cylindrical shell under axial compression, NACA Technical Memorandum 1390 (1955)",
+    "G. W. Hunt, I. Ario, Twist buckling and the foldable cylinder: an exercise in origami, International Journal of Non-Linear Mechanics 40 (2005) 833–843"
+  ],
+  "related": {
+    "objects": [
+      "pliego/kresling-tower",
+      "pliego/waterbomb-tessellation",
+      "pliego/miura-ori"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/pocket-zine",
+  "title": {"en": "Pocket zine", "es": "Fanzine de bolsillo", "fr": "Fanzine de poche", "pt": "Fanzine de bolso"},
+  "summary": {
+    "en": "The eight-page booklet folded from one sheet with one cut, with an exact fold program and an imposition computed from the fold.",
+    "es": "El cuadernillo de ocho páginas doblado de una sola hoja con un solo corte, con una secuencia exacta y una imposición calculada a partir del doblado.",
+    "fr": "Le livret de huit pages plié dans une seule feuille avec une seule coupe, avec un programme exact et une imposition calculée à partir du pliage.",
+    "pt": "O livrinho de oito páginas dobrado de uma única folha com um único corte, com uma sequência exata e uma imposição calculada a partir da dobra."
+  },
+  "article": {
+    "path": "pocket-zine/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "twentieth-century zine culture to the present; a classroom and library staple",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Zine», https://en.wikipedia.org/wiki/Zine",
+    "University of Wisconsin–Madison, Wisconsin Union Wheelhouse Studios, «One Page Zine Instructions», https://union.wisc.edu/events-and-activities/open-art-studio-and-classes/wheelhouse-studios-at-home/one-page-zine-instructions",
+    "Niagara County Community College Library, «Zines: Make Zines», https://libguides.niagaracc.suny.edu/zines/makezines"
+  ],
+  "related": {
+    "objects": ["pliego/leporello", "pliego/page-turn", "pliego/saddle-stitch"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}

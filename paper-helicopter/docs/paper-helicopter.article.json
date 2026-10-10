@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-helicopter",
+  "title": {"en": "Paper helicopter", "es": "Helicóptero de papel", "fr": "Hélicoptère en papier", "pt": "Helicóptero de papel"},
+  "summary": {
+    "en": "The classic falling spinner: a strip cut into two blades folded out in opposite directions, with a weight folded up; it spins down slowly when dropped.",
+    "es": "El clásico giro que cae: una tira cortada en dos aspas dobladas hacia lados opuestos, con un lastre doblado; al soltarla baja girando despacio.",
+    "fr": "La classique toupie qui tombe : une bande fendue en deux pales repliées en sens opposés, avec un lest replié ; lâchée, elle descend lentement en tournant.",
+    "pt": "O clássico pião que cai: uma tira cortada em duas pás dobradas em sentidos opostos, com um lastro dobrado; solta, desce girando devagar."
+  },
+  "article": {
+    "path": "paper-helicopter/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional classroom toy",
+  "heritage": false,
+  "sources": [
+    "T. Siorek, R. Haftka, Paper Helicopter - Experimental Optimum Engineering Design Classroom Problem, AIAA 1998, doi:10.2514/6.1998-4963",
+    "Wikipedia, «Autorotation», https://en.wikipedia.org/wiki/Autorotation"
+  ],
+  "related": {"objects": ["pliego/pinwheel", "pliego/card-boomerang"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

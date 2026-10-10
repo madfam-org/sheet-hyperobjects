@@ -13,7 +13,7 @@ Thank you for helping paper move. The commons accepts **objects**; the platform 
 3. **Licence.** Declare `CERN-OHL-W-2.0` in both `project.attribution.license` and
    `hyperobject.commons_license` (owner ruling, 2026-10-10). Do not add a licence file to your
    cartridge. Contributions are accepted under CERN-OHL-W-2.0: inbound equals outbound.
-4. **Lineage.** Fill `project.attribution.lineage[]`; an empty list claims original work.
+4. **Lineage.** Fill `project.attribution.lineage[]` with at least one entry: one per source, or one entry with `"license": "original"` that states the work is original.
 5. **Four languages.** Every label and the article's title and summary in en, es, fr and pt,
    written or reviewed by a person.
 6. **Never copy a designer's crease pattern or diagram.** Generate the geometry yourself.

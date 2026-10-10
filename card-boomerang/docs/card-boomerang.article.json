@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/card-boomerang",
+  "title": {"en": "Card boomerang", "es": "Bumerán de cartulina", "fr": "Boomerang en carton", "pt": "Bumerangue de cartolina"},
+  "summary": {
+    "en": "A small three-blade boomerang cut from card, its tips bent up slightly by hand; flicked off a fingertip, it spins out and comes back.",
+    "es": "Un pequeño bumerán de tres aspas cortado en cartulina, con las puntas un poco dobladas a mano; lanzado de un golpe de dedo, sale girando y vuelve.",
+    "fr": "Un petit boomerang à trois pales découpé dans du carton, pointes légèrement relevées à la main ; lancé d'une pichenette, il part en tournant et revient.",
+    "pt": "Um pequeno bumerangue de três pás cortado em cartolina, com as pontas levemente dobradas à mão; lançado com um peteleco, sai girando e volta."
+  },
+  "article": {
+    "path": "card-boomerang/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "modern classroom toy",
+  "heritage": false,
+  "sources": ["Wikipedia, «Boomerang», https://en.wikipedia.org/wiki/Boomerang"],
+  "related": {"objects": ["pliego/paper-helicopter", "pliego/pinwheel"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

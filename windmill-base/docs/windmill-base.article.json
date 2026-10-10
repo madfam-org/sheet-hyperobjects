@@ -1,0 +1,46 @@
+{
+  "spec_version": 1,
+  "object": "pliego/windmill-base",
+  "title": {
+    "en": "Windmill base",
+    "es": "Base de molinete",
+    "fr": "Base du moulin à vent",
+    "pt": "Base do cata-vento"
+  },
+  "summary": {
+    "en": "Quarter lines, diagonals and a blintz collapse into four flaps swivelled round a central square, in four-fold rotational symmetry. Flat-folded state verified exactly; the swivel collapse runs as a physical program.",
+    "es": "Las líneas de cuarto, las diagonales y un blintz se pliegan en cuatro solapas giradas alrededor de un cuadrado central, con simetría de rotación de orden cuatro. El estado doblado se verifica de forma exacta; el colapso con giros se ejecuta como secuencia física.",
+    "fr": "Les lignes des quarts, les diagonales et un blintz s'effondrent en quatre rabats pivotés autour d'un carré central, avec une symétrie de rotation d'ordre quatre. L'état plié est vérifié exactement ; l'effondrement par pivots est une séquence physique.",
+    "pt": "As linhas dos quartos, as diagonais e um blintz colapsam em quatro abas giradas em volta de um quadrado central, com simetria de rotação de ordem quatro. O estado dobrado é verificado de forma exata; o colapso com giros corre como sequência física."
+  },
+  "article": {
+    "path": "windmill-base/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020: Kawasaki's and Maekawa's theorems",
+    "Origami Resource Center, «Origami Windmill Base», https://origami-resource-center.com/windmill-base/ (folding sequence, consulted for the order of the precreases and the swivel collapse)",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/blintz-base",
+      "pliego/waterbomb-base",
+      "pliego/crease-and-unfold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

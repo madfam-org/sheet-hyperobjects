@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/carousel-book",
+  "title": {"en": "Carousel book", "es": "Libro carrusel", "fr": "Livre carrousel", "pt": "Livro carrossel"},
+  "summary": {
+    "en": "A book that opens 360° into a star of chambers, made from one scored strip of card, with tie ribbons and optional windows through its walls.",
+    "es": "Un libro que se abre 360° en una estrella de cámaras, hecho de una sola tira de cartulina hendida, con listones para atarlo y ventanas opcionales en sus paredes.",
+    "fr": "Un livre qui s'ouvre à 360° en une étoile de chambres, fait d'une seule bande de bristol rainée, avec des rubans pour le nouer et des fenêtres facultatives dans ses parois.",
+    "pt": "Um livro que se abre 360° numa estrela de câmaras, feito de uma única tira de cartão vincada, com fitas para amarrar e janelas opcionais nas paredes."
+  },
+  "article": {
+    "path": "carousel-book/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary book arts and pop-up books",
+  "heritage": false,
+  "sources": [
+    "Let's Talk Picture Books, «Favorite Carousel Books» (2022), https://www.letstalkpicturebooks.com/2022/02/favorite-carousel-books.html",
+    "Smithsonian Libraries and Archives, «A Carousel Holiday Decoration», https://library.si.edu/finding-aid/carousel-holiday-decoration"
+  ],
+  "related": {
+    "objects": ["pliego/leporello", "pliego/tunnel-book", "pliego/parallel-fold-popup"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}

@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-chain",
+  "title": {"en": "Paper chain", "es": "Cadena de papel", "fr": "Guirlande de papier", "pt": "Corrente de papel"},
+  "summary": {
+    "en": "Strips of paper looped and glued into rings, each threaded through the one before, so the rings interlock into a hanging chain.",
+    "es": "Tiras de papel enrolladas y pegadas en aros, cada una pasada por la anterior, de modo que los aros se entrelazan en una cadena colgante.",
+    "fr": "Des bandes de papier bouclées et collées en anneaux, chacune passée dans la précédente, si bien que les anneaux s'entrelacent en une guirlande suspendue.",
+    "pt": "Tiras de papel enroladas e coladas em aros, cada uma passada pela anterior, de modo que os aros se entrelaçam numa corrente pendurada."
+  },
+  "article": {
+    "path": "paper-chain/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "first recorded 1882; in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://origamiheaven.com/historyofpaperchains.htm",
+    "https://1900s.org.uk/1900s-christmas-decorations.htm"
+  ],
+  "related": {"objects": ["pliego/paper-crown", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}

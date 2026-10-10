@@ -1,0 +1,39 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-flowers",
+  "title": {"en": "Paper flowers", "es": "Flores de papel", "fr": "Fleurs en papier", "pt": "Flores de papel"},
+  "summary": {
+    "en": "Tissue-paper flowers on rolled paper stems, two ways: a carnation made like a small pom-pom, and a cut-petal flower whose strip of petals is wound round the stem. Each is made step by step, exactly; the carnation's bloom, which crushes the tissue, is a reference frame.",
+    "es": "Flores de papel de china sobre tallos de papel enrollado, de dos maneras: un clavel hecho como un pompón chico y una flor de pétalos recortados cuya tira de pétalos se enrolla alrededor del tallo. Cada una se hace paso a paso, de forma exacta; la apertura del clavel, que aplasta el papel, es un marco de referencia.",
+    "fr": "Des fleurs en papier de soie sur des tiges de papier roulé, de deux façons : un œillet fait comme un petit pompon, et une fleur à pétales découpés dont la bande de pétales s'enroule autour de la tige. Chacune se fait pas à pas, exactement ; l'épanouissement de l'œillet, qui écrase le papier, est un cadre de référence.",
+    "pt": "Flores de papel de seda sobre caules de papel enrolado, de duas maneiras: um cravo feito como um pompom pequeno e uma flor de pétalas recortadas cuja tira de pétalas se enrola em volta do caule. Cada uma é feita passo a passo, de forma exata; a abertura do cravo, que amassa o papel, é um quadro de referência."
+  },
+  "article": {
+    "path": "paper-flowers/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "Mexican paper flowers: from the 17th century (per the cited guide) to today",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Mexican paper flowers (flores de papel)",
+    "regions": ["México"],
+    "custodians": ["Makers of paper flowers in Mexico"],
+    "note": {
+      "en": "The two constructions and their geometry are original MADFAM work; the paper-flower tradition and its credit belong to the makers of paper flowers in Mexico.",
+      "es": "Las dos construcciones y su geometría son obra original de MADFAM; la tradición de las flores de papel y su crédito pertenecen a quienes hacen flores de papel en México.",
+      "fr": "Les deux constructions et leur géométrie sont une œuvre originale de MADFAM ; la tradition des fleurs en papier et son crédit appartiennent aux artisans des fleurs en papier au Mexique.",
+      "pt": "As duas construções e a sua geometria são obra original da MADFAM; a tradição das flores de papel e o seu crédito pertencem a quem faz flores de papel no México."
+    }
+  },
+  "excludes": [
+    "The stacked-disc cempasúchil method described by N+: described with its source, not modelled",
+    "The carnation's bloom, the wire and glue, and crepe paper's stretch: they need the physics engine (there is no crepe-paper stock card; the tissue is papel de china)"
+  ],
+  "sources": [
+    "https://www.mexican-folk-art-guide.com/mexican-paper-flowers.html",
+    "https://www.nmas.com.mx/cultura/como-hacer-flores-de-cempasuchil-de-papel-crepe-china-facil-y-rapido/",
+    "https://www.mexicodesconocido.com.mx/papel-china.html"
+  ],
+  "related": {"objects": ["pliego/tissue-pom-pom", "pliego/papel-picado-banner"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C, sub-lane C-B); awaiting a human editorial pass."}
+}

@@ -1,0 +1,24 @@
+{
+  "spec_version": 1,
+  "object": "pliego/flexagon",
+  "title": {"en": "Flexagon", "es": "Flexágono", "fr": "Flexagone", "pt": "Flexágono"},
+  "summary": {
+    "en": "A folded paper band that shows a new face each time you flex it: trihexa-, hexahexa- and tetraflexagon from one generator, flexed through every face as an exact rigid motion.",
+    "es": "Una banda de papel doblada que muestra una cara nueva cada vez que se flexiona: trihexa-, hexahexa- y tetraflexágono de un mismo generador, flexionados por todas sus caras como un movimiento rígido exacto.",
+    "fr": "Une bande de papier pliée qui montre une nouvelle face à chaque flexion : trihexa-, hexahexa- et tétraflexagone issus d'un même générateur, flexés à travers toutes leurs faces selon un mouvement rigide exact.",
+    "pt": "Uma faixa de papel dobrada que mostra uma face nova cada vez que é flexionada: triexa-, hexaexa- e tetraflexágono de um mesmo gerador, flexionados por todas as faces como um movimento rígido exato."
+  },
+  "article": {
+    "path": "flexagon/docs/README.md",
+    "sections": ["What it is", "Geometry", "The flex", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "1939 to present; a mathematical paper toy",
+  "heritage": false,
+  "sources": [
+    "M. Gardner, «Flexagons», Scientific American 195 (6), December 1956",
+    "M. Gardner, Hexaflexagons and Other Mathematical Diversions (1959)",
+    "Wikipedia, «Flexagon», https://en.wikipedia.org/wiki/Flexagon"
+  ],
+  "related": {"objects": ["pliego/kaleidocycle", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

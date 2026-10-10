@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/lucky-star",
+  "title": {"en": "Lucky star", "es": "Estrella de la suerte", "fr": "Étoile porte-bonheur", "pt": "Estrela da sorte"},
+  "summary": {
+    "en": "The strip-folded puffy star: a knot in a paper strip makes a pentagon, the rest of the strip wraps round it, and pinching the sides puffs it into a star.",
+    "es": "La estrellita inflada de tira de papel: un nudo en la tira forma un pentágono, el resto de la tira se enrolla alrededor y al pellizcar los lados se infla en estrella.",
+    "fr": "La petite étoile gonflée en bande de papier : un nœud forme un pentagone, le reste de la bande s'enroule autour, et en pinçant les côtés elle se gonfle en étoile.",
+    "pt": "A estrelinha inflada de tira de papel: um nó na tira forma um pentágono, o resto da tira enrola-se em volta e, ao apertar os lados, ela incha em estrela."
+  },
+  "article": {
+    "path": "lucky-star/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "folk paper craft",
+  "heritage": false,
+  "sources": ["Wikipedia, «Pentagon», https://en.wikipedia.org/wiki/Pentagon"],
+  "related": {"objects": ["pliego/flexagon", "pliego/kaleidocycle"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

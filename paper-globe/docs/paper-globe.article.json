@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-globe",
+  "title": {"en": "Paper globe", "es": "Globo de papel", "fr": "Globe en papier", "pt": "Globo de papel"},
+  "summary": {
+    "en": "Twelve or twenty-four gores, each a pole-to-pole slice of a sphere developed flat, bent along their length until they close into a globe.",
+    "es": "Doce o veinticuatro husos, cada uno una franja de esfera de polo a polo desarrollada en plano, curvados a lo largo hasta cerrarse en un globo.",
+    "fr": "Douze ou vingt-quatre fuseaux, chacun une tranche de sphère d'un pôle à l'autre développée à plat, courbés sur leur longueur jusqu'à se refermer en globe.",
+    "pt": "Doze ou vinte e quatro fusos, cada um uma fatia de esfera de polo a polo desenvolvida no plano, curvados ao longo do comprimento até se fecharem num globo."
+  },
+  "article": {
+    "path": "paper-globe/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "globe gores since the early 16th century; in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Gore_(segment)",
+    "https://en.wikipedia.org/wiki/Globe"
+  ],
+  "related": {"objects": ["pliego/party-hat"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}

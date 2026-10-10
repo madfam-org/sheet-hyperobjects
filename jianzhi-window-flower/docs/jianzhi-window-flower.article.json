@@ -1,0 +1,64 @@
+{
+  "spec_version": 1,
+  "object": "pliego/jianzhi-window-flower",
+  "title": {
+    "en": "Jianzhi window flower",
+    "es": "Flor de ventana de jianzhi",
+    "fr": "Fleur de fenêtre jianzhi",
+    "pt": "Flor de janela de jianzhi"
+  },
+  "summary": {
+    "en": "Radial fold-and-cut in the idiom of Chinese paper-cut window flowers: a red square folded into a 4-, 6- or 8-fold wedge, cut once through every layer and unfolded into an original design. Chinese paper-cut was inscribed by UNESCO in 2009.",
+    "es": "Doblar y cortar en forma radial, al estilo de las flores de ventana del papel recortado chino: un cuadrado rojo doblado en una cuña de 4, 6 u 8 ejes, cortado una sola vez a través de todas las capas y desdoblado en un diseño original. El papel recortado chino fue inscrito por la UNESCO en 2009.",
+    "fr": "Plier-découper rayonnant, dans l'esprit des fleurs de fenêtre du papier découpé chinois : un carré rouge plié en un coin d'ordre 4, 6 ou 8, découpé une seule fois à travers toutes les couches puis déplié en un motif original. Le papier découpé chinois a été inscrit par l'UNESCO en 2009.",
+    "pt": "Dobra e corte radial, no estilo das flores de janela do papel recortado chinês: um quadrado vermelho dobrado numa cunha de 4, 6 ou 8 eixos, cortado uma só vez através de todas as camadas e desdobrado num desenho original. O papel recortado chinês foi inscrito pela UNESCO em 2009."
+  },
+  "article": {
+    "path": "jianzhi-window-flower/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "historical tradition, in continuous use",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Chinese paper-cut (jianzhi)",
+    "regions": [
+      "China"
+    ],
+    "custodians": [
+      "The communities who practise Chinese paper-cut"
+    ],
+    "note": {
+      "en": "The motifs are original MADFAM geometry made by fold-and-cut in a generic radial idiom; the tradition and its credit belong to the practitioners of Chinese paper-cut.",
+      "es": "Los motivos son geometría original de MADFAM hecha doblando y cortando, en un estilo radial genérico; la tradición y su crédito pertenecen a quienes practican el papel recortado chino.",
+      "fr": "Les motifs sont une géométrie originale de MADFAM obtenue par pliage-découpage, dans un style rayonnant générique ; la tradition et son crédit appartiennent aux praticiens du papier découpé chinois.",
+      "pt": "Os motivos são geometria original da MADFAM feita por dobra e corte, num estilo radial genérico; a tradição e o seu crédito pertencem a quem pratica o papel recortado chinês."
+    }
+  },
+  "excludes": [
+    "Any traditional or artist-made paper-cut design: every motif is generated geometry (scallops, petals, crescents, arches, diamonds)",
+    "Engraving with a chisel through stacks of paper, described by UNESCO: not simulated"
+  ],
+  "sources": [
+    "https://ich.unesco.org/en/RL/chinese-paper-cut-00219",
+    "https://en.wikipedia.org/wiki/Chinese_paper_cutting"
+  ],
+  "related": {
+    "objects": [
+      "pliego/paper-snowflake",
+      "pliego/papel-picado-banner",
+      "pliego/paper-doily"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

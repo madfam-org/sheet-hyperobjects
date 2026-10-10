@@ -1,0 +1,47 @@
+{
+  "spec_version": 1,
+  "object": "pliego/preliminary-base",
+  "title": {
+    "en": "Preliminary base",
+    "es": "Base preliminar",
+    "fr": "Base préliminaire",
+    "pt": "Base preliminar"
+  },
+  "summary": {
+    "en": "The square base: one diagonal and both book folds collapse so the four corners meet at the bottom. One vertex of degree 6, folded along an exact rigid path, coloured side out or in.",
+    "es": "La base cuadrada: una diagonal y los dos pliegues de libro se pliegan juntos y las cuatro esquinas se encuentran abajo. Un vértice de grado 6, doblado por una trayectoria rígida exacta, con el color por fuera o por dentro.",
+    "fr": "La base carrée : une diagonale et les deux plis livre s'effondrent ensemble et les quatre coins se rejoignent en bas. Un sommet de degré 6, plié le long d'une trajectoire rigide exacte, couleur à l'extérieur ou à l'intérieur.",
+    "pt": "A base quadrada: uma diagonal e as duas dobras de livro colapsam juntas e os quatro cantos encontram-se em baixo. Um vértice de grau 6, dobrado por uma trajetória rígida exata, com a cor por fora ou por dentro."
+  },
+  "article": {
+    "path": "preliminary-base/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020: Kawasaki's and Maekawa's theorems",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/waterbomb-base",
+      "pliego/bird-base",
+      "pliego/frog-base",
+      "pliego/petal-fold",
+      "pliego/squash-fold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

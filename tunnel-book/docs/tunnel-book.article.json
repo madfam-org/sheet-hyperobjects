@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/tunnel-book",
+  "title": {"en": "Tunnel book", "es": "Libro túnel", "fr": "Livre tunnel", "pt": "Livro túnel"},
+  "summary": {
+    "en": "A tunnel (peepshow) book cut from one sheet: layered papercut frames on accordion walls, opened by pulling the cover, with four original scenes.",
+    "es": "Un libro túnel (de mirilla) cortado en una sola hoja: marcos calados en capas sobre paredes en acordeón que se abren al tirar de la portada, con cuatro escenas originales.",
+    "fr": "Un livre tunnel (livre-lorgnette) découpé dans une seule feuille : des cadres découpés en plans sur des parois en accordéon, ouverts en tirant la couverture, avec quatre scènes originales.",
+    "pt": "Um livro túnel (de espiar) cortado numa única folha: molduras recortadas em camadas sobre paredes em sanfona, abertas ao puxar a capa, com quatro cenas originais."
+  },
+  "article": {
+    "path": "tunnel-book/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "eighteenth-century paper peepshows to the present; a book-arts and classroom staple",
+  "heritage": false,
+  "sources": [
+    "Smithsonian Libraries, «Martin Engelbrecht», https://library.si.edu/es/tags/martin-engelbrecht",
+    "Victoria and Albert Museum, «The Tunnel» (paper peepshow, about 1825), https://collections.vam.ac.uk/item/O1418244/the-tunnel-paper-peepshow",
+    "Topeka & Shawnee County Public Library, «Tunnel books: an easy step by step», https://tscpl.org/articles/tunnel-books-an-easy-step-by-step"
+  ],
+  "related": {
+    "objects": ["pliego/leporello", "pliego/page-turn", "pliego/pocket-zine", "pliego/papel-picado-banner"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}

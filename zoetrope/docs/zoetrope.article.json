@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/zoetrope",
+  "title": {"en": "Zoetrope", "es": "Zoótropo", "fr": "Zootrope", "pt": "Zootrópio"},
+  "summary": {
+    "en": "A slotted paper drum on a base disc with a strip of original drawings inside; spun and watched through the slits, the drawings run as an animation.",
+    "es": "Un tambor de papel ranurado sobre un disco de base con una tira de dibujos originales por dentro; al girarlo y mirar por las ranuras, los dibujos se animan.",
+    "fr": "Un tambour de papier à fentes sur un disque de base, avec une bande de dessins originaux à l'intérieur ; en tournant, vus par les fentes, les dessins s'animent.",
+    "pt": "Um tambor de papel com fendas sobre um disco de base, com uma tira de desenhos originais por dentro; girado e visto pelas fendas, os desenhos ganham movimento."
+  },
+  "article": {
+    "path": "zoetrope/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "1834 to present; an optical toy",
+  "heritage": false,
+  "sources": ["Wikipedia, «Zoetrope», https://en.wikipedia.org/wiki/Zoetrope"],
+  "related": {"objects": ["pliego/thaumatrope", "pliego/volvelle"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}
