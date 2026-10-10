@@ -1,0 +1,109 @@
+{
+  "project": {
+    "name": {"en": "Card linkages", "es": "Mecanismos articulados de cartulina", "fr": "Mécanismes articulés en carte", "pt": "Mecanismos articulados de cartão"},
+    "slug": "card-linkages",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "Levers and linkages in card: a four-bar linkage folded from one strip with score-line hinges, a scissor extender folded as a rhombus chain, and a crank-and-rocker of flat links joined by brads. Every pose is solved so the links stay joined.",
+      "es": "Palancas y mecanismos articulados de cartulina: un cuadrilátero articulado doblado de una sola tira con bisagras marcadas, un extensor de tijera doblado como cadena de rombos, y una manivela con balancín de eslabones planos unidos con broches. Cada posición está resuelta para que los eslabones sigan unidos.",
+      "fr": "Leviers et mécanismes articulés en carte : un quadrilatère articulé plié d'une seule bande à charnières rainées, un extenseur à ciseaux plié en chaîne de losanges, et une manivelle-balancier en biellettes plates assemblées par attaches parisiennes. Chaque position est résolue pour que les biellettes restent jointes.",
+      "pt": "Alavancas e mecanismos articulados de cartão: um quadrilátero articulado dobrado de uma só tira com dobradiças vincadas, um extensor de tesoura dobrado como cadeia de losangos, e uma manivela com balancim de elos planos unidos com colchetes. Cada posição é resolvida para que os elos fiquem unidos."
+    },
+    "difficulty": "intermediate",
+    "tags": ["mechanism", "linkage", "four-bar", "lazy-tongs", "scissor", "crank-rocker", "brad", "living-hinge", "hyperobject", "commons"],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original design: link proportions, strips, kinematics and the folded constructions are computed by this cartridge; four-bar linkages, lazy tongs and crank-and-rocker mechanisms are classical kinematics, credited to no designer",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {"id": "four-bar", "label": {"en": "Four-bar (folded strip)", "es": "Cuadrilátero articulado (tira doblada)", "fr": "Quadrilatère articulé (bande pliée)", "pt": "Quadrilátero articulado (tira dobrada)"}, "script_file": "main.py", "sheets": ["base", "strip"]},
+    {"id": "extender", "label": {"en": "Scissor extender (folded rhombus chain)", "es": "Extensor de tijera (cadena de rombos doblada)", "fr": "Extenseur à ciseaux (chaîne de losanges pliée)", "pt": "Extensor de tesoura (cadeia de losangos dobrada)"}, "script_file": "main.py", "sheets": ["base", "strip"]},
+    {"id": "crank-rocker", "label": {"en": "Crank and rocker (brads)", "es": "Manivela y balancín (broches)", "fr": "Manivelle et balancier (attaches)", "pt": "Manivela e balancim (colchetes)"}, "script_file": "main.py", "sheets": ["base", "rocker", "coupler", "crank"]}
+  ],
+  "sheets": [
+    {"id": "base", "label": {"en": "Base", "es": "Base", "fr": "Base", "pt": "Base"}, "stock": "cardstock-300"},
+    {"id": "strip", "label": {"en": "Linkage strip", "es": "Tira del mecanismo", "fr": "Bande du mécanisme", "pt": "Tira do mecanismo"}, "stock": "cardstock-250"},
+    {"id": "rocker", "label": {"en": "Rocker", "es": "Balancín", "fr": "Balancier", "pt": "Balancim"}, "stock": "cardstock-250"},
+    {"id": "coupler", "label": {"en": "Coupler", "es": "Biela", "fr": "Bielle", "pt": "Biela"}, "stock": "cardstock-250"},
+    {"id": "crank", "label": {"en": "Crank", "es": "Manivela", "fr": "Manivelle", "pt": "Manivela"}, "stock": "cardstock-250"}
+  ],
+  "parameter_groups": [
+    {"id": "size", "label": {"en": "Size", "es": "Tamaño", "fr": "Format", "pt": "Tamanho"}},
+    {"id": "build", "label": {"en": "Construction", "es": "Construcción", "fr": "Construction", "pt": "Construção"}}
+  ],
+  "parameters": [
+    {
+      "id": "scale", "type": "slider", "group": "size", "unit": "ratio",
+      "label": {"en": "Scale", "es": "Escala", "fr": "Échelle", "pt": "Escala"},
+      "tooltip": {"en": "Multiplies every link length (1 = the designed proportions).", "es": "Multiplica el largo de todos los eslabones (1 = las proporciones diseñadas).", "fr": "Multiplie la longueur de chaque biellette (1 = les proportions dessinées).", "pt": "Multiplica o comprimento de todos os elos (1 = as proporções desenhadas)."},
+      "default": 1.0, "min": 0.6, "max": 2.0, "step": 0.05
+    },
+    {
+      "id": "wall", "type": "slider", "group": "build", "unit": "mm", "modes": ["four-bar", "extender"],
+      "label": {"en": "Strip height (mm)", "es": "Alto de la tira (mm)", "fr": "Hauteur de la bande (mm)", "pt": "Altura da tira (mm)"},
+      "tooltip": {"en": "The folded links stand on their edges; this is how tall they stand.", "es": "Los eslabones doblados se paran de canto; esta es su altura.", "fr": "Les biellettes pliées tiennent sur la tranche ; c'est leur hauteur.", "pt": "Os elos dobrados ficam de pé sobre a borda; esta é a sua altura."},
+      "default": 30, "min": 15, "max": 60, "step": 1
+    },
+    {
+      "id": "cells", "type": "slider", "group": "build", "unit": "count", "modes": ["extender"],
+      "label": {"en": "Scissor cells", "es": "Celdas de tijera", "fr": "Cellules de ciseaux", "pt": "Células de tesoura"},
+      "default": 4, "min": 2, "max": 8, "step": 1
+    },
+    {
+      "id": "link_width", "type": "slider", "group": "build", "unit": "mm", "modes": ["crank-rocker"],
+      "label": {"en": "Link width (mm)", "es": "Ancho de los eslabones (mm)", "fr": "Largeur des biellettes (mm)", "pt": "Largura dos elos (mm)"},
+      "default": 14, "min": 10, "max": 24, "step": 1
+    }
+  ],
+  "presets": [
+    {"id": "large", "label": {"en": "Large (×1.5)", "es": "Grande (×1.5)", "fr": "Grand (×1,5)", "pt": "Grande (×1,5)"}, "values": {"scale": 1.5}},
+    {"id": "six-cells", "label": {"en": "Six scissor cells", "es": "Seis celdas de tijera", "fr": "Six cellules de ciseaux", "pt": "Seis células de tesoura"}, "values": {"cells": 6}},
+    {"id": "low-walls", "label": {"en": "Low strip, wide links", "es": "Tira baja, eslabones anchos", "fr": "Bande basse, biellettes larges", "pt": "Tira baixa, elos largos"}, "values": {"wall": 18, "link_width": 20}}
+  ],
+  "controls": [
+    {"id": "sequence", "kind": "sequence", "label": {"en": "Swing the input link", "es": "Mover el eslabón de entrada", "fr": "Balancer la biellette d'entrée", "pt": "Balançar o elo de entrada"}, "min": 0, "max": 24, "default": 0, "unit": "step"},
+    {"id": "crank", "kind": "angle", "label": {"en": "Turn the crank", "es": "Girar la manivela", "fr": "Tourner la manivelle", "pt": "Girar a manivela"}, "min": 0, "max": 360, "default": 0, "unit": "deg"}
+  ],
+  "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],
+  "stock": {"default": "cardstock-250", "alternatives": ["cardstock-300", "cardstock-160"]},
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "mechanism",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "hinges",
+        "type": "hinge",
+        "label": {"en": "Score-line hinges of the folded strip", "es": "Bisagras marcadas de la tira doblada", "fr": "Charnières rainées de la bande pliée", "pt": "Dobradiças vincadas da tira dobrada"},
+        "edges": [{"sheet": "strip", "edge": "hinge"}],
+        "parameters": ["scale", "wall"],
+        "polarity": "neutral"
+      },
+      {
+        "id": "brads",
+        "type": "pivot",
+        "label": {"en": "Brad pivots of the crank and rocker", "es": "Ejes de broche de la manivela y el balancín", "fr": "Axes à attache de la manivelle et du balancier", "pt": "Eixos de colchete da manivela e do balancim"},
+        "edges": [{"sheet": "base", "edge": "brad"}],
+        "parameters": ["scale", "link_width"],
+        "polarity": "neutral",
+        "symmetry": 0
+      }
+    ],
+    "capabilities": {"previewable": true, "closed_form_kinematics": true, "joins": true, "target_frames": true},
+    "societal_benefit": {
+      "en": "Linkages turn one motion into another: card and a few brads are enough to see how a crank drives a rocker, why some four-bars turn all the way round and others only swing, and how lazy tongs reach.",
+      "es": "Los mecanismos articulados convierten un movimiento en otro: bastan cartulina y unos broches para ver cómo una manivela mueve un balancín, por qué unos cuadriláteros dan la vuelta completa y otros solo oscilan, y cómo se estira una tijera extensible.",
+      "fr": "Les mécanismes articulés changent un mouvement en un autre : de la carte et quelques attaches suffisent pour voir comment une manivelle entraîne un balancier, pourquoi certains quadrilatères font le tour complet et d'autres ne font que balancer, et comment s'allonge un zigzag.",
+      "pt": "Os mecanismos articulados transformam um movimento noutro: bastam cartão e alguns colchetes para ver como uma manivela move um balancim, por que alguns quadriláteros dão a volta completa e outros só oscilam, e como se estica uma tesoura extensível."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}
