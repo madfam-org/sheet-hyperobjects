@@ -37,7 +37,7 @@
     }
   },
   "excludes": [
-    "Layer order (tucking under a flap): a model without paper thickness shows positions only"
+    "Layer order between the two units (tucking under a flap): checked within each unit only; the program shows positions"
   ],
   "sources": [
     "https://origami-resource-center.com/ninja-star/"
