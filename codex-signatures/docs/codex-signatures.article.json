@@ -1,0 +1,27 @@
+{
+  "spec_version": 1,
+  "object": "pliego/codex-signatures",
+  "title": {"en": "Codex signatures", "es": "Cuadernillos del códice", "fr": "Cahiers du codex", "pt": "Cadernos do códice"},
+  "summary": {
+    "en": "A printed press sheet (pliego) folded into a folio, quarto or octavo signature, with the imposition computed from the fold and checked, and signatures gathered into a sewn book block.",
+    "es": "Un pliego impreso doblado en un cuadernillo en folio, en cuarto o en octavo, con la imposición calculada a partir del doblado y comprobada, y cuadernillos alzados en un cuerpo de libro cosido.",
+    "fr": "Une feuille d'impression (pliego) pliée en cahier in-folio, in-quarto ou in-octavo, avec l'imposition calculée à partir du pliage et vérifiée, et des cahiers assemblés en un corps d'ouvrage cousu.",
+    "pt": "Uma folha impressa (pliego) dobrada num caderno in-fólio, in-quarto ou in-oitavo, com a imposição calculada a partir da dobra e verificada, e cadernos alceados num miolo costurado."
+  },
+  "article": {
+    "path": "codex-signatures/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "printed books from the fifteenth century to the present; the codex itself is older",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Book size», https://en.wikipedia.org/wiki/Book_size",
+    "Merriam-Webster, «outer form», https://www.merriam-webster.com/dictionary/outer%20form",
+    "Wikipedia, «Bookbinding», https://en.wikipedia.org/wiki/Bookbinding",
+    "Wikcionario, «pliego», https://es.wiktionary.org/wiki/pliego"
+  ],
+  "related": {
+    "objects": ["pliego/saddle-stitch", "pliego/pocket-zine", "pliego/page-turn", "pliego/stab-binding"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}
