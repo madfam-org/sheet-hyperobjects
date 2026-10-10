@@ -1,0 +1,50 @@
+{
+  "spec_version": 1,
+  "object": "pliego/reveal-block",
+  "title": {
+    "en": "Reveal block",
+    "es": "Bloque revelable",
+    "fr": "Bloc à révéler",
+    "pt": "Bloco revelável"
+  },
+  "summary": {
+    "en": "A memo-block sculpture: every sheet of a paper pad is pre-cut along its layer of a 3-D scene, and tearing the sheets away from the top leaves the scene standing inside the block.",
+    "es": "Una escultura en bloc de notas: cada hoja de un bloc de papel viene precortada según su capa de una escena tridimensional, y al arrancar las hojas desde arriba la escena queda en pie dentro del bloque.",
+    "fr": "Une sculpture en bloc-notes : chaque feuille d'un bloc de papier est prédécoupée selon sa couche d'une scène en trois dimensions, et en arrachant les feuilles par le dessus on laisse la scène debout dans le bloc.",
+    "pt": "Uma escultura em bloco de notas: cada folha de um bloco de papel vem pré-cortada segundo a sua camada de uma cena tridimensional, e ao destacar as folhas a partir de cima a cena fica de pé dentro do bloco."
+  },
+  "article": {
+    "path": "reveal-block/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The reveal program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary technique (digitally cut memo blocks)",
+  "heritage": false,
+  "sources": [
+    "PaperSpecs, «3D Einstein Memo Pad», https://www.paperspecs.com/gallery/3d-einstein-memo-pad/",
+    "Boing Boing, «Blocks of laser-perforated note-cards that reveal architectural models as leaves are torn away» (2018), https://boingboing.net/2018/01/15/omoshiro-block.html",
+    "bungu.store, «Layer Memo Block / Marumo Printing», https://bungu.store/products/layer-memo-block-marumo-printing",
+    "US patent 6,254,960 B1, «Memo block», https://patents.google.com/patent/US6254960",
+    "3DPrint.com, «Mcor 3D printers: IRIS and Matrix 300», https://3dprint.com/9603/mcor-3d-printers-iris-matrix-300/",
+    "US patent 5,657,679, «Method and apparatus for separating an LOM sculpture from an adherent base», https://patents.google.com/patent/US5657679",
+    "W. E. Lorensen and H. E. Cline, Marching cubes: a high resolution 3D surface construction algorithm, SIGGRAPH '87",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.8"
+  ],
+  "related": {
+    "objects": [
+      "pliego/perforated-tear",
+      "pliego/paper-snowflake"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane (wave 2b, lane R); awaiting a human review pass."
+  }
+}
