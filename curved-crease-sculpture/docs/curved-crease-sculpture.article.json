@@ -1,0 +1,24 @@
+{
+  "spec_version": 1,
+  "object": "pliego/curved-crease-sculpture",
+  "title": {"en": "Curved-crease sculpture", "es": "Escultura de pliegues curvos", "fr": "Sculpture à plis courbes", "pt": "Escultura de dobras curvas"},
+  "summary": {
+    "en": "Paper folded along curves, concentric arcs or interleaved spirals, alternately mountain and valley. The panels bend as the creases close, and the sheet takes a curved shape that holds itself up.",
+    "es": "Papel plegado a lo largo de curvas, arcos concéntricos o espirales entrelazadas, alternando monte y valle. Los paneles se curvan al cerrarse los pliegues y la hoja toma una forma curva que se sostiene sola.",
+    "fr": "Du papier plié le long de courbes, arcs concentriques ou spirales entrelacées, en montagne et vallée alternées. Les panneaux se courbent quand les plis se referment, et la feuille prend une forme courbe qui tient toute seule.",
+    "pt": "Papel dobrado ao longo de curvas, arcos concêntricos ou espirais entrelaçadas, alternando montanha e vale. Os painéis curvam-se quando as dobras fecham, e a folha toma uma forma curva que se sustenta sozinha."
+  },
+  "article": {
+    "path": "curved-crease-sculpture/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "20th century (Bauhaus paper studies; David Huffman's research from the 1970s)",
+  "heritage": false,
+  "sources": [
+    "D. A. Huffman, Curvature and creases: a primer on paper, IEEE Transactions on Computers C-25 (1976) 1010–1019",
+    "E. D. Demaine, M. L. Demaine, D. Koschitz, T. Tachi, Curved crease folding: a review on art, design and mathematics, IABSE-IASS Symposium, London 2011",
+    "E. D. Demaine, M. L. Demaine, D. Koschitz, Reconstructing David Huffman's legacy in curved-crease folding, Origami 5 (CRC Press, 2011)"
+  ],
+  "related": {"objects": ["pliego/pleated-hypar", "pliego/pleat-and-crimp"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}

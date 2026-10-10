@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/hexagonal-twist",
+  "title": {"en": "Hexagonal and triangle twists", "es": "Torsiones hexagonal y triangular", "fr": "Twists hexagonal et triangulaire", "pt": "Torções hexagonal e triangular"},
+  "summary": {
+    "en": "A central hexagon or triangle outlined in valleys, with one pleat per edge, on a sheet of the same symmetry. Folded flat, the polygon turns while the pleats close round it.",
+    "es": "Un hexágono o un triángulo central marcado con valles y un pliegue por lado, sobre una hoja de la misma simetría. Al plegarlo en plano, el polígono gira mientras los pliegues se cierran a su alrededor.",
+    "fr": "Un hexagone ou un triangle central tracé en vallées, avec un pli par côté, sur une feuille de même symétrie. Replié à plat, le polygone tourne pendant que les plis se referment autour de lui.",
+    "pt": "Um hexágono ou um triângulo central marcado com vales, com uma prega por lado, numa folha da mesma simetria. Dobrado rente, o polígono gira enquanto as pregas se fecham à sua volta."
+  },
+  "article": {
+    "path": "hexagonal-twist/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "20th century (twist folds explored by Shuzo Fujimoto in the 1970s)",
+  "heritage": false,
+  "sources": [
+    "S. Fujimoto, Sōzōsei o kaihatsu suru rittai origami (Creative invention by 3-D origami), self-published, 1976",
+    "R. J. Lang, Twists, Tilings, and Tessellations: Mathematical Methods for Geometric Origami, CRC Press, 2018",
+    "T. A. Evans, R. J. Lang, S. P. Magleby, L. L. Howell, Rigidly foldable origami twists, Origami 6 (AMS, 2015)",
+    "T. C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020"
+  ],
+  "related": {"objects": ["pliego/square-twist", "pliego/miura-ori"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}
