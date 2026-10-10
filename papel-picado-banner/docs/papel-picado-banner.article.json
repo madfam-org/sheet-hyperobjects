@@ -1,0 +1,53 @@
+{
+  "spec_version": 1,
+  "object": "pliego/papel-picado-banner",
+  "title": {
+    "en": "Papel picado banner",
+    "es": "Tira de papel picado",
+    "fr": "Guirlande de papel picado",
+    "pt": "Varal de papel picado"
+  },
+  "summary": {
+    "en": "A string of tissue-paper flags hanging from a sagging line and stirred by the wind; each flag is folded, cut once through every layer and unfolded into an original geometric motif. Papel picado is the papercut tradition credited to San Salvador Huixcolotla, Puebla.",
+    "es": "Una tira de banderitas de papel de china que cuelga de un cordel vencido y se mece con el viento; cada banderita se dobla, se corta una sola vez a través de todas sus capas y se desdobla en un motivo geométrico original. El papel picado es la tradición de papel recortado que se atribuye a San Salvador Huixcolotla, Puebla.",
+    "fr": "Une guirlande de fanions en papier de soie suspendue à une ficelle qui fléchit, agitée par le vent ; chaque fanion est plié, découpé une seule fois à travers toutes ses couches puis déplié en un motif géométrique original. Le papel picado est la tradition de papier découpé attribuée à San Salvador Huixcolotla, Puebla.",
+    "pt": "Um varal de bandeirinhas de papel de seda pendurado num cordel que verga e balança ao vento; cada bandeirinha é dobrada, cortada uma só vez através de todas as camadas e desdobrada num motivo geométrico original. O papel picado é a tradição de papel recortado atribuída a San Salvador Huixcolotla, Puebla."
+  },
+  "article": {
+    "path": "papel-picado-banner/docs/README.md"
+  },
+  "era": "contemporary, in continuous use",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Papel picado",
+    "regions": [
+      "San Salvador Huixcolotla, Puebla, México"
+    ],
+    "custodians": [
+      "The papel picado artisans of San Salvador Huixcolotla"
+    ],
+    "note": {
+      "en": "The motifs are original MADFAM geometry made by fold-and-cut; the tradition and its credit belong to the artisans of Huixcolotla.",
+      "es": "Los motivos son geometría original de MADFAM hecha doblando y cortando; la tradición y su crédito pertenecen a las y los artesanos de Huixcolotla.",
+      "fr": "Les motifs sont une géométrie originale de MADFAM obtenue par pliage-découpage ; la tradition et son crédit appartiennent aux artisans de Huixcolotla.",
+      "pt": "Os motivos são geometria original da MADFAM feita por dobra e corte; a tradição e o seu crédito pertencem aos artesãos de Huixcolotla."
+    }
+  },
+  "excludes": [
+    "Any artisan's or workshop's papel picado design: every motif is generated geometry (flowers, diamonds, scallops, a sun)",
+    "The workshop method of chisels (fierritos) and mallet through stacks of tissue: described in the article, not simulated"
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Papel_picado",
+    "https://www.mexicodesconocido.com.mx/papel-picado-huixcolotla.html"
+  ],
+  "related": {
+    "objects": [
+      "pliego/paper-snowflake"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

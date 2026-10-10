@@ -1,0 +1,32 @@
+{
+  "spec_version": 1,
+  "object": "pliego/rotating-squares",
+  "title": {
+    "en": "Rotating squares",
+    "es": "Cuadrados rotatorios",
+    "fr": "Carrés rotatifs",
+    "pt": "Quadrados rotativos"
+  },
+  "summary": {
+    "en": "An auxetic kirigami sheet: squares joined at small corner ligaments by straight cuts. Pull it and it widens as it lengthens, because neighbouring squares counter-rotate.",
+    "es": "Una hoja de kirigami auxética: cuadrados unidos por pequeños ligamentos en las esquinas mediante cortes rectos. Al jalarla se ensancha a la vez que se alarga, porque los cuadrados vecinos giran en sentidos opuestos.",
+    "fr": "Une feuille de kirigami auxétique : des carrés reliés par de petits ligaments aux coins grâce à des découpes droites. Quand on la tire, elle s'élargit en s'allongeant, car les carrés voisins tournent en sens contraire.",
+    "pt": "Uma folha de kirigami auxética: quadrados unidos por pequenos ligamentos nos cantos por meio de cortes retos. Ao puxá-la, ela se alarga enquanto se alonga, porque os quadrados vizinhos giram em sentidos opostos."
+  },
+  "article": {
+    "path": "rotating-squares/docs/README.md"
+  },
+  "era": "contemporary (auxetic metamaterials research)",
+  "sources": [
+    "J. N. Grima and K. E. Evans, Auxetic behavior from rotating squares, J. Mater. Sci. Lett. 19 (2000) 1563–1565"
+  ],
+  "related": {
+    "objects": [
+      "pliego/miura-ori"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
