@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/presentation-folder",
+  "title": {"en": "Presentation folder", "es": "Carpeta de presentación", "fr": "Chemise de présentation", "pt": "Pasta de apresentação"},
+  "summary": {
+    "en": "A pocket folder from one sheet of board: two covers on a capacity spine (two scores), a glued pocket in each cover and business-card slits, for A4 or US Letter papers.",
+    "es": "Una carpeta con bolsillos de una sola hoja de cartulina: dos tapas sobre un lomo de capacidad (dos marcados), un bolsillo pegado en cada tapa y ranuras para tarjeta, para hojas A4 o carta.",
+    "fr": "Une chemise à pochettes dans une seule feuille de carton : deux couvertures sur un dos de capacité (deux rainages), une pochette collée dans chaque couverture et des fentes pour carte, pour feuilles A4 ou US Letter.",
+    "pt": "Uma pasta com bolsos de uma só folha de cartão: duas capas sobre uma lombada de capacidade (dois vincos), um bolso colado em cada capa e fendas para cartão, para folhas A4 ou US Letter."
+  },
+  "article": {
+    "path": "presentation-folder/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "office stationery in current use",
+  "sources": ["Wikipedia, File folder", "Wikipedia, Business card", "Wikipedia, ISO 216"],
+  "related": {"objects": ["pliego/envelope", "pliego/embossed-stationery", "pliego/print-folds"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
