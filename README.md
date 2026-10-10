@@ -32,7 +32,8 @@ are born quadrilingual (en/es/fr/pt). The full contract is in [AGENTS.md](AGENTS
 
 ## The classes, from turning a page to a diorama
 
-The launch catalog climbs ten rungs (the platform's `docs/strategy/launch-catalog.md`):
+The launch catalog climbs ten rungs (Pliego's
+[launch catalog](https://github.com/madfam-org/pliego/blob/main/docs/strategy/launch-catalog.md)):
 
 | # | Class | Examples |
 |---|---|---|
