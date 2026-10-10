@@ -1,0 +1,86 @@
+{
+  "project": {
+    "name": {"en": "Thaumatrope", "es": "Taumatropo", "fr": "Thaumatrope", "pt": "Taumatrópio"},
+    "slug": "thaumatrope",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "A card disc with a different picture on each side, twirled on two strings so fast that the pictures merge: the bird appears inside its cage. Three original picture pairs drawn by the script; the preview flips the disc about its string axis.",
+      "es": "Un disco de cartulina con un dibujo distinto en cada cara, que se hace girar con dos hilos tan rápido que los dibujos se funden: el pájaro aparece dentro de su jaula. Tres parejas de dibujos originales trazadas por el script; la vista previa gira el disco sobre el eje de los hilos.",
+      "fr": "Un disque de carton portant une image différente sur chaque face, qu'on fait tourner sur deux fils si vite que les images se fondent : l'oiseau apparaît dans sa cage. Trois paires d'images originales dessinées par le script ; l'aperçu fait pivoter le disque sur l'axe des fils.",
+      "pt": "Um disco de cartolina com um desenho diferente em cada face, girado em dois fios tão depressa que os desenhos se fundem: o pássaro aparece dentro da gaiola. Três pares de desenhos originais traçados pelo script; a pré-visualização gira o disco em torno do eixo dos fios."
+    },
+    "thumbnail": "/projects/thaumatrope.svg",
+    "difficulty": "beginner",
+    "tags": ["thaumatrope", "optical-toy", "persistence-of-vision", "toy", "animation", "hinge", "hyperobject", "commons"],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original design: the disc and the three picture pairs are drawn by main.py; the thaumatrope is a nineteenth-century optical toy (popularised by J. A. Paris, 1825), credited to that history",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "default",
+      "label": {"en": "Flip the disc", "es": "Girar el disco", "fr": "Faire tourner le disque", "pt": "Girar o disco"},
+      "sheets": ["disc"]
+    }
+  ],
+  "sheets": [
+    {"id": "disc", "label": {"en": "Disc", "es": "Disco", "fr": "Disque", "pt": "Disco"}, "stock": "cardstock-250"}
+  ],
+  "parameters": [
+    {
+      "id": "design", "type": "select",
+      "label": {"en": "Pictures", "es": "Dibujos", "fr": "Images", "pt": "Desenhos"},
+      "default": "bird-cage",
+      "options": [
+        {"value": "bird-cage", "label": {"en": "Bird and cage", "es": "Pájaro y jaula", "fr": "Oiseau et cage", "pt": "Pássaro e gaiola"}},
+        {"value": "fish-bowl", "label": {"en": "Fish and bowl", "es": "Pez y pecera", "fr": "Poisson et bocal", "pt": "Peixe e aquário"}},
+        {"value": "flower-pot", "label": {"en": "Flower and pot", "es": "Flor y maceta", "fr": "Fleur et pot", "pt": "Flor e vaso"}}
+      ]
+    },
+    {
+      "id": "diameter", "type": "slider", "unit": "mm",
+      "label": {"en": "Disc diameter (mm)", "es": "Diámetro del disco (mm)", "fr": "Diamètre du disque (mm)", "pt": "Diâmetro do disco (mm)"},
+      "default": 90, "min": 50, "max": 200, "step": 1
+    },
+    {
+      "id": "stock", "type": "select",
+      "label": {"en": "Card", "es": "Cartulina", "fr": "Carton", "pt": "Cartolina"},
+      "default": "cardstock-250",
+      "options": [
+        {"value": "cardstock-250", "label": {"en": "Card 250 g/m²", "es": "Cartulina 250 g/m²", "fr": "Bristol 250 g/m²", "pt": "Cartolina 250 g/m²"}},
+        {"value": "cardstock-300", "label": {"en": "Card 300 g/m²", "es": "Cartulina 300 g/m²", "fr": "Bristol 300 g/m²", "pt": "Cartolina 300 g/m²"}},
+        {"value": "cardstock-160", "label": {"en": "Light card 160 g/m²", "es": "Cartulina ligera 160 g/m²", "fr": "Bristol léger 160 g/m²", "pt": "Cartolina leve 160 g/m²"}}
+      ]
+    }
+  ],
+  "presets": [
+    {"id": "fish", "label": {"en": "Fish and bowl", "es": "Pez y pecera", "fr": "Poisson et bocal", "pt": "Peixe e aquário"}, "values": {"design": "fish-bowl"}},
+    {"id": "flower", "label": {"en": "Flower and pot, large", "es": "Flor y maceta, grande", "fr": "Fleur et pot, grand", "pt": "Flor e vaso, grande"}, "values": {"design": "flower-pot", "diameter": 120}}
+  ],
+  "controls": [
+    {"id": "flip", "kind": "angle", "label": {"en": "Flip the disc", "es": "Girar el disco", "fr": "Faire tourner le disque", "pt": "Girar o disco"}, "min": 0, "max": 360, "default": 0, "unit": "deg"}
+  ],
+  "export_formats": ["svg", "dxf", "pdf", "hpgl", "fold", "glb"],
+  "stock": {"default": "cardstock-250", "alternatives": ["cardstock-300", "cardstock-160"]},
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "toy",
+    "kernel": "sheet",
+    "capabilities": {"previewable": true, "turns_continuously": true, "printed_faces": true},
+    "societal_benefit": {
+      "en": "The simplest animation machine: two pictures and a twirl show how the eye blends images, the idea behind film.",
+      "es": "La máquina de animación más sencilla: dos dibujos y un giro muestran cómo el ojo funde imágenes, la idea detrás del cine.",
+      "fr": "La plus simple des machines d'animation : deux images et une rotation montrent comment l'œil fond les images, l'idée derrière le cinéma.",
+      "pt": "A máquina de animação mais simples: dois desenhos e um giro mostram como o olho funde imagens, a ideia por trás do cinema."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}
