@@ -38,8 +38,8 @@ COLOURS = {"cardstock-160": "#1d1d1f", "copy-80": "#1d1d1f", "kami": "#1d1d1f",
 
 motif = str(PARAM(lambda: motif, "urn"))
 cutout = str(PARAM(lambda: cutout, "silhouette"))
-width = clamp(PARAM(lambda: width, 150.0), 80.0, 300.0)
-height = clamp(PARAM(lambda: height, 200.0), 100.0, 400.0)
+width = clamp(PARAM(lambda: width, 150.0), 120.0, 300.0)
+height = clamp(PARAM(lambda: height, 200.0), 120.0, 400.0)
 stock = str(PARAM(lambda: stock, "cardstock-160"))
 if motif not in ("urn", "tree", "butterfly"):
     raise ValueError(f"motif {motif!r} must be urn, tree or butterfly")
