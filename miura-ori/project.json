@@ -1,6 +1,6 @@
 {
   "project": {
-    "name": "Miura-ori",
+    "name": {"en": "Miura-ori", "es": "Miura-ori", "fr": "Miura-ori", "pt": "Miura-ori"},
     "slug": "miura-ori",
     "version": "0.1.0",
     "engine": "pliego",
