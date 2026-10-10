@@ -1,0 +1,22 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-crown",
+  "title": {"en": "Paper crown", "es": "Corona de papel", "fr": "Couronne en papier", "pt": "Coroa de papel"},
+  "summary": {
+    "en": "A band of card with zigzag points, battlements or scallops along its top edge, rolled into a ring and glued with a plain overlap.",
+    "es": "Una banda de cartulina con picos en zigzag, almenas u ondas en el borde superior, enrollada en un aro y pegada con un traslape liso.",
+    "fr": "Un bandeau de bristol à pointes en zigzag, créneaux ou festons sur le bord supérieur, roulé en anneau et collé par un recouvrement uni.",
+    "pt": "Uma faixa de cartão com pontas em zigue-zague, ameias ou ondas na borda superior, enrolada num aro e colada com uma sobreposição lisa."
+  },
+  "article": {
+    "path": "paper-crown/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary celebration object, in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Christmas_cracker"
+  ],
+  "related": {"objects": ["pliego/party-hat", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}

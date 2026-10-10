@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/quilling",
+  "title": {"en": "Quilling", "es": "Filigrana de papel (quilling)", "fr": "Paperolles (quilling)", "pt": "Quilling (filigrana de papel)"},
+  "summary": {
+    "en": "Paper filigree: a narrow strip rolled on a slotted tool into a tight coil, released into a loose coil, pinched into a teardrop or a marquise, or left open as a scroll.",
+    "es": "Filigrana de papel: una tira angosta enrollada en una herramienta ranurada hasta formar una espiral cerrada, soltada en una espiral abierta, pellizcada en gota o en ojo, o dejada abierta como voluta.",
+    "fr": "Le papier filigrané : une bande étroite roulée sur un outil fendu en rouleau serré, relâchée en spirale lâche, pincée en goutte ou en œil, ou laissée ouverte en volute.",
+    "pt": "Filigrana de papel: uma tira estreita enrolada numa ferramenta com fenda até virar um rolinho fechado, solta numa espiral aberta, beliscada em gota ou em olho, ou deixada aberta como arabesco."
+  },
+  "article": {
+    "path": "quilling/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "12th–16th-century religious craft, fashionable in 18th–19th-century England, in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Quilling",
+    "https://origami-resource-center.com/quilling-instructions/"
+  ],
+  "related": {"objects": ["pliego/paper-beads", "pliego/paper-rose"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}
