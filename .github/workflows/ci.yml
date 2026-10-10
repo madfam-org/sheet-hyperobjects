@@ -24,10 +24,10 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA: the head of draft PR
-  # madfam-org/hyperobjects-spec#60 (pliego-spec, sheet-manifest schema) until it lands on the keystone's main;
-  # re-pin to the merge commit then.
-  SPEC_PIN: "643117f49102520ebb11796761760d01561187d9"
+  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA on its main: the merge of
+  # madfam-org/hyperobjects-spec#60 (pliego-spec 0.12.0: sheet-manifest schema, the sheet-document contract
+  # vendored from Pliego main, material_ref open to the sheet-behaviour reference).
+  SPEC_PIN: "ab589994cc91b45a6ad27afe342de3eba961e2ff"
   # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
   # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
   PLIEGO_PIN: "6b6243a7d96d236d1fe48f147415f308214f21a8"
