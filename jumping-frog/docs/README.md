@@ -36,12 +36,26 @@ The card is `W × H` (3 × 5 in by default). Its top `W × W` square carries the
 The program is `kinematic`, 18 steps: crease the X (fold and unfold, twice), crease the line
 through `O` (fold and unfold), collapse the head in six rigid states, fold the front legs, the
 sides, the bottom up and the pleat back down. Then the pleat opens by `spring` degrees so the frog
-sits on it, and finally it is pressed nearly flat.
+sits on it, and finally it is pressed nearly flat. With `spring` at 0 the pleat has nothing to
+open, so that step is left out.
 
-Every state is an exact rigid state: the worst loop-closure residual over the program is about
-2 × 10⁻⁶ mm, which is the kernel's grid snapping. The collapse is not linear in the fold angles: a
-straight blend between two of its states misses closure by up to 1.1 mm on the default card. The
-cartridge prints both figures.
+- **Flat folds.** Every fold is an operation of `pliego.FoldProgram` on a layer-ordered flat state.
+  After each one the kernel checks the layer order (taco and tortilla conditions, transitivity) and
+  Kawasaki and Maekawa at every vertex. The crease pattern is the final flat state unfolded.
+- **The head is one vertex collapse** (`pliego.flatvertex.collapse`). The two diagonals fold
+  valley and the line through `O` mountain, all at once; the kernel solves the layer order and
+  checks every ray ends with its sign. The six states the program shows are even steps along the
+  kernel's rigid path, which follows the straight line from start to end in fold-angle space,
+  projected onto the states that close.
+- **The spring and the press are 3-D hinge poses.** The bottom flap turns about the bottom-up
+  crease and the pleat's flap about the pleat's crease (`FoldProgram.hinge`), with every layer
+  of each flap.
+- **Closure.** Every state is an exact rigid state: the worst loop-closure residual over the program
+  is below 10⁻⁶ mm (the step angles are written to six decimals). The collapse is not linear
+  in the fold angles: a straight blend between two of its states misses closure by up to
+  1.1 mm on the default card. The cartridge prints both figures.
+- **The pattern.** Each crease's fold angle in the pattern is the flat-folded one (±180°); the
+  sequence and the `folded` target carry the pleat's open and pressed angles.
 
 **The jump needs physics.** Pressing stores elastic energy in the pleat's creases, and the hop is
 that energy released against the frog's weight and the table. The studio's preview is kinematic
