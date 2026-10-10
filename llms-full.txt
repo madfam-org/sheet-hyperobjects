@@ -1,0 +1,53 @@
+# sheet-hyperobjects: full context for coding agents
+
+> Last Updated: 2026-10-10
+>
+> Boundary checkpoint (2026-10-10): public repository. Operational detail (topology, secrets,
+> runbooks, people) lives in MADFAM's private ops repository under the repo-boundary contract
+> (docs/PUBLIC_REPO_BOUNDARY.md). Never copy it here.
+
+## What this is
+
+The commons of sheet hyperobjects. A sheet object's source is its **flat sheet** (outline, cuts,
+creases — mountain, valley, score, perforation — and glue tabs) plus its **fold program**; every
+3-D state is derived from them. The cartridge's generator (`main.py`) writes a sheet document
+(FOLD 1.2 plus the `pliego:` namespace, the contract in Pliego's `docs/spec/v1/sheet-document.md`).
+Pliego's engine animates it with the physics of a real paper stock (Pliego's `materials/*`).
+
+## Cartridge contract
+
+- Layout: `<slug>/main.py`, `<slug>/project.json`, `<slug>/docs/README.md`, at the repository root.
+- Slugs: `^[a-z0-9]+(-[a-z0-9]+)*$`, 2–80 characters, permanent once landed.
+- Manifest: validated by `pliego-spec check cartridge <slug>` from hyperobjects-spec at a pinned SHA.
+- Licence: `project.attribution.license` == `hyperobject.commons_license` == `CERN-OHL-W-2.0`
+  (owner ruling, 2026-10-10). No per-cartridge licence files.
+- Lineage: `project.attribution.lineage[]` required (empty = original work).
+- i18n: every label object carries `en`, `es`, `fr`, `pt`.
+- Interfaces: `spine`/`gutter`, `glue_flap` ↔ `glue_zone`, `tab` ↔ `slot`, `hinge`, `page_edge`,
+  `pivot` (matched to a Yantra4D brad through `hardware_ref`), `track`.
+
+## Classes (the launch ladder)
+
+1. Techniques (page turn, folds, reverse folds, squash, petal, rabbit ear, pleat, tab-and-slot,
+   glue flap, score, perforation). 2. Bases. 3. Traditional models (attributed to tradition).
+4. Tessellations and engineering origami. 5. Kirigami. 6. Papercut traditions (community credit).
+7. Paper engineering (pop-up mechanisms). 8. Book structures. 9. Flexagons and toys.
+10. Dioramas (compositions through interfaces).
+
+## Heritage and provenance
+
+Traditional models cite sources and are credited to their tradition; papercut traditions credit
+their communities (papel picado: San Salvador Huixcolotla, Puebla; amate: the Otomí of San Pablito,
+Pahuatlán, Puebla). Modern designers' crease patterns are copyrighted and never used.
+
+## Process
+
+One agent per slug; the coordinator alone writes indexes and only when landing a passing cartridge;
+the coordinator moves Pliego's pin to this repository after these lanes are green. Third-party
+contributions wait on the CLA-vs-DCO ruling.
+
+## CI
+
+GitHub-hosted `ubuntu-24.04`, actions pinned by SHA, `contents: read`. Lanes: triple, manifests
+(`pliego-spec` at `SPEC_PIN`), render (`pliego-kernel` at `PLIEGO_PIN`), byte and file-size gates.
+An unset pin prints `skip: <PIN> not set`.
