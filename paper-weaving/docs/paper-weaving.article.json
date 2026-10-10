@@ -1,0 +1,39 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-weaving",
+  "title": {"en": "Paper weaving", "es": "Tejido de papel", "fr": "Tissage de papier", "pt": "Tecelagem de papel"},
+  "summary": {
+    "en": "Strips of paper woven over and under: a mat in plain, twill or basket weave, and the Danish and Scandinavian woven heart basket. Every crossing is a contact, one strip above the other.",
+    "es": "Tiras de papel tejidas por encima y por debajo: una esterilla en tafetán, sarga o panamá, y el corazón tejido de Dinamarca y Escandinavia. Cada cruce es un contacto, una tira sobre la otra.",
+    "fr": "Des bandes de papier tissées dessus-dessous : une natte en toile, sergé ou natté, et le cœur tressé du Danemark et de Scandinavie. Chaque croisement est un contact, une bande au-dessus de l'autre.",
+    "pt": "Tiras de papel tecidas por cima e por baixo: uma esteira em tafetá, sarja ou panamá, e o coração trançado da Dinamarca e da Escandinávia. Cada cruzamento é um contato, uma tira sobre a outra."
+  },
+  "article": {
+    "path": "paper-weaving/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "nineteenth century to present (woven hearts); strip weaving is a traditional craft",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Woven paper hearts (julehjerter)",
+    "regions": ["Denmark", "the Nordic countries", "northern Germany"],
+    "custodians": ["The households and schools of Denmark and the Nordic countries that make woven hearts at Christmas"],
+    "note": {
+      "en": "The heart's geometry is computed by this cartridge; the tradition and its credit belong to the Danish and Nordic households that keep it.",
+      "es": "La geometría del corazón la calcula este cartucho; la tradición y su crédito pertenecen a los hogares daneses y nórdicos que la conservan.",
+      "fr": "La géométrie du cœur est calculée par cette cartouche ; la tradition et son crédit appartiennent aux foyers danois et nordiques qui la perpétuent.",
+      "pt": "A geometria do coração é calculada por este cartucho; a tradição e o seu crédito pertencem aos lares dinamarqueses e nórdicos que a mantêm."
+    }
+  },
+  "excludes": [
+    "Any published woven-heart or weaving pattern: every piece and strip is generated geometry",
+    "The topological threading of strips and loops: the program sets the woven layer order, it does not simulate threading"
+  ],
+  "sources": [
+    "Wikipedia, «Pleated Christmas hearts», https://en.wikipedia.org/wiki/Pleated_Christmas_hearts",
+    "Wikipedia (Danish), «Julehjerte», https://da.wikipedia.org/wiki/Julehjerte",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §4 and §6"
+  ],
+  "related": {"objects": ["pliego/tab-and-slot", "pliego/leporello"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}
+}

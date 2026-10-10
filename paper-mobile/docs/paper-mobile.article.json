@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-mobile",
+  "title": {"en": "Paper mobile", "es": "Móvil de papel", "fr": "Mobile en papier", "pt": "Móbile de papel"},
+  "summary": {
+    "en": "A balanced hanging mobile of card shapes on threads and scored card arms; every arm hangs from a balance point computed from the areas and centroids below it.",
+    "es": "Un móvil colgante y equilibrado de figuras de cartulina en hilos y brazos de cartulina marcada; cada brazo cuelga de un punto de equilibrio calculado a partir de las áreas y los centroides que tiene debajo.",
+    "fr": "Un mobile suspendu et équilibré, fait de formes en bristol sur des fils et de bras en bristol rainé ; chaque bras pend à un point d'équilibre calculé à partir des aires et des centroïdes qu'il porte.",
+    "pt": "Um móbile pendurado e equilibrado, feito de formas de cartão em fios e braços de cartão vincado; cada braço pende de um ponto de equilíbrio calculado a partir das áreas e dos centroides abaixo dele."
+  },
+  "article": {
+    "path": "paper-mobile/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "art form since the 1930s; in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Mobile_(sculpture)",
+    "https://en.wikipedia.org/wiki/Lever"
+  ],
+  "related": {"objects": ["pliego/papel-picado-banner"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}

@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-doll-chain",
+  "title": {
+    "en": "Paper doll chain",
+    "es": "Cadena de muñecos de papel",
+    "fr": "Farandole de papier",
+    "pt": "Corrente de bonecos de papel"
+  },
+  "summary": {
+    "en": "Accordion fold-and-cut: pleat a strip, cut one figure through every layer, and it opens into a chain of figures holding hands. Original person, dress and heart figures, three to ten panels.",
+    "es": "Doblar en acordeón y cortar: pliega una tira, corta una figura a través de todas las capas y se abre en una cadena de figuras tomadas de la mano. Figuras originales de persona, vestido y corazón, de tres a diez paneles.",
+    "fr": "Pliage en accordéon et découpe : pliez une bande, découpez une figure à travers toutes les couches, et elle s'ouvre en une farandole de figures qui se tiennent la main. Figures originales de personnage, de robe et de cœur, de trois à dix panneaux.",
+    "pt": "Dobra em sanfona e corte: dobre uma tira, corte uma figura através de todas as camadas e ela abre numa corrente de figuras de mãos dadas. Figuras originais de pessoa, vestido e coração, de três a dez painéis."
+  },
+  "article": {
+    "path": "paper-doll-chain/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "generic technique",
+  "sources": [
+    "E. D. Demaine, M. L. Demaine and A. Lubiw, Folding and cutting paper, JCDCG 98, LNCS 1763 (2000)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/mirror-silhouette",
+      "pliego/leporello"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

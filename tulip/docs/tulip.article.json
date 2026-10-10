@@ -1,0 +1,44 @@
+{
+  "spec_version": 1,
+  "object": "pliego/tulip",
+  "title": {
+    "en": "Tulip",
+    "es": "Tulipán",
+    "fr": "Tulipe",
+    "pt": "Tulipa"
+  },
+  "summary": {
+    "en": "The traditional flat tulip as a two-sheet assembly: a blossom with two petals and a stem with a leaf, each folded from its own square by simple folds solved as exact rigid motions, then slid together.",
+    "es": "El tulipán plano tradicional como ensamble de dos hojas: una flor con dos pétalos y un tallo con hoja, cada uno doblado de su propio cuadrado con pliegues simples resueltos como movimientos rígidos exactos, y luego unidos deslizándolos.",
+    "fr": "La tulipe plate traditionnelle en assemblage de deux feuilles : une fleur à deux pétales et une tige avec sa feuille, chacune pliée dans son propre carré par des plis simples résolus en mouvements rigides exacts, puis glissées l'une dans l'autre.",
+    "pt": "A tulipa plana tradicional como montagem de duas folhas: uma flor com duas pétalas e um caule com folha, cada um dobrado do seu próprio quadrado com dobras simples resolvidas como movimentos rígidos exatos, e depois encaixados."
+  },
+  "article": {
+    "path": "tulip/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional model, in continuous use",
+  "heritage": false,
+  "sources": [
+    "The easy tulip blossom (a triangle with its corners folded up as petals) as published for beginners, e.g. Instructables, «Origami Tulip (Easy)», https://www.instructables.com/Origami-Tulip-Easy",
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011 (the kite base)",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.4–§5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/kite-base",
+      "pliego/waterbomb-base"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

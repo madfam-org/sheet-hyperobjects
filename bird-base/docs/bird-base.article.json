@@ -1,0 +1,47 @@
+{
+  "spec_version": 1,
+  "object": "pliego/bird-base",
+  "title": {
+    "en": "Bird base",
+    "es": "Base de pájaro",
+    "fr": "Base de l'oiseau",
+    "pt": "Base do pássaro"
+  },
+  "summary": {
+    "en": "The base of the crane: a preliminary base petal-folded front and back. Five interior vertices; the collapse and both petal folds run along exact rigid paths from the kernel's motion solver.",
+    "es": "La base de la grulla: una base preliminar con pliegue pétalo delante y detrás. Cinco vértices interiores; el colapso y los dos pliegues pétalo siguen trayectorias rígidas exactas del solucionador de movimiento del núcleo.",
+    "fr": "La base de la grue : une base préliminaire pliée en pétale devant et derrière. Cinq sommets intérieurs ; l'effondrement et les deux plis pétale suivent des trajectoires rigides exactes du solveur de mouvement du noyau.",
+    "pt": "A base do grou: uma base preliminar com dobra pétala na frente e atrás. Cinco vértices interiores; o colapso e as duas dobras pétala seguem trajetórias rígidas exatas do solucionador de movimento do núcleo."
+  },
+  "article": {
+    "path": "bird-base/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020: Kawasaki's and Maekawa's theorems",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/preliminary-base",
+      "pliego/petal-fold",
+      "pliego/paper-crane",
+      "pliego/flapping-bird",
+      "pliego/frog-base"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

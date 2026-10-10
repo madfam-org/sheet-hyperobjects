@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-beads",
+  "title": {"en": "Paper beads", "es": "Cuentas de papel", "fr": "Perles en papier", "pt": "Contas de papel"},
+  "summary": {
+    "en": "A long strip of paper wound round a needle from its wide end to its tip: a long triangle gives a bead that tapers to both ends, a rectangle a tube, and a strip with bowed sides, computed for the paper and needle, an oval.",
+    "es": "Una tira larga de papel enrollada en una aguja desde su extremo ancho hasta la punta: un triángulo largo da una cuenta que se adelgaza hacia los dos extremos, un rectángulo da un tubo, y una tira de lados abombados, calculada para el papel y la aguja, da un óvalo.",
+    "fr": "Une longue bande de papier enroulée autour d'une aiguille, du bout large à la pointe : un long triangle donne une perle effilée aux deux bouts, un rectangle un tube, et une bande aux bords bombés, calculée pour le papier et l'aiguille, un ovale.",
+    "pt": "Uma tira comprida de papel enrolada numa agulha da ponta larga até a ponta fina: um triângulo comprido dá uma conta que afina nas duas pontas, um retângulo dá um tubo, e uma tira de lados abaulados, calculada para o papel e a agulha, dá um oval."
+  },
+  "article": {
+    "path": "paper-beads/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "Victorian parlour craft, revived and in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://i-beads.co.uk/blogs/blog/38",
+    "https://www.thebeadchest.com/pages/bead-types/paper-beads"
+  ],
+  "related": {"objects": ["pliego/quilling", "pliego/party-hat"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}

@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/deckle-tear",
+  "title": {"en": "Torn and deckle edges", "es": "Bordes rasgados y de barba", "fr": "Bords déchirés et à barbes", "pt": "Bordas rasgadas e de barba"},
+  "summary": {
+    "en": "A strip torn off a sheet three ways (folded and creased first, freely, or against a ruler); the torn outline follows the paper's fibre length and grain, and the strip lifts away.",
+    "es": "Una tira que se desprende de una hoja de tres maneras (doblada y marcada antes, a mano libre o contra una regla); el contorno rasgado sigue el largo de fibra y el hilo del papel, y la tira se levanta y se aparta.",
+    "fr": "Une bande détachée d'une feuille de trois façons (pliée et marquée d'abord, à main levée ou contre une règle) ; le contour déchiré suit la longueur des fibres et le sens du papier, et la bande se soulève et s'écarte.",
+    "pt": "Uma tira destacada de uma folha de três maneiras (dobrada e vincada antes, à mão livre ou contra uma régua); o contorno rasgado segue o comprimento de fibra e o sentido do papel, e a tira se ergue e se afasta."
+  },
+  "article": {
+    "path": "deckle-tear/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional technique, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Deckle edge», https://en.wikipedia.org/wiki/Deckle_edge",
+    "British Letterpress, «Machine or Grain Direction in Paper», https://britishletterpress.co.uk/letterpress-guides/printing/paper/machine-or-grain-direction-in-paper/",
+    "Pliego research memo, «Paper physics» (docs/research/paper-physics-memo.md), material table",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6 and §5.8"
+  ],
+  "related": {"objects": ["pliego/perforated-tear", "pliego/reveal-block", "pliego/crease-and-unfold"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}
+}

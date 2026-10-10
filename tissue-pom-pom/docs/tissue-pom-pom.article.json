@@ -1,0 +1,27 @@
+{
+  "spec_version": 1,
+  "object": "pliego/tissue-pom-pom",
+  "title": {"en": "Tissue pom-pom", "es": "Pompón de papel de china", "fr": "Pompon en papier de soie", "pt": "Pompom de papel de seda"},
+  "summary": {
+    "en": "A stack of tissue sheets pleated together like a fan, tied at the centre, its ends trimmed round or pointed, then pulled apart into a ball. The pleating plays exactly; the fluffing into a ball is physics.",
+    "es": "Una pila de hojas de papel de china dobladas juntas en acordeón, amarradas al centro, con las puntas recortadas redondas o en pico, y luego abiertas hasta formar una bola. El plisado se reproduce de forma exacta; el esponjado de la bola es física.",
+    "fr": "Une pile de feuilles de papier de soie pliées ensemble en accordéon, nouées au centre, aux extrémités taillées en rond ou en pointe, puis écartées en boule. Le plissage se joue exactement ; le gonflage en boule relève de la physique.",
+    "pt": "Uma pilha de folhas de papel de seda dobradas juntas em sanfona, amarradas no centro, com as pontas aparadas redondas ou em bico, e depois abertas até formar uma bola. O plissado se reproduz de forma exata; o afofamento da bola é física."
+  },
+  "article": {
+    "path": "tissue-pom-pom/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary celebration decoration in papel de china",
+  "heritage": false,
+  "excludes": [
+    "The tie (thread wound round the stick) and the fluffing of the layers into a ball: they bend and crush the tissue, so they are described and left to the physics engine",
+    "Any claim that the pom-pom is a documented Mexican tradition of its own: the sources document papel de china festive decoration in Mexico and the pom-pom method, not the pom-pom's origin"
+  ],
+  "sources": [
+    "https://www.mexicodesconocido.com.mx/papel-china.html",
+    "https://www.elcorteingles.es/contenidos/ninos/pompon-papel-seda-casero/"
+  ],
+  "related": {"objects": ["pliego/papel-picado-banner", "pliego/paper-flowers"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C, sub-lane C-B); awaiting a human editorial pass."}
+}

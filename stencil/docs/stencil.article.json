@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/stencil",
+  "title": {
+    "en": "Stencil",
+    "es": "Plantilla de estarcido",
+    "fr": "Pochoir",
+    "pt": "Estêncil"
+  },
+  "summary": {
+    "en": "A cut stencil plate for any text in A–Z and 0–9. The letters are built from separate strokes with paper bridges between them, so the middles of A, B, O, P and R stay attached. Every bridge is checked against the material's minimum feature.",
+    "es": "Una plantilla de estarcido cortada para cualquier texto con A–Z y 0–9. Las letras se forman con trazos separados por puentes de material, así que el centro de la A, la B, la O, la P y la R no se cae. Cada puente se verifica contra el detalle mínimo del material.",
+    "fr": "Une plaque de pochoir découpée pour tout texte en A–Z et 0–9. Les lettres sont faites de traits séparés par des ponts de matière, si bien que le centre des A, B, O, P et R reste attaché. Chaque pont est vérifié contre le détail minimal du matériau.",
+    "pt": "Uma placa de estêncil cortada para qualquer texto com A–Z e 0–9. As letras são formadas por traços separados por pontes de material, por isso o miolo do A, do B, do O, do P e do R não cai. Cada ponte é verificada contra o detalhe mínimo do material."
+  },
+  "article": {
+    "path": "stencil/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "generic technique",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Stencil"
+  ],
+  "related": {
+    "objects": [
+      "pliego/stack-cut-panel",
+      "pliego/papel-picado-banner"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

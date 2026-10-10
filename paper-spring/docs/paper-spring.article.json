@@ -1,0 +1,22 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-spring",
+  "title": {"en": "Paper spring (witch's ladder)", "es": "Resorte de papel (escalera de bruja)", "fr": "Ressort en papier (escalier de sorcière)", "pt": "Mola de papel (escada de bruxa)"},
+  "summary": {
+    "en": "Two strips glued crosswise and folded over each other in turn: a stack that stretches by itself when let go and closes when squashed. Square or triangular section.",
+    "es": "Dos tiras pegadas en cruz y dobladas una sobre otra por turnos: una pila que se estira sola al soltarla y se cierra al aplastarla. Sección cuadrada o triangular.",
+    "fr": "Deux bandes collées en croix et repliées l'une sur l'autre à tour de rôle : une pile qui s'allonge toute seule quand on la lâche et se referme quand on l'écrase. Section carrée ou triangulaire.",
+    "pt": "Duas tiras coladas em cruz e dobradas uma sobre a outra à vez: uma pilha que estica sozinha quando é solta e fecha quando é esmagada. Secção quadrada ou triangular."
+  },
+  "article": {
+    "path": "paper-spring/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional (first clear record: Amsterdam, 1863)",
+  "heritage": true,
+  "sources": [
+    "D. Mitchell, The Public Paperfolding History Project, History of the Witch's Ladder — https://origamiheaven.com/historyofwitchsladder.htm"
+  ],
+  "related": {"objects": ["pliego/leporello", "pliego/accordion-fan", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}

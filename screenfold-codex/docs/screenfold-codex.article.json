@@ -1,0 +1,27 @@
+{
+  "spec_version": 1,
+  "object": "pliego/screenfold-codex",
+  "title": {"en": "Screenfold codex", "es": "Códice biombo", "fr": "Codex en paravent", "pt": "Códice em biombo"},
+  "summary": {
+    "en": "The book form of Mesoamerica: a long amate strip folded back and forth like a screen, its leaves coated white on both sides; a blank structure, no historical imagery reproduced.",
+    "es": "La forma del libro mesoamericano: una tira larga de amate plegada en zigzag como un biombo, con las hojas cubiertas de blanco por ambos lados; una estructura en blanco, sin reproducir ninguna imagen histórica.",
+    "fr": "La forme du livre mésoaméricain : une longue bande d'amate pliée en zigzag comme un paravent, ses feuillets enduits de blanc des deux côtés ; une structure vierge, sans aucune image historique reproduite.",
+    "pt": "A forma do livro mesoamericano: uma tira longa de amate dobrada em zigue-zague como um biombo, com as folhas cobertas de branco dos dois lados; uma estrutura em branco, sem reproduzir nenhuma imagem histórica."
+  },
+  "article": {
+    "path": "screenfold-codex/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "pre-Columbian Mesoamerica to the early colonial period; amate papermaking continues today",
+  "heritage": true,
+  "sources": [
+    "Wikipedia, «Mesoamerican codices», https://en.wikipedia.org/wiki/Mesoamerican_codices",
+    "Wikipedia, «Amate», https://en.wikipedia.org/wiki/Amate",
+    "Wikipedia, «Dresden Codex», https://en.wikipedia.org/wiki/Dresden_Codex",
+    "Smarthistory, «Codex Borgia» (LibreTexts edition), https://human.libretexts.org/Bookshelves/Art/Art_History_and_Theory/SmartHistory_of_Art_2e/SmartHistory_of_Art_XIa_-_The_Americas_before_1500/03%3A_Mesoamerica/3.14%3A_Aztec_(Mexica)_art/3.14.12%3A_Codex_Borgia"
+  ],
+  "related": {
+    "objects": ["pliego/leporello", "pliego/codex-signatures", "pliego/papel-picado-banner"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass, including a heritage review."}
+}

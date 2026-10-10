@@ -1,0 +1,24 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-bag",
+  "title": {"en": "Paper bag", "es": "Bolsa de papel", "fr": "Sac en papier", "pt": "Saco de papel"},
+  "summary": {
+    "en": "The flat-bottomed paper bag with side gussets, from one sheet of kraft, folded from flat to open by an exact rigid program.",
+    "es": "La bolsa de papel de fondo plano con fuelles laterales, hecha de una sola hoja de kraft y plegada de plana a abierta con una secuencia rígida exacta.",
+    "fr": "Le sac en papier à fond plat et soufflets latéraux, tiré d'une seule feuille de kraft et plié de la feuille au sac ouvert par une séquence rigide exacte.",
+    "pt": "O saco de papel de fundo chato com foles laterais, feito de uma única folha de kraft e dobrado de plano a aberto por uma sequência rígida exata."
+  },
+  "article": {
+    "path": "paper-bag/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "1871 to present",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Margaret E. Knight», https://en.wikipedia.org/wiki/Margaret_E._Knight",
+    "Lemelson-MIT, «Margaret Knight», https://lemelson.mit.edu/resources/margaret-knight",
+    "Wikipedia, «Charles Stilwell», https://en.wikipedia.org/wiki/Charles_Stilwell"
+  ],
+  "related": {"objects": ["pliego/folding-carton", "pliego/envelope", "pliego/gift-wrap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·D); awaiting a human editorial pass."}
+}

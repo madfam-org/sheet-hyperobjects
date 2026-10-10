@@ -1,0 +1,27 @@
+{
+  "spec_version": 1,
+  "object": "pliego/modular-origami",
+  "title": {"en": "Modular origami", "es": "Origami modular", "fr": "Origami modulaire", "pt": "Origami modular"},
+  "summary": {
+    "en": "Interlocking-unit assemblies from generic units: a cube of six sleeve units, and a wreath and a crown of triangular units in the folk 3-D origami idiom; one unit folds step by step beside the finished object.",
+    "es": "Ensambles de unidades entrelazadas hechas con unidades genéricas: un cubo de seis unidades de funda, y una corona plana y una corona de pie de unidades triangulares al estilo popular del origami 3D; una unidad se dobla paso a paso junto al objeto terminado.",
+    "fr": "Des assemblages de modules imbriqués faits de modules génériques : un cube de six modules en fourreau, et une couronne à plat et une couronne debout de modules triangulaires dans l'idiome populaire de l'origami 3D ; un module se plie pas à pas à côté de l'objet fini.",
+    "pt": "Montagens de unidades encaixadas feitas de unidades genéricas: um cubo de seis unidades de luva, e uma guirlanda e uma coroa de unidades triangulares no estilo popular do origami 3D; uma unidade se dobra passo a passo ao lado do objeto pronto."
+  },
+  "article": {
+    "path": "modular-origami/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "modular origami recorded since 1734; the folk triangular-unit idiom in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Modular origami», https://en.wikipedia.org/wiki/Modular_origami",
+    "Wikipedia, «Chinese paper folding», https://en.wikipedia.org/wiki/Zhezhi",
+    "Pliego kernel (docs/strategy/kernel.md), simplefold and kinematics"
+  ],
+  "excludes": [
+    "Any named designer's unit (for example the Sonobe unit, Fuse units or the Jackson cube): both units are derived by this cartridge"
+  ],
+  "related": {"objects": ["pliego/valley-fold", "pliego/squash-fold"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}
+}

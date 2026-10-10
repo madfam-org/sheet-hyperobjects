@@ -1,0 +1,40 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-yarn",
+  "title": {"en": "Paper yarn, cord and rope", "es": "Hilo, cordón y cuerda de papel", "fr": "Fil, cordelette et corde de papier", "pt": "Fio, cordão e corda de papel"},
+  "summary": {
+    "en": "A narrow strip of paper twisted into yarn; two yarns plied into a cord, three into a rope. The twist is modelled as the strip winding round a tube, so it plays step by step and exactly.",
+    "es": "Una tira angosta de papel torcida hasta hacer hilo; dos hilos torcidos juntos dan un cordón y tres, una cuerda. La torsión se modela como la tira enrollada alrededor de un tubo, así que se reproduce paso a paso y de forma exacta.",
+    "fr": "Une bande étroite de papier tordue en fil ; deux fils retordus donnent une cordelette, trois une corde. La torsion est modélisée comme la bande enroulée autour d'un tube : elle se joue pas à pas et de façon exacte.",
+    "pt": "Uma tira estreita de papel torcida até virar fio; dois fios torcidos juntos dão um cordão e três, uma corda. A torção é modelada como a tira enrolada em volta de um tubo, de modo que se reproduz passo a passo e de forma exata."
+  },
+  "article": {
+    "path": "paper-yarn/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "paper thread: traditional (shifu, Japan) and contemporary",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Shifu (cloth woven from paper thread)",
+    "regions": ["Japan"],
+    "custodians": ["Shifu weavers of Japan"],
+    "note": {
+      "en": "The geometry is original MADFAM work (a strip wound round a tube); the paper-thread tradition and its credit belong to the shifu makers.",
+      "es": "La geometría es obra original de MADFAM (una tira enrollada alrededor de un tubo); la tradición del hilo de papel y su crédito pertenecen a quienes hacen shifu.",
+      "fr": "La géométrie est une œuvre originale de MADFAM (une bande enroulée autour d'un tube) ; la tradition du fil de papier et son crédit appartiennent aux artisans du shifu.",
+      "pt": "A geometria é obra original da MADFAM (uma tira enrolada em volta de um tubo); a tradição do fio de papel e o seu crédito pertencem a quem faz shifu."
+    }
+  },
+  "excludes": [
+    "The shifu process itself (cutting, rolling on a stone, separating, weaving): described with sources, not simulated",
+    "A solid, tightly rolled thread and each ply's own counter-twist: the model is a hollow, butt-wound tube"
+  ],
+  "sources": [
+    "https://www.emkp.org/discover-the-traditional-paper-textiles-of-japan-with-expert-kazuko-sato/",
+    "https://gethiroshima.com/?p=40197",
+    "https://en.wikipedia.org/wiki/Rope",
+    "https://en.wikipedia.org/wiki/Yarn"
+  ],
+  "related": {"objects": ["pliego/party-hat"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C, sub-lane C-B); awaiting a human editorial pass."}
+}

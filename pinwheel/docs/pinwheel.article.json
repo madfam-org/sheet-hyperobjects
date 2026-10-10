@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/pinwheel",
+  "title": {"en": "Pinwheel", "es": "Rehilete", "fr": "Moulinet", "pt": "Cata-vento"},
+  "summary": {
+    "en": "The traditional paper windmill: a square cut along its diagonals, each blade's corner curled to the centre and pinned to a stick; four or eight blades.",
+    "es": "El molinillo de papel tradicional: un cuadrado cortado por sus diagonales, la esquina de cada aspa curvada hasta el centro y clavada a un palito; cuatro u ocho aspas.",
+    "fr": "Le moulin à vent de papier traditionnel : un carré fendu le long de ses diagonales, le coin de chaque pale ramené au centre et épinglé sur un bâton ; quatre ou huit pales.",
+    "pt": "O cata-vento de papel tradicional: um quadrado cortado pelas diagonais, o canto de cada pá curvado até o centro e preso a uma vareta; quatro ou oito pás."
+  },
+  "article": {
+    "path": "pinwheel/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "folk toy, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Pinwheel (toy)», https://en.wikipedia.org/wiki/Pinwheel_(toy)",
+    "Te Rangi Hīroa, Samoan Material Culture (1930)"
+  ],
+  "related": {"objects": ["pliego/paper-helicopter", "pliego/paper-top"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}
