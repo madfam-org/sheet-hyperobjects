@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/cardboard-furniture",
+  "title": {"en": "Cardboard furniture", "es": "Muebles de cartón", "fr": "Mobilier en carton", "pt": "Móveis de cartão"},
+  "summary": {
+    "en": "Original slotted furniture in thick corrugated board — a stool and a side table — assembled without glue: two cross-halved legs and a top held by tabs in mortises, with the slots checked against the caliper and the parts laid out on a stock sheet. A prototype, with no load rating.",
+    "es": "Muebles ranurados originales de cartón corrugado grueso —un banco y una mesa auxiliar— armados sin pegamento: dos patas a media madera y una cubierta sujeta con espigas en mortajas, con las ranuras comprobadas contra el calibre y las piezas acomodadas en una hoja. Es un prototipo, sin capacidad de carga declarada.",
+    "fr": "Du mobilier original à fentes en carton ondulé épais — un tabouret et une table d'appoint — monté sans colle : deux pieds à mi-bois et un plateau tenu par des tenons dans des mortaises, avec les fentes vérifiées par rapport à l'épaisseur et les pièces imposées sur une feuille. Un prototype, sans charge admissible annoncée.",
+    "pt": "Móveis ranhurados originais de cartão canelado grosso — um banco e uma mesa de apoio — montados sem cola: duas pernas a meia-madeira e um tampo preso por espigas em encaixes, com as ranhuras verificadas contra a espessura e as peças dispostas numa folha. É um protótipo, sem capacidade de carga declarada."
+  },
+  "article": {
+    "path": "cardboard-furniture/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "board furniture since the mid-twentieth century; this design is new",
+  "sources": ["Wikipedia, Cardboard furniture", "Wikipedia, Halving joint", "Wikipedia, Mortise and tenon"],
+  "related": {"objects": ["pliego/slotted-dividers", "pliego/corrugated-board", "pliego/honeycomb-panel"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
