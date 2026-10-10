@@ -1,0 +1,29 @@
+{
+  "spec_version": 1,
+  "object": "pliego/saddle-stitch",
+  "title": {"en": "Saddle-stitched booklet", "es": "Cuadernillo engrapado a caballete", "fr": "Livret piqué à cheval", "pt": "Livreto com grampo canoa"},
+  "summary": {
+    "en": "The stapled booklet of nested folded sheets, with the creep of the inner sheets computed from the paper's caliper and trimmed off in advance, a computed imposition and the staples as joins.",
+    "es": "El cuadernillo engrapado de pliegos doblados uno dentro de otro, con el corrimiento de los pliegos interiores calculado con el calibre del papel y refinado de antemano, una imposición calculada y las grapas como uniones.",
+    "fr": "Le livret agrafé de feuilles pliées emboîtées, avec la chasse des feuilles intérieures calculée d'après l'épaisseur du papier et recoupée d'avance, une imposition calculée et les agrafes comme liens.",
+    "pt": "O livreto grampeado de folhas dobradas encaixadas umas nas outras, com o deslocamento das folhas internas calculado pela espessura do papel e refilado de antemão, uma imposição calculada e os grampos como uniões."
+  },
+  "article": {
+    "path": "saddle-stitch/docs/README.md",
+    "sections": ["What it is", "Geometry", "Creep (shingling)", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "industrial print finishing to the present; office booklet makers and long-reach staplers",
+  "heritage": false,
+  "sources": [
+    "Kodak workflow documentation, «Shingling the Page Images for Creep Compensation», https://workflowhelp.kodak.com/x/1QDTE",
+    "PrintPlanet forum, «Creep, how do you calculate it?», https://printplanet.com/threads/creep-how-do-you-calculate-it.19494/",
+    "Printivity, «What is Creep in a Saddle-Stitch Booklet?», https://www.printivity.com/insights/what-is-creep-in-a-saddle-stitch-booklet",
+    "4over4, «What a Saddle Stitched Booklet Is and Why Pages Come in Fours», https://v2.4over4.com/guide/what-is-a-saddle-stitched-booklet",
+    "Wikipedia, «Saddle stitch stapler», https://en.wikipedia.org/wiki/Saddle_stitch_stapler",
+    "Konica Minolta, AccurioPress C7100/C7090 user's guide, «Adjusting Booklet Finishing», https://manuals.konicaminolta.eu/ineo-plus-7100-7090/EN/contents/guide03_05_06.html"
+  ],
+  "related": {
+    "objects": ["pliego/pocket-zine", "pliego/page-turn", "pliego/leporello", "pliego/greeting-card"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}
