@@ -49,6 +49,9 @@ constraint, `length >= (pleats + 1) * (pleat_width + width)`, says so and the sc
 
 ## The fold program
 
+The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
+cartridge writes the document, and the engine is specified to compute the motion from it.
+
 Both techniques run in `physical` mode: hinges are driven by the hand, and the paper is paper.
 
 - **Pleat**: one step per pair, *Pleat k: valley, then mountain*, driving both lines to ±180°

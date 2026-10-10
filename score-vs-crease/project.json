@@ -10,10 +10,10 @@
     "version": "0.1.0",
     "engine": "pliego",
     "description": {
-      "en": "Two identical 300 g/m² cards folded side by side, one scored first and one not. The scored line is a weakened hinge that folds where it was told to; the plain one has to be forced through the full thickness of the card. Why every card fold is scored.",
-      "es": "Dos cartulinas idénticas de 300 g/m² dobladas lado a lado, una hendida antes y otra no. La línea hendida es una bisagra debilitada que se dobla justo donde se le indicó; la otra hay que forzarla a través de todo el grueso de la cartulina. Por qué todo doblez en cartulina se hiende.",
-      "fr": "Deux cartes identiques de 300 g/m² pliées côte à côte, l'une rainée au préalable, l'autre non. La ligne rainée est une charnière affaiblie qui plie là où on l'a décidé ; l'autre doit être forcée à travers toute l'épaisseur de la carte. Pourquoi on raine tout pli dans du bristol.",
-      "pt": "Dois cartões idênticos de 300 g/m² dobrados lado a lado, um vincado antes e o outro não. A linha vincada é uma dobradiça enfraquecida que dobra onde lhe foi indicado; a outra precisa ser forçada através de toda a espessura do cartão. Por que toda dobra em cartão é vincada."
+      "en": "Two identical 300 g/m² cards folded side by side, one scored first and one not. The scored line is a weakened hinge that folds where it was told to; the plain one has to be forced through the full thickness of the card. That is why every fold in card is scored.",
+      "es": "Dos cartulinas idénticas de 300 g/m² dobladas lado a lado, una hendida antes y otra no. La línea hendida es una bisagra debilitada que se dobla justo donde se le indicó; la otra hay que forzarla a través de todo el grueso de la cartulina. Por eso todo doblez en cartulina se hiende.",
+      "fr": "Deux cartes identiques de 300 g/m² pliées côte à côte, l'une rainée au préalable, l'autre non. La ligne rainée est une charnière affaiblie qui plie là où on l'a décidé ; l'autre doit être forcée à travers toute l'épaisseur de la carte. C'est pourquoi on raine tout pli dans du bristol.",
+      "pt": "Dois cartões idênticos de 300 g/m² dobrados lado a lado, um vincado antes e o outro não. A linha vincada é uma dobradiça enfraquecida que dobra onde lhe foi indicado; a outra precisa ser forçada através de toda a espessura do cartão. Por isso toda dobra em cartão é vincada."
     },
     "difficulty": "beginner",
     "tags": [
@@ -163,10 +163,10 @@
         "pt": "Ângulo da dobra (°)"
       },
       "tooltip": {
-        "en": "How far the fold goes: 180° is folded flat.",
-        "es": "Hasta dónde llega el doblez: 180° es doblado por completo, en plano.",
-        "fr": "Jusqu'où va le pli : 180° correspond à un pli complètement à plat.",
-        "pt": "Até onde vai a dobra: 180° é dobrada por completo, rente."
+        "en": "How far the fold goes: at 180° the paper is folded completely flat.",
+        "es": "Qué tanto se dobla: a 180° el papel queda doblado por completo y plano.",
+        "fr": "Jusqu'où va le pli : à 180° le papier est plié complètement à plat.",
+        "pt": "Quanto se dobra: a 180° o papel fica dobrado por completo e plano."
       },
       "default": 180,
       "min": 30,

@@ -11,7 +11,7 @@
     "engine": "pliego",
     "description": {
       "en": "Fold a line flat, press it, open it again: the paper remembers. Each crease is held past the stock's elastic limit and then released, and it relaxes to a rest angle instead of lying flat. That crease memory is what makes precreasing work.",
-      "es": "Se dobla una línea en plano, se marca y se vuelve a abrir: el papel recuerda. Cada pliegue se sostiene más allá del límite elástico del papel y luego se suelta, y se relaja hasta un ángulo de reposo en vez de quedar plano. Esa memoria del pliegue es lo que hace funcionar el premarcado.",
+      "es": "Se dobla el papel por una línea hasta dejarlo plano, se marca y se vuelve a abrir: el papel recuerda. Cada pliegue se sostiene más allá del límite elástico del papel y luego se suelta, y se relaja hasta un ángulo de reposo en vez de quedar plano. Esa memoria del pliegue es lo que hace funcionar el premarcado.",
       "fr": "On plie une ligne à plat, on la marque, on la rouvre : le papier s'en souvient. Chaque pli est maintenu au-delà de la limite élastique du papier puis relâché, et il revient à un angle de repos au lieu de se remettre à plat. Cette mémoire du pli est ce qui fait fonctionner le prémarquage.",
       "pt": "Dobra-se uma linha rente, vinca-se e abre-se de novo: o papel se lembra. Cada vinco é mantido além do limite elástico do papel e depois solto, e relaxa até um ângulo de repouso em vez de ficar plano. Essa memória do vinco é o que faz a pré-vincagem funcionar."
     },
@@ -129,7 +129,7 @@
       ],
       "tooltip": {
         "en": "Foil paper keeps almost any fold; kami and copy paper spring back part of the way.",
-        "es": "El papel foil conserva casi cualquier doblez; el kami y el bond regresan en parte.",
+        "es": "El papel foil conserva casi cualquier doblez; el kami y el bond se abren un poco al soltarlos.",
         "fr": "Le papier aluminium garde presque n'importe quel pli ; le kami et le papier ramette reviennent en partie.",
         "pt": "O papel laminado guarda quase qualquer dobra; o kami e o sulfite voltam em parte."
       }
@@ -145,7 +145,7 @@
       },
       "tooltip": {
         "en": "Each crease is folded, pressed and unfolded in turn.",
-        "es": "Cada pliegue se dobla, se marca y se desdobla por turno.",
+        "es": "Cada pliegue se dobla, se marca y se desdobla, uno tras otro.",
         "fr": "Chaque pli est plié, marqué puis déplié à son tour.",
         "pt": "Cada vinco é dobrado, marcado e desdobrado por vez."
       },
@@ -191,7 +191,7 @@
       },
       "tooltip": {
         "en": "How long the crease is held flat before it is released.",
-        "es": "Cuánto tiempo se sostiene el pliegue en plano antes de soltarlo.",
+        "es": "Cuánto tiempo se mantiene apretado el pliegue antes de soltarlo.",
         "fr": "Combien de temps le pli reste maintenu à plat avant d'être relâché.",
         "pt": "Quanto tempo o vinco é mantido rente antes de ser solto."
       },

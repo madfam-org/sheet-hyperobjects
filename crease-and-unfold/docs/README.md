@@ -28,6 +28,9 @@ splits each of them into two edges, and a fold step drives both halves of its li
 
 ## The fold program: fold, press, release
 
+The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
+cartridge writes the document, and the engine is specified to compute the motion from it.
+
 For each crease, in order, the program has three `physical` steps:
 
 1. **Valley-fold** the line to 180° (1.5 s). The engine drives the hinge with the crease stiffness

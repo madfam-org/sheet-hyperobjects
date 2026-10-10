@@ -23,7 +23,10 @@ fold and nothing to cut except the outline.
 The grain runs up the page (`grain_deg = 90`, long grain), as it does in a well-made book. Pages
 then bend easily around an axis parallel to the spine, which is the direction a page turns.
 
-## Mechanics: what the engine simulates
+## Mechanics: what the engine is asked to simulate
+
+The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
+cartridge writes the document, and the engine is specified to compute the motion from it.
 
 The cartridge builds its leaf with the kernel's book generator, `pliego.book.leaf`, which writes
 three things into the sheet document:

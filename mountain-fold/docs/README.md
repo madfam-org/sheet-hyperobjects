@@ -38,7 +38,10 @@ the valley fold's frame lifts it to +Y.
 appearance block). A mountain fold closes the two white back faces onto each other, so the red
 front stays outside. Choosing between the two decides which colour a finished model shows.
 
-## What the engine simulates
+## What the engine is asked to simulate
+
+The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
+cartridge writes the document, and the engine is specified to compute the motion from it.
 
 One physical step, *Mountain-fold along the diagonal*, drives the hinge to `−angle` with the
 crease stiffness raised by the hand factor. The flaps are physical paper with the stock's bending

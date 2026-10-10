@@ -1,0 +1,45 @@
+{
+  "spec_version": 1,
+  "object": "pliego/score-vs-crease",
+  "title": {
+    "en": "Score vs crease",
+    "es": "Hendida o sin hender",
+    "fr": "Rainé ou non rainé",
+    "pt": "Vincado ou não vincado"
+  },
+  "summary": {
+    "en": "Two identical 300 g/m² cards folded side by side, one scored first and one not: why every fold in card is scored.",
+    "es": "Dos cartulinas idénticas de 300 g/m² dobladas lado a lado, una hendida antes y otra no: por qué todo doblez en cartulina se hiende.",
+    "fr": "Deux cartes identiques de 300 g/m² pliées côte à côte, l'une rainée au préalable, l'autre non : pourquoi on raine tout pli dans du bristol.",
+    "pt": "Dois cartões idênticos de 300 g/m² dobrados lado a lado, um vincado antes e o outro não: por que toda dobra em cartão é vincada."
+  },
+  "article": {
+    "path": "score-vs-crease/docs/README.md",
+    "sections": [
+      "Geometry",
+      "What the engine is asked to simulate",
+      "Why heavy card cracks, and why a score helps",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional technique, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Lechenault, Thiria & Adda-Bedia 2014, Mechanical response of a creased sheet, PRL 112, 244301 — https://arxiv.org/abs/1404.1243",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §4 and §5",
+    "materials/cardstock-300/stock.json (Pliego stock card)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/crease-and-unfold",
+      "pliego/perforated-tear"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

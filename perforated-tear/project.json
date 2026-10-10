@@ -124,10 +124,10 @@
         "pt": "Curso do puxão (mm)"
       },
       "tooltip": {
-        "en": "How far the Pull control drags the stub away from the card.",
-        "es": "Hasta dónde aleja el control Jalar el talón de la tarjeta.",
-        "fr": "Jusqu'où la commande Tirer éloigne le talon de la carte.",
-        "pt": "Até onde o controle Puxar afasta o canhoto do cartão."
+        "en": "How far the «Pull the stub» control drags the stub away from the card.",
+        "es": "Hasta dónde aleja el talón de la tarjeta el control «Jala el talón».",
+        "fr": "Jusqu'où la commande « Tirer sur le talon » éloigne le talon de la carte.",
+        "pt": "Até onde o controle «Puxe o canhoto» afasta o canhoto do cartão."
       },
       "default": 10,
       "min": 2,

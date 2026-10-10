@@ -177,10 +177,10 @@
         "pt": "Inclinação (°)"
       },
       "tooltip": {
-        "en": "Angle of the lines away from square. The far part of the strip shifts sideways.",
-        "es": "Ángulo de las líneas respecto a la escuadra. La parte lejana de la tira se desplaza de lado.",
-        "fr": "Angle des lignes par rapport à l'équerre. La partie éloignée de la bande se décale sur le côté.",
-        "pt": "Ângulo das linhas em relação ao esquadro. A parte distante da tira se desloca para o lado."
+        "en": "How far the lines lean from the perpendicular. The far part of the strip shifts sideways.",
+        "es": "Cuánto se inclinan las líneas respecto a la perpendicular. La parte lejana de la tira se desplaza hacia un lado.",
+        "fr": "Inclinaison des lignes par rapport à la perpendiculaire. La partie éloignée de la bande se décale sur le côté.",
+        "pt": "Quanto as linhas se inclinam em relação à perpendicular. A parte distante da tira se desloca para o lado."
       },
       "default": 0,
       "min": 0,

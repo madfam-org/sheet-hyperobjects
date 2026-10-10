@@ -174,10 +174,10 @@
         "pt": "Ângulo da dobra (°)"
       },
       "tooltip": {
-        "en": "How far the fold goes: 180° is folded flat.",
-        "es": "Hasta dónde llega el doblez: 180° es doblado por completo, en plano.",
-        "fr": "Jusqu'où va le pli : 180° correspond à un pli complètement à plat.",
-        "pt": "Até onde vai a dobra: 180° é dobrada por completo, rente."
+        "en": "How far the fold goes: at 180° the paper is folded completely flat.",
+        "es": "Qué tanto se dobla: a 180° el papel queda doblado por completo y plano.",
+        "fr": "Jusqu'où va le pli : à 180° le papier est plié complètement à plat.",
+        "pt": "Quanto se dobra: a 180° o papel fica dobrado por completo e plano."
       },
       "default": 180,
       "min": 30,

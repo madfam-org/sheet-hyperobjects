@@ -30,7 +30,10 @@ card's appearance block records. In a valley fold the two red front faces close 
 and the white back ends up outside. That is how you recognise a valley fold in the hand, and it is
 exactly what the `mountain-fold` cartridge reverses.
 
-## What the engine simulates
+## What the engine is asked to simulate
+
+The behaviour described here is the engine contract of the sheet-document spec v1 (§4, §5): the
+cartridge writes the document, and the engine is specified to compute the motion from it.
 
 The fold program has one step, *Valley-fold along the diagonal* (or *in half, edge to edge*), in
 `physical` mode. During the step the engine drives the hinge toward its target with the stock's
