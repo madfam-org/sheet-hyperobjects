@@ -25,7 +25,7 @@
   },
   "excludes": [
     "Designer models (the Nakamura lock, record-holding designs): not included",
-    "Flight: needs the engine's air model (wave W3); the figures in pliego:meta.flight describe the folded shape only"
+    "Flight: needs the engine's air model (wave W3); the span and centre-of-gravity figures describe the folded shape only"
   ],
   "sources": [
     "https://origamiheaven.com/historyofthepaperdart.htm",

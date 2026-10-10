@@ -597,4 +597,4 @@ entries = [(b, *st) for st in fd["steps"]]
 worst, mid = check_closure(b, [x[1] for x in entries])
 print(f"kinematics: design={design} steps={len(entries)} max_closure_mm={worst:.3e} "
       f"max_linear_midpoint_closure_mm={mid:.3e} " + " ".join(f"{a}={v}" for a, v in perf.items()))
-result = program(entries, [b], "Paper airplane", meta={"flight": perf})
+result = program(entries, [b], "Paper airplane")

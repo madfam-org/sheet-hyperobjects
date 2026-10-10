@@ -48,9 +48,10 @@ pattern is used. The sheet's long axis is the keel, the nose is the top edge.
   circumference (length − 6 % overlap), each facet line turned 22.5°. Real paper curves smoothly;
   the facets are the preview's polygonal approximation, written as flat (`F`) lines.
 
-The cartridge measures the folded plane and writes the figures into `pliego:meta.flight`. It counts
-every layer of uniform paper: the centre of gravity is the area-weighted centroid of all facets.
-With the defaults on A4:
+The cartridge measures the folded plane and prints the figures on its `kinematics:` line (the
+sheet-document schema keeps `pliego:meta` closed, so they are not written into the document). It
+counts every layer of uniform paper: the centre of gravity is the area-weighted centroid of all
+facets. With the defaults on A4:
 
 | design | span | length | centre of gravity behind the nose |
 |---|---|---|---|
