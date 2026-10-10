@@ -427,7 +427,7 @@ tr, asg, fa_ = (doc.data["pliego:edges_treatment"], doc.data["edges_assignment"]
                 doc.data["edges_foldAngle"])
 for e, nm in enumerate(names):
     if nm and "ruling-" in nm:
-        tr[e], asg[e], fa_[e] = "none", "F", 0.0
+        tr[e], asg[e], fa_[e] = "none", "F", 0   # an int, as the builder writes zeros
     elif nm and asg[e] == "B" and nm.split("-")[-1].isdigit():
         names[e] = "-".join(nm.split("-")[:-1])
 result = doc.stamp()
