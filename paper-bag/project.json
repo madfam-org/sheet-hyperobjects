@@ -186,13 +186,23 @@
   ],
   "constraints": [
     {
-      "expression": "gusset + overlap < width - 4",
+      "expression": "gusset <= width - 2",
       "severity": "error",
       "message": {
-        "en": "The gusset plus the overlap must stay under the width minus 4 mm, or the gusset flaps collide on the bottom.",
-        "es": "El fuelle más el solape debe quedar por debajo del ancho menos 4 mm; si no, las solapas de los fuelles chocan en el fondo.",
-        "fr": "Le soufflet plus le recouvrement doit rester inférieur à la largeur moins 4 mm, sinon les rabats des soufflets se heurtent au fond.",
-        "pt": "O fole mais a sobreposição deve ficar abaixo da largura menos 4 mm; senão as abas dos foles batem no fundo."
+        "en": "The gusset may be at most the width minus 2 mm, or the gusset triangles meet in the middle of the bottom.",
+        "es": "El fuelle puede medir como máximo el ancho menos 2 mm; si no, los triángulos de los fuelles se tocan en el centro del fondo.",
+        "fr": "Le soufflet peut mesurer au plus la largeur moins 2 mm, sinon les triangles des soufflets se touchent au milieu du fond.",
+        "pt": "O fole pode medir no máximo a largura menos 2 mm; senão os triângulos dos foles tocam-se no meio do fundo."
+      }
+    },
+    {
+      "expression": "overlap <= gusset - 4",
+      "severity": "error",
+      "message": {
+        "en": "The bottom overlap may be at most the gusset minus 4 mm.",
+        "es": "El solape del fondo puede medir como máximo el fuelle menos 4 mm.",
+        "fr": "Le recouvrement du fond peut mesurer au plus le soufflet moins 4 mm.",
+        "pt": "A sobreposição do fundo pode medir no máximo o fole menos 4 mm."
       }
     }
   ],
