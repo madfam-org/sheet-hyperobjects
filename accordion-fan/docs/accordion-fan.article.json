@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/accordion-fan",
+  "title": {"en": "Accordion fan", "es": "Abanico plegable", "fr": "Éventail plissé", "pt": "Leque plissado"},
+  "summary": {
+    "en": "Two fans on one geometry, the radial pleat: a hand fan whose pleats gather at the base, and the paper leaf of a ribbed folding fan with its card ribs. The pleats close and open rigidly, exact at every step.",
+    "es": "Dos abanicos sobre una misma geometría, el plisado radial: un abanico de mano cuyos pliegues se recogen en la base y el país de papel de un abanico de varillas, con sus varillas de cartulina. El plisado se cierra y se abre de forma rígida, exacto en cada paso.",
+    "fr": "Deux éventails sur une même géométrie, le plissé radial : un éventail à main dont les plis se resserrent à la base, et la feuille de papier d'un éventail à brins, avec ses brins de carton. Le plissé se ferme et s'ouvre de façon rigide, exact à chaque étape.",
+    "pt": "Dois leques sobre uma mesma geometria, o plissado radial: um leque de mão cujas pregas se recolhem na base e a folha de papel de um leque de varetas, com as suas varetas de cartolina. O plissado fecha e abre de forma rígida, exato em cada passo."
+  },
+  "article": {
+    "path": "accordion-fan/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional (the folding fan is traced to Japan)",
+  "heritage": true,
+  "sources": [
+    "Wikipedia, «Hand fan», https://en.wikipedia.org/wiki/Hand_fan",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.3 and §6"
+  ],
+  "related": {"objects": ["pliego/leporello", "pliego/pleat-and-crimp", "pliego/miura-ori"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}
