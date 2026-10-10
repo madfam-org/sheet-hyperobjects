@@ -1,0 +1,43 @@
+{
+  "spec_version": 1,
+  "object": "pliego/origamic-architecture",
+  "title": {
+    "en": "Origamic architecture",
+    "es": "Arquitectura origámica",
+    "fr": "Architecture origamique",
+    "pt": "Arquitetura origâmica"
+  },
+  "summary": {
+    "en": "90° cut-and-fold cards from one sheet: slits and folds make a staircase, an arched gateway or a building facade rise when the card opens to a right angle, and fold flat again when it closes. Original designs with an exact rigid open-and-close program.",
+    "es": "Tarjetas de corte y pliegue a 90° hechas de una sola hoja: ranuras y dobleces hacen que una escalera, un portal con arco o una fachada se levanten cuando la tarjeta se abre en ángulo recto, y vuelvan a quedar planos al cerrarla. Diseños originales con una secuencia rígida exacta de apertura y cierre.",
+    "fr": "Des cartes coupées-pliées à 90° tirées d'une seule feuille : fentes et plis font se dresser un escalier, un portail en arc ou une façade quand la carte s'ouvre à angle droit, et tout se replie à plat quand elle se ferme. Des modèles originaux, avec une séquence rigide exacte d'ouverture et de fermeture.",
+    "pt": "Cartões de corte e dobra a 90° feitos de uma só folha: fendas e dobras fazem uma escada, um portal em arco ou uma fachada erguer-se quando o cartão abre em ângulo reto, e voltar a ficar planos quando fecha. Desenhos originais com uma sequência rígida exata de abrir e fechar."
+  },
+  "article": {
+    "path": "origamic-architecture/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "1980s to the present",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Origamic_architecture"
+  ],
+  "related": {
+    "objects": [
+      "pliego/v-fold-popup",
+      "pliego/parallel-fold-popup",
+      "pliego/kirigami-cube"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

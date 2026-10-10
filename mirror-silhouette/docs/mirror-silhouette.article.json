@@ -1,0 +1,43 @@
+{
+  "spec_version": 1,
+  "object": "pliego/mirror-silhouette",
+  "title": {
+    "en": "Mirror silhouette",
+    "es": "Silueta en espejo",
+    "fr": "Silhouette en miroir",
+    "pt": "Silhueta espelhada"
+  },
+  "summary": {
+    "en": "Bilateral fold-and-cut: fold a sheet in half, cut half a motif through both layers, and it opens into a symmetric shape. Original urn, tree and butterfly motifs, kept as a silhouette or cut out of a framed card.",
+    "es": "Doblar y cortar con un eje: dobla una hoja por la mitad, corta medio motivo a través de las dos capas y se abre en una figura simétrica. Motivos originales de ánfora, árbol y mariposa, como silueta o recortados en una tarjeta con marco.",
+    "fr": "Plier-découper bilatéral : pliez une feuille en deux, découpez un demi-motif à travers les deux couches, et elle s'ouvre en une forme symétrique. Motifs originaux d'urne, d'arbre et de papillon, gardés en silhouette ou évidés dans une carte encadrée.",
+    "pt": "Dobra e corte bilateral: dobre uma folha ao meio, corte meio motivo através das duas camadas e ela abre numa forma simétrica. Motivos originais de urna, árvore e borboleta, como silhueta ou recortados num cartão com moldura."
+  },
+  "article": {
+    "path": "mirror-silhouette/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "generic technique",
+  "sources": [
+    "E. D. Demaine, M. L. Demaine and A. Lubiw, Folding and cutting paper, JCDCG 98, LNCS 1763 (2000)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/paper-snowflake",
+      "pliego/jianzhi-window-flower",
+      "pliego/paper-doll-chain"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/lattice-kirigami",
+  "title": {
+    "en": "Lattice kirigami",
+    "es": "Kirigami de retícula",
+    "fr": "Kirigami en treillis",
+    "pt": "Kirigami em treliça"
+  },
+  "summary": {
+    "en": "Rows of straight slits, staggered by half a pitch, turn a sheet into a mesh that stretches far beyond plain paper. Make it by hand from an accordion cut from alternate folds, or cut it flat and pull it open.",
+    "es": "Hileras de ranuras rectas, desfasadas medio paso entre sí, convierten una hoja en una malla que se estira mucho más que el papel liso. Se hace a mano con un acordeón cortado desde dobleces alternos, o se corta en plano y se jala para abrirla.",
+    "fr": "Des rangées de fentes droites, décalées d'un demi-pas, font d'une feuille un filet qui s'étire bien plus que le papier ordinaire. On le fabrique à la main à partir d'un accordéon découpé depuis un pli sur deux, ou on le découpe à plat et on le tire pour l'ouvrir.",
+    "pt": "Fileiras de fendas retas, desencontradas meio passo entre si, transformam uma folha numa malha que estica muito além do papel liso. Faz-se à mão a partir de uma sanfona cortada em dobras alternadas, ou corta-se com a folha estendida e puxa-se para abrir."
+  },
+  "article": {
+    "path": "lattice-kirigami/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program and the pull",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary pattern, in continuous use",
+  "sources": [
+    "T. C. Shyu et al., A kirigami approach to engineering elasticity in nanocomposites through patterned defects, Nature Materials 14, 785-789 (2015)",
+    "M. Isobe and K. Okumura, Initial rigid response and softening transition of highly stretchable kirigami sheet materials, Scientific Reports 6, 24758 (2016)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/rotating-squares"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
