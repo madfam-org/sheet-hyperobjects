@@ -186,7 +186,8 @@ for sid, _, rho, _ in program:
 if run_mode != "hand" and (worst_closure > TOL_MM or worst_edge > TOL_MM):
     raise ValueError(f"inconsistent rigid fold state: closure {worst_closure:.3g} mm, "
                      f"edge {worst_edge:.3g} mm")
-print(f"kinematics: mode={run_mode} steps={len(program)} max_closure_mm={worst_closure:.3e} "
+dof = kinematics.dof(arr, state(mode2(60.0)))
+print(f"kinematics: mode={run_mode} steps={len(program)} dof={dof} max_closure_mm={worst_closure:.3e} "
       f"max_edge_error_mm={worst_edge:.3e} max_linear_midpoint_closure_mm={worst_mid:.3e}")
 
 steps = [pliego.Step(sid, label, [(m, a) for m, a in zip(CREASES, rho)], duration_ms=ms)
