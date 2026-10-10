@@ -1,0 +1,14 @@
+{
+  "object": "pliego/outside-reverse-fold",
+  "title": {"en": "Outside reverse fold", "es": "Pliegue invertido exterior", "fr": "Pli inversé extérieur", "pt": "Dobra invertida externa"},
+  "summary": {
+    "en": "One end of a folded strip is wrapped back around its own outside. The same degree-4 vertex as the inside reverse fold, driven the other way along its second rigid mode.",
+    "es": "Un extremo de una tira doblada se envuelve hacia atrás por fuera de sí misma. El mismo vértice de grado 4 que el pliegue invertido interior, recorrido en el otro sentido de su segundo modo rígido.",
+    "fr": "Une extrémité d'une bande pliée est retournée autour de son propre extérieur. Le même sommet de degré 4 que le pli inversé intérieur, parcouru dans l'autre sens de son second mode rigide.",
+    "pt": "Uma ponta de uma tira dobrada é envolvida para trás por fora de si mesma. O mesmo vértice de grau 4 da dobra invertida interna, percorrido no outro sentido do seu segundo modo rígido."
+  },
+  "article": {"path": "outside-reverse-fold/docs/README.md", "sections": ["The geometry: the other direction of mode 2", "How to fold it by hand", "What the engine simulates"]},
+  "era": "traditional technique, in continuous use",
+  "sources": ["F. Foschi, T. Hull, J. S. Ku, Explicit kinematic equations for degree-4 rigid origami vertices, arXiv:2206.12691"],
+  "related": {"objects": ["pliego/inside-reverse-fold", "pliego/valley-fold"]}
+}
