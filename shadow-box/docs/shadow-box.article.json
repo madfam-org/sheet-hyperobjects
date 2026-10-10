@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/shadow-box",
+  "title": {"en": "Shadow box", "es": "Caja de sombras", "fr": "Boîte à ombres", "pt": "Caixa de sombras"},
+  "summary": {
+    "en": "A layered papercut diorama: three to eight cut frames, kept apart by folded spacer tubes, inside a card box with a window in its front.",
+    "es": "Un diorama de papel calado en capas: de tres a ocho marcos calados, separados por tubos plegados, dentro de una caja de cartulina con una ventana al frente.",
+    "fr": "Un diorama de papier découpé en plans : de trois à huit cadres découpés, séparés par des tubes pliés, dans une boîte en carte avec une fenêtre en façade.",
+    "pt": "Um diorama de papel recortado em camadas: de três a oito molduras recortadas, separadas por tubos dobrados, dentro de uma caixa de cartão com uma janela na frente."
+  },
+  "article": {
+    "path": "shadow-box/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "eighteenth-century perspective theatres to present",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Martin Engelbrecht», https://en.wikipedia.org/wiki/Martin_Engelbrecht",
+    "Stephen J. Gertz, «The Miniature Theaters of Martin Engelbrecht», Fine Books Magazine, 2009, https://www.finebooksmagazine.com/fine-books-news/miniature-theaters-martin-engelbrecht"
+  ],
+  "related": {"objects": ["pliego/tunnel-book", "pliego/kirigami-cube", "pliego/reveal-block"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·D); awaiting a human editorial pass."}
+}
