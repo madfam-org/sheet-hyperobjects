@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-rose",
+  "title": {"en": "Rolled paper rose", "es": "Rosa de papel enrollado", "fr": "Rose en papier roulé", "pt": "Rosa de papel enrolado"},
+  "summary": {
+    "en": "A spiral cut into a disc of paper, rolled from its outer end into a tight bud, let loosen and glued onto the uncut centre circle; the curved strip stacks into cones, upright at the heart and opening toward flat at the outside.",
+    "es": "Una espiral recortada en un disco de papel, enrollada desde su punta exterior en un capullo apretado, aflojada y pegada sobre el círculo central sin cortar; la tira curva se apila en conos, erguidos en el corazón y cada vez más abiertos hacia fuera.",
+    "fr": "Une spirale découpée dans un disque de papier, roulée depuis son bout extérieur en un bouton serré, desserrée puis collée sur le cercle central non découpé ; la bande courbe s'empile en cônes, droits au cœur et de plus en plus ouverts vers l'extérieur.",
+    "pt": "Uma espiral recortada num disco de papel, enrolada a partir da ponta externa num botão apertado, afrouxada e colada sobre o círculo central sem corte; a tira curva se empilha em cones, eretos no miolo e cada vez mais abertos para fora."
+  },
+  "article": {
+    "path": "paper-rose/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary paper craft, in continuous use",
+  "heritage": false,
+  "sources": [
+    "https://hgtv.com/lifestyle/entertaining/how-to-make-rolled-paper-roses",
+    "https://www.archmil.org/ArchMil/Resources/CraftInstructionsRolledPaperRose.pdf"
+  ],
+  "related": {"objects": ["pliego/quilling", "pliego/spiral-popup"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C); awaiting a human editorial pass."}
+}
