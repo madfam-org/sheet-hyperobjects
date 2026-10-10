@@ -1,0 +1,47 @@
+{
+  "spec_version": 1,
+  "object": "pliego/lily",
+  "title": {
+    "en": "Lily and iris",
+    "es": "Lirio e iris",
+    "fr": "Lys et iris",
+    "pt": "Lírio e íris"
+  },
+  "summary": {
+    "en": "Two traditional flowers from the frog base: its four faces are narrowed and the flower opens about its stem, the lily with eight even petals, the iris with four at right angles. Every flat move is a checked layer-aware operation; the opening is a rigid hinge pose the preview plays.",
+    "es": "Dos flores tradicionales desde la base de rana: se estrechan sus cuatro caras y la flor se abre alrededor del tallo, el lirio con ocho pétalos regulares, el iris con cuatro en ángulo recto. Cada paso plano es una operación por capas comprobada; la apertura es una pose rígida de bisagras que reproduce la vista previa.",
+    "fr": "Deux fleurs traditionnelles depuis la base de la grenouille : ses quatre faces sont affinées et la fleur s'ouvre autour de sa tige, le lys avec huit pétales réguliers, l'iris avec quatre à angle droit. Chaque geste à plat est une opération par couches vérifiée ; l'ouverture est une pose rigide de charnières que l'aperçu joue.",
+    "pt": "Duas flores tradicionais a partir da base do sapo: as suas quatro faces são afinadas e a flor abre-se à volta do caule, o lírio com oito pétalas regulares, a íris com quatro em ângulo reto. Cada passo plano é uma operação por camadas verificada; a abertura é uma pose rígida de dobradiças que a pré-visualização reproduz."
+  },
+  "article": {
+    "path": "lily/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional models",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Marshall Bern and Barry Hayes, The complexity of flat origami, Proc. 7th ACM-SIAM Symposium on Discrete Algorithms, 1996",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/frog-base",
+      "pliego/preliminary-base",
+      "pliego/petal-fold",
+      "pliego/squash-fold"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}

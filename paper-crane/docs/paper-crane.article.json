@@ -1,0 +1,49 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-crane",
+  "title": {
+    "en": "Paper crane",
+    "es": "Grulla de papel",
+    "fr": "Grue en papier",
+    "pt": "Grou de papel"
+  },
+  "summary": {
+    "en": "The traditional orizuru, folded move by move on layer-ordered flat states: preliminary base, bird base, narrowing folds, inside reverse folds for the neck, the tail and the head, and the wings brought down or spread. Every state is checked; the crease pattern is the finished crane unfolded.",
+    "es": "La orizuru tradicional, plegada paso a paso sobre estados planos con orden de capas: base preliminar, base de pájaro, pliegues para estrechar, pliegues invertidos interiores para el cuello, la cola y la cabeza, y las alas bajadas o abiertas. Cada estado se comprueba; el patrón de pliegues es la grulla terminada, desplegada.",
+    "fr": "L'orizuru traditionnelle, pliée geste par geste sur des états à plat avec ordre des couches : base préliminaire, base de l'oiseau, plis d'affinage, plis inversés intérieurs pour le cou, la queue et la tête, et les ailes rabattues ou déployées. Chaque état est vérifié ; le motif de plis est la grue terminée, dépliée.",
+    "pt": "O orizuru tradicional, dobrado passo a passo sobre estados planos com ordem de camadas: base preliminar, base do pássaro, dobras para afinar, dobras invertidas internas para o pescoço, a cauda e a cabeça, e as asas baixadas ou abertas. Cada estado é verificado; o padrão de vincos é o grou acabado, desdobrado."
+  },
+  "article": {
+    "path": "paper-crane/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional model; printed instructions since 1797",
+  "heritage": false,
+  "sources": [
+    "Hiden Senbazuru Orikata (Kyoto, 1797), text attributed to Akisato Rito",
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Marshall Bern and Barry Hayes, The complexity of flat origami, Proc. 7th ACM-SIAM Symposium on Discrete Algorithms, 1996",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/bird-base",
+      "pliego/preliminary-base",
+      "pliego/petal-fold",
+      "pliego/inside-reverse-fold",
+      "pliego/flapping-bird"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
