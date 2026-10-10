@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/embossed-stationery",
+  "title": {"en": "Embossed stationery", "es": "Papelería con relieve", "fr": "Papeterie gaufrée", "pt": "Papelaria em relevo"},
+  "summary": {
+    "en": "Sheet pressing and heat branding on a folded card — blind and registered emboss, deboss, hot foil, letterpress, laser burn and branding iron — with each finish's plates for the press.",
+    "es": "Prensado y marcado al fuego sobre una tarjeta doblada —relieve en seco y en registro, bajorrelieve, hot stamping, tipografía, quemado láser y hierro de marcar— con las placas de cada acabado para la prensa.",
+    "fr": "Pressage et marquage à chaud sur une carte pliée — gaufrage à sec et repéré, embossage en creux, dorure à chaud, typographie, brûlure laser et fer à marquer — avec les clichés de chaque finition pour la presse.",
+    "pt": "Prensagem e marcação a fogo num cartão dobrado — relevo seco e em registo, baixo-relevo, hot stamping, tipografia, queima a laser e ferro de marcar — com as chapas de cada acabamento para a prensa."
+  },
+  "article": {
+    "path": "embossed-stationery/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "stationery crafts in continuous use; laser engraving since the late twentieth century",
+  "sources": ["Wikipedia, Embossing (paper)", "Wikipedia, Letterpress printing", "Wikipedia, Hot stamping"],
+  "related": {"objects": ["pliego/folding-carton", "pliego/envelope", "pliego/score-vs-crease"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

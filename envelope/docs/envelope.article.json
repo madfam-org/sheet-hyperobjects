@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/envelope",
+  "title": {"en": "Envelope", "es": "Sobre", "fr": "Enveloppe", "pt": "Envelope"},
+  "summary": {
+    "en": "Every common envelope as one family — eight styles, the ISO 269 and US sizes, gummed or peel-and-seal — generated from the finished size and folded closed.",
+    "es": "Todos los sobres comunes como una sola familia —ocho estilos, los tamaños ISO 269 y estadounidenses, engomado o autoadhesivo— generados a partir del tamaño terminado y cerrados con su secuencia.",
+    "fr": "Toutes les enveloppes courantes en une seule famille — huit styles, les formats ISO 269 et américains, gommée ou autocollante — générées à partir du format fini et fermées par leur séquence.",
+    "pt": "Todos os envelopes comuns como uma só família — oito estilos, os tamanhos ISO 269 e americanos, gomado ou autoadesivo — gerados a partir do tamanho acabado e fechados pela sua sequência."
+  },
+  "article": {
+    "path": "envelope/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "folded letters for centuries; machine-made envelopes since the nineteenth century",
+  "sources": ["ISO 269:1985 Correspondence envelopes — Designation and sizes (withdrawn 2019)", "Wikipedia, Envelope", "Wikipedia, Paper size"],
+  "related": {"objects": ["pliego/folding-carton", "pliego/embossed-stationery", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

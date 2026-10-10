@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/corrugated-shipper",
+  "title": {"en": "Corrugated shipper", "es": "Caja de cartón corrugado", "fr": "Caisse en carton ondulé", "pt": "Caixa de papelão ondulado"},
+  "summary": {
+    "en": "The slotted shipping cases as one family — regular slotted, half-slotted, full overlap and telescope — generated from inside dimensions and the board's caliper.",
+    "es": "Las cajas ranuradas de envío como una sola familia —ranurada regular, media caja, solapas superpuestas y telescópica— generadas a partir de las medidas interiores y del calibre del cartón.",
+    "fr": "Les caisses à rabats en une seule famille — américaine, demi-caisse, rabats chevauchants et télescopique — générées à partir des dimensions intérieures et de l'épaisseur du carton.",
+    "pt": "As caixas de abas para expedição como uma só família — normal, meia caixa, abas sobrepostas e telescópica — geradas a partir das medidas internas e da espessura do papelão."
+  },
+  "article": {
+    "path": "corrugated-shipper/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "industrial packaging, twentieth century to the present",
+  "sources": ["FEFCO International Fibreboard Case Code (code list)", "Wikipedia, Corrugated fiberboard (after Foster 1997)", "Rogalka, Grabski & Garbowski 2023, Sensors 23:6242"],
+  "related": {"objects": ["pliego/corrugated-board", "pliego/mailer-box", "pliego/folding-carton", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

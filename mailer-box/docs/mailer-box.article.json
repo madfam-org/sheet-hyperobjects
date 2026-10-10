@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/mailer-box",
+  "title": {"en": "Mailer box", "es": "Caja tipo mailer", "fr": "Boîte postale à rabat", "pt": "Caixa mailer"},
+  "summary": {
+    "en": "One-piece corrugated mailers with a hinged lid — the roll-end tuck-front mailer and the pizza style — generated from inside dimensions, glue-free, with brand artwork on the lid.",
+    "es": "Cajas de envío de una pieza en cartón corrugado con tapa abisagrada —el mailer de extremos enrollados y el estilo pizza— generadas a partir de las medidas interiores, sin pegamento y con arte de marca en la tapa.",
+    "fr": "Boîtes postales d'une pièce en carton ondulé à couvercle articulé — à bouts roulés et patte rentrante, et style pizza — générées à partir des dimensions intérieures, sans colle, avec illustration de marque sur le couvercle.",
+    "pt": "Caixas de envio de uma peça em papelão ondulado com tampa articulada — o mailer de pontas enroladas e o estilo pizza — geradas a partir das medidas internas, sem cola e com arte de marca na tampa."
+  },
+  "article": {
+    "path": "mailer-box/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "mail-order and e-commerce packaging, twentieth century to the present",
+  "sources": ["FEFCO International Fibreboard Case Code (code list)", "Wikipedia, Corrugated fiberboard (after Foster 1997)"],
+  "related": {"objects": ["pliego/corrugated-shipper", "pliego/corrugated-board", "pliego/folding-carton"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

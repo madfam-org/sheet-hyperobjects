@@ -1,0 +1,416 @@
+{
+  "project": {
+    "name": {
+      "en": "Embossed stationery",
+      "es": "Papelería con relieve",
+      "fr": "Papeterie gaufrée",
+      "pt": "Papelaria em relevo"
+    },
+    "slug": "embossed-stationery",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "Sheet pressing and heat branding on a folded card: blind emboss, registered emboss, deboss, hot foil and letterpress, plus laser burn and branding-iron marks. The motif is original geometry, each finish carries its depth, profile and colour, and the dieline export writes the plates: emboss die and counter, foil plate, letterpress plate, branding-iron face and laser engrave layers.",
+      "es": "Prensado y marcado al fuego sobre una tarjeta doblada: relieve en seco, relieve en registro, bajorrelieve, hot stamping y tipografía, además de quemado láser y marcas con hierro. El motivo es geometría original, cada acabado lleva su profundidad, perfil y color, y la exportación del suaje escribe las placas: matriz y contramatriz del relieve, placa de película metálica, placa tipográfica, cara del hierro de marcar y capas de grabado láser.",
+      "fr": "Pressage et marquage à chaud sur une carte pliée : gaufrage à sec, gaufrage repéré, embossage en creux, dorure à chaud et typographie, ainsi que brûlure laser et marques au fer. Le motif est une géométrie originale, chaque finition porte sa profondeur, son profil et sa couleur, et l'export du flan écrit les clichés : matrice et contre-partie du gaufrage, cliché de dorure, cliché typographique, face du fer à marquer et couches de gravure laser.",
+      "pt": "Prensagem e marcação a fogo num cartão dobrado: relevo seco, relevo em registo, baixo-relevo, hot stamping e tipografia, além de queima a laser e marcas a ferro. O motivo é geometria original, cada acabamento leva profundidade, perfil e cor, e a exportação do corte escreve as chapas: matriz e contramatriz do relevo, clichê de estampagem, chapa tipográfica, face do ferro de marcar e camadas de gravação a laser."
+    },
+    "thumbnail": "/projects/embossed-stationery.svg",
+    "difficulty": "beginner",
+    "tags": [
+      "stationery",
+      "pressing",
+      "emboss",
+      "foil",
+      "letterpress",
+      "heat-branding",
+      "card",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM design (the motif and card are computed in this cartridge's main.py); embossing, debossing, foil stamping, letterpress and heat branding are general finishing crafts, attributed to that tradition",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "card",
+      "label": {
+        "en": "Folded card",
+        "es": "Tarjeta doblada",
+        "fr": "Carte pliée",
+        "pt": "Cartão dobrado"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "card"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "card",
+      "label": {
+        "en": "Folded card",
+        "es": "Tarjeta doblada",
+        "fr": "Carte pliée",
+        "pt": "Cartão dobrado"
+      },
+      "stock": "cardstock-300"
+    }
+  ],
+  "parameter_groups": [
+    {
+      "id": "finish",
+      "label": {
+        "en": "Finish",
+        "es": "Acabado",
+        "fr": "Finition",
+        "pt": "Acabamento"
+      }
+    },
+    {
+      "id": "card",
+      "label": {
+        "en": "Card",
+        "es": "Tarjeta",
+        "fr": "Carte",
+        "pt": "Cartão"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "style",
+      "type": "select",
+      "group": "finish",
+      "label": {
+        "en": "Finish",
+        "es": "Acabado",
+        "fr": "Finition",
+        "pt": "Acabamento"
+      },
+      "default": "blind-emboss",
+      "options": [
+        {
+          "value": "blind-emboss",
+          "label": {
+            "en": "Blind emboss",
+            "es": "Grabado en relieve en seco",
+            "fr": "Gaufrage à sec",
+            "pt": "Relevo seco"
+          }
+        },
+        {
+          "value": "registered-emboss",
+          "label": {
+            "en": "Registered emboss (over print)",
+            "es": "Relieve en registro (sobre impresión)",
+            "fr": "Gaufrage repéré (sur impression)",
+            "pt": "Relevo em registo (sobre impressão)"
+          }
+        },
+        {
+          "value": "deboss",
+          "label": {
+            "en": "Deboss",
+            "es": "Bajorrelieve",
+            "fr": "Embossage en creux",
+            "pt": "Baixo-relevo"
+          }
+        },
+        {
+          "value": "hot-foil",
+          "label": {
+            "en": "Hot foil",
+            "es": "Hot stamping (estampado con película metálica)",
+            "fr": "Dorure à chaud",
+            "pt": "Hot stamping (estampagem a quente)"
+          }
+        },
+        {
+          "value": "letterpress",
+          "label": {
+            "en": "Letterpress",
+            "es": "Tipografía (letterpress)",
+            "fr": "Typographie (letterpress)",
+            "pt": "Tipografia (letterpress)"
+          }
+        },
+        {
+          "value": "laser-burn",
+          "label": {
+            "en": "Laser burn (heat branding)",
+            "es": "Quemado láser (marcado al fuego)",
+            "fr": "Brûlure laser (marquage à chaud)",
+            "pt": "Queima a laser (marcação a fogo)"
+          }
+        },
+        {
+          "value": "branding-iron",
+          "label": {
+            "en": "Branding iron (heat branding)",
+            "es": "Hierro de marcar (marcado al fuego)",
+            "fr": "Fer à marquer (marquage à chaud)",
+            "pt": "Ferro de marcar (marcação a fogo)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "size",
+      "type": "select",
+      "group": "card",
+      "label": {
+        "en": "Folded size",
+        "es": "Tamaño doblado",
+        "fr": "Format plié",
+        "pt": "Tamanho dobrado"
+      },
+      "default": "a6",
+      "options": [
+        {
+          "value": "a6",
+          "label": {
+            "en": "A6 (105 × 148 mm)",
+            "es": "A6 (105 × 148 mm)",
+            "fr": "A6 (105 × 148 mm)",
+            "pt": "A6 (105 × 148 mm)"
+          }
+        },
+        {
+          "value": "a7",
+          "label": {
+            "en": "A7 (74 × 105 mm)",
+            "es": "A7 (74 × 105 mm)",
+            "fr": "A7 (74 × 105 mm)",
+            "pt": "A7 (74 × 105 mm)"
+          }
+        },
+        {
+          "value": "us-5x7",
+          "label": {
+            "en": "5 × 7 in",
+            "es": "5 × 7 in",
+            "fr": "5 × 7 in",
+            "pt": "5 × 7 in"
+          }
+        },
+        {
+          "value": "square-150",
+          "label": {
+            "en": "Square 150 mm",
+            "es": "Cuadrada de 150 mm",
+            "fr": "Carrée de 150 mm",
+            "pt": "Quadrado de 150 mm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "points",
+      "type": "slider",
+      "group": "finish",
+      "unit": "count",
+      "label": {
+        "en": "Star points",
+        "es": "Puntas de la estrella",
+        "fr": "Branches de l'étoile",
+        "pt": "Pontas da estrela"
+      },
+      "tooltip": {
+        "en": "The registered emboss's sample print is drawn for 8 points; other counts fall out of register.",
+        "es": "La impresión de muestra del relieve en registro está dibujada para 8 puntas; con otro número queda fuera de registro.",
+        "fr": "L'impression d'exemple du gaufrage repéré est dessinée pour 8 branches ; un autre nombre sort du repérage.",
+        "pt": "A impressão de amostra do relevo em registo está desenhada para 8 pontas; outro número sai de registo."
+      },
+      "default": 8,
+      "min": 5,
+      "max": 12,
+      "step": 1
+    },
+    {
+      "id": "motif",
+      "type": "slider",
+      "group": "finish",
+      "unit": "ratio",
+      "label": {
+        "en": "Motif size",
+        "es": "Tamaño del motivo",
+        "fr": "Taille du motif",
+        "pt": "Tamanho do motivo"
+      },
+      "tooltip": {
+        "en": "Diameter as a fraction of the cover's shorter side.",
+        "es": "Diámetro como fracción del lado menor de la portada.",
+        "fr": "Diamètre en fraction du petit côté de la couverture.",
+        "pt": "Diâmetro como fração do lado menor da capa."
+      },
+      "default": 0.55,
+      "min": 0.3,
+      "max": 0.8,
+      "step": 0.05
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "group": "card",
+      "label": {
+        "en": "Board",
+        "es": "Cartulina",
+        "fr": "Carton",
+        "pt": "Cartão"
+      },
+      "default": "cardstock-300",
+      "options": [
+        {
+          "value": "cardstock-250",
+          "label": {
+            "en": "Cardstock 250 g/m²",
+            "es": "Cartulina 250 g/m²",
+            "fr": "Bristol 250 g/m²",
+            "pt": "Cartolina 250 g/m²"
+          }
+        },
+        {
+          "value": "cardstock-300",
+          "label": {
+            "en": "Cardstock 300 g/m²",
+            "es": "Cartulina 300 g/m²",
+            "fr": "Bristol 300 g/m²",
+            "pt": "Cartolina 300 g/m²"
+          }
+        },
+        {
+          "value": "sbs-board-350",
+          "label": {
+            "en": "Solid bleached board (SBS) 350 g/m²",
+            "es": "Cartulina sólida blanqueada (SBS) 350 g/m²",
+            "fr": "Carton blanchi massif (SBS) 350 g/m²",
+            "pt": "Cartão sólido branqueado (SBS) 350 g/m²"
+          }
+        },
+        {
+          "value": "folding-boxboard-300",
+          "label": {
+            "en": "Folding boxboard (FBB) 300 g/m²",
+            "es": "Cartulina plegable (FBB) 300 g/m²",
+            "fr": "Carton plat (FBB) 300 g/m²",
+            "pt": "Cartão duplex (FBB) 300 g/m²"
+          }
+        },
+        {
+          "value": "greyboard-1500",
+          "label": {
+            "en": "Greyboard 1.5 mm",
+            "es": "Cartón gris 1.5 mm",
+            "fr": "Carton gris 1,5 mm",
+            "pt": "Papelão cinza 1,5 mm"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "wedding-foil",
+      "label": {
+        "en": "Gold-foil invitation",
+        "es": "Invitación con dorado",
+        "fr": "Faire-part doré",
+        "pt": "Convite com dourado"
+      },
+      "values": {
+        "style": "hot-foil",
+        "size": "us-5x7",
+        "stock": "sbs-board-350"
+      }
+    },
+    {
+      "id": "letterpress-note",
+      "label": {
+        "en": "Letterpress note card",
+        "es": "Tarjeta de notas en tipografía",
+        "fr": "Carte de correspondance typographiée",
+        "pt": "Cartão de notas em tipografia"
+      },
+      "values": {
+        "style": "letterpress",
+        "size": "a7",
+        "points": 6
+      }
+    },
+    {
+      "id": "burned-greyboard",
+      "label": {
+        "en": "Branded greyboard tag",
+        "es": "Etiqueta de cartón gris marcada",
+        "fr": "Étiquette en carton gris marquée",
+        "pt": "Etiqueta de papelão cinza marcada"
+      },
+      "values": {
+        "style": "branding-iron",
+        "size": "square-150",
+        "stock": "greyboard-1500",
+        "motif": 0.7
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Fold",
+        "es": "Doblar",
+        "fr": "Plier",
+        "pt": "Dobrar"
+      },
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "fold",
+    "glb"
+  ],
+  "stock": {
+    "default": "cardstock-300",
+    "alternatives": [
+      "cardstock-250",
+      "sbs-board-350",
+      "folding-boxboard-300",
+      "greyboard-1500"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "technique",
+    "kernel": "sheet",
+    "capabilities": {
+      "kinematic_program": true,
+      "score_treatment": true,
+      "pressing": true,
+      "heat_branding": true,
+      "branding": true
+    },
+    "societal_benefit": {
+      "en": "Pressing and branding are how small makers give paper and board a mark of their own; describing each finish with its depth, plates and limits lets a design go from screen to press without guesswork.",
+      "es": "El prensado y el marcado son la forma en que los pequeños talleres dan a papel y cartón una marca propia; describir cada acabado con su profundidad, sus placas y sus límites permite llevar un diseño de la pantalla a la prensa sin adivinar.",
+      "fr": "Le pressage et le marquage sont la façon dont les petits ateliers donnent au papier et au carton une marque à eux ; décrire chaque finition avec sa profondeur, ses clichés et ses limites mène un projet de l'écran à la presse sans deviner.",
+      "pt": "A prensagem e a marcação são a forma como pequenos ateliês dão ao papel e ao cartão uma marca própria; descrever cada acabamento com profundidade, chapas e limites leva um projeto da tela à prensa sem adivinhação."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}
