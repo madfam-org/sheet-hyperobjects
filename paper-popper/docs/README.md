@@ -27,8 +27,8 @@ The sheet lies landscape, `W × H` (A4 by default); `m = H/2`, `c = W/2`.
 
 ## The fold program
 
-The program is `kinematic`, 8 steps, all simple folds; every state is an exact rigid state (closure
-below 10⁻¹² mm). The studio shows the folded popper standing with its points down.
+The program is `kinematic`, 8 steps, all simple folds. Each fold is an operation of `pliego.FoldProgram` on a layer-ordered flat state. After every fold the kernel checks the layer order (taco and tortilla conditions, transitivity) and Kawasaki and Maekawa at every vertex, and the crease pattern is the final state unfolded. The four corners, and the two ends, each move together as one step. Every state,
+and every halfway state the preview blends, is an exact rigid state (closure below 10⁻¹² mm). The studio shows the folded popper standing with its points down.
 
 **The bang needs physics.** The snap is a flap that turns inside out in a few milliseconds and the
 air it drives. Both belong to the physics engine and its air model; the program stops in the folded

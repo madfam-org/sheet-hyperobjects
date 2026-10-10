@@ -31,14 +31,18 @@ crossed at 90° make the pinwheel: a square centre and four blades.
 ## The fold program
 
 The program is `kinematic`, 10 steps over two sheets. Steps 1–3 for unit A, then for unit B, then
-the assembly: unit B's halves are folded across unit A, then unit A's halves across unit B. Every
-state is an exact rigid state (closure below 10⁻¹² mm on each sheet).
+the assembly: unit B's halves are folded across unit A, then unit A's halves across unit B. Each
+unit is folded by `pliego.FoldProgram` operations on its own layer-ordered flat state; after every
+fold the kernel checks the unit's layer order (taco and tortilla conditions, transitivity) and
+Kawasaki and Maekawa at every vertex, and each crease pattern is the unit's final state unfolded.
+The first crosswise fold is opened again, so the pattern draws it as a flat crease (`F`, a scored
+line). Every state is an exact rigid state (closure below 10⁻¹² mm on each sheet).
 
 Unit B is placed crossed under unit A from the start. The studio's preview poses each sheet about
 its own first face, so sheets do not travel; a placement step would need a mechanism, and none fits
-a sheet that is also being folded. In a model without paper thickness, tucking a flap *under*
-another and laying it on top occupy the same place: the program shows where each flap goes, not
-which layer it slides between.
+a sheet that is also being folded. The layer order is checked within each unit, not between the
+two: a flap tucked *under* the other unit's flap and one laid on top occupy the same place, so the
+program shows where each flap goes, not which layer of the other unit it slides between.
 
 ## Making one by hand
 
