@@ -1,0 +1,107 @@
+{
+  "project": {
+    "name": {"en": "Tab and slot", "es": "Lengüeta y ranura", "fr": "Tenon et fente", "pt": "Lingueta e fenda"},
+    "slug": "tab-and-slot",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "Two cards that lock together without glue: each has a slit from one edge to the meeting point, and turned a quarter turn to each other they slide into a standing cross held only by contact.",
+      "es": "Dos tarjetas que se ensamblan sin pegamento: cada una tiene una ranura de un borde al punto de encuentro y, giradas un cuarto de vuelta entre sí, se deslizan una en otra hasta formar una cruz de pie que solo sostiene el contacto.",
+      "fr": "Deux cartes qui s'emboîtent sans colle : chacune a une fente d'un bord jusqu'au point de rencontre et, tournées d'un quart de tour l'une par rapport à l'autre, elles glissent l'une dans l'autre en une croix debout tenue par le seul contact.",
+      "pt": "Dois cartões que se encaixam sem cola: cada um tem uma fenda de uma borda até o ponto de encontro e, girados um quarto de volta um em relação ao outro, deslizam um no outro formando uma cruz de pé sustentada só pelo contato."
+    },
+    "thumbnail": "/projects/tab-and-slot.svg",
+    "difficulty": "beginner",
+    "tags": ["technique", "interlocking", "slot", "no-glue", "paper-engineering", "hyperobject", "commons"],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM geometry, computed in this cartridge's main.py; interlocking slotted cards are a general technique of paper and card construction, attributed to that tradition rather than to any designer",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "assembled",
+      "label": {"en": "Assembled", "es": "Ensamblado", "fr": "Assemblé", "pt": "Montado"},
+      "sheets": ["card-a", "card-b"]
+    }
+  ],
+  "sheets": [
+    {"id": "card-a", "label": {"en": "Card A (slot from the top)", "es": "Tarjeta A (ranura desde arriba)", "fr": "Carte A (fente par le haut)", "pt": "Cartão A (fenda por cima)"}, "stock": "cardstock-250"},
+    {"id": "card-b", "label": {"en": "Card B (slot from the bottom)", "es": "Tarjeta B (ranura desde abajo)", "fr": "Carte B (fente par le bas)", "pt": "Cartão B (fenda por baixo)"}, "stock": "cardstock-250"}
+  ],
+  "parameters": [
+    {
+      "id": "card_width", "type": "slider", "unit": "mm",
+      "label": {"en": "Card width (mm)", "es": "Ancho de tarjeta (mm)", "fr": "Largeur de carte (mm)", "pt": "Largura do cartão (mm)"},
+      "default": 100, "min": 50, "max": 200, "step": 1
+    },
+    {
+      "id": "card_height", "type": "slider", "unit": "mm",
+      "label": {"en": "Card height (mm)", "es": "Alto de tarjeta (mm)", "fr": "Hauteur de carte (mm)", "pt": "Altura do cartão (mm)"},
+      "default": 120, "min": 50, "max": 200, "step": 1
+    },
+    {
+      "id": "slit_ratio", "type": "slider", "unit": "ratio",
+      "label": {"en": "Share of the height slotted on card A", "es": "Parte de la altura ranurada en la tarjeta A", "fr": "Part de la hauteur fendue sur la carte A", "pt": "Parte da altura com fenda no cartão A"},
+      "tooltip": {"en": "Card A is slotted from the top over this share of the height, card B from the bottom over the rest, so the two slits always meet.", "es": "La tarjeta A se ranura desde arriba en esta parte de la altura y la B desde abajo en el resto, de modo que las dos ranuras siempre se encuentran.", "fr": "La carte A est fendue par le haut sur cette part de la hauteur, la carte B par le bas sur le reste : les deux fentes se rejoignent toujours.", "pt": "O cartão A recebe a fenda por cima nesta parte da altura e o B por baixo no restante, de modo que as duas fendas sempre se encontram."},
+      "default": 0.5, "min": 0.25, "max": 0.75, "step": 0.05
+    },
+    {
+      "id": "stock", "type": "select",
+      "label": {"en": "Card", "es": "Cartulina", "fr": "Bristol", "pt": "Cartolina"},
+      "default": "cardstock-250",
+      "options": [
+        {"value": "cardstock-160", "label": {"en": "Cardstock 160 g/m²", "es": "Cartulina 160 g/m²", "fr": "Bristol 160 g/m²", "pt": "Cartolina 160 g/m²"}},
+        {"value": "cardstock-250", "label": {"en": "Cardstock 250 g/m²", "es": "Cartulina 250 g/m²", "fr": "Bristol 250 g/m²", "pt": "Cartolina 250 g/m²"}},
+        {"value": "cardstock-300", "label": {"en": "Cardstock 300 g/m²", "es": "Cartulina 300 g/m²", "fr": "Bristol 300 g/m²", "pt": "Cartolina 300 g/m²"}}
+      ]
+    }
+  ],
+  "presets": [
+    {"id": "low-cross", "label": {"en": "Low, wide cross", "es": "Cruz baja y ancha", "fr": "Croix basse et large", "pt": "Cruz baixa e larga"}, "values": {"card_width": 180, "card_height": 70}},
+    {"id": "offset-slots", "label": {"en": "Unequal slits", "es": "Ranuras desiguales", "fr": "Fentes inégales", "pt": "Fendas desiguais"}, "values": {"slit_ratio": 0.3, "stock": "cardstock-300"}}
+  ],
+  "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],
+  "stock": {"default": "cardstock-250", "alternatives": ["cardstock-160", "cardstock-300"]},
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "technique",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "slot",
+        "type": "slot",
+        "label": {"en": "Slot in card A (from the top edge)", "es": "Ranura de la tarjeta A (desde el borde superior)", "fr": "Fente de la carte A (depuis le bord supérieur)", "pt": "Fenda do cartão A (a partir da borda superior)"},
+        "edges": [{"sheet": "card-a", "edge": "slot"}],
+        "parameters": ["card_width", "card_height", "slit_ratio"],
+        "polarity": "female",
+        "symmetry": 2,
+        "frame": {"sheet": "card-a", "origin": [0, "card_height", 0], "normal": [0, 0, 1], "x_axis": [0, -1, 0]}
+      },
+      {
+        "id": "tab",
+        "type": "tab",
+        "label": {"en": "Complementary slit in card B (from the bottom edge)", "es": "Ranura complementaria de la tarjeta B (desde el borde inferior)", "fr": "Fente complémentaire de la carte B (depuis le bord inférieur)", "pt": "Fenda complementar do cartão B (a partir da borda inferior)"},
+        "edges": [{"sheet": "card-b", "edge": "slot"}],
+        "parameters": ["card_width", "card_height", "slit_ratio"],
+        "polarity": "male",
+        "symmetry": 2,
+        "frame": {"sheet": "card-b", "origin": [0, 0, 0], "normal": [1, 0, 0], "x_axis": [0, 1, 0]}
+      }
+    ],
+    "capabilities": {"glue_free": true, "held_by_contact": true},
+    "societal_benefit": {
+      "en": "A joint that needs no glue and comes apart again: the first lesson in building with card, and the basis of flat-packed toys and stands.",
+      "es": "Una unión que no necesita pegamento y se vuelve a desarmar: la primera lección para construir con cartulina y la base de juguetes y soportes que se guardan planos.",
+      "fr": "Un assemblage sans colle qui se démonte : la première leçon de construction en carton et la base des jouets et présentoirs livrés à plat.",
+      "pt": "Uma junta que não precisa de cola e se desmonta de novo: a primeira lição para construir com cartolina e a base de brinquedos e suportes que se guardam planos."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}

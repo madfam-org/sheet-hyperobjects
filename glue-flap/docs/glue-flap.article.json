@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/glue-flap",
+  "title": {"en": "Glue flap", "es": "Pestaña de pegado", "fr": "Patte de collage", "pt": "Aba de colagem"},
+  "summary": {
+    "en": "A strip folded into a closed tube and shut with a tapered glue tab: the joint behind every glued box, sleeve and pop-up piece.",
+    "es": "Una tira doblada en un tubo cerrado y sellada con una pestaña de pegado en trapecio: la unión detrás de toda caja, funda o pieza pop-up pegada.",
+    "fr": "Une bande pliée en tube fermé et close par une patte de collage biseautée : l'assemblage de toute boîte, de tout fourreau et de toute pièce pop-up collés.",
+    "pt": "Uma tira dobrada em um tubo fechado e selada com uma aba de colagem chanfrada: a junta por trás de toda caixa, luva ou peça pop-up colada."
+  },
+  "article": {
+    "path": "glue-flap/docs/README.md",
+    "sections": ["The technique", "Fabrication", "What the engine simulates", "Parameters", "Interfaces", "Provenance"]
+  },
+  "era": "a general technique in continuous use",
+  "related": {
+    "objects": ["pliego/tab-and-slot", "pliego/v-fold-popup", "pliego/parallel-fold-popup"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

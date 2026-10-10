@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/parallel-fold-popup",
+  "title": {"en": "Parallel-fold pop-up", "es": "Pop-up de pliegue paralelo", "fr": "Pop-up à pli parallèle", "pt": "Pop-up de dobra paralela"},
+  "summary": {
+    "en": "A three-fold strip glued across the gutter becomes a standing box when the spread opens, and folds flat again when it closes.",
+    "es": "Una tira con tres dobleces, pegada sobre el pliegue central, se convierte en una caja de pie al abrir el pliego y vuelve a quedar plana al cerrarlo.",
+    "fr": "Une bande à trois plis, collée de part et d'autre de la pliure, devient une boîte debout à l'ouverture et se range de nouveau à plat à la fermeture.",
+    "pt": "Uma tira com três dobras, colada sobre a dobra central, vira uma caixa de pé quando a página dupla se abre e volta a ficar plana ao fechar."
+  },
+  "article": {
+    "path": "parallel-fold-popup/docs/README.md",
+    "sections": ["The mechanism", "Fabrication", "What the engine simulates", "Parameters", "Interfaces", "Provenance"]
+  },
+  "era": "contemporary paper engineering, a general mechanism in continuous use",
+  "related": {
+    "objects": ["pliego/v-fold-popup", "pliego/glue-flap"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

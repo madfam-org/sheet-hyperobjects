@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/tab-and-slot",
+  "title": {"en": "Tab and slot", "es": "Lengüeta y ranura", "fr": "Tenon et fente", "pt": "Lingueta e fenda"},
+  "summary": {
+    "en": "Two slotted cards, turned a quarter turn to each other, slide together into a standing cross held only by contact — no glue.",
+    "es": "Dos tarjetas ranuradas, giradas un cuarto de vuelta entre sí, se deslizan una en otra hasta formar una cruz de pie que solo sostiene el contacto, sin pegamento.",
+    "fr": "Deux cartes fendues, tournées d'un quart de tour l'une par rapport à l'autre, s'emboîtent en une croix debout tenue par le seul contact, sans colle.",
+    "pt": "Dois cartões com fenda, girados um quarto de volta um em relação ao outro, encaixam-se numa cruz de pé sustentada só pelo contato, sem cola."
+  },
+  "article": {
+    "path": "tab-and-slot/docs/README.md",
+    "sections": ["The technique", "Fabrication", "What the engine simulates", "Parameters", "Interfaces", "Provenance"]
+  },
+  "era": "a general technique in continuous use",
+  "related": {
+    "objects": ["pliego/glue-flap"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
