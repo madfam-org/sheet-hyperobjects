@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/kirigami-cube",
+  "title": {
+    "en": "Kirigami cube",
+    "es": "Cubo de kirigami",
+    "fr": "Cube en kirigami",
+    "pt": "Cubo de kirigami"
+  },
+  "summary": {
+    "en": "A closed cube from one cut and scored sheet, without glue: the walls rise from a cross-shaped net, seven flaps tuck inside, and the lid closes. An exact rigid fold program ends in the closed cube.",
+    "es": "Un cubo cerrado a partir de una sola hoja cortada y marcada, sin pegamento: las paredes se levantan desde un desarrollo en cruz, siete solapas se meten por dentro y la tapa se cierra. Una secuencia rígida exacta termina en el cubo cerrado.",
+    "fr": "Un cube fermé tiré d'une seule feuille découpée et rainée, sans colle : les parois se relèvent depuis un patron en croix, sept rabats se glissent à l'intérieur et le couvercle se ferme. Une séquence rigide exacte aboutit au cube fermé.",
+    "pt": "Um cubo fechado a partir de uma só folha cortada e vincada, sem cola: as paredes erguem-se de uma planificação em cruz, sete abas encaixam por dentro e a tampa fecha. Uma sequência rígida exata termina no cubo fechado."
+  },
+  "article": {
+    "path": "kirigami-cube/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary",
+  "sources": [
+    "E. D. Demaine and J. O'Rourke, Geometric Folding Algorithms: Linkages, Origami, Polyhedra, Cambridge University Press (2007)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/tab-and-slot",
+      "pliego/glue-flap"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/waterbomb-tessellation",
+  "title": {"en": "Waterbomb tessellation", "es": "Teselado de bomba de agua", "fr": "Pavage de la bombe à eau", "pt": "Tesselação da bomba d'água"},
+  "summary": {
+    "en": "A grid of the generic waterbomb cell in which every vertex is a waterbomb base. Folded symmetrically it curls rigidly and closes into an exact tube; pressed flat, every cell becomes a flat waterbomb base.",
+    "es": "Una cuadrícula de la celda genérica de bomba de agua en la que cada vértice es una base de bomba de agua. Plegada de forma simétrica se enrolla rígidamente y se cierra en un tubo exacto; aplanada, cada celda se vuelve una base de bomba de agua plana.",
+    "fr": "Une grille de la cellule générique de la bombe à eau dont chaque sommet est une base de la bombe à eau. Pliée symétriquement, elle s'enroule de façon rigide et se ferme en un tube exact ; aplatie, chaque cellule devient une base de la bombe à eau à plat.",
+    "pt": "Uma grade da célula genérica da bomba d'água em que cada vértice é uma base da bomba d'água. Dobrada de forma simétrica, enrola-se rigidamente e fecha-se num tubo exato; achatada, cada célula torna-se uma base da bomba d'água plana."
+  },
+  "article": {
+    "path": "waterbomb-tessellation/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional base; tessellation and tube studied in the 20th–21st centuries",
+  "heritage": false,
+  "sources": [
+    "T. C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020",
+    "B. H. Hanna, J. M. Lund, R. J. Lang, S. P. Magleby, L. L. Howell, Waterbomb base: a symmetric single-vertex bistable origami mechanism, Smart Materials and Structures 23 (2014) 094009",
+    "Y. Chen, H. Feng, J. Ma, R. Peng, Z. You, Symmetric waterbomb origami, Proceedings of the Royal Society A 472 (2016) 20150846",
+    "Y. Yoshimura, On the mechanism of buckling of a circular cylindrical shell under axial compression, NACA Technical Memorandum 1390 (1955)"
+  ],
+  "related": {"objects": ["pliego/yoshimura", "pliego/kresling-tower", "pliego/square-twist"]},
+  "review_status": {"state": "generated", "note": "Written by an agent lane; awaiting a human review pass."}
+}

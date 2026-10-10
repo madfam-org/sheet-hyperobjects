@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-doily",
+  "title": {
+    "en": "Paper doily",
+    "es": "Carpeta de papel",
+    "fr": "Napperon en papier",
+    "pt": "Toalhinha de papel"
+  },
+  "summary": {
+    "en": "Radial lace by fold-and-cut: a square folded into a 4-, 6- or 8-fold wedge and cut once into a round doily with a scalloped edge and rings of small holes. The lace density sets how many rings and holes there are.",
+    "es": "Encaje radial doblando y cortando: un cuadrado doblado en una cuña de 4, 6 u 8 ejes y cortado una sola vez en una carpeta redonda con orilla festoneada y anillos de agujeritos. La densidad del encaje fija cuántos anillos y agujeros lleva.",
+    "fr": "Dentelle rayonnante par pliage-découpage : un carré plié en un coin d'ordre 4, 6 ou 8 et découpé une seule fois en un napperon rond, bord festonné et anneaux de petits jours. La densité de la dentelle fixe le nombre d'anneaux et de jours.",
+    "pt": "Renda radial por dobra e corte: um quadrado dobrado numa cunha de 4, 6 ou 8 eixos e cortado uma só vez numa toalhinha redonda com borda recortada e anéis de furinhos. A densidade da renda define quantos anéis e furos ela tem."
+  },
+  "article": {
+    "path": "paper-doily/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "generic",
+  "sources": [
+    "E. D. Demaine, M. L. Demaine and A. Lubiw, Folding and cutting paper, JCDCG 98, LNCS 1763 (2000)"
+  ],
+  "related": {
+    "objects": [
+      "pliego/paper-snowflake",
+      "pliego/jianzhi-window-flower"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

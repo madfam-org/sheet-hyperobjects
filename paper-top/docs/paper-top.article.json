@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-top",
+  "title": {"en": "Paper top", "es": "Trompo de papel", "fr": "Toupie en papier", "pt": "Pião de papel"},
+  "summary": {
+    "en": "A spinning top made only of card: a printed disc keyed onto a folded triangular axle with a pyramid point.",
+    "es": "Un trompo hecho solo de cartulina: un disco impreso encajado en un eje triangular doblado con punta de pirámide.",
+    "fr": "Une toupie faite seulement de carton : un disque imprimé claveté sur un axe triangulaire plié à pointe pyramidale.",
+    "pt": "Um pião feito só de cartolina: um disco impresso encaixado num eixo triangular dobrado com ponta de pirâmide."
+  },
+  "article": {
+    "path": "paper-top/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional toy of many cultures",
+  "heritage": false,
+  "sources": ["Wikipedia, «Spinning top», https://en.wikipedia.org/wiki/Spinning_top", "Wikipedia, «Newton disc», https://en.wikipedia.org/wiki/Newton_disc"],
+  "related": {"objects": ["pliego/pinwheel", "pliego/zoetrope"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/kaleidocycle",
+  "title": {"en": "Kaleidocycle", "es": "Caleidociclo", "fr": "Kaléidocycle", "pt": "Caleidociclo"},
+  "summary": {
+    "en": "A ring of 6, 8 or 10 tetrahedra hinged edge to edge that turns through its own centre without end, folded from one band and turned along its exact closed-loop motion.",
+    "es": "Un anillo de 6, 8 o 10 tetraedros unidos arista con arista que gira a través de su propio centro sin fin, doblado a partir de una sola banda y girado según su movimiento exacto de lazo cerrado.",
+    "fr": "Un anneau de 6, 8 ou 10 tétraèdres articulés arête contre arête qui tourne sans fin à travers son propre centre, plié dans une seule bande et tourné selon son mouvement exact en boucle fermée.",
+    "pt": "Um anel de 6, 8 ou 10 tetraedros articulados aresta com aresta que gira através do próprio centro sem fim, dobrado a partir de uma única faixa e girado segundo o seu movimento exato de laço fechado."
+  },
+  "article": {
+    "path": "kaleidocycle/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "1958 to present; a paper linkage toy",
+  "heritage": false,
+  "sources": [
+    "D. Schattschneider, W. Walker, M. C. Escher Kaleidocycles (1977)",
+    "Wikipedia, «Kaleidocycle», https://en.wikipedia.org/wiki/Kaleidocycle"
+  ],
+  "related": {"objects": ["pliego/flexagon", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

@@ -1,0 +1,669 @@
+{
+  "project": {
+    "name": {
+      "en": "Modular origami",
+      "es": "Origami modular",
+      "fr": "Origami modulaire",
+      "pt": "Origami modular"
+    },
+    "slug": "modular-origami",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "Interlocking-unit assemblies from generic units: a cube of six sleeve units whose tabs slide into each other's pockets, and a wreath and a crown of triangular units in the folk 3-D origami idiom, each point tucked into the next unit's pocket. One unit folds step by step beside the finished object.",
+      "es": "Ensambles de unidades entrelazadas hechas con unidades genéricas: un cubo de seis unidades de funda cuyas pestañas entran en los bolsillos de las otras, y una corona plana y una corona de pie de unidades triangulares al estilo popular del origami 3D, cada punta metida en el bolsillo de la unidad siguiente. Una unidad se dobla paso a paso junto al objeto terminado.",
+      "fr": "Des assemblages de modules imbriqués faits de modules génériques : un cube de six modules en fourreau dont les languettes glissent dans les poches des autres, et une couronne à plat et une couronne debout de modules triangulaires dans l'idiome populaire de l'origami 3D, chaque pointe glissée dans la poche du module suivant. Un module se plie pas à pas à côté de l'objet fini.",
+      "pt": "Montagens de unidades encaixadas feitas de unidades genéricas: um cubo de seis unidades de luva cujas abas entram nos bolsos umas das outras, e uma guirlanda e uma coroa de unidades triangulares no estilo popular do origami 3D, cada ponta enfiada no bolso da unidade seguinte. Uma unidade se dobra passo a passo ao lado do objeto pronto."
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "origami",
+      "modular",
+      "units",
+      "cube",
+      "wreath",
+      "3d-origami",
+      "simplefold",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original design: the sleeve unit and the triangular unit's fold sequence are derived by this cartridge (generic units, no named designer's unit); the triangular unit follows the folk Chinese 3-D modular idiom (zhezhi), credited to that tradition; every crease is computed by main.py",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "cube",
+      "label": {
+        "en": "Cube of six sleeve units",
+        "es": "Cubo de seis unidades de funda",
+        "fr": "Cube de six modules en fourreau",
+        "pt": "Cubo de seis unidades de luva"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "unit",
+        "face-1",
+        "face-2",
+        "face-3",
+        "face-4",
+        "face-5",
+        "face-6"
+      ]
+    },
+    {
+      "id": "wreath",
+      "label": {
+        "en": "Wreath of triangular units",
+        "es": "Corona plana de unidades triangulares",
+        "fr": "Couronne de modules triangulaires",
+        "pt": "Guirlanda de unidades triangulares"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "unit",
+        "unit-1",
+        "unit-2",
+        "unit-3",
+        "unit-4",
+        "unit-5",
+        "unit-6",
+        "unit-7",
+        "unit-8",
+        "unit-9",
+        "unit-10",
+        "unit-11",
+        "unit-12",
+        "unit-13",
+        "unit-14",
+        "unit-15",
+        "unit-16",
+        "unit-17",
+        "unit-18",
+        "unit-19",
+        "unit-20",
+        "unit-21",
+        "unit-22",
+        "unit-23",
+        "unit-24"
+      ]
+    },
+    {
+      "id": "crown",
+      "label": {
+        "en": "Crown of standing triangular units",
+        "es": "Corona de unidades triangulares de pie",
+        "fr": "Couronne de modules triangulaires debout",
+        "pt": "Coroa de unidades triangulares em pé"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "unit",
+        "unit-1",
+        "unit-2",
+        "unit-3",
+        "unit-4",
+        "unit-5",
+        "unit-6",
+        "unit-7",
+        "unit-8",
+        "unit-9",
+        "unit-10",
+        "unit-11",
+        "unit-12",
+        "unit-13",
+        "unit-14",
+        "unit-15",
+        "unit-16",
+        "unit-17",
+        "unit-18",
+        "unit-19",
+        "unit-20",
+        "unit-21",
+        "unit-22",
+        "unit-23",
+        "unit-24"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "unit",
+      "label": {
+        "en": "Unit (folding)",
+        "es": "Unidad (en plegado)",
+        "fr": "Module (en pliage)",
+        "pt": "Unidade (dobrando)"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "face-1",
+      "label": {
+        "en": "Cube face 1",
+        "es": "Cara del cubo 1",
+        "fr": "Face du cube 1",
+        "pt": "Face do cubo 1"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "face-2",
+      "label": {
+        "en": "Cube face 2",
+        "es": "Cara del cubo 2",
+        "fr": "Face du cube 2",
+        "pt": "Face do cubo 2"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "face-3",
+      "label": {
+        "en": "Cube face 3",
+        "es": "Cara del cubo 3",
+        "fr": "Face du cube 3",
+        "pt": "Face do cubo 3"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "face-4",
+      "label": {
+        "en": "Cube face 4",
+        "es": "Cara del cubo 4",
+        "fr": "Face du cube 4",
+        "pt": "Face do cubo 4"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "face-5",
+      "label": {
+        "en": "Cube face 5",
+        "es": "Cara del cubo 5",
+        "fr": "Face du cube 5",
+        "pt": "Face do cubo 5"
+      },
+      "stock": "elephant-hide-110"
+    },
+    {
+      "id": "face-6",
+      "label": {
+        "en": "Cube face 6",
+        "es": "Cara del cubo 6",
+        "fr": "Face du cube 6",
+        "pt": "Face do cubo 6"
+      },
+      "stock": "elephant-hide-110"
+    },
+    {
+      "id": "unit-1",
+      "label": {
+        "en": "Unit 1",
+        "es": "Unidad 1",
+        "fr": "Module 1",
+        "pt": "Unidade 1"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-2",
+      "label": {
+        "en": "Unit 2",
+        "es": "Unidad 2",
+        "fr": "Module 2",
+        "pt": "Unidade 2"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-3",
+      "label": {
+        "en": "Unit 3",
+        "es": "Unidad 3",
+        "fr": "Module 3",
+        "pt": "Unidade 3"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-4",
+      "label": {
+        "en": "Unit 4",
+        "es": "Unidad 4",
+        "fr": "Module 4",
+        "pt": "Unidade 4"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-5",
+      "label": {
+        "en": "Unit 5",
+        "es": "Unidad 5",
+        "fr": "Module 5",
+        "pt": "Unidade 5"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-6",
+      "label": {
+        "en": "Unit 6",
+        "es": "Unidad 6",
+        "fr": "Module 6",
+        "pt": "Unidade 6"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-7",
+      "label": {
+        "en": "Unit 7",
+        "es": "Unidad 7",
+        "fr": "Module 7",
+        "pt": "Unidade 7"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-8",
+      "label": {
+        "en": "Unit 8",
+        "es": "Unidad 8",
+        "fr": "Module 8",
+        "pt": "Unidade 8"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-9",
+      "label": {
+        "en": "Unit 9",
+        "es": "Unidad 9",
+        "fr": "Module 9",
+        "pt": "Unidade 9"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-10",
+      "label": {
+        "en": "Unit 10",
+        "es": "Unidad 10",
+        "fr": "Module 10",
+        "pt": "Unidade 10"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-11",
+      "label": {
+        "en": "Unit 11",
+        "es": "Unidad 11",
+        "fr": "Module 11",
+        "pt": "Unidade 11"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-12",
+      "label": {
+        "en": "Unit 12",
+        "es": "Unidad 12",
+        "fr": "Module 12",
+        "pt": "Unidade 12"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-13",
+      "label": {
+        "en": "Unit 13",
+        "es": "Unidad 13",
+        "fr": "Module 13",
+        "pt": "Unidade 13"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-14",
+      "label": {
+        "en": "Unit 14",
+        "es": "Unidad 14",
+        "fr": "Module 14",
+        "pt": "Unidade 14"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-15",
+      "label": {
+        "en": "Unit 15",
+        "es": "Unidad 15",
+        "fr": "Module 15",
+        "pt": "Unidade 15"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-16",
+      "label": {
+        "en": "Unit 16",
+        "es": "Unidad 16",
+        "fr": "Module 16",
+        "pt": "Unidade 16"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-17",
+      "label": {
+        "en": "Unit 17",
+        "es": "Unidad 17",
+        "fr": "Module 17",
+        "pt": "Unidade 17"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-18",
+      "label": {
+        "en": "Unit 18",
+        "es": "Unidad 18",
+        "fr": "Module 18",
+        "pt": "Unidade 18"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-19",
+      "label": {
+        "en": "Unit 19",
+        "es": "Unidad 19",
+        "fr": "Module 19",
+        "pt": "Unidade 19"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-20",
+      "label": {
+        "en": "Unit 20",
+        "es": "Unidad 20",
+        "fr": "Module 20",
+        "pt": "Unidade 20"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-21",
+      "label": {
+        "en": "Unit 21",
+        "es": "Unidad 21",
+        "fr": "Module 21",
+        "pt": "Unidade 21"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-22",
+      "label": {
+        "en": "Unit 22",
+        "es": "Unidad 22",
+        "fr": "Module 22",
+        "pt": "Unidade 22"
+      },
+      "stock": "tant"
+    },
+    {
+      "id": "unit-23",
+      "label": {
+        "en": "Unit 23",
+        "es": "Unidad 23",
+        "fr": "Module 23",
+        "pt": "Unidade 23"
+      },
+      "stock": "kami"
+    },
+    {
+      "id": "unit-24",
+      "label": {
+        "en": "Unit 24",
+        "es": "Unidad 24",
+        "fr": "Module 24",
+        "pt": "Unidade 24"
+      },
+      "stock": "tant"
+    }
+  ],
+  "parameter_groups": [
+    {
+      "id": "unit",
+      "label": {
+        "en": "Unit",
+        "es": "Unidad",
+        "fr": "Module",
+        "pt": "Unidade"
+      }
+    },
+    {
+      "id": "ring",
+      "label": {
+        "en": "Ring",
+        "es": "Anillo",
+        "fr": "Anneau",
+        "pt": "Anel"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "unit_size",
+      "type": "slider",
+      "group": "unit",
+      "unit": "mm",
+      "label": {
+        "en": "Unit size (mm)",
+        "es": "Tamaño de la unidad (mm)",
+        "fr": "Taille du module (mm)",
+        "pt": "Tamanho da unidade (mm)"
+      },
+      "tooltip": {
+        "en": "The cube's face, or the triangular unit's paper width (its paper is 2:3).",
+        "es": "La cara del cubo, o el ancho del papel de la unidad triangular (su papel es 2:3).",
+        "fr": "La face du cube, ou la largeur du papier du module triangulaire (son papier est en 2:3).",
+        "pt": "A face do cubo, ou a largura do papel da unidade triangular (o seu papel é 2:3)."
+      },
+      "default": 40,
+      "min": 24,
+      "max": 90,
+      "step": 1
+    },
+    {
+      "id": "units",
+      "type": "slider",
+      "group": "ring",
+      "unit": "count",
+      "modes": [
+        "wreath",
+        "crown"
+      ],
+      "label": {
+        "en": "Units in the ring",
+        "es": "Unidades en el anillo",
+        "fr": "Modules dans l'anneau",
+        "pt": "Unidades no anel"
+      },
+      "default": 12,
+      "min": 6,
+      "max": 24,
+      "step": 1
+    },
+    {
+      "id": "depth",
+      "type": "slider",
+      "group": "ring",
+      "unit": "ratio",
+      "modes": [
+        "wreath",
+        "crown"
+      ],
+      "label": {
+        "en": "How deep each point goes in",
+        "es": "Qué tan hondo entra cada punta",
+        "fr": "Profondeur d'insertion de chaque pointe",
+        "pt": "Quão fundo entra cada ponta"
+      },
+      "tooltip": {
+        "en": "Fraction of the unit's long leg that slides into the next pocket.",
+        "es": "Fracción del cateto largo de la unidad que entra en el bolsillo siguiente.",
+        "fr": "Fraction du grand côté du module qui glisse dans la poche suivante.",
+        "pt": "Fração do cateto maior da unidade que entra no bolso seguinte."
+      },
+      "default": 0.55,
+      "min": 0.3,
+      "max": 0.75,
+      "step": 0.05
+    },
+    {
+      "id": "tilt",
+      "type": "slider",
+      "group": "ring",
+      "unit": "deg",
+      "modes": [
+        "crown"
+      ],
+      "label": {
+        "en": "Crown tilt (°)",
+        "es": "Inclinación de la corona (°)",
+        "fr": "Inclinaison de la couronne (°)",
+        "pt": "Inclinação da coroa (°)"
+      },
+      "default": 70,
+      "min": 20,
+      "max": 85,
+      "step": 1
+    }
+  ],
+  "presets": [
+    {
+      "id": "big-units",
+      "label": {
+        "en": "Big units (60 mm)",
+        "es": "Unidades grandes (60 mm)",
+        "fr": "Grands modules (60 mm)",
+        "pt": "Unidades grandes (60 mm)"
+      },
+      "values": {
+        "unit_size": 60
+      }
+    },
+    {
+      "id": "eight-units",
+      "label": {
+        "en": "Eight-unit ring",
+        "es": "Anillo de ocho unidades",
+        "fr": "Anneau de huit modules",
+        "pt": "Anel de oito unidades"
+      },
+      "values": {
+        "units": 8,
+        "depth": 0.45
+      }
+    },
+    {
+      "id": "tall-crown",
+      "label": {
+        "en": "Twenty units, nearly upright",
+        "es": "Veinte unidades, casi de pie",
+        "fr": "Vingt modules, presque debout",
+        "pt": "Vinte unidades, quase em pé"
+      },
+      "values": {
+        "units": 20,
+        "tilt": 82
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Fold a unit",
+        "es": "Doblar una unidad",
+        "fr": "Plier un module",
+        "pt": "Dobrar uma unidade"
+      },
+      "min": 0,
+      "max": 7,
+      "default": 0,
+      "unit": "step"
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "hpgl",
+    "glb",
+    "fold"
+  ],
+  "stock": {
+    "default": "kami",
+    "alternatives": [
+      "tant",
+      "elephant-hide-110",
+      "copy-80"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "model",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "sleeve_tabs",
+        "type": "tab",
+        "label": {
+          "en": "Sleeve unit tabs (they slide into the neighbouring pockets)",
+          "es": "Pestañas de la unidad de funda (entran en los bolsillos vecinos)",
+          "fr": "Languettes du module en fourreau (elles glissent dans les poches voisines)",
+          "pt": "Abas da unidade de luva (entram nos bolsos vizinhos)"
+        },
+        "edges": [
+          {
+            "sheet": "unit",
+            "edge": "tab-hinge"
+          }
+        ],
+        "parameters": [
+          "unit_size"
+        ],
+        "polarity": "male"
+      }
+    ],
+    "capabilities": {
+      "previewable": true,
+      "flat_foldable": true,
+      "simple_folds": true,
+      "assembled_initial_frame": true
+    },
+    "societal_benefit": {
+      "en": "Modular origami turns many small, identical folds into one big object, which makes it a shared classroom project: every pair of hands folds units, and the whole only holds when they interlock.",
+      "es": "El origami modular convierte muchos pliegues pequeños e iguales en un objeto grande, y por eso es un proyecto compartido de salón: cada par de manos dobla unidades, y el todo solo se sostiene cuando se entrelazan.",
+      "fr": "L'origami modulaire fait de nombreux petits pliages identiques un seul grand objet : c'est un projet de classe partagé, chaque paire de mains plie des modules, et l'ensemble ne tient que lorsqu'ils s'imbriquent.",
+      "pt": "O origami modular transforma muitas dobras pequenas e iguais num objeto grande, e por isso é um projeto de sala compartilhado: cada par de mãos dobra unidades, e o todo só se sustenta quando elas se encaixam."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}

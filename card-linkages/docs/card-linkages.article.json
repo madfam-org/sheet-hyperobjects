@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/card-linkages",
+  "title": {"en": "Card linkages", "es": "Mecanismos articulados de cartulina", "fr": "Mécanismes articulés en carte", "pt": "Mecanismos articulados de cartão"},
+  "summary": {
+    "en": "Levers and linkages in card: a four-bar folded from one strip, a scissor extender folded as a rhombus chain, and a crank and rocker of flat links on brads, every pose solved so the links stay joined.",
+    "es": "Palancas y mecanismos de cartulina: un cuadrilátero articulado doblado de una tira, un extensor de tijera doblado como cadena de rombos y una manivela con balancín de eslabones planos con broches; cada posición está resuelta para que los eslabones sigan unidos.",
+    "fr": "Leviers et mécanismes en carte : un quadrilatère articulé plié d'une bande, un extenseur à ciseaux plié en chaîne de losanges et une manivelle-balancier en biellettes plates sur attaches ; chaque position est résolue pour que les biellettes restent jointes.",
+    "pt": "Alavancas e mecanismos em cartão: um quadrilátero articulado dobrado de uma tira, um extensor de tesoura dobrado como cadeia de losangos e uma manivela com balancim de elos planos com colchetes; cada posição é resolvida para que os elos fiquem unidos."
+  },
+  "article": {
+    "path": "card-linkages/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism and the fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "classical kinematics, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Four-bar linkage», https://en.wikipedia.org/wiki/Four-bar_linkage",
+    "Wikipedia, «Pantograph» (target of «Lazy tongs»), https://en.wikipedia.org/wiki/Pantograph",
+    "Wikipedia, «Brass fastener», https://en.wikipedia.org/wiki/Brass_fastener",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.3–§5.6"
+  ],
+  "related": {"objects": ["pliego/fastener-joins", "pliego/paper-automaton", "pliego/pull-tab-slider", "pliego/parallel-fold-popup"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}
+}

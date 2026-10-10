@@ -1,0 +1,32 @@
+{
+  "spec_version": 1,
+  "object": "pliego/print-folds",
+  "title": {"en": "Print folds", "es": "Plegados de imprenta", "fr": "Pliages d'imprimerie", "pt": "Dobras gráficas"},
+  "summary": {
+    "en": "Every commercial print fold from one generator: letter, z-fold, gatefold, French, roll, double parallel, accordion, cross and map folds, with allowances computed from the caliper and an exact fold program.",
+    "es": "Todos los plegados comerciales de imprenta con un solo generador: tríptico enrollado, zigzag, díptico de puertas, francés, enrollado, doble paralelo, acordeón, cruzado y de mapa, con holguras calculadas con el calibre y una secuencia exacta.",
+    "fr": "Tous les pliages commerciaux d'imprimerie avec un seul générateur : pli lettre, en Z, fenêtre, à la française, roulé, double parallèle, accordéon, croisé et carte, avec des jeux calculés d'après l'épaisseur et un programme exact.",
+    "pt": "Todas as dobras gráficas comerciais com um só gerador: carta, Z, folder com portas, francesa, enrolada, paralela dupla, sanfona, cruzada e mapa, com folgas calculadas pela espessura e uma sequência exata."
+  },
+  "article": {
+    "path": "print-folds/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "commercial print finishing, from machine folding to the present",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Book folding», https://en.wikipedia.org/wiki/Book_folding",
+    "Wikipedia, «Folding machine», https://en.wikipedia.org/wiki/Folding_machine",
+    "Smartpress, «12 types of brochure folds for marketing & how to use them», https://smartpress.com/blog/on-press/12-types-of-brochure-folds-for-marketing-how-to-use-them",
+    "4over4, «What is a right angle or French fold?», https://www.4over4.com/faqs/marketing-materials/what-is-a-right-angle-or-french-fold",
+    "Qin Printing, «Map fold», https://www.qinprinting.com/map-fold/",
+    "University of Southampton, Valley Graphics, «Folding», https://www.southampton.ac.uk/valleygraphics/finishing/folding.page",
+    "Vomela, «7 facts to know about paper folding in commercial printing», https://blog.vomela.com/7-facts-to-know-about-paper-folding-commercial-printing",
+    "4over4, «Blank brochure templates and the panel widths that make a fold work», https://v2.4over4.com/guide/how-blank-brochure-templates-work",
+    "4over4, «Free tri-fold brochure templates with real panel dimensions», https://v2.4over4.com/guide/free-tri-fold-brochure-templates-guide"
+  ],
+  "related": {
+    "objects": ["pliego/greeting-card", "pliego/score-vs-crease", "pliego/leporello", "pliego/codex-signatures", "pliego/miura-ori"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·B); awaiting a human editorial pass."}
+}

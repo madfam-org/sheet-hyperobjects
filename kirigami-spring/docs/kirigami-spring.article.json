@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/kirigami-spring",
+  "title": {
+    "en": "Kirigami spring",
+    "es": "Resorte de kirigami",
+    "fr": "Ressort en kirigami",
+    "pt": "Mola de kirigami"
+  },
+  "summary": {
+    "en": "A spiral cut turns a flat disc into a strip that joins a centre to a rim. Hold the rim, lift the centre, and the strip rises into a conical helix: a spring cut from one sheet, with one or two arms.",
+    "es": "Un corte en espiral convierte un disco plano en una tira que une un centro con un aro. Sujeta el aro, levanta el centro y la tira se eleva en una hélice cónica: un resorte cortado en una sola hoja, de uno o dos brazos.",
+    "fr": "Une découpe en spirale transforme un disque plat en une bande qui relie un centre à une couronne. Tenez la couronne, soulevez le centre : la bande s'élève en hélice conique. Un ressort découpé dans une seule feuille, à un ou deux bras.",
+    "pt": "Um corte em espiral transforma um disco plano numa tira que liga um centro a um aro. Segure o aro, levante o centro e a tira sobe numa hélice cónica: uma mola cortada numa só folha, com um ou dois braços."
+  },
+  "article": {
+    "path": "kirigami-spring/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The mechanism",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "classical geometry; contemporary cut",
+  "sources": [
+    "T. L. Heath (ed.), The Works of Archimedes, Cambridge University Press (1897): On Spirals"
+  ],
+  "related": {
+    "objects": [
+      "pliego/lattice-kirigami",
+      "pliego/rotating-squares"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}

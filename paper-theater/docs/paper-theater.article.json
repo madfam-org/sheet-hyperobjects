@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-theater",
+  "title": {"en": "Paper theatre", "es": "Teatro de papel", "fr": "Théâtre de papier", "pt": "Teatro de papel"},
+  "summary": {
+    "en": "A toy theatre in card: stage, proscenium, wings, ground row and backdrop held by tabs and slits, and a flat that slides in from the wings.",
+    "es": "Un teatro de juguete en cartulina: escenario, proscenio, bastidores, rompimiento y telón de fondo sujetos con pestañas y ranuras, y una figura que entra deslizándose desde los bastidores.",
+    "fr": "Un théâtre de papier en carte : scène, cadre de scène, coulisses, ferme basse et toile de fond tenus par pattes et fentes, et une figurine qui entre en glissant depuis les coulisses.",
+    "pt": "Um teatro de brinquedo em cartão: palco, proscênio, bastidores, praticável e pano de fundo presos por abas e fendas, e uma figura que entra deslizando pelos bastidores."
+  },
+  "article": {
+    "path": "paper-theater/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program and the slide", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "nineteenth-century European toy theatre to present",
+  "heritage": true,
+  "sources": [
+    "Wikipedia, «Toy theater», https://en.wikipedia.org/wiki/Toy_theater",
+    "Pollock's Toy Museum, «William West and the Regency Toy Theatre», https://www.pollockstoymuseum.co.uk/wp-content/uploads/2025/11/William-West-and-the-Regency-Toy-Theatre.pdf",
+    "Wikipedia (de), «Papiertheater», https://de.wikipedia.org/wiki/Papiertheater",
+    "Robert Louis Stevenson, «A Penny Plain and Twopence Coloured», essay, 1884",
+    "George Speaight, Juvenile Drama: The History of the English Toy Theatre, 1946"
+  ],
+  "related": {"objects": ["pliego/shadow-box", "pliego/tab-and-slot", "pliego/pull-tab-slider"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·D); awaiting a human editorial pass."}
+}

@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/thaumatrope",
+  "title": {"en": "Thaumatrope", "es": "Taumatropo", "fr": "Thaumatrope", "pt": "Taumatrópio"},
+  "summary": {
+    "en": "A card disc with a different picture on each side, twirled on two strings until the pictures merge into one.",
+    "es": "Un disco de cartulina con un dibujo distinto en cada cara, que se hace girar con dos hilos hasta que los dibujos se funden en uno.",
+    "fr": "Un disque de carton portant une image différente sur chaque face, qu'on fait tourner sur deux fils jusqu'à ce que les images se fondent.",
+    "pt": "Um disco de cartolina com um desenho diferente em cada face, girado em dois fios até que os desenhos se fundam num só."
+  },
+  "article": {
+    "path": "thaumatrope/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "1825 to present; an optical toy",
+  "heritage": false,
+  "sources": ["Wikipedia, «Thaumatrope», https://en.wikipedia.org/wiki/Thaumatrope", "J. A. Paris, Philosophy in Sport made Science in Earnest (1827)"],
+  "related": {"objects": ["pliego/zoetrope", "pliego/dissolve-scene"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·T); awaiting a human editorial pass."}
+}

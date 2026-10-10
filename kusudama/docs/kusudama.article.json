@@ -1,0 +1,39 @@
+{
+  "spec_version": 1,
+  "object": "pliego/kusudama",
+  "title": {"en": "Kusudama", "es": "Kusudama", "fr": "Kusudama", "pt": "Kusudama"},
+  "summary": {
+    "en": "The traditional Japanese flower ball, glued: a square folded on its diagonal, its corners brought up into a diamond and rolled into a cone makes a petal; five petals make a flower and twelve flowers make the ball.",
+    "es": "La tradicional bola de flores japonesa, pegada: un cuadrado doblado por la diagonal, con las esquinas subidas en un rombo y enrollado en cono, forma un pétalo; cinco pétalos forman una flor y doce flores forman la bola.",
+    "fr": "La boule de fleurs japonaise traditionnelle, collée : un carré plié sur sa diagonale, ses coins remontés en losange puis roulé en cône, donne un pétale ; cinq pétales font une fleur et douze fleurs font la boule.",
+    "pt": "A tradicional bola de flores japonesa, colada: um quadrado dobrado na diagonal, com os cantos levados para cima num losango e enrolado em cone, faz uma pétala; cinco pétalas fazem uma flor e doze flores fazem a bola."
+  },
+  "article": {
+    "path": "kusudama/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "traditional Japanese paper folding; paper flower balls of undocumented date, in continuous use",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Kusudama (Japanese flower ball)",
+    "regions": ["Japan"],
+    "custodians": ["The Japanese paper-folding tradition"],
+    "note": {
+      "en": "The geometry is original MADFAM work (a single-vertex petal rolled into a faceted cone, the flower and the ball solved from contact conditions); the glued flower ball and its credit belong to the Japanese paper-folding tradition.",
+      "es": "La geometría es obra original de MADFAM (un pétalo de un solo vértice enrollado en un cono facetado, y la flor y la bola resueltas a partir de las condiciones de contacto); la bola de flores pegadas y su crédito pertenecen a la tradición japonesa del plegado de papel.",
+      "fr": "La géométrie est une œuvre originale de MADFAM (un pétale à un seul sommet roulé en cône à facettes, la fleur et la boule résolues à partir des conditions de contact) ; la boule de fleurs collées et son crédit appartiennent à la tradition japonaise du pliage de papier.",
+      "pt": "A geometria é obra original da MADFAM (uma pétala de um só vértice enrolada num cone facetado, e a flor e a bola resolvidas a partir das condições de contato); a bola de flores coladas e o seu crédito pertencem à tradição japonesa da dobradura de papel."
+    }
+  },
+  "excludes": [
+    "Modular kusudama whose units slot into pockets, and every designer's modular unit: only the traditional glued petal is modelled",
+    "Sewn or threaded kusudama, tassels and hanging threads: described in the sources, not modelled",
+    "The assembly motions (petals into a flower, flowers into the ball): the flower and the ball start assembled"
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kusudama",
+    "https://origamiheaven.com/historyofkusudama.htm"
+  ],
+  "related": {"objects": ["pliego/party-hat", "pliego/glue-flap"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·C, sub-lane C-C); awaiting a human editorial pass."}
+}
