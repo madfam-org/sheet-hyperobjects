@@ -32,15 +32,23 @@ The sheet is portrait, `W × H`. Let `hc = H/2` and `w2 = W/2`; the brim strip i
 4. Fold the front strip up twice: at `y = b/2`, then at `y = b`. The brim is a band from `b` to
    `1.5 b`. Turn over (mountain folds seen from the front) and do the same at the back.
 5. Pirate: the brim's ends lie beyond the crown's slanted edges. Each end folds around the side
-   along that edge: the front ends behind, the back ends to the front.
+   along that edge, straight after its own brim: the front brim's ends go behind, then the back
+   strip is folded up over them, and the back brim's ends come round to the front. Folding all
+   four ends at the end instead is not a flat folding: the front ends would have to pass through
+   the back ones (the kernel's layer check refuses it).
 
 For a broadsheet page (380 × 580 mm) the crown is 190 mm high on a 380 mm base, a size a child can
 wear.
 
 ## The fold program
 
-The program is `kinematic`: 6 steps for the newspaper hat, 7 for the pirate hat, all simple folds.
-Every state is an exact rigid state (closure below 10⁻¹² mm). The studio shows the flat hat
+The program is `kinematic`: 6 steps for the newspaper hat, 8 for the pirate hat, all simple folds.
+Each fold is an operation of `pliego.FoldProgram` on a layer-ordered flat state. After every fold
+the kernel checks the layer order (taco and tortilla conditions, transitivity) and Kawasaki and
+Maekawa at every vertex, and the crease pattern is the final state unfolded. The centre line is
+opened again, so the pattern draws it as a flat crease (`F`, a scored line). Folds the diagram
+shows as one step (both corners, a brim's two folds, a brim's two ends) move together. Every state,
+and every halfway state the preview blends, is an exact rigid state (closure below 10⁻¹² mm). The studio shows the flat hat
 standing upright. **Wearing it** means opening the bottom into a rounded crown, which curves the
 paper and needs the physics engine.
 
@@ -49,8 +57,9 @@ paper and needs the physics engine.
 1. Fold a newspaper page in half, top edge down to the bottom edge.
 2. Fold it in half sideways and unfold, to mark the centre.
 3. Fold the two top corners down to the centre line.
-4. Fold the front strip up halfway, then up again over the corners. Turn over and do the same.
-5. Pirate: fold the ends of the brim around the sides.
+4. Fold the front strip up halfway, then up again over the corners. (Pirate: fold the brim's ends
+   behind, around the sides.)
+5. Turn over and do the same with the other strip. (Pirate: fold its ends round to the front.)
 6. Open the bottom and put it on.
 
 ## Parameters
