@@ -1,0 +1,24 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-automaton",
+  "title": {"en": "Paper automaton", "es": "Autómata de papel", "fr": "Automate en papier", "pt": "Autômato de papel"},
+  "summary": {
+    "en": "A cam-and-crank automaton box in card: the handle turns a cam that lifts a follower through the lid, and a bird on top bobs. Snail, eccentric or egg cam, with a cut-and-score net for every part.",
+    "es": "Una caja autómata de leva y manivela en cartulina: la manivela gira una leva que levanta un seguidor a través de la tapa, y un pájaro arriba se balancea. Leva de caracol, excéntrica o de huevo, con plantilla para cortar y marcar de cada pieza.",
+    "fr": "Une boîte automate à came et manivelle en carte : la manivelle tourne une came qui soulève un poussoir à travers le couvercle, et un oiseau perché dessus hoche. Came en escargot, excentrique ou en œuf, avec un gabarit à découper et rainer pour chaque pièce.",
+    "pt": "Uma caixa autômata de came e manivela em cartão: a manivela gira um came que levanta um seguidor através da tampa, e um pássaro em cima balança. Came caracol, excêntrico ou ovo, com molde para cortar e vincar de cada peça."
+  },
+  "article": {
+    "path": "paper-automaton/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism and the fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "original design (2026); cam automata are a long craft tradition",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Cam (mechanism)», https://en.wikipedia.org/wiki/Cam_(mechanism)",
+    "Wikipedia, «Automaton», https://en.wikipedia.org/wiki/Automaton",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.4 and §6"
+  ],
+  "related": {"objects": ["pliego/card-linkages", "pliego/fastener-joins", "pliego/volvelle"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}
+}

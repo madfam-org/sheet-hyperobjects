@@ -1,0 +1,25 @@
+{
+  "spec_version": 1,
+  "object": "pliego/fastener-joins",
+  "title": {"en": "Fastener joins", "es": "Uniones con sujetadores", "fr": "Assemblages par attaches", "pt": "Uniões com fixadores"},
+  "summary": {
+    "en": "Two cards joined without glue: an arm turning on a brad, an eyelet or a rivet, or a cover held by staples or a running stitch and opening beside them.",
+    "es": "Dos tarjetas unidas sin pegamento: un brazo que gira sobre un broche, un ojillo o un remache, o una tapa sujeta con grapas o una puntada corrida que abre junto a ellas.",
+    "fr": "Deux cartes assemblées sans colle : un bras qui tourne sur une attache parisienne, un œillet ou un rivet, ou une couverture tenue par des agrafes ou un point avant et qui s'ouvre à côté.",
+    "pt": "Dois cartões unidos sem cola: um braço que gira num colchete, num ilhós ou num rebite, ou uma capa presa por grampos ou por um ponto corrido que abre ao lado deles."
+  },
+  "article": {
+    "path": "fastener-joins/docs/README.md",
+    "sections": ["What it is", "Geometry", "The mechanism and the fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "nineteenth century to present (brads, eyelets, staples); stitched binding is far older",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Brass fastener», https://en.wikipedia.org/wiki/Brass_fastener",
+    "Wikipedia, «Grommet», https://en.wikipedia.org/wiki/Grommet",
+    "Wikipedia, «Staple (fastener)», https://en.wikipedia.org/wiki/Staple_(fastener)",
+    "Wikipedia, «Traditional Chinese bookbinding», https://en.wikipedia.org/wiki/Traditional_Chinese_bookbinding"
+  ],
+  "related": {"objects": ["pliego/volvelle", "pliego/pull-tab-slider", "pliego/card-linkages"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}
+}
