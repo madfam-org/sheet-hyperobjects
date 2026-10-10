@@ -147,7 +147,8 @@ for w, V, R, E, far_p, far_q in (("r", V1, R1, E1, (s, t), (s - t, 0.0)),
         "Pli cerf-volant depuis Q, au-delà du centre inscrit (prémarquage)",
         "Vinco de pipa desde Q, além do incentro (pré-vinco)", w))
     crease(sheet, f"ridge-{w}", R, V, "mountain", side_label(
-        "Ridge of the flap (bisector of the corner)", "Cresta de la solapa (bisectriz de la esquina)",
+        "Ridge of the flap (bisector of the corner)",
+        "Cresta de la solapa (bisectriz de la esquina)",
         "Arête du rabat (bissectrice du coin)", "Crista da aba (bissetriz do canto)", w))
     crease(sheet, f"swivel-{w}", V, E, "valley", side_label(
         "Swivel (perpendicular to the edge)", "Giro (perpendicular al borde)",
