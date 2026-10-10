@@ -22,8 +22,8 @@ and strut–floor folds from the triangle's angles (mountain: the easel goes beh
 side); the floor's tabs slide flat into the slots. Every fold is straight and the blank is a
 face tree, so the program is kinematic and exact; the triangle closes exactly at the end (the
 floor's tabs land on the back fold). Panels are inside + t (t = the board caliper); slots are 2t
-wide through their folds and the lip's tabs drop 1.5t. Glue welds, the tabs' snap and the stand's stability under load need the
-physics engine; no load rating is claimed.
+wide through their folds and the lip's tabs drop 1.5t. Glue welds, the tabs' snap and the
+stand's stability under load need the physics engine; no load rating is claimed.
 """
 
 import math
