@@ -1,0 +1,44 @@
+{
+  "spec_version": 1,
+  "object": "pliego/fish-base",
+  "title": {
+    "en": "Fish base",
+    "es": "Base de pez",
+    "fr": "Base du poisson",
+    "pt": "Base do peixe"
+  },
+  "summary": {
+    "en": "Two rabbit ears on one diagonal: kite folds from both ends, then each side corner rises as a flap laid toward the same end. Two degree-4 vertices, each folded along its exact rigid path.",
+    "es": "Dos orejas de conejo sobre una diagonal: pliegues de cometa desde los dos extremos y luego cada esquina lateral se levanta como una solapa que se acuesta hacia el mismo extremo. Dos vértices de grado 4, cada uno doblado por su trayectoria rígida exacta.",
+    "fr": "Deux oreilles de lapin sur une diagonale : des plis cerf-volant depuis les deux bouts, puis chaque coin latéral se dresse en rabat couché vers le même bout. Deux sommets de degré 4, chacun plié le long de sa trajectoire rigide exacte.",
+    "pt": "Duas orelhas de coelho sobre uma diagonal: dobras de pipa desde as duas pontas e depois cada canto lateral ergue-se como uma aba deitada para a mesma ponta. Dois vértices de grau 4, cada um dobrado pela sua trajetória rígida exata."
+  },
+  "article": {
+    "path": "fish-base/docs/README.md",
+    "sections": [
+      "Geometry",
+      "The fold program",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base, in continuous use",
+  "heritage": false,
+  "sources": [
+    "Robert J. Lang, Origami Design Secrets: Mathematical Methods for an Ancient Art, 2nd ed., CRC Press, 2011",
+    "Thomas C. Hull, Origametry: Mathematical Methods in Paper Folding, Cambridge University Press, 2020: Kawasaki's and Maekawa's theorems",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/kite-base",
+      "pliego/rabbit-ear"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
