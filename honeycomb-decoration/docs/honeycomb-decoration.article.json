@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "object": "pliego/honeycomb-decoration",
+  "title": {
+    "en": "Honeycomb decoration",
+    "es": "Adorno de panal",
+    "fr": "Décoration en nid d'abeille",
+    "pt": "Enfeite de favo de mel"
+  },
+  "summary": {
+    "en": "A stack of tissue sheets glued along alternating stripes between two card covers. Open it like a book and the tissue spreads into cells: a honeycomb ball, a half-ball fan for a wall, or a bell.",
+    "es": "Una pila de hojas de papel de china pegadas en franjas alternas entre dos tapas de cartulina. Al abrirla como un libro, el papel se despliega en celdas: una bola de panal, un abanico de media bola para la pared o una campana.",
+    "fr": "Une pile de feuilles de papier de soie collées en bandes alternées entre deux couvertures de carton. Ouverte comme un livre, la soie se déploie en alvéoles : une boule en nid d'abeille, un éventail en demi-boule pour le mur, ou une cloche.",
+    "pt": "Uma pilha de folhas de papel de seda coladas em faixas alternadas entre duas capas de cartolina. Aberta como um livro, a seda abre-se em células: uma bola de favo de mel, um leque de meia bola para a parede ou um sino."
+  },
+  "article": {
+    "path": "honeycomb-decoration/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The mechanism",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional craft, in continuous use",
+  "sources": [
+    "https://www.hobbycraft.co.uk/ideas/how-to-make-tissue-paper-honeycombs.html"
+  ],
+  "related": {
+    "objects": [
+      "pliego/glue-flap",
+      "pliego/papel-picado-banner"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by an agent lane; awaiting a human review pass."
+  }
+}
