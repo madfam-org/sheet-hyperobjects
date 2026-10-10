@@ -10,10 +10,10 @@
     "version": "0.1.0",
     "engine": "pliego",
     "description": {
-      "en": "A family of original low-poly paper models (a heart, a ringed planet, a vase, a gem, a fox head, a mask and a car), each unfolded into numbered, tabbed pieces on pages, with a program that folds the pieces into the model.",
-      "es": "Una familia de modelos de papel low-poly originales (un corazón, un planeta con anillos, un jarrón, una gema, una cabeza de zorro, una máscara y un coche), cada uno desplegado en piezas numeradas y con pestañas sobre hojas, con una secuencia que dobla las piezas hasta formar el modelo.",
-      "fr": "Une famille de modèles en papier low-poly originaux (un cœur, une planète à anneaux, un vase, une gemme, une tête de renard, un masque et une voiture), chacun déplié en pièces numérotées à languettes sur des pages, avec un programme qui plie les pièces jusqu'au modèle.",
-      "pt": "Uma família de modelos de papel low-poly originais (um coração, um planeta com anéis, um vaso, uma gema, uma cabeça de raposa, uma máscara e um carro), cada um desdobrado em peças numeradas e com abas em folhas, com uma sequência que dobra as peças até formar o modelo."
+      "en": "A family of original low-poly paper models (a heart, a ringed planet, a vase, a gem, a fox head, a mask, a car, an owl, a rocket and a lighthouse), each unfolded into numbered, tabbed pieces on pages, with a program that folds the pieces into the model.",
+      "es": "Una familia de modelos de papel low-poly originales (un corazón, un planeta con anillos, un jarrón, una gema, una cabeza de zorro, una máscara, un coche, un búho, un cohete y un faro), cada uno desplegado en piezas numeradas y con pestañas sobre hojas, con una secuencia que dobla las piezas hasta formar el modelo.",
+      "fr": "Une famille de modèles en papier low-poly originaux (un cœur, une planète à anneaux, un vase, une gemme, une tête de renard, un masque, une voiture, un hibou, une fusée et un phare), chacun déplié en pièces numérotées à languettes sur des pages, avec un programme qui plie les pièces jusqu'au modèle.",
+      "pt": "Uma família de modelos de papel low-poly originais (um coração, um planeta com anéis, um vaso, uma gema, uma cabeça de raposa, uma máscara, um carro, uma coruja, um foguete e um farol), cada um desdobrado em peças numeradas e com abas em folhas, com uma sequência que dobra as peças até formar o modelo."
     },
     "thumbnail": "/projects/low-poly-papercraft.svg",
     "difficulty": "intermediate",
@@ -187,6 +187,33 @@
             "es": "Coche",
             "fr": "Voiture",
             "pt": "Carro"
+          }
+        },
+        {
+          "value": "owl",
+          "label": {
+            "en": "Owl",
+            "es": "Búho",
+            "fr": "Hibou",
+            "pt": "Coruja"
+          }
+        },
+        {
+          "value": "rocket",
+          "label": {
+            "en": "Rocket",
+            "es": "Cohete",
+            "fr": "Fusée",
+            "pt": "Foguete"
+          }
+        },
+        {
+          "value": "lighthouse",
+          "label": {
+            "en": "Lighthouse",
+            "es": "Faro",
+            "fr": "Phare",
+            "pt": "Farol"
           }
         }
       ]
@@ -490,6 +517,45 @@
         "design": "car",
         "size": 170
       }
+    },
+    {
+      "id": "owl",
+      "label": {
+        "en": "Owl",
+        "es": "Búho",
+        "fr": "Hibou",
+        "pt": "Coruja"
+      },
+      "values": {
+        "design": "owl",
+        "size": 130
+      }
+    },
+    {
+      "id": "rocket",
+      "label": {
+        "en": "Rocket",
+        "es": "Cohete",
+        "fr": "Fusée",
+        "pt": "Foguete"
+      },
+      "values": {
+        "design": "rocket",
+        "size": 170
+      }
+    },
+    {
+      "id": "lighthouse",
+      "label": {
+        "en": "Lighthouse",
+        "es": "Faro",
+        "fr": "Phare",
+        "pt": "Farol"
+      },
+      "values": {
+        "design": "lighthouse",
+        "size": 180
+      }
     }
   ],
   "controls": [
@@ -531,10 +597,10 @@
       "glue_joins": true
     },
     "societal_benefit": {
-      "en": "Seven models a family or a classroom can print on card at home and build with a blade and glue, each one a lesson in how flat paper becomes a solid.",
-      "es": "Siete modelos que una familia o un salón de clases puede imprimir en cartulina en casa y armar con una navaja y pegamento; cada uno enseña cómo el papel plano se vuelve un sólido.",
-      "fr": "Sept modèles qu'une famille ou une classe peut imprimer sur du bristol et construire avec une lame et de la colle, chacun une leçon sur la façon dont le papier plat devient un volume.",
-      "pt": "Sete modelos que uma família ou uma turma pode imprimir em cartolina em casa e montar com estilete e cola; cada um ensina como o papel plano vira um sólido."
+      "en": "Ten models a family or a classroom can print on card at home and build with a blade and glue, each one a lesson in how flat paper becomes a solid.",
+      "es": "Diez modelos que una familia o un salón de clases puede imprimir en cartulina en casa y armar con una navaja y pegamento; cada uno enseña cómo el papel plano se vuelve un sólido.",
+      "fr": "Dix modèles qu'une famille ou une classe peut imprimer sur du bristol et construire avec une lame et de la colle, chacun une leçon sur la façon dont le papier plat devient un volume.",
+      "pt": "Dez modelos que uma família ou uma turma pode imprimir em cartolina em casa e montar com estilete e cola; cada um ensina como o papel plano vira um sólido."
     },
     "commons_license": "CERN-OHL-W-2.0"
   }

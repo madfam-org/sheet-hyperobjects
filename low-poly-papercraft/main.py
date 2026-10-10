@@ -1,10 +1,11 @@
 """Low-poly papercraft — sheet-hyperobjects cartridge (Pliego).
 
 One family of original MADFAM low-poly models, chosen by `design`: a heart, a ringed planet, a
-vase, a gem, a fox head, a mask and a car. Each model is generated here from mesh primitives
-(`pliego.mesh`): no commercial papercraft model or pattern file is copied or traced. Each one is
-unfolded by the kernel (`pliego.unfold.net`, kernel.md §5) into tabbed, numbered pieces packed
-onto pages, with a program that folds every piece from the page into its place on the model.
+vase, a gem, a fox head, a mask, a car, an owl, a rocket and a lighthouse. Each model is
+generated here from mesh primitives (`pliego.mesh`): no commercial papercraft model or pattern
+file is copied or traced. Each one is unfolded by the kernel (`pliego.unfold.net`, kernel.md
+§5) into tabbed, numbered pieces packed onto pages, with a program that folds every piece from
+the page into its place on the model.
 
 How each design is built:
 
@@ -19,7 +20,13 @@ How each design is built:
 - mask: a patch of an ellipsoid, narrowed toward the chin, with a raised nose and brow and two
   eye holes (an open mesh);
 - car: a side profile with the wheels drawn into it, extruded across the car's width (the
-  paper-toy car).
+  paper-toy car);
+- owl: the convex hull of a pear-shaped body whose front is flattened into a facial disc with a
+  point for the beak, and two ear tufts raised as pyramids from the faces nearest them;
+- rocket: a lathe (tail, body, ogive nose), four fins extruded outward from alternate faces of
+  the lowest band and tapered, and a nozzle bell extruded from the base and flared;
+- lighthouse: a lathe whose profile tapers up the tower, steps out to the gallery and back in to
+  the lantern, and ends in an overhanging conical roof.
 """
 
 import math
@@ -148,6 +155,34 @@ def car():
     return M.prism(side, 1.45)
 
 
+def owl():
+    body = M.hull(mirrored([
+        (0.0, 0.0, 0.42), (0.5, 0.0, 0.2), (0.0, 0.0, -0.45), (0.42, 0.0, -0.3),     # base
+        (0.62, 0.55, 0.12), (0.0, 0.5, 0.62), (0.5, 0.55, -0.38), (0.0, 0.6, -0.6),  # belly, back
+        (0.55, 1.05, 0.25), (0.25, 1.0, 0.52), (0.0, 0.92, 0.56),                    # facial disc
+        (0.5, 1.45, 0.18), (0.0, 1.42, 0.48), (0.48, 1.5, -0.25), (0.0, 1.55, -0.32), # brow, crown
+        (0.0, 1.12, -0.58), (0.0, 1.1, 0.74),                                         # nape, beak
+    ]))
+    for side in (1.0, -1.0):
+        body = M.extrude(body, M.nearest_face(body, (0.4 * side, 1.52, -0.02)), 0.42, 0.0)
+    return body
+
+
+def rocket():
+    body = M.lathe([(0.34, 0.0), (0.5, 0.55), (0.5, 1.95), (0.42, 2.5), (0.24, 2.9), (0.0, 3.15)],
+                   8, phase_deg=22.5)
+    for k in range(4):                 # fins on alternate faces of the lowest band, tapered
+        a = math.radians(67.5 + 90 * k)
+        body = M.extrude(body, M.nearest_face(body, (0.45 * math.cos(a), 0.27,
+                                                     -0.45 * math.sin(a))), 0.5, 0.3)
+    return M.extrude(body, M.nearest_face(body, (0.0, -0.1, 0.0)), 0.16, 1.2)   # nozzle bell
+
+
+def lighthouse():
+    return M.lathe([(1.0, 0.0), (0.72, 4.0), (1.0, 4.02), (1.0, 4.2), (0.6, 4.2), (0.6, 4.85),
+                    (0.78, 4.85), (0.0, 5.45)], 8)
+
+
 DESIGNS = {
     "heart": (heart, "#c8102e", {"en": "Heart", "es": "Corazón", "fr": "Cœur", "pt": "Coração"}),
     "planet": (planet, "#e3a857", {"en": "Ringed planet", "es": "Planeta con anillos",
@@ -158,6 +193,11 @@ DESIGNS = {
                              "pt": "Cabeça de raposa"}),
     "mask": (mask, "#efe3c8", {"en": "Mask", "es": "Máscara", "fr": "Masque", "pt": "Máscara"}),
     "car": (car, "#3a86ff", {"en": "Car", "es": "Coche", "fr": "Voiture", "pt": "Carro"}),
+    "owl": (owl, "#a47148", {"en": "Owl", "es": "Búho", "fr": "Hibou", "pt": "Coruja"}),
+    "rocket": (rocket, "#e5383b", {"en": "Rocket", "es": "Cohete", "fr": "Fusée",
+                                   "pt": "Foguete"}),
+    "lighthouse": (lighthouse, "#f4f1de", {"en": "Lighthouse", "es": "Faro", "fr": "Phare",
+                                           "pt": "Farol"}),
 }
 if design not in DESIGNS:
     raise ValueError(f"low-poly-papercraft: design must be one of {sorted(DESIGNS)}, "

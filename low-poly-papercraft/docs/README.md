@@ -2,10 +2,10 @@
 
 | | Title | Summary |
 |---|---|---|
-| en | Low-poly papercraft | A family of original low-poly paper models (a heart, a ringed planet, a vase, a gem, a fox head, a mask and a car), each unfolded into numbered, tabbed pieces on pages, with a program that folds the pieces into the model. |
-| es | Papercraft low-poly | Una familia de modelos de papel low-poly originales (un corazón, un planeta con anillos, un jarrón, una gema, una cabeza de zorro, una máscara y un coche), cada uno desplegado en piezas numeradas y con pestañas sobre hojas, con una secuencia que dobla las piezas hasta formar el modelo. |
-| fr | Papercraft low-poly | Une famille de modèles en papier low-poly originaux (un cœur, une planète à anneaux, un vase, une gemme, une tête de renard, un masque et une voiture), chacun déplié en pièces numérotées à languettes sur des pages, avec un programme qui plie les pièces jusqu'au modèle. |
-| pt | Papercraft low-poly | Uma família de modelos de papel low-poly originais (um coração, um planeta com anéis, um vaso, uma gema, uma cabeça de raposa, uma máscara e um carro), cada um desdobrado em peças numeradas e com abas em folhas, com uma sequência que dobra as peças até formar o modelo. |
+| en | Low-poly papercraft | A family of original low-poly paper models (a heart, a ringed planet, a vase, a gem, a fox head, a mask, a car, an owl, a rocket and a lighthouse), each unfolded into numbered, tabbed pieces on pages, with a program that folds the pieces into the model. |
+| es | Papercraft low-poly | Una familia de modelos de papel low-poly originales (un corazón, un planeta con anillos, un jarrón, una gema, una cabeza de zorro, una máscara, un coche, un búho, un cohete y un faro), cada uno desplegado en piezas numeradas y con pestañas sobre hojas, con una secuencia que dobla las piezas hasta formar el modelo. |
+| fr | Papercraft low-poly | Une famille de modèles en papier low-poly originaux (un cœur, une planète à anneaux, un vase, une gemme, une tête de renard, un masque, une voiture, un hibou, une fusée et un phare), chacun déplié en pièces numérotées à languettes sur des pages, avec un programme qui plie les pièces jusqu'au modèle. |
+| pt | Papercraft low-poly | Uma família de modelos de papel low-poly originais (um coração, um planeta com anéis, um vaso, uma gema, uma cabeça de raposa, uma máscara, um carro, uma coruja, um foguete e um farol), cada um desdobrado em peças numeradas e com abas em folhas, com uma sequência que dobra as peças até formar o modelo. |
 
 ## What it is
 
@@ -22,6 +22,9 @@ is one family of such models, all original MADFAM designs, selected by the `desi
 | `fox` | the convex hull of a few control points (long snout, wide cheek ruff), with two pyramid ears raised from the faces nearest the ear positions | closed |
 | `mask` | a patch of an ellipsoid, narrowed toward the chin, with a raised nose and brow ridge and two eye holes | open (outline and eyes) |
 | `car` | the side profile of a small car, wheels drawn into it, extruded across the car's width: the paper-toy car | closed |
+| `owl` | the convex hull of a pear-shaped body, its front flattened into a facial disc with a point for the beak, and two ear tufts raised as pyramids | closed |
+| `rocket` | a surface of revolution (tail, body, pointed nose) with four tapered fins pulled out of its lowest band and a flared nozzle under it | closed |
+| `lighthouse` | a surface of revolution: a tapering tower, a gallery that steps out and back in, the lantern and an overhanging conical roof | closed |
 
 Each design comes out as printable pages and a folding program, from the same unfolder as
 `papercraft-unfold`. Like that object, it has two modes: `fold`, the kinematic fold-up, and
@@ -43,6 +46,15 @@ Every mesh is generated in `main.py` from the kernel's mesh primitives (`pliego.
   planar.
 - **Fox.** A convex hull is the simplest closed surface through chosen points. The face nearest
   each ear position is extruded to a single apex (`shrink` 0), which raises a triangular pyramid.
+- **Owl.** Also a convex hull, with a point standing out of the facial disc on the centre line,
+  so the beak is a vertex of the hull itself, and two ear tufts extruded to an apex like the
+  fox's ears.
+- **Rocket.** Four faces of the lathe's lowest band, every other one, are extruded outward and
+  shrunk to 30 %, which makes four tapered fins. The base is extruded down and widened (`shrink`
+  1.2) into the nozzle bell, which is what the rocket stands on.
+- **Lighthouse.** The lathe's profile tapers from the base to the gallery, steps out to the
+  gallery's rim and back in to the lantern, then out again under the roof, so every ring is a
+  band of planar trapezoids.
 - **Mask and other bent surfaces.** Quads that are not planar are split along their shorter
   diagonal, so every face is a flat piece of card.
 
@@ -55,7 +67,8 @@ edges that border a single face are plain cut edges with no tab. Every fold line
 on card stock.
 
 The front faces print in each design's colour in the studio (heart red, planet sand, vase blue,
-gem teal, fox orange, mask cream, car blue). On paper, the colour is the card you print on.
+gem teal, fox orange, mask cream, car blue, owl brown, rocket red, lighthouse white). On paper,
+the colour is the card you print on.
 
 ## The fold program
 
@@ -89,8 +102,10 @@ as crease memory, since the card was folded before it was glued. One step lets g
 3. Cut out the pieces, tabs included. For the mask, also cut out the eye holes.
 4. Pre-fold every line. Most folds are mountains (the printed side stays out). The valley folds
    are where the surface turns inward: the heart's notch, the planet where the ring meets the
-   sphere, the vase's neck, the base of the fox's ears, around the mask's nose and eyes, and the
-   car's windscreen and wheel arches. The gem has none.
+   sphere, the vase's neck, the base of the fox's ears, around the mask's nose and eyes, the
+   car's windscreen and wheel arches, the base of the owl's ear tufts, the roots of the rocket's
+   fins and its nozzle, and the lighthouse under its gallery, at the foot of its lantern and
+   under its roof. The gem has none.
 5. Glue tab by tab, each one under the edge with the **same number**, largest piece first. Close
    the last edges from the inside with tweezers.
 6. For the mask: punch a hole near each side edge and tie an elastic cord through.
@@ -99,7 +114,7 @@ as crease memory, since the card was folded before it was glued. One step lets g
 
 | Parameter | Meaning |
 |---|---|
-| `design` | heart, planet, vase, gem, fox, mask or car |
+| `design` | heart, planet, vase, gem, fox, mask, car, owl, rocket or lighthouse |
 | `size` | largest dimension of the finished model, mm |
 | `page` | A4 or US Letter |
 | `method` | cutting strategy: shortest cuts (long edges stay folded) or steepest edge |
