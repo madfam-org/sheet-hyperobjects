@@ -1,0 +1,23 @@
+{
+  "spec_version": 1,
+  "object": "pliego/spiral-popup",
+  "title": {"en": "Spiral pop-up", "es": "Pop-up de espiral", "fr": "Pop-up spirale", "pt": "Pop-up de espiral"},
+  "summary": {
+    "en": "A spiral cut from a disc, glued across a card's gutter, springs out like a spring when the card opens and lies flat when it closes.",
+    "es": "Una espiral cortada de un disco y pegada de un lado al otro del pliegue central salta como un resorte al abrir la tarjeta y queda plana al cerrarla.",
+    "fr": "Une spirale découpée dans un disque et collée de part et d'autre de la pliure jaillit comme un ressort quand la carte s'ouvre et se couche à plat quand elle se ferme.",
+    "pt": "Uma espiral cortada de um disco e colada dos dois lados da dobra central salta como uma mola quando o cartão se abre e fica plana quando ele se fecha."
+  },
+  "article": {
+    "path": "spiral-popup/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "contemporary paper engineering; a general technique in continuous use",
+  "heritage": false,
+  "sources": [
+    "Duncan Birmingham, Pop-Up Design and Paper Mechanics, GMC Publications, 2010",
+    "Wikipedia, «Archimedean spiral», https://en.wikipedia.org/wiki/Archimedean_spiral"
+  ],
+  "related": {"objects": ["pliego/tent-popup", "pliego/step-popup", "pliego/greeting-card"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W2b·L5); awaiting a human editorial pass."}
+}
