@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/slotted-dividers",
+  "title": {"en": "Slotted dividers", "es": "Separadores ranurados", "fr": "Croisillons à fentes", "pt": "Divisórias ranhuradas"},
+  "summary": {
+    "en": "Interlocking partitions that divide a case into cells: board strips with half-height slots one caliper wide, generated from the cell grid, assembled as the initial frame and lifted apart by a control.",
+    "es": "Separadores que se entrelazan y dividen una caja en celdas: tiras de cartón con ranuras de media altura y un calibre de ancho, generadas a partir de la cuadrícula, armadas como cuadro inicial y separadas con un control.",
+    "fr": "Des croisillons qui s'emboîtent et divisent une caisse en alvéoles : des bandes de carton à fentes de mi-hauteur, larges d'une épaisseur, générées à partir de la grille, montées comme état initial et séparées par un curseur.",
+    "pt": "Divisórias que se encaixam e dividem uma caixa em células: tiras de cartão com ranhuras de meia altura e uma espessura de largura, geradas a partir da grelha, montadas como estado inicial e separadas por um controlo."
+  },
+  "article": {
+    "path": "slotted-dividers/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "a standard fitting of corrugated cases, in current use",
+  "sources": ["Wikipedia, Corrugated box design", "Wikipedia, Corrugated fiberboard"],
+  "related": {"objects": ["pliego/corrugated-shipper", "pliego/corrugated-board", "pliego/cardboard-furniture"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
