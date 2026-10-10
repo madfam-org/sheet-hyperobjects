@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/pillow-box",
+  "title": {"en": "Pillow box", "es": "Caja almohada", "fr": "Boîte berlingot", "pt": "Caixa travesseiro"},
+  "summary": {
+    "en": "The curved-score pillow pack from inside dimensions: bulging panels, side scores and lens flaps whose curved scores come from an exact reflection construction. The flattened tube pops open in one exact rigid motion.",
+    "es": "La caja almohada de marcados curvos, a partir de las medidas interiores: paneles abombados, marcados laterales y solapas en forma de lente cuyos marcados curvos salen de una construcción exacta por reflexión. El tubo aplanado se abre en un solo movimiento rígido y exacto.",
+    "fr": "Le berlingot à rainages courbes, à partir des dimensions intérieures : panneaux bombés, rainages latéraux et rabats en lentille dont les rainages courbes viennent d'une construction exacte par réflexion. Le tube aplati s'ouvre en un seul mouvement rigide et exact.",
+    "pt": "A caixa travesseiro de vincos curvos, a partir das medidas internas: painéis abaulados, vincos laterais e abas em forma de lente cujos vincos curvos vêm de uma construção exata por reflexão. O tubo achatado abre-se num só movimento rígido e exato."
+  },
+  "article": {
+    "path": "pillow-box/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "a common folding-carton style in current use; curved-folding geometry from the late twentieth century on",
+  "sources": ["Fuchs and Tabachnikov, More on paperfolding (1999)", "Kilian et al., Curved folding (2008)", "Mitani, Column-shaped origami design based on mirror reflections (2012)", "Wikipedia, Folding carton"],
+  "related": {"objects": ["pliego/folding-carton", "pliego/curved-crease-sculpture", "pliego/gable-box"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

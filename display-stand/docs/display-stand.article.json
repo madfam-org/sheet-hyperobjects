@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/display-stand",
+  "title": {"en": "Display stand", "es": "Exhibidor de mostrador", "fr": "Présentoir de comptoir", "pt": "Expositor de balcão"},
+  "summary": {
+    "en": "A counter display from one sheet of board: a product tray with a double front lip, a header card leaning back and an easel back that locks into a rigid triangle, with the print side facing the shopper.",
+    "es": "Un exhibidor de mostrador de una sola hoja de cartón: una charola con frente doble, una cabecera inclinada hacia atrás y un atril que se traba en un triángulo rígido, con la cara impresa hacia el cliente.",
+    "fr": "Un présentoir de comptoir dans une seule feuille de carton : un plateau à bord avant double, un fronton incliné vers l'arrière et une béquille qui se verrouille en un triangle rigide, la face imprimée vers le client.",
+    "pt": "Um expositor de balcão de uma só folha de cartão: uma bandeja com frente dupla, uma cabeceira inclinada para trás e um cavalete que trava num triângulo rígido, com a face impressa para o cliente."
+  },
+  "article": {
+    "path": "display-stand/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "a common point-of-sale fixture in current use",
+  "sources": ["Wikipedia, Point of sale display", "Wikipedia, Corrugated fiberboard"],
+  "related": {"objects": ["pliego/gable-box", "pliego/mailer-box", "pliego/slotted-dividers"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

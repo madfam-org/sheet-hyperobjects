@@ -1,0 +1,124 @@
+{
+  "project": {
+    "name": {"en": "Branded tag", "es": "Etiqueta de marca", "fr": "Étiquette de marque", "pt": "Etiqueta de marca"},
+    "slug": "branded-tag",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "A folded board hang tag that shows the four ways a brand goes onto board: printed artwork, a pressed mark (emboss or deboss), an iron burn and a laser burn, each with its plates for the press. Clipped corners, an eyelet hole through both panels and a string to hang it from; the program folds the back behind the cover.",
+      "es": "Una etiqueta colgante de cartón doblada que muestra las cuatro formas de poner una marca en el cartón: arte impreso, marca prensada (relieve o bajorrelieve), quemado con hierro y quemado láser, cada una con sus placas para la prensa. Esquinas recortadas, un ojillo que atraviesa ambas caras y un hilo para colgarla; la secuencia dobla el reverso detrás de la portada.",
+      "fr": "Une étiquette suspendue en carton pliée qui montre les quatre façons de marquer le carton : illustration imprimée, marque pressée (gaufrage ou embossage en creux), brûlure au fer et brûlure laser, chacune avec ses clichés pour la presse. Coins coupés, un œillet qui traverse les deux volets et un fil pour la suspendre ; la séquence replie le verso derrière le recto.",
+      "pt": "Uma etiqueta pendente de cartão dobrada que mostra as quatro maneiras de pôr uma marca no cartão: arte impressa, marca prensada (relevo ou baixo-relevo), queima a ferro e queima a laser, cada uma com as suas chapas para a prensa. Cantos cortados, um ilhó que atravessa as duas faces e um fio para a pendurar; a sequência dobra o verso atrás da frente."
+    },
+    "thumbnail": "/projects/branded-tag.svg",
+    "difficulty": "beginner",
+    "tags": ["branding", "tag", "pressing", "emboss", "heat-branding", "laser", "dieline", "hyperobject", "commons"],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {"source": "Original MADFAM design: the tag and the brand-neutral mark (a rounded-square ring, a folded-corner triangle and a dot) are computed in this cartridge's main.py and drawn identically in assets/mark.svg (original placeholder artwork); no real brand logo is used. Embossing, debossing, printing and heat branding are general finishing crafts, attributed to that tradition.", "license": "original"}
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "tag",
+      "label": {"en": "Hang tag", "es": "Etiqueta colgante", "fr": "Étiquette suspendue", "pt": "Etiqueta pendente"},
+      "script_file": "main.py",
+      "sheets": ["tag"]
+    }
+  ],
+  "sheets": [
+    {"id": "tag", "label": {"en": "Hang tag", "es": "Etiqueta colgante", "fr": "Étiquette suspendue", "pt": "Etiqueta pendente"}, "stock": "greyboard-1500"}
+  ],
+  "parameter_groups": [
+    {"id": "brand", "label": {"en": "Branding", "es": "Marca", "fr": "Marquage", "pt": "Marca"}},
+    {"id": "tag", "label": {"en": "Tag", "es": "Etiqueta", "fr": "Étiquette", "pt": "Etiqueta"}}
+  ],
+  "parameters": [
+    {
+      "id": "style", "type": "select", "group": "brand",
+      "label": {"en": "Branding", "es": "Tipo de marcado", "fr": "Marquage", "pt": "Tipo de marcação"},
+      "default": "emboss",
+      "options": [
+        {"value": "artwork", "label": {"en": "Printed artwork", "es": "Arte impreso", "fr": "Illustration imprimée", "pt": "Arte impressa"}},
+        {"value": "emboss", "label": {"en": "Pressed mark: emboss", "es": "Marca prensada: relieve", "fr": "Marque pressée : gaufrage", "pt": "Marca prensada: relevo"}},
+        {"value": "deboss", "label": {"en": "Pressed mark: deboss", "es": "Marca prensada: bajorrelieve", "fr": "Marque pressée : embossage en creux", "pt": "Marca prensada: baixo-relevo"}},
+        {"value": "iron-burn", "label": {"en": "Iron burn", "es": "Quemado con hierro", "fr": "Brûlure au fer", "pt": "Queima a ferro"}},
+        {"value": "laser-burn", "label": {"en": "Laser burn", "es": "Quemado láser", "fr": "Brûlure laser", "pt": "Queima a laser"}}
+      ]
+    },
+    {
+      "id": "mark_scale", "type": "slider", "group": "brand", "unit": "ratio",
+      "label": {"en": "Mark size", "es": "Tamaño de la marca", "fr": "Taille de la marque", "pt": "Tamanho da marca"},
+      "tooltip": {"en": "Mark width as a fraction of the tag's width.", "es": "Ancho de la marca como fracción del ancho de la etiqueta.", "fr": "Largeur de la marque en fraction de la largeur de l'étiquette.", "pt": "Largura da marca como fração da largura da etiqueta."},
+      "default": 0.62, "min": 0.35, "max": 0.8, "step": 0.01
+    },
+    {
+      "id": "size", "type": "select", "group": "tag",
+      "label": {"en": "Tag size", "es": "Tamaño de la etiqueta", "fr": "Taille de l'étiquette", "pt": "Tamanho da etiqueta"},
+      "default": "medium",
+      "options": [
+        {"value": "small", "label": {"en": "Small (40 × 70 mm)", "es": "Chica (40 × 70 mm)", "fr": "Petite (40 × 70 mm)", "pt": "Pequena (40 × 70 mm)"}},
+        {"value": "medium", "label": {"en": "Medium (55 × 90 mm)", "es": "Mediana (55 × 90 mm)", "fr": "Moyenne (55 × 90 mm)", "pt": "Média (55 × 90 mm)"}},
+        {"value": "large", "label": {"en": "Large (70 × 120 mm)", "es": "Grande (70 × 120 mm)", "fr": "Grande (70 × 120 mm)", "pt": "Grande (70 × 120 mm)"}}
+      ]
+    },
+    {
+      "id": "hole", "type": "slider", "group": "tag", "unit": "mm",
+      "label": {"en": "Eyelet hole (mm)", "es": "Ojillo (mm)", "fr": "Œillet (mm)", "pt": "Ilhó (mm)"},
+      "tooltip": {"en": "Diameter of the hole through both panels.", "es": "Diámetro del orificio que atraviesa ambas caras.", "fr": "Diamètre du trou qui traverse les deux volets.", "pt": "Diâmetro do furo que atravessa as duas faces."},
+      "default": 5, "min": 3, "max": 8, "step": 0.5
+    },
+    {
+      "id": "string_length", "type": "slider", "group": "tag", "unit": "mm",
+      "label": {"en": "String length (mm)", "es": "Largo del hilo (mm)", "fr": "Longueur du fil (mm)", "pt": "Comprimento do fio (mm)"},
+      "default": 90, "min": 30, "max": 300, "step": 5
+    },
+    {
+      "id": "stock", "type": "select", "group": "tag",
+      "label": {"en": "Board", "es": "Cartón", "fr": "Carton", "pt": "Cartão"},
+      "default": "greyboard-1500",
+      "options": [
+        {"value": "greyboard-1500", "label": {"en": "Greyboard 1.5 mm", "es": "Cartón gris 1.5 mm", "fr": "Carton gris 1,5 mm", "pt": "Cartão cinza 1,5 mm"}},
+        {"value": "sbs-board-350", "label": {"en": "Solid bleached board (SBS) 350 g/m²", "es": "Cartulina sólida blanqueada (SBS) 350 g/m²", "fr": "Carton blanchi massif (SBS) 350 g/m²", "pt": "Cartão sólido branqueado (SBS) 350 g/m²"}},
+        {"value": "folding-boxboard-300", "label": {"en": "Folding boxboard (FBB) 300 g/m²", "es": "Cartulina plegable (FBB) 300 g/m²", "fr": "Carton plat (FBB) 300 g/m²", "pt": "Cartão duplex (FBB) 300 g/m²"}},
+        {"value": "cardstock-300", "label": {"en": "Cardstock 300 g/m²", "es": "Cartulina 300 g/m²", "fr": "Bristol 300 g/m²", "pt": "Cartolina 300 g/m²"}}
+      ]
+    }
+  ],
+  "presets": [
+    {"id": "iron-greyboard", "label": {"en": "Iron-burned greyboard tag", "es": "Etiqueta de cartón gris quemada con hierro", "fr": "Étiquette en carton gris brûlée au fer", "pt": "Etiqueta de cartão cinza queimada a ferro"}, "values": {"style": "iron-burn", "stock": "greyboard-1500"}},
+    {"id": "printed-sbs", "label": {"en": "Printed SBS tag", "es": "Etiqueta impresa en SBS", "fr": "Étiquette imprimée en SBS", "pt": "Etiqueta impressa em SBS"}, "values": {"style": "artwork", "stock": "sbs-board-350", "size": "small"}},
+    {"id": "laser-large", "label": {"en": "Large laser-burned tag", "es": "Etiqueta grande quemada con láser", "fr": "Grande étiquette brûlée au laser", "pt": "Etiqueta grande queimada a laser"}, "values": {"style": "laser-burn", "size": "large", "mark_scale": 0.5}}
+  ],
+  "controls": [
+    {"id": "sequence", "kind": "sequence", "label": {"en": "Fold", "es": "Doblar", "fr": "Plier", "pt": "Dobrar"}, "min": 0, "max": 1, "default": 0, "unit": "step"}
+  ],
+  "export_formats": ["svg", "dxf", "pdf", "fold", "glb"],
+  "stock": {"default": "greyboard-1500", "alternatives": ["sbs-board-350", "folding-boxboard-300", "cardstock-300"]},
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "model",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "spine",
+        "type": "hinge",
+        "label": {"en": "Spine", "es": "Lomo", "fr": "Dos", "pt": "Lombada"},
+        "edges": [{"sheet": "tag", "edge": "spine"}],
+        "parameters": ["size"],
+        "polarity": "neutral"
+      }
+    ],
+    "capabilities": {"kinematic_program": true, "score_treatment": true, "pressing": true, "heat_branding": true, "branding": true, "string_join": true, "dieline": true},
+    "societal_benefit": {
+      "en": "A tag is often the first branded thing a small maker produces; showing printing, pressing and burning side by side, with the plates each needs, lets a workshop choose the finish its tools and budget allow.",
+      "es": "Una etiqueta suele ser lo primero con marca que produce un pequeño taller; mostrar la impresión, el prensado y el quemado lado a lado, con las placas que cada uno necesita, le permite elegir el acabado que sus herramientas y su presupuesto alcanzan.",
+      "fr": "Une étiquette est souvent la première chose marquée que produit un petit atelier ; montrer l'impression, le pressage et la brûlure côte à côte, avec les clichés de chacun, lui permet de choisir la finition que ses outils et son budget permettent.",
+      "pt": "Uma etiqueta é muitas vezes a primeira coisa com marca que um pequeno ateliê produz; mostrar a impressão, a prensagem e a queima lado a lado, com as chapas de cada uma, permite-lhe escolher o acabamento que as suas ferramentas e o seu orçamento permitem."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}

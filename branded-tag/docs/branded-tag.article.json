@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/branded-tag",
+  "title": {"en": "Branded tag", "es": "Etiqueta de marca", "fr": "Étiquette de marque", "pt": "Etiqueta de marca"},
+  "summary": {
+    "en": "A folded board hang tag showing the four ways a brand goes onto board — printed artwork, a pressed mark (emboss or deboss), an iron burn and a laser burn — with an eyelet hole through both panels and a string to hang it.",
+    "es": "Una etiqueta colgante de cartón doblada que muestra las cuatro formas de marcar el cartón —arte impreso, marca prensada (relieve o bajorrelieve), quemado con hierro y quemado láser—, con un ojillo que atraviesa ambas caras y un hilo para colgarla.",
+    "fr": "Une étiquette suspendue en carton pliée qui montre les quatre façons de marquer le carton — illustration imprimée, marque pressée (gaufrage ou embossage en creux), brûlure au fer et brûlure laser — avec un œillet qui traverse les deux volets et un fil pour la suspendre.",
+    "pt": "Uma etiqueta pendente de cartão dobrada que mostra as quatro maneiras de marcar o cartão — arte impressa, marca prensada (relevo ou baixo-relevo), queima a ferro e queima a laser — com um ilhó que atravessa as duas faces e um fio para a pendurar."
+  },
+  "article": {
+    "path": "branded-tag/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "finishing crafts in continuous use; laser engraving since the late twentieth century",
+  "sources": ["Wikipedia, Embossing (paper)", "Wikipedia, Branding iron", "Wikipedia, Laser engraving"],
+  "related": {"objects": ["pliego/embossed-stationery", "pliego/folding-carton", "pliego/presentation-folder"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

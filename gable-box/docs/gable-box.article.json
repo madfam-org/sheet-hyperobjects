@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/gable-box",
+  "title": {"en": "Gable box", "es": "Caja gable con asa", "fr": "Boîte à pignon", "pt": "Caixa gable com alça"},
+  "summary": {
+    "en": "A gable-top carry box with a handle, from inside dimensions: roof panels that meet at the ridge, handles back to back with matching hand holes, gable ends whose support flaps carry the roof, and a tuck or 1-2-3 bottom.",
+    "es": "Una caja de transporte con techo a dos aguas y asa, a partir de las medidas interiores: techos que se juntan en la cumbrera, asas espalda con espalda con orificios que coinciden, frontones cuyas solapas de apoyo sostienen el techo y fondo de lengüeta o 1-2-3.",
+    "fr": "Une boîte de transport à pignon et à poignée, à partir des dimensions intérieures : toits qui se rejoignent au faîtage, poignées dos à dos aux trous de prise alignés, pignons dont les rabats d'appui portent le toit, et fond à patte rentrante ou 1-2-3.",
+    "pt": "Uma caixa de transporte com telhado de duas águas e alça, a partir das medidas internas: telhados que se juntam na cumeeira, alças costas com costas com furos coincidentes, frontões cujas abas de apoio sustentam o telhado e fundo de encaixe ou 1-2-3."
+  },
+  "article": {
+    "path": "gable-box/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "a general folding-carton style in current use",
+  "sources": ["Wikipedia, Folding carton", "Wikipedia, Carton"],
+  "related": {"objects": ["pliego/folding-carton", "pliego/pillow-box", "pliego/display-stand"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}

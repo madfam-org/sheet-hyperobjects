@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/sleeve-and-tray",
+  "title": {"en": "Sleeve and tray", "es": "Funda y charola", "fr": "Fourreau et tiroir", "pt": "Luva e gaveta"},
+  "summary": {
+    "en": "The matchbox-style pack from the tray's inside dimensions: a tray with rolled locking ends and a glued sleeve that fits it, with a fold program for the blanks and a slide control for the assembled pack.",
+    "es": "El empaque tipo caja de cerillos a partir de las medidas interiores de la charola: una charola con cabeceras enrolladas que se traban y una funda pegada a su medida, con secuencia de armado para los suajes y un control de deslizamiento para el empaque armado.",
+    "fr": "L'emballage façon boîte d'allumettes à partir des dimensions intérieures du tiroir : un tiroir aux extrémités roulées et verrouillées et un fourreau collé à sa mesure, avec une séquence de montage pour les flans et un curseur de glissement pour l'emballage monté.",
+    "pt": "A embalagem estilo caixa de fósforos a partir das medidas internas da gaveta: uma gaveta com cabeceiras enroladas que travam e uma luva colada à sua medida, com sequência de montagem para os cortes e um controlo de deslize para a embalagem montada."
+  },
+  "article": {
+    "path": "sleeve-and-tray/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "the matchbox's sliding box and its descendants, in current use",
+  "sources": ["Wikipedia, Matchbox", "Wikipedia, Folding carton"],
+  "related": {"objects": ["pliego/mailer-box", "pliego/folding-carton", "pliego/pull-tab-slider"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
