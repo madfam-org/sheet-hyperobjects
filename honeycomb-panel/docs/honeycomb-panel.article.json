@@ -1,0 +1,19 @@
+{
+  "spec_version": 1,
+  "object": "pliego/honeycomb-panel",
+  "title": {"en": "Honeycomb panel", "es": "Panel de panal", "fr": "Panneau nid d'abeilles", "pt": "Painel colmeia"},
+  "summary": {
+    "en": "Structural paper honeycomb: kraft ribbons glued along alternate stripes and expanded into hexagonal cells between two liners, with the core's density and the panel's areal density computed from the cell size and the papers.",
+    "es": "Panal estructural de papel: tiras de kraft pegadas en franjas alternas y expandidas en celdas hexagonales entre dos caras, con la densidad del núcleo y la densidad superficial del panel calculadas a partir del tamaño de celda y los papeles.",
+    "fr": "Nid d'abeilles structurel en papier : des rubans de kraft collés en bandes alternées et expansés en alvéoles hexagonales entre deux peaux, avec la masse volumique de l'âme et la masse surfacique du panneau calculées à partir de la taille d'alvéole et des papiers.",
+    "pt": "Colmeia estrutural de papel: fitas de kraft coladas em faixas alternadas e expandidas em células hexagonais entre duas faces, com a densidade do núcleo e a gramagem do painel calculadas a partir do tamanho da célula e dos papéis."
+  },
+  "article": {
+    "path": "honeycomb-panel/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "expanded honeycomb cores, an industrial construction in current use",
+  "sources": ["Gibson and Ashby, Cellular Solids (1997)", "Wikipedia, Honeycomb structure", "Wikipedia, Sandwich-structured composite"],
+  "related": {"objects": ["pliego/corrugated-board", "pliego/honeycomb-decoration", "pliego/cardboard-furniture"]},
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
