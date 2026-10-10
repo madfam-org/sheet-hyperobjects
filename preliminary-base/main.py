@@ -148,13 +148,15 @@ key("unfold-diagonal", L4("Unfold", "Desdobla", "Dépliez", "Desdobre"),
       {"diag-nw": 0.0, "diag-se": 0.0}, 900, 3)
 key("fold-book-ew", says(VERB[BOOK], L4("in half, top to bottom",
                                           "a la mitad, de arriba abajo",
-                                          "en deux, de haut en bas", "ao meio, de cima para baixo")),
+                                          "en deux, de haut en bas",
+                                          "ao meio, de cima para baixo")),
       {"book-e": SB, "book-w": SB}, 1200, 4)
 key("unfold-book-ew", L4("Unfold", "Desdobla", "Dépliez", "Desdobre"),
       {"book-e": 0.0, "book-w": 0.0}, 900, 3)
 key("fold-book-ns", says(VERB[BOOK], L4("in half, side to side",
                                           "a la mitad, de lado a lado",
-                                          "en deux, d'un côté à l'autre", "ao meio, de lado a lado")),
+                                          "en deux, d'un côté à l'autre",
+                                          "ao meio, de lado a lado")),
       {"book-n": SB, "book-s": SB}, 1200, 4)
 key("unfold-book-ns", L4("Unfold", "Desdobla", "Dépliez", "Desdobre"),
       {"book-n": 0.0, "book-s": 0.0}, 900, 3)
