@@ -150,18 +150,18 @@ def diamond(state):
             near((x0, (y0 + y1) / 2)), near((x1, (y0 + y1) / 2)))
 
 
-O, B, LFT, RGT = diamond(fp.state)
+CTR, B, LFT, RGT = diamond(fp.state)
 lo = math.atan2(RGT[1] - B[1], RGT[0] - B[0])
 bis = (lo + math.pi / 2) / 2
-KR = meet(B, (math.cos(bis), math.sin(bis)), O, (RGT[0] - O[0], RGT[1] - O[1]))
-KL = meet(B, (-math.cos(bis), math.sin(bis)), O, (LFT[0] - O[0], LFT[1] - O[1]))
+KR = meet(B, (math.cos(bis), math.sin(bis)), CTR, (RGT[0] - CTR[0], RGT[1] - CTR[1]))
+KL = meet(B, (-math.cos(bis), math.sin(bis)), CTR, (LFT[0] - CTR[0], LFT[1] - CTR[1]))
 
 
 def petal_side(tag, top):
     fp.fold(f"kite-r-{tag}", T["kite-r"], (B, KR), "valley", at=(RGT[0] - 8, RGT[1]), layers=2)
     fp.fold(f"kite-l-{tag}", T["kite-l"], (KL, B), "valley", at=(LFT[0] + 8, LFT[1]), layers=2)
     if top:
-        fp.fold(f"top-{tag}", T["top"], (KL, KR), "valley", at=(O[0] + 3, O[1] - 8), layers=1)
+        fp.fold(f"top-{tag}", T["top"], (KL, KR), "valley", at=(CTR[0] + 3, CTR[1] - 8), layers=1)
         fp.unfold_last(f"open-top-{tag}", T["open"])
     for name, k, c in (("l", KL, LFT), ("r", KR, RGT)):
         cr = mirror(c, B, k)
