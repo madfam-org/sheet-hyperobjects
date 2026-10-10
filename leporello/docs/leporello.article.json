@@ -1,0 +1,20 @@
+{
+  "spec_version": 1,
+  "object": "pliego/leporello",
+  "title": {"en": "Leporello", "es": "Libro acordeón", "fr": "Leporello", "pt": "Livro sanfona"},
+  "summary": {
+    "en": "An accordion book: one strip folded back and forth into equal panels, valley and mountain in turn, that closes into a stack and opens into a continuous surface.",
+    "es": "Un libro acordeón: una sola tira doblada en zigzag en paneles iguales, valle y monte por turnos, que se cierra en una pila y se abre en una superficie continua.",
+    "fr": "Un livre accordéon : une seule bande pliée en zigzag en panneaux égaux, vallée et montagne tour à tour, qui se ferme en pile et s'ouvre en une surface continue.",
+    "pt": "Um livro sanfona: uma única tira dobrada em zigue-zague em painéis iguais, vale e montanha alternados, que se fecha numa pilha e se abre numa superfície contínua."
+  },
+  "article": {
+    "path": "leporello/docs/README.md",
+    "sections": ["The structure", "Fabrication", "What the engine simulates", "Parameters", "Interfaces", "Provenance"]
+  },
+  "era": "a general book structure in continuous use",
+  "related": {
+    "objects": ["pliego/v-fold-popup", "pliego/parallel-fold-popup"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane; awaiting a human editorial pass."}
+}
