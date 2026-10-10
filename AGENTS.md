@@ -77,6 +77,7 @@ cartridges it read.
 
 ## Rulings
 
-Ruled (owner, 2026-10-10): object licence CERN-OHL-W-2.0. Pending: CLA vs DCO for third-party
-contributions (`contribution-signoff.yml` stays inert); the commons topology record (a third commons
-kernel beside solid and soft). Agents prepare to a ruling and stop; they never take one.
+Ruled (owner, 2026-10-10): this commons exists, named `sheet-hyperobjects` — a third commons beside
+the solid and soft commons, split by kernel; object licence CERN-OHL-W-2.0. Pending: CLA vs DCO for
+third-party contributions (`contribution-signoff.yml` stays inert). Agents prepare to a ruling and
+stop; they never take one.

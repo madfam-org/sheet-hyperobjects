@@ -18,8 +18,8 @@ with separated powers, and one rule: no role substitutes assertion for evidence.
 
 - **No agent and no maintainer chooses a licence.** The object licence is CERN-OHL-W-2.0 (owner
   ruling, 2026-10-10; [NOTICE.md](NOTICE.md)). Any deviation is an owner-ruled carve-out.
-- **Topology** — that sheet objects live in their own commons beside the solid and soft commons — is
-  an owner matter.
+- **Topology** — that sheet objects live in their own commons beside the solid and soft commons —
+  was ruled by the owner on 2026-10-10; any change to it is an owner matter.
 - **Rulings are dated records.** A decision that lives only in someone's memory of a conversation
   has not been made.
 
