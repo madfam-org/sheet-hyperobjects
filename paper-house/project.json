@@ -1,0 +1,278 @@
+{
+  "project": {
+    "name": {"en": "Paper house", "es": "Casa de papel", "fr": "Maison en papier", "pt": "Casa de papel"},
+    "slug": "paper-house",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {"en": "An original cut-out paper house in four designs (a cottage with a chimney, a townhouse with its gable to the street, a gambrel-roofed barn with double doors and a house with a hip roof), built as a model at 1:100, 1:87 or 1:50 and unfolded into tabbed, numbered pieces on pages, with windows and doors cut out or scored and a program that folds the pieces into the house and opens its doors.", "es": "Una casa de papel recortable original en cuatro diseños (una casita con chimenea, una casa de ciudad con el hastial a la calle, un granero de tejado holandés con puerta doble y una casa con tejado a cuatro aguas), construida como maqueta a 1:100, 1:87 o 1:50 y desplegada en piezas numeradas y con pestañas sobre hojas, con ventanas y puertas recortadas o marcadas y una secuencia que dobla las piezas hasta formar la casa y abre sus puertas.", "fr": "Une maison en papier à découper originale en quatre modèles (une maisonnette avec cheminée, une maison de ville pignon sur rue, une grange à comble brisé avec porte à deux battants et une maison à toit en croupe), construite en maquette au 1/100, au 1/87 ou au 1/50 et dépliée en pièces numérotées à languettes sur des pages, avec fenêtres et portes découpées ou rainées et un programme qui plie les pièces jusqu'à la maison et ouvre ses portes.", "pt": "Uma casa de papel para recortar original em quatro modelos (uma casinha com chaminé, um sobrado urbano com a empena para a rua, um celeiro de telhado de mansarda com porta dupla e uma casa com telhado de quatro águas), construída como maquete em 1:100, 1:87 ou 1:50 e desdobrada em peças numeradas e com abas em folhas, com janelas e portas recortadas ou vincadas e uma sequência que dobra as peças até formar a casa e abre as portas."},
+    "thumbnail": "/projects/paper-house.svg",
+    "difficulty": "intermediate",
+    "tags": ["papercraft", "paper-model", "house", "architecture", "cut-out", "unfolding", "glue", "tab", "hyperobject", "commons"],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {"source": "Original MADFAM designs: the four houses (proportions, roofs, chimney, windows and doors) are generated as meshes in main.py and unfolded by pliego.unfold; no published cut-out sheet, kit or model is copied or traced", "license": "original"}
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "fold",
+      "label": {"en": "Fold up (exact kinematics)", "es": "Armar (cinemática exacta)", "fr": "Montage (cinématique exacte)", "pt": "Montagem (cinemática exata)"},
+      "script_file": "main.py",
+      "sheets": ["piece-1"]
+    },
+    {
+      "id": "glued",
+      "label": {"en": "Glued model (paper physics)", "es": "Modelo pegado (física del papel)", "fr": "Modèle collé (physique du papier)", "pt": "Modelo colado (física do papel)"},
+      "script_file": "main.py",
+      "sheets": ["piece-1"]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "piece-1",
+      "label": {"en": "Piece 1 (the net adds piece-2, piece-3… as it needs)", "es": "Pieza 1 (la plantilla añade piece-2, piece-3… según haga falta)", "fr": "Pièce 1 (le patron ajoute piece-2, piece-3… selon les besoins)", "pt": "Peça 1 (o molde acrescenta piece-2, piece-3… conforme precisar)"},
+      "stock": "cardstock-250"
+    }
+  ],
+  "parameter_groups": [
+    {
+      "id": "model",
+      "label": {"en": "House", "es": "Casa", "fr": "Maison", "pt": "Casa"}
+    },
+    {
+      "id": "net",
+      "label": {"en": "Net and page", "es": "Plantilla y hoja", "fr": "Patron et page", "pt": "Molde e folha"}
+    },
+    {
+      "id": "tabs",
+      "label": {"en": "Tabs", "es": "Pestañas", "fr": "Languettes", "pt": "Abas"}
+    }
+  ],
+  "parameters": [
+    {
+      "id": "design",
+      "type": "select",
+      "group": "model",
+      "label": {"en": "Design", "es": "Diseño", "fr": "Modèle", "pt": "Modelo"},
+      "tooltip": {"en": "The house to build. Every design is an original MADFAM model, generated in main.py.", "es": "La casa que se arma. Cada diseño es un modelo original de MADFAM, generado en main.py.", "fr": "La maison à construire. Chaque modèle est un original de MADFAM, généré dans main.py.", "pt": "A casa a montar. Cada modelo é um original da MADFAM, gerado em main.py."},
+      "default": "cottage",
+      "options": [
+        {
+          "value": "cottage",
+          "label": {"en": "Cottage (gable roof, chimney)", "es": "Casita (tejado a dos aguas, chimenea)", "fr": "Maisonnette (toit à deux pans, cheminée)", "pt": "Casinha (telhado de duas águas, chaminé)"}
+        },
+        {
+          "value": "townhouse",
+          "label": {"en": "Townhouse (gable to the street)", "es": "Casa de ciudad (hastial a la calle)", "fr": "Maison de ville (pignon sur rue)", "pt": "Sobrado urbano (empena para a rua)"}
+        },
+        {
+          "value": "barn",
+          "label": {"en": "Barn (gambrel roof, double doors)", "es": "Granero (tejado holandés, puerta doble)", "fr": "Grange (comble brisé, porte à deux battants)", "pt": "Celeiro (telhado de mansarda, porta dupla)"}
+        },
+        {
+          "value": "hip-house",
+          "label": {"en": "House with a hip roof", "es": "Casa con tejado a cuatro aguas", "fr": "Maison à toit en croupe", "pt": "Casa com telhado de quatro águas"}
+        }
+      ]
+    },
+    {
+      "id": "scale",
+      "type": "select",
+      "group": "model",
+      "label": {"en": "Scale", "es": "Escala", "fr": "Échelle", "pt": "Escala"},
+      "tooltip": {"en": "Model scale: one metre of house is 10 mm of card at 1:100, 11.5 mm at 1:87 and 20 mm at 1:50. Larger scales print on more pages, in more pieces.", "es": "Escala de la maqueta: un metro de casa son 10 mm de cartulina a 1:100, 11,5 mm a 1:87 y 20 mm a 1:50. Las escalas mayores se imprimen en más hojas y más piezas.", "fr": "Échelle de la maquette : un mètre de maison fait 10 mm de bristol au 1/100, 11,5 mm au 1/87 et 20 mm au 1/50. Les grandes échelles s'impriment sur plus de pages, en plus de pièces.", "pt": "Escala da maquete: um metro de casa são 10 mm de cartolina em 1:100, 11,5 mm em 1:87 e 20 mm em 1:50. Escalas maiores imprimem em mais folhas e mais peças."},
+      "default": "87",
+      "options": [
+        {
+          "value": "100",
+          "label": {"en": "1:100", "es": "1:100", "fr": "1/100", "pt": "1:100"}
+        },
+        {
+          "value": "87",
+          "label": {"en": "1:87 (H0 model railway)", "es": "1:87 (H0, modelismo ferroviario)", "fr": "1/87 (H0, modélisme ferroviaire)", "pt": "1:87 (H0, ferromodelismo)"}
+        },
+        {
+          "value": "50",
+          "label": {"en": "1:50 (desk model)", "es": "1:50 (maqueta de escritorio)", "fr": "1/50 (maquette de bureau)", "pt": "1:50 (maquete de mesa)"}
+        }
+      ]
+    },
+    {
+      "id": "openings",
+      "type": "select",
+      "group": "model",
+      "label": {"en": "Windows and doors", "es": "Ventanas y puertas", "fr": "Fenêtres et portes", "pt": "Janelas e portas"},
+      "tooltip": {"en": "Cut: windows are cut out and doors are cut on three sides so they swing open on a scored hinge. Scored: the outlines are only scored, and the house stays closed. None: plain walls.", "es": "Recortadas: las ventanas se recortan y las puertas se cortan por tres lados para que giren sobre una bisagra marcada. Marcadas: los contornos solo se marcan y la casa queda cerrada. Ninguna: muros lisos.", "fr": "Découpées : les fenêtres sont évidées et les portes découpées sur trois côtés pour pivoter sur une charnière rainée. Rainées : les contours sont seulement rainés et la maison reste fermée. Aucune : murs nus.", "pt": "Recortadas: as janelas são vazadas e as portas são cortadas em três lados para girar numa dobradiça vincada. Vincadas: os contornos são apenas vincados e a casa fica fechada. Nenhuma: paredes lisas."},
+      "default": "cut",
+      "options": [
+        {
+          "value": "cut",
+          "label": {"en": "Cut out (doors open)", "es": "Recortadas (las puertas abren)", "fr": "Découpées (les portes s'ouvrent)", "pt": "Recortadas (as portas abrem)"}
+        },
+        {
+          "value": "scored",
+          "label": {"en": "Scored only", "es": "Solo marcadas", "fr": "Seulement rainées", "pt": "Só vincadas"}
+        },
+        {
+          "value": "none",
+          "label": {"en": "None", "es": "Ninguna", "fr": "Aucune", "pt": "Nenhuma"}
+        }
+      ]
+    },
+    {
+      "id": "chimney",
+      "type": "checkbox",
+      "group": "model",
+      "label": {"en": "Chimney", "es": "Chimenea", "fr": "Cheminée", "pt": "Chaminé"},
+      "tooltip": {"en": "A chimney straddling the ridge (the barn has none).", "es": "Una chimenea a caballo sobre la cumbrera (el granero no tiene).", "fr": "Une cheminée à cheval sur le faîtage (la grange n'en a pas).", "pt": "Uma chaminé montada sobre a cumeeira (o celeiro não tem)."},
+      "default": true
+    },
+    {
+      "id": "page",
+      "type": "select",
+      "group": "net",
+      "label": {"en": "Page size", "es": "Tamaño de hoja", "fr": "Format de page", "pt": "Tamanho da folha"},
+      "default": "a4",
+      "options": [
+        {
+          "value": "a4",
+          "label": {"en": "A4", "es": "A4", "fr": "A4", "pt": "A4"}
+        },
+        {
+          "value": "letter",
+          "label": {"en": "US Letter", "es": "Carta", "fr": "Lettre US", "pt": "Carta (US Letter)"}
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "type": "select",
+      "group": "net",
+      "label": {"en": "Cutting strategy", "es": "Estrategia de corte", "fr": "Stratégie de découpe", "pt": "Estratégia de corte"},
+      "tooltip": {"en": "Which edges the unfolder tries to keep as folds first. Shortest cuts keeps long edges folded, so there is less to glue; steepest edge cuts, at every corner, the edge that climbs most steeply.", "es": "Qué aristas intenta conservar primero como pliegues. «Cortes más cortos» deja dobladas las aristas largas, así hay menos que pegar; «arista más empinada» corta, en cada vértice, la arista que sube con más pendiente.", "fr": "Quelles arêtes le dépliage garde d'abord en plis. « Coupes les plus courtes » garde pliées les longues arêtes, il reste moins à coller ; « arête la plus raide » coupe, à chaque sommet, l'arête qui monte le plus fort.", "pt": "Quais arestas o desdobramento tenta manter primeiro como dobras. «Cortes mais curtos» mantém dobradas as arestas longas, e sobra menos para colar; «aresta mais íngreme» corta, em cada vértice, a aresta que sobe com mais inclinação."},
+      "default": "min-perimeter",
+      "options": [
+        {
+          "value": "min-perimeter",
+          "label": {"en": "Shortest cuts", "es": "Cortes más cortos", "fr": "Coupes les plus courtes", "pt": "Cortes mais curtos"}
+        },
+        {
+          "value": "steepest-edge",
+          "label": {"en": "Steepest edge", "es": "Arista más empinada", "fr": "Arête la plus raide", "pt": "Aresta mais íngreme"}
+        }
+      ]
+    },
+    {
+      "id": "tab_style",
+      "type": "select",
+      "group": "tabs",
+      "label": {"en": "Glue tabs", "es": "Pestañas de pegado", "fr": "Languettes de collage", "pt": "Abas de colagem"},
+      "default": "trapezoid",
+      "options": [
+        {
+          "value": "trapezoid",
+          "label": {"en": "Trapezoid", "es": "Trapecio", "fr": "Trapèze", "pt": "Trapézio"}
+        },
+        {
+          "value": "triangle",
+          "label": {"en": "Triangle", "es": "Triángulo", "fr": "Triangle", "pt": "Triângulo"}
+        },
+        {
+          "value": "none",
+          "label": {"en": "None (edge to edge, taped)", "es": "Ninguna (canto con canto, con cinta)", "fr": "Aucune (bord à bord, au ruban adhésif)", "pt": "Nenhuma (borda com borda, com fita)"}
+        }
+      ]
+    },
+    {
+      "id": "tab_height",
+      "type": "slider",
+      "group": "tabs",
+      "unit": "mm",
+      "label": {"en": "Tab height (mm)", "es": "Alto de la pestaña (mm)", "fr": "Hauteur de la languette (mm)", "pt": "Altura da aba (mm)"},
+      "tooltip": {"en": "The tallest a tab may be (3–6 mm here, so the windows and doors keep clear of the tabs glued behind the walls); tabs shrink where the space under the matching face is short.", "es": "Altura máxima de una pestaña (aquí de 3 a 6 mm, para que ventanas y puertas no choquen con las pestañas pegadas tras los muros); se acorta donde falta espacio bajo la cara que le corresponde.", "fr": "Hauteur maximale d'une languette (ici 3 à 6 mm, pour que fenêtres et portes restent à l'écart des languettes collées derrière les murs) ; elle raccourcit là où la face correspondante manque de place.", "pt": "Altura máxima da aba (aqui de 3 a 6 mm, para que janelas e portas fiquem longe das abas coladas atrás das paredes); ela encolhe onde falta espaço sob a face correspondente."},
+      "default": 5,
+      "min": 3,
+      "max": 6,
+      "step": 0.5
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "group": "net",
+      "label": {"en": "Card", "es": "Cartulina", "fr": "Bristol", "pt": "Cartolina"},
+      "default": "cardstock-250",
+      "options": [
+        {
+          "value": "cardstock-160",
+          "label": {"en": "Cardstock 160 g/m²", "es": "Cartulina 160 g/m²", "fr": "Bristol 160 g/m²", "pt": "Cartolina 160 g/m²"}
+        },
+        {
+          "value": "cardstock-250",
+          "label": {"en": "Cardstock 250 g/m²", "es": "Cartulina 250 g/m²", "fr": "Bristol 250 g/m²", "pt": "Cartolina 250 g/m²"}
+        },
+        {
+          "value": "cardstock-300",
+          "label": {"en": "Cardstock 300 g/m²", "es": "Cartulina 300 g/m²", "fr": "Bristol 300 g/m²", "pt": "Cartolina 300 g/m²"}
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "cottage",
+      "label": {"en": "Cottage", "es": "Casita", "fr": "Maisonnette", "pt": "Casinha"},
+      "values": {"design": "cottage"}
+    },
+    {
+      "id": "townhouse",
+      "label": {"en": "Townhouse", "es": "Casa de ciudad", "fr": "Maison de ville", "pt": "Sobrado urbano"},
+      "values": {"design": "townhouse"}
+    },
+    {
+      "id": "barn",
+      "label": {"en": "Barn", "es": "Granero", "fr": "Grange", "pt": "Celeiro"},
+      "values": {"design": "barn"}
+    },
+    {
+      "id": "hip-house",
+      "label": {"en": "Hip-roofed house", "es": "Casa a cuatro aguas", "fr": "Maison à toit en croupe", "pt": "Casa de quatro águas"},
+      "values": {"design": "hip-house"}
+    },
+    {
+      "id": "desk-cottage",
+      "label": {"en": "Cottage at 1:50 (desk model)", "es": "Casita a 1:50 (maqueta de escritorio)", "fr": "Maisonnette au 1/50 (maquette de bureau)", "pt": "Casinha em 1:50 (maquete de mesa)"},
+      "values": {"design": "cottage", "scale": "50"}
+    },
+    {
+      "id": "barn-1-100-scored",
+      "label": {"en": "Barn at 1:100, scored openings", "es": "Granero a 1:100, aberturas marcadas", "fr": "Grange au 1/100, ouvertures rainées", "pt": "Celeiro em 1:100, aberturas vincadas"},
+      "values": {"design": "barn", "scale": "100", "openings": "scored"}
+    }
+  ],
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {"en": "Assemble", "es": "Armar", "fr": "Monter", "pt": "Montar"},
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ],
+  "export_formats": ["svg", "dxf", "pdf", "glb", "fold"],
+  "stock": {
+    "default": "cardstock-250",
+    "alternatives": ["cardstock-160", "cardstock-300"]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "model",
+    "kernel": "sheet",
+    "capabilities": {"prints_on_pages": true, "kinematic_fold_up": true, "glue_joins": true, "opening_doors": true},
+    "societal_benefit": {"en": "A house a child can print, cut and glue at a kitchen table, at a scale that fits a model railway or a school diorama, and a first lesson in how buildings are drawn: walls, roof planes and openings laid flat.", "es": "Una casa que un niño puede imprimir, recortar y pegar en la mesa de la cocina, a una escala que sirve para una maqueta de tren o una maqueta escolar, y una primera lección de cómo se dibuja un edificio: muros, faldones y vanos extendidos en plano.", "fr": "Une maison qu'un enfant peut imprimer, découper et coller sur la table de la cuisine, à une échelle qui convient à un réseau de train miniature ou à une maquette scolaire, et une première leçon sur la façon de dessiner un bâtiment : murs, pans de toit et ouvertures mis à plat.", "pt": "Uma casa que uma criança pode imprimir, recortar e colar na mesa da cozinha, numa escala que serve para uma maquete de trem ou um trabalho escolar, e uma primeira lição de como se desenha um edifício: paredes, águas do telhado e vãos estendidos no plano."},
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}
