@@ -24,12 +24,13 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA. PLACEHOLDER: empty until the keystone's
-  # `pliego-spec` package lands on its main; the coordinator sets the SHA in the same PR that first needs it.
-  SPEC_PIN: ""
-  # The platform (madfam-org/pliego) at a full commit SHA, for pliego-kernel. PLACEHOLDER: empty until the kernel
-  # and its cartridge runner (`python -m pliego.cartridge <dir>`) land on Pliego's main.
-  PLIEGO_PIN: ""
+  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA: the head of draft PR
+  # madfam-org/hyperobjects-spec#60 (pliego-spec, sheet-manifest schema) until it lands on the keystone's main;
+  # re-pin to the merge commit then.
+  SPEC_PIN: "643117f49102520ebb11796761760d01561187d9"
+  # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
+  # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
+  PLIEGO_PIN: "168a448d0817f40ddea7037d54476afa972e13ef"
 
 jobs:
   triple:
@@ -87,10 +88,21 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
+      - name: Pliego stock cards at PLIEGO_PIN (materials/ only)
+        if: env.PLIEGO_PIN != ''
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: madfam-org/pliego
+          ref: ${{ env.PLIEGO_PIN }}
+          path: .pliego
+          sparse-checkout: materials
+          persist-credentials: false
       - name: Run every cartridge
         run: |
           set -euo pipefail
           if [ -z "${PLIEGO_PIN}" ]; then echo "skip: PLIEGO_PIN not set"; exit 0; fi
+          export PLIEGO_MATERIALS="$GITHUB_WORKSPACE/.pliego/materials"
+          test -d "$PLIEGO_MATERIALS" || { echo "render: FAIL materials/ missing at PLIEGO_PIN"; exit 1; }
           [[ "${PLIEGO_PIN}" =~ ^[0-9a-f]{40}$ ]] || { echo "render: FAIL PLIEGO_PIN is not a full 40-hex SHA"; exit 1; }
           python -m pip install --quiet "pliego-kernel @ git+https://github.com/madfam-org/pliego@${PLIEGO_PIN}#subdirectory=packages/kernel"
           python -c "import importlib.util, sys; sys.exit(0 if importlib.util.find_spec('pliego.cartridge') else 1)" \
