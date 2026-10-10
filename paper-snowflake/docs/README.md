@@ -49,7 +49,9 @@ stops rendering when the hub would be too small for the chosen arm width.
 ## What the engine shows
 
 The fold program re-folds the cut sheet along its creases in the original order (four steps) and
-then releases every crease: the snowflake opens out. Version 1 documents describe the sheet after
+then unfolds every crease flat by hand: the snowflake opens out. Letting go of the creases would
+not be enough, because paper folded flat springs back only by its yield angle (about 35°) and
+stays folded (see `crease-and-unfold`). Version 1 documents describe the sheet after
 cutting, so the program shows the folding on the cut paper; in the real craft the cut is made while
 the paper is folded.
 
