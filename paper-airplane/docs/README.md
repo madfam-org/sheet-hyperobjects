@@ -50,14 +50,14 @@ pattern is used. The sheet's long axis is the keel, the nose is the top edge.
 
 The cartridge measures the folded plane and prints the figures on its `kinematics:` line (the
 sheet-document schema keeps `pliego:meta` closed, so they are not written into the document). It
-counts every layer of uniform paper: the centre of gravity is the area-weighted centroid of all
-facets. With the defaults on A4:
+counts every layer of uniform paper: the centre of gravity is the area-weighted mean of every
+face's own area centroid. With the defaults on A4:
 
 | design | span | length | centre of gravity behind the nose |
 |---|---|---|---|
-| dart | 165.7 mm | 297.0 mm | 164.0 mm (55.2 %) |
+| dart | 165.7 mm | 297.0 mm | 159.8 mm (53.8 %) |
 | glider | 180.1 mm | 192.0 mm | 74.4 mm (38.8 %) |
-| delta | 187.6 mm | 303.0 mm | 162.7 mm (53.7 %) |
+| delta | 187.6 mm | 303.0 mm | 157.3 mm (51.9 %) |
 | square | 172.9 mm | 267.3 mm | 121.0 mm (45.3 %) |
 | canard | 172.9 mm | 279.2 mm | 131.7 mm (47.2 %) |
 | ring | hoop diameter 88.9 mm | — | — |
@@ -72,18 +72,37 @@ the folded shape; they do not predict how the plane flies.
 ## The fold program
 
 The program is `kinematic`. Each step lists only the creases it moves, and every state is an exact
-rigid state. The fold engine embedded in `main.py` keeps a rigid transform for every facet of the
-sheet. A fold rotates the facets the paper connects on one side of a line, and the angle of every
-kernel edge is then measured between its two faces. The cartridge checks each state and the linear
-midpoint between states with `pliego.kinematics.closure_residual`, and fails if any state misses
-closure by more than 10⁻³ mm. At the defaults the worst residual is below 10⁻⁶ mm.
+rigid state.
+
+- **Flat folds are kernel operations.** Every fold is an operation of `pliego.FoldProgram` on a
+  layer-ordered flat state. After each one the kernel checks the layer order (taco and tortilla
+  conditions, transitivity) and Kawasaki and Maekawa at every vertex. The crease pattern is the
+  final flat state unfolded. Each wing, foreplane and winglet folds with every layer of its side
+  beyond its line, the flaps folded inside included.
+- **Slits are kernel cuts.** The canard's slit and the elevator slits are `FoldProgram.cut`
+  operations through both layers; the sheet carries them as cut lines from the first frame. A cut
+  is not a fold, so a slit step shows no motion; its label tells the hand what to do.
+- **Opening is a set of hinge poses** about the existing creases: the fuselage sides 16° apart,
+  the wings (and foreplanes) to the dihedral, the winglets up or down, the elevator tabs to the
+  trim. The diagram shows them as one step. The left fuselage side lifts with every layer of its
+  own half, including a flap whose crease lies along the keel (the dart's corners).
+- **The ring** is the leading edge rolled over, sixteen facet lines scored, then the strip rolled
+  into its hoop, each facet turning 22.5° about its line.
+- **The pattern.** The crease pattern is the flat state unfolded, so each crease's fold angle is
+  its flat-folded one (±180°, or `F` for a line left open, such as the scored ring facets and the
+  elevator-tab hinges). The opening angles live in the sequence and in the `folded` target.
+- **Closure.** The cartridge checks each state and the linear midpoint between states with
+  `pliego.kinematics.closure_residual`, and fails if any state misses closure by more than
+  10⁻³ mm. At the defaults the worst residual is below 10⁻⁶ mm.
 
 Typical steps (the dart): fold in half lengthwise; unfold; corners to the centre; edges to the
 centre; (nose weight); fold in half; fold each wing down; open the wings to the dihedral and set the
-trim. A cut is not a fold, so a slit step shows no motion; its label tells the hand what to do.
+trim.
 
 The studio's preview poses the sheet from one face. The cartridge places the sheet so that the
-finished plane shows level and upright, which tilts the flat sheet slightly at the start.
+finished plane shows level and upright, which tilts the flat sheet slightly at the start. With a
+slit, no `folded` target is written: a slit's two sides still share their end vertices in the
+kernel, so a target that opens a slit would draw them on one side.
 
 ## Making one by hand
 
