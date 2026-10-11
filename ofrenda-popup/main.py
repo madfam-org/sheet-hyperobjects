@@ -260,7 +260,7 @@ def arch(rf):
                 HP - base_h - ry * math.sin(math.radians(8.0 + 164.0 * i / 400)))
                for i in range(401)]
         run = [0.0]
-        for p0, p1 in zip(arc, arc[1:]):
+        for p0, p1 in zip(arc, arc[1:], strict=False):
             run.append(run[-1] + math.dist(p0, p1))
         want = ([run[-1] * j / (flowers - 1) for j in range(flowers)] if flowers > 1
                 else [run[-1] / 2.0])
@@ -286,7 +286,8 @@ LAYERS = ((RF, 10 if RF >= 9.0 else 8, 0.0), (RI, 7 if RI >= 7.0 else (6 if RI >
                                                18.0))
 templates = [marigold_disc(f"marigold-{layer}", rad, n, rot, PETAL_COLOURS[layer], None)
              for layer, (rad, n, rot) in enumerate(LAYERS)] if centres else []
-if len(templates) == 2 and pliego.foldcut.material_min_area(templates[1].build()) < 1.1 * FMINF ** 2:
+if len(templates) == 2 and \
+        pliego.foldcut.material_min_area(templates[1].build()) < 1.1 * FMINF ** 2:
     templates, LAYERS = templates[:1], LAYERS[:1]   # inner petals below the face-area floor
 for j, (cu, cv) in enumerate(centres):
     x, y = wall_xy(cu, cv)
