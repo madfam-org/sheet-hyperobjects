@@ -100,7 +100,7 @@
   "stock": {"default": "folding-boxboard-300", "alternatives": ["sbs-board-350", "cardstock-300", "greyboard-1500"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "mechanism",
+    "domain": "packaging",
     "kernel": "sheet",
     "interfaces": [
       {
