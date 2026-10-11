@@ -12,10 +12,14 @@ A pull tab that moves a part. Two modes:
   moved by a `rotate` mechanism about the pivot (the `swing` angle control); the pivot is a brad
   through a hole in the lever and a kiss-cut mark on the page.
 
-Both moving parts are kinematic sheets with no joins of their own, so the preview drives them; the
-rails, the backing and the page are glued to each other (fixed to fixed, which the preview does not
-need either). Layers are stacked 0.3 mm apart, inside the stocks' collision thickness, so every glue
-weld holds in the initial frame.
+Both moving parts are kinematic sheets with no joins of their own, so the preview drives them. In
+`straight` the rails, the backing and the page are fixed boards (spec §5.1: kinematic on the strip's
+mechanism, which does not move them) glued to each other, so the strip slides between rigid
+layers: the engine's glue welds at zero offset, and physical layers glued that way close round the
+channel and drag along with the strip by friction. Layers are stacked 0.33 mm apart: the contact
+distance between the strip and the page stock (half the sum of their collision thicknesses), so no
+moving part starts inside another's contact distance, and inside the page stock's 0.36 mm
+collision thickness, so every glue weld holds in the initial frame.
 """
 
 import math
@@ -57,7 +61,8 @@ sw_deg = pliego.clamp(swing, 10.0, 70.0)
 
 STOCK = "cardstock-300"           # page, backing, rails
 MOVER = "cardstock-250"           # strip, lever
-GAP = 0.3                         # layer spacing (< 0.36 mm collision thickness of the page stock)
+GAP = 0.33                        # layer spacing: the contact distance (0.30 + 0.36) / 2, and
+#                                   inside the page stock's 0.36 mm collision thickness (glue)
 CLEAR = 1.0                       # clearance each side of the strip in the channel
 STOP = 3.0                        # the head is this much wider than the strip, each side
 HEAD = 6.0                        # length of the head
@@ -101,11 +106,12 @@ if mode == "straight":
 
     page = pliego.Sheet("page", rect(0, 0, W, H), stock=STOCK, grain_deg=90.0,
                         label=L4("Page with a window", "Página con ventana", "Page à fenêtre",
-                                 "Página com janela"),
+                                 "Página com janela"), kinematic="pull-strip",
                         placement=pliego.Placement(origin=(0.0, 2 * GAP, 0.0)))
     page.hole(rect(wx0, yc - wh / 2.0, wx0 + ww, yc + wh / 2.0))
     backing = pliego.Sheet("backing", rect(0, 0, W, H), stock=STOCK, grain_deg=90.0,
-                           label=L4("Backing", "Respaldo", "Contre-page", "Contracapa"))
+                           label=L4("Backing", "Respaldo", "Contre-page", "Contracapa"),
+                           kinematic="pull-strip")
     rails = []
     for side, sgn in (("rail-low", -1.0), ("rail-high", 1.0)):
         # an L: wide channel from the inner end to the mouth, narrower channel from there out
@@ -122,6 +128,7 @@ if mode == "straight":
                                   "Riel" + (" inferior" if sgn < 0 else " superior"),
                                   "Glissière" + (" inférieure" if sgn < 0 else " supérieure"),
                                   "Trilho" + (" inferior" if sgn < 0 else " superior")),
+                         kinematic="pull-strip",
                          placement=pliego.Placement(origin=(lo_x, GAP, -lo_y)))
         # glue the outer, full-length band of the rail to the backing and to the page
         band = rect(0.0, 0.0, W - x_in, RAIL) if sgn < 0 else \
