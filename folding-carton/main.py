@@ -86,11 +86,12 @@ def _clip(poly, a, b, off):
     return out
 
 
-def closed_glue(assembly, sheet_id, zones, frame="target:closed", after=None):
+def closed_glue(assembly, sheet_id, zones, frame="target:closed", after=None, sides=None):
     """Welds for glue zones ({id, polygon} on sheet `sheet_id`), read from a closed pose: {zone id:
     (region, map, side, k)} — the zone inset by INSET and clipped clear of cut edges, the map
     onto the face it lands on, the side of that face the tab lies on, and k, the last step that
-    folds a crease on the face-tree path from tab to zone (or `after[zone id]`). Zones that land
+    folds a crease on the face-tree path from tab to zone (`after` and `sides` override k and the
+    side by zone id, for a flap that wraps round its zone's edge). Zones that land
     on no face are left out (fabrication data only)."""
     d = assembly.build().data
     X = next(f for f in d["file_frames"] if f.get("frame_title") == frame)
@@ -149,12 +150,15 @@ def closed_glue(assembly, sheet_id, zones, frame="target:closed", after=None):
         if not hits:
             continue
         ib = min(hits)[1]
+        off = to2(faces[ib], C3)[1]            # the tab's height over the zone's front
         q0, q1, q2 = [to2(faces[ib], to3(faces[ia], p))[0] for p in ((0, 0), (1, 0), (0, 1))]
         m = [q1[0] - q0[0], q2[0] - q0[0], q1[1] - q0[1], q2[1] - q0[1], q0[0], q0[1]]
-        # the tab comes from the side of the zone where its hinge neighbour stands
+        # the side: where the tab lies off the zone's plane, else where its hinge neighbour stands
         lean = [to2(faces[ib], to3(f, centre([lay[v] for v in f])))[1]
                 for i, f in enumerate(faces) if i != ia and rims[i] & rims[ia]]
-        side = "front" if max(lean, key=abs, default=1.0) > 0 else "back"
+        side = "front" if (off if abs(off) > 0.5 else max(lean, key=abs, default=1.0)) > 0 \
+            else "back"
+        side = (sides or {}).get(z["id"], side)
         prev, todo = {ia: None}, [ia]          # the face-tree path closes the loop
         while todo:
             i = todo.pop(0)
@@ -188,12 +192,12 @@ def closed_glue(assembly, sheet_id, zones, frame="target:closed", after=None):
     return out
 
 
-def glue_at_steps(assembly, groups, frame="target:closed", after=None):
+def glue_at_steps(assembly, groups, frame="target:closed", after=None, sides=None):
     """A glue join for every glue zone of `groups` ([(sheet, zones)]), active from the step after
     the one that closes it (a short final press step when that is the last one). Returns the
     joins made and the zones left as fabrication data."""
     welds = {(sh.id, z): (sh, w) for sh, zones in groups
-             for z, w in closed_glue(assembly, sh.id, zones, frame, after).items()}
+             for z, w in closed_glue(assembly, sh.id, zones, frame, after, sides).items()}
     steps = assembly.sequence.steps
     if any(w[3] == len(steps) - 1 for _, w in welds.values()):
         steps.append(pliego.Step("press", PRESS, [], duration_ms=600))
