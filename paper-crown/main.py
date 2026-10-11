@@ -104,8 +104,7 @@ for k in range(1, N + m):
         h = band
     else:
         h = top(j / sub)
-    crown.crease((k * w, 0.0), (k * w, h), "flat", 0.0, treatment="crease",
-                 name="overlap" if k == N else None)
+    crown.bend((k * w, 0.0), (k * w, h), name="overlap" if k == N else None)
 
 cut_check = pliego.papercut.analyze(crown, min_feature_mm=STOCKS[stock])
 if not cut_check.ok:
@@ -218,8 +217,17 @@ if mode == "make":
                                        "Passe a sobreposição lisa por dentro e cole-a"),
                     [(ref(e), angles[e]) for e in lap_e], duration_ms=2000),
     ]
+    steps.append(pliego.Step("press", L4("Hold the overlap until the glue sets",
+                                         "Sostén el traslape hasta que el pegamento agarre",
+                                         "Tenez le recouvrement jusqu'à ce que la colle prenne",
+                                         "Segure a sobreposição até a cola pegar"),
+                             [], duration_ms=800))
+    # the overlap's glue takes hold once it lies on the band (spec §5.19): flat, then glued
+    glue = pliego.glue("overlap-to-band", crown, region, crown, glue_map, "front")
+    glue["active_from"] = "press"
     assembly = pliego.Assembly(
-        [crown], controls=[pliego.sequence_control(label=L4("Roll the crown", "Enrollar la "
+        [crown], joins=[glue],
+        controls=[pliego.sequence_control(label=L4("Roll the crown", "Enrollar la "
                                                             "corona", "Rouler la couronne",
                                                             "Enrolar a coroa"))],
         sequence=pliego.Sequence(steps, mode="kinematic"),
@@ -246,10 +254,4 @@ else:
         targets={"crown": ring, "flat": {"angles": flat}}, title="Paper crown")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The panel lines are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved band.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

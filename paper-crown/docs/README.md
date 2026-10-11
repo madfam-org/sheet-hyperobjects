@@ -45,15 +45,26 @@ sheet, which becomes the outside.
 
 1. curl the band into a loose ring (every line at half its final angle);
 2. close the ring until the ends meet;
-3. slide the plain overlap inside and glue it.
+3. slide the plain overlap inside and glue it;
+4. hold the overlap until the glue sets.
 
-It ends in the ring, which is also written as the frame `target:crown`. The crown stands on its side
-because the preview keeps the first panel on the table.
+The overlap's glue is a `glue` join with `active_from: "press"` (sheet-document spec §5.19): the
+band starts flat and the program ends glued. It ends in the ring, which is also written as the
+frame `target:crown`. The crown stands on its side because the preview keeps the first panel on
+the table.
 
 **Mode `glued`** is the finished crown for the physics engine: the glue weld and an `initial` frame
 standing upright. Its `physical` program presses the crown flat to store it (two layers, folds at
 the seam and at the opposite line) and opens it again. The weld holds in both states; the flat state
 is written as `target:flat`.
+
+**Why two modes.** Step-activated glue would let one physical program roll the flat band, glue it
+and then press it flat and open it. Measured in the physics engine, it does not close: driven
+crease by crease, the rolled band's ends stay 37 mm apart after the close step (42 mm after the
+overlap step), so the glue finds nothing to weld when it switches on. A kinematic program closes
+the ring exactly but holds the sheet rigid, so it cannot show the weld keeping the ring shut while
+it is pressed flat. Until the engine can close a rolled band, `make` shows the making and `glued`
+shows the glued crown's physics.
 
 **Preview and engine.** The preview plays both programs exactly at their ends. In between, the flat
 press is a straight blend of angles, so the overlap drifts off the glue for a moment; the engine

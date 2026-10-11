@@ -57,10 +57,20 @@ then tongue; or the seal flaps). Flaps are separated by slits, so no two folds m
 board: the blank is a face tree and folds rigidly. The blank lies print side down and the carton
 erects lying on its front panel.
 
-**Limits.** The glue welds (joint, seal ends, crash-lock triangles) are glue zones, not joins:
-welding is the physics engine's job. The crash-lock's diagonal crease is drawn but left flat by
-the erecting program — it folds only when the glued carton is knocked flat, and the pop-open
-action needs the engine. Tongues are shown kinematically; their friction lock needs contact.
+**Glue that takes hold at its step.** The glue zones are also `glue` joins with `active_from`
+(sheet-document spec §5.19), so the program starts from the flat blank and ends glued. The
+script reads each weld from the closed pose: the face the zone lands on, the map onto it and the
+side the tab lies on; the weld region is the zone inset by 0.75 mm, clipped clear of any cut
+edge it would reach (the tea box's window sits closer to the joint than the glue flap is wide).
+Each glue takes hold at the step after the last fold on the path from its tab to its zone: the
+manufacturer's joint once the tube is formed, the seal-end flaps once each end is closed (a short
+final *press* step holds the top seal), the crash-lock triangles once the bottom is closed.
+
+**Limits.** In the physics engine a kinematic program poses its sheet rigidly, so the welds are
+recorded state there rather than forces; they act once the program runs physically. The
+crash-lock's diagonal crease is drawn but left flat by the erecting program: it folds only when
+the glued carton is knocked flat, and the pop-open action needs the engine. Tongues are shown
+kinematically; their friction lock needs contact.
 
 ## Making one by hand
 

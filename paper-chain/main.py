@@ -111,8 +111,7 @@ def make_strip(k):
                               f"Elo {k + 1}"),
                      front=colour, back=colour)
     for j in range(1, n + m):
-        s.crease((j * w, 0.0), (j * w, W), "flat", 0.0, treatment="crease",
-                 name="overlap" if j == n else None)
+        s.bend((j * w, 0.0), (j * w, W), name="overlap" if j == n else None)
     return s
 
 
@@ -241,10 +240,21 @@ if mode == "make":
                     "e cole as pontas"))
         targets = [(pliego.assembly.EdgeRef(s, e), angles[e]) for e in band_e + lap_e]
         steps.append(pliego.Step(f"link-{k + 1}", label, targets, duration_ms=1500))
+    steps.append(pliego.Step("press", L4("Hold the last seam until the glue sets",
+                                         "Sostén la última unión hasta que el pegamento agarre",
+                                         "Tenez la dernière jointure jusqu'à ce que la colle "
+                                         "prenne", "Segure a última junta até a cola pegar"),
+                             [], duration_ms=800))
+    # each ring's seam takes hold once it is closed: from the next link's step (spec §5.19)
+    seams = []
+    for k, s in enumerate(strips):
+        g = pliego.glue(f"seam-{k + 1}", s, region, s, glue_map, "front")
+        g["active_from"] = steps[k + 1].id
+        seams.append(g)
     assembly = pliego.Assembly(
-        strips, controls=[pliego.sequence_control(label=L4("Make the chain", "Hacer la cadena",
-                                                           "Faire la chaîne",
-                                                           "Fazer a corrente"))],
+        strips, joins=seams,
+        controls=[pliego.sequence_control(label=L4("Make the chain", "Hacer la cadena",
+                                                   "Faire la chaîne", "Fazer a corrente"))],
         sequence=pliego.Sequence(steps, mode="kinematic"),
         targets={"chain": {s.id: {"angles": dict(angles)} for s in strips}},
         title="Paper chain")
@@ -264,10 +274,4 @@ else:
         targets={"chain": chain}, title="Paper chain")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The panel lines are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved strip.
-tr = doc.data["pliego:edges_treatment"]
-for e, asg in enumerate(doc.data["edges_assignment"]):
-    if asg == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

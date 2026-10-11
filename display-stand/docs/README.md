@@ -43,9 +43,14 @@ Every fold is straight and the blank is a face tree, so the program is kinematic
 the lip's inner leaf; raise the side walls and fold their ears in; roll the lip's outer leaf over
 the ears and lock it; raise the header; fold the easel down behind and run its floor under until
 the tabs reach the back slots — the triangle closes exactly at the end of that step. The preview
-poses the blank from its first face, so the first side wall starts already raised. **Limits.**
-The back ears' glue, the tabs' snap and the stand's stability with products in it are the
-physics engine's part; no load rating is claimed.
+poses the blank from its first face, so the first side wall starts already raised.
+
+Each glue zone is also a `glue` join with `active_from` (sheet-document spec §5.19): the script
+reads the weld from the closed pose (the face the zone lands on, the map onto it and the side the
+tab lies on; the region is the zone inset by 0.75 mm), and the glue takes hold at the step after
+the last fold on the path from tab to zone, so the program starts from the flat blank and ends
+glued. The back ears take hold once the header is up. **Limits.** The tabs' snap and the stand's
+stability with products in it are the physics engine's part; no load rating is claimed.
 
 ## Making one by hand
 

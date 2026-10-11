@@ -18,7 +18,7 @@
     "Wikipedia, «Four-bar linkage», https://en.wikipedia.org/wiki/Four-bar_linkage",
     "Wikipedia, «Pantograph» (target of «Lazy tongs»), https://en.wikipedia.org/wiki/Pantograph",
     "Wikipedia, «Brass fastener», https://en.wikipedia.org/wiki/Brass_fastener",
-    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.3–§5.6"
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.3–§5.6 and §5.18 (keyed mechanisms)"
   ],
   "related": {"objects": ["pliego/fastener-joins", "pliego/paper-automaton", "pliego/pull-tab-slider", "pliego/parallel-fold-popup"]},
   "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}

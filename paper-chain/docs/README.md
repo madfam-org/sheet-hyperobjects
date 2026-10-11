@@ -42,11 +42,20 @@ the default strips (200 × 25 mm, 20 mm overlap): a = 28.36 mm, p = 50.25 mm, an
 **Mode `make`.** The links are flat strips, each placed where its ring will hang: its sheet
 placement puts the strip's first panel at the bottom of its ring. A `kinematic` program then loops
 and glues them one by one, each step "pass strip k through link k − 1, loop it and glue the ends".
-It ends in the chain, which is also written as `target:chain`.
+A last short step holds the final seam. Each ring's seam is a `glue` join with `active_from`
+(sheet-document spec §5.19): it takes hold at the next link's step, once its ring is closed (the
+last one at the hold step), so the strips start flat and the program ends glued. It ends in the
+chain, which is also written as `target:chain`.
 
 **Mode `glued`** is the finished chain for the physics engine: eight glue welds and an `initial`
 frame of the hanging chain. The first link is held at the top of its ring by a `pin` join that a
 `translate` mechanism moves, so the control `Lift the chain` raises it by up to 100 mm.
+
+**Why two modes.** A single physical program would have to roll each flat strip into a closed ring
+by driving its panel lines, thread it through the previous ring and only then let the glue take
+hold. The engine cannot close a rolled band that way yet (on the paper crown it leaves the ends
+37 mm apart, so the glue finds nothing to weld), and a kinematic program holds every strip rigid,
+so it cannot let the glued chain hang. `make` shows the making; `glued` hangs the chain.
 
 **Preview and engine.** The studio preview plays the making. The flat strips start where the rings
 will hang, and the preview does not stop one strip passing through another: threading a strip

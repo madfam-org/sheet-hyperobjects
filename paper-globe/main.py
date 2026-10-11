@@ -93,8 +93,7 @@ def gore_sheet(g):
                               f"Fuso {g + 1}"),
                      front=colours[g % len(colours)], back="#f6f1e7")
     for i in range(1, K):
-        s.crease(lower[i - 1], upper[i - 1], "flat", 0.0, treatment="crease",
-                 name="equator" if 2 * i == K else None)
+        s.bend(lower[i - 1], upper[i - 1], name="equator" if 2 * i == K else None)
     return s
 
 
@@ -272,10 +271,4 @@ assembly = pliego.Assembly(
 
 doc = assembly.build(cartridge=SLUG, mode=str(PARAM(lambda: mode, "globe")),  # noqa: F821
                      params=params)
-# The panel lines are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score the gores.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

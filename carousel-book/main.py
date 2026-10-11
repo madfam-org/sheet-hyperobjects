@@ -175,26 +175,33 @@ steps = [
                             "Desata los listones y cierra el libro",
                             "Dénouez les rubans et fermez le livre",
                             "Desamarre as fitas e feche o livro"),
-                [(m, SHUT) for m in spine_folds], duration_ms=2500),
+                [(m, SHUT) for m in spine_folds], duration_ms=2500,
+                release_joins=[j["id"] for j in joins]),
     pliego.Step("open", open_label, [(m, 180.0 - ALPHA) for m in spine_folds], duration_ms=3500,
-                note=L4("Bring the covers together and tie the ribbons at top and bottom.",
-                        "Junta las tapas y ata los listones arriba y abajo.",
-                        "Rapprochez les couvertures et nouez les rubans en haut et en bas.",
-                        "Junte as capas e amarre as fitas em cima e em baixo.")),
+                note=L4("Bring the covers together.", "Junta las tapas.",
+                        "Rapprochez les couvertures.", "Junte as capas.")),
+    pliego.Step("tie", L4("Tie the ribbons at top and bottom", "Ata los listones arriba y abajo",
+                          "Nouez les rubans en haut et en bas",
+                          "Amarre as fitas em cima e em baixo"),
+                [], duration_ms=800),
 ]
-for st in steps:
+# spec §5.20: the ribbons tied in the displayed state come undone as the book closes; tied again
+# once it is open (a released join stays released, so the second knot is its own join, §5.19)
+joins += [dict(j, id=f"{j['id']}-again", active_from="tie") for j in list(joins)]
+for st in (st for st in steps if st.targets):
     state = angles(st.targets[0][1])
     if pliego.kinematics.closure_residual(arr, state) > 1e-6:
         raise ValueError(f"carousel-book: step {st.id} is not a rigid state")
 
 print(f"carousel: chambers={N} page={w:g}x{h:g}mm strip={2 * N * w:g}mm alpha={ALPHA:.3f}deg "
-      f"windows={windows} ribbons={[round(j['length'], 2) for j in joins]}")
+      f"windows={windows} ribbons={[round(j['length'], 2) for j in joins[:2]]} "
+      f"untied@close retied@tie")
 
 result = pliego.Assembly(
     [strip], joins=joins,
     controls=[pliego.sequence_control(label=L4("Close and open", "Cerrar y abrir",
                                                "Fermer et ouvrir", "Fechar e abrir"),
-                                      default=2.0)],
+                                      default=3.0)],
     sequence=pliego.Sequence(steps, mode="kinematic"),
     initial={"angles": {m: 180.0 - ALPHA for m in spine_folds}
              | {m: -180.0 for m in fore_folds}, "root": (w / 2.0, h / 2.0)},

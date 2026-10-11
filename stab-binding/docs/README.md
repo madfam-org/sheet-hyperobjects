@@ -39,9 +39,11 @@ fore-edge), H the book height (head to tail), d the spine margin, r the hole rad
 | back cover | W × H | none | `spine` |
 
 Holes are 16-sided polygons whose inscribed circle has the chosen diameter, cut through every sheet
-with `sheet.hole`. (At a few sizes the kernel's hole bridging grazes a polygon corner and leaves a
-face that is not simple; the script then turns the polygons by a fraction of a side, which keeps
-the inscribed diameter, and fails loud if no turn works.) Each sheet type is checked with `pliego.papercut.analyze` (one connected piece,
+with `sheet.hole`, every polygon turned by half a side. (An earlier kernel's hole bridging could
+graze a polygon corner and leave a face that is not simple, so the script searched for a turn that
+worked; the kernel's split cuts made the search unnecessary, and it is gone. A sweep of the four
+patterns over book heights 100–400 mm and hole diameters 1.5 and 3.3 mm built a valid document
+every time.) Each sheet type is checked with `pliego.papercut.analyze` (one connected piece,
 every bridge at least the stock's minimum feature); the script also checks that every hole keeps
 the minimum feature from the spine, head and tail and from its neighbours, that no stitch runs over
 a hole it does not use, and that the hinge leaves at least 40 mm of page.

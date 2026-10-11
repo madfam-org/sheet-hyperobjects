@@ -260,51 +260,36 @@ def uv(k, folded_half=False):
     return ((2 * W - x) if folded_half else x, H - y)
 
 
-PHASES = (0.5, 0.25, 0.75, 0.125, 0.375, 0.625, 0.875, 0.0, 0.0625, 0.3125)
-phase_of = {}
-
-
-def faces_simple(sheet):
-    arr = sheet.build()
-    return all(len(set(f)) == len(f)
-               and pliego.geometry.is_simple_polygon([arr.vertices[v] for v in f])
-               for f in arr.faces)
+TURN = 0.5                            # every hole polygon turned by half a side
 
 
 def make_sheet(sid, label, stock, folded, hinge_at=None):
-    """One sheet with every hole. The kernel bridges holes into their face with J edges; at a few
-    sizes a bridge grazes a hole's own corner and leaves a face that is not simple, so the
-    polygons are turned by the first phase in PHASES that builds simple faces (fail loud)."""
+    """One sheet with every hole (each a polygon turned by TURN of a side)."""
     width = 2 * W if folded else W
     # Outline vertices on the spine edge(s) level with every hole give each hole a near, plain
     # target for its bridges.
     vs = sorted({round(H - y, 9) for _, y in holes.values()})
     outline = ([(0, 0), (width, 0)] + ([(width, v) for v in vs] if folded else [])
                + [(width, H), (0, H)] + [(0, v) for v in reversed(vs)])
-    key = (folded, hinge_at is not None)
-    for turn in ([phase_of[key]] if key in phase_of else PHASES):
-        s = pliego.Sheet(sid, outline, stock=stock, grain_deg=90.0, label=label)
-        for k in order:
-            s.hole(ring(*uv(k), turn))
-            if folded:
-                s.hole(ring(*uv(k, True), turn))
-        s.label_edge("spine", (0, 0), (0, H))
-        fold = hinge_mark = None
+    s = pliego.Sheet(sid, outline, stock=stock, grain_deg=90.0, label=label)
+    for k in order:
+        s.hole(ring(*uv(k), TURN))
         if folded:
-            s.label_edge("spine", (width, 0), (width, H))
-            fold = s.mountain((W, 0), (W, H), name="fore-edge",
-                              label=L4("Fore-edge fold", "Doblez del corte delantero",
-                                       "Pli de la gouttière", "Dobra do corte da frente"))
-        else:
-            s.label_edge("fore-edge", (W, 0), (W, H))
-        if hinge_at is not None:
-            hinge_mark = s.score((hinge_at, 0), (hinge_at, H), "valley", OPEN, name="hinge",
-                                 label=L4("Hinge score", "Hendido de la bisagra",
-                                          "Rainage de la charnière", "Vinco da dobradiça"))
-        if key in phase_of or faces_simple(s):
-            phase_of[key] = turn
-            return s, fold, hinge_mark
-    raise ValueError(f"stab-binding: no hole phase gives simple faces on {sid}")
+            s.hole(ring(*uv(k, True), TURN))
+    s.label_edge("spine", (0, 0), (0, H))
+    fold = hinge_mark = None
+    if folded:
+        s.label_edge("spine", (width, 0), (width, H))
+        fold = s.mountain((W, 0), (W, H), name="fore-edge",
+                          label=L4("Fore-edge fold", "Doblez del corte delantero",
+                                   "Pli de la gouttière", "Dobra do corte da frente"))
+    else:
+        s.label_edge("fore-edge", (W, 0), (W, H))
+    if hinge_at is not None:
+        hinge_mark = s.score((hinge_at, 0), (hinge_at, H), "valley", OPEN, name="hinge",
+                             label=L4("Hinge score", "Hendido de la bisagra",
+                                      "Rainage de la charnière", "Vinco da dobradiça"))
+    return s, fold, hinge_mark
 
 
 front, _, hinge = make_sheet("cover-front", L4("Front cover", "Tapa delantera",

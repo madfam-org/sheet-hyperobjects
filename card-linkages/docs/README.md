@@ -57,17 +57,27 @@ links lie flat in layers. This cartridge has three modes:
 - **`extender`**: two steps, open and close. Because every angle is linear in α, the blend
   between the two poses is itself a valid pose: the chain stays closed throughout, not only at the
   keys.
-- **`crank-rocker`**: the crank is a kinematic sheet on a `rotate` mechanism about its brad (the
-  `crank` control); brads at the other three pivots are `pivot` joins. Twelve `target:crank-000`
-  … `target:crank-330` frames hold the exact solved pose every 30°.
+- **`crank-rocker`**: one control, `crank`, drives all three links as kinematic sheets through
+  keyed mechanisms (sheet-document spec §5.18). The crank turns on a `rotate` about its ground
+  brad. The rocker turns about its own ground brad on a `rotate` whose `keys` table maps the crank
+  angle to the rocker's closed-form swing (periodic, 360°). The coupler turns about the crank's
+  brad on a `rotate` that **rides** the crank: its keys hold the coupler's heading minus the crank
+  angle, so the crank carries it round and it turns on its brad by the difference. The keys start
+  every 5° and are refined (3°, 2°, 1°) until the moving brads stay within 0.05 mm of joined
+  between keys: 0.036 mm at the default size with 73 keys, 0.019 mm for `large` with 121 keys
+  every 3°. The two moving brads stay `pivot` joins; the ground brads are the mechanisms'
+  centres. Twelve `target:crank-000` … `target:crank-330` frames hold the exact solved pose every
+  30°.
 
-**Preview and engine.** `four-bar` and `extender` play in the studio preview. The `crank` control
-of `crank-rocker` is disabled in the preview: the coupler and rocker follow the crank only through
-their pivots, and joins are the physics engine's work. A preview mechanism cannot stand in: a
-mechanism moves its sheet linearly in its control (a rotation by the control value, or a
-translation in proportion), and a coupler's motion is not linear in the crank angle. The same
-limit is why the crank-and-rocker is not folded: a crank that turns fully folds flat onto its
-coupler twice a turn, and standing links on score lines would pass through each other there.
+**Preview and engine.** All three modes play in the studio preview, `crank-rocker` included: the
+preview and the physics engine evaluate the same key tables, so the coupler stays on both of its
+brads at every crank angle. Measured over two turns in 2.5° steps (engine `World`, mesh edge
+10 mm), the worst gap at a moving brad is 0.036 mm in the engine and in the preview, and the links
+do not stretch (largest strain about 3e-14). Before the keyed mechanisms only the crank was a
+mechanism: the preview left the coupler and rocker behind (48 mm off the crank's brad) and the
+engine dragged them through their pivots with up to 4.8 mm of gap and strains above 2. The
+crank-and-rocker is still not folded: a crank that turns fully folds flat onto its coupler twice a
+turn, and standing links on score lines would pass through each other there.
 
 The folded extender has no crossing bars, so in card its cells can flex a little independently;
 crossing bars on brads (true lazy tongs) tie every cell to one angle. The physics engine will show

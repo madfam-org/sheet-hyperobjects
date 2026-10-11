@@ -44,9 +44,16 @@ Every fold is straight and no hinge meets another inside the sheet — flaps are
 so the blank is a face tree and the program is kinematic and exact: form the tube and glue the
 joint, close the bottom (two steps for the tuck, four for the 1-2-3), fold the roof supports in,
 then bring the roofs together and raise the handles back to back. The box rests on its front
-panel throughout. **Limits.** The manufacturer's joint and the peel-and-seal strip are glue zones
-(fabrication data); welding them, the snap-lock tongue's friction and the handle carrying a load
-need the physics engine. No load rating is claimed.
+panel throughout.
+
+Each glue zone is also a `glue` join with `active_from` (sheet-document spec §5.19): the script
+reads the weld from the closed pose (the face the zone lands on, the map onto it and the side the
+tab lies on; the region is the zone inset by 0.75 mm), and the glue takes hold at the step after
+the last fold on the path from tab to zone, so the program starts from the flat blank and ends
+glued. The joint takes hold once the tube is formed; the handle seal, closed in the last step, in
+a short final *press* step. **Limits.** In the physics engine a kinematic program poses the blank
+rigidly, so the welds are recorded state there, not forces. The snap-lock tongue's friction and
+the handle carrying a load need the physics engine. No load rating is claimed.
 
 ## Making one by hand
 

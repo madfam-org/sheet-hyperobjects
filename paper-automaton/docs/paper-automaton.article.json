@@ -17,7 +17,7 @@
   "sources": [
     "Wikipedia, «Cam (mechanism)», https://en.wikipedia.org/wiki/Cam_(mechanism)",
     "Wikipedia, «Automaton», https://en.wikipedia.org/wiki/Automaton",
-    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.4 and §6"
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.4, §5.18 (keyed mechanisms) and §6"
   ],
   "related": {"objects": ["pliego/card-linkages", "pliego/fastener-joins", "pliego/volvelle"]},
   "review_status": {"state": "generated", "note": "Authored by an agent lane (W2c·M); awaiting a human editorial pass."}

@@ -230,7 +230,7 @@ for phi in RULE_PHI:
     elif phi > 315.0 + 1e-9:
         ruling_th += [360.0 - phi, phi - 270.0]                          # the C flap
 for th in ruling_th:
-    base.crease(CTR, rim(th), "flat", 0.0, treatment="crease")
+    base.bend(CTR, rim(th))
 cut_check = pliego.papercut.analyze(base, min_feature_mm=1.0)
 if not cut_check.ok:
     raise ValueError(f"kusudama: the square fails the papercut check: {cut_check.issues}")
@@ -428,8 +428,14 @@ if mode == "petal":
             "que cette bande.", f"As bordas se sobrepõem {DELTA:g}° em torno da ponta; passe "
             "cola só nessa faixa.")),
     ]
+    steps.append(pliego.Step("press", L4("Hold the seam until the glue sets",
+                                         "Sostén la unión hasta que el pegamento agarre",
+                                         "Tenez la jointure jusqu'à ce que la colle prenne",
+                                         "Segure a junta até a cola pegar"), [], duration_ms=800))
+    seam = pliego.glue("seam", base, SEAM, base, SEAM_MAP, side="back")
+    seam["active_from"] = "press"          # spec §5.19: the cone's seam glued at its step
     assembly = pliego.Assembly(
-        [base], controls=[pliego.sequence_control(label=SEQ_LABEL)],
+        [base], joins=[seam], controls=[pliego.sequence_control(label=SEQ_LABEL)],
         sequence=pliego.Sequence(steps, mode="kinematic"),
         targets={"petal": {"angles": dict(angles)}}, title="Kusudama petal")
 
@@ -561,9 +567,4 @@ else:
                 for k, s in enumerate(sheets)}, title="Kusudama ball")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The rulings are plain paper (spec §4: F + `none`): exporters must not score a rolled surface.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

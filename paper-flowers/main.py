@@ -189,8 +189,7 @@ stem = pliego.Sheet("stem", [(0.0, 0.0), (stem_w, 0.0), (stem_w, stem_length),
                              (0.0, stem_length)], stock=stem_stock, grain_deg=90.0,
                     label=L4("Stem", "Tallo", "Tige", "Caule"), back="#5b8c3a")
 for i in range(1, stem_n):
-    stem.crease((i * STEM_FACET, 0.0), (i * STEM_FACET, stem_length), "flat", 0.0,
-                treatment="crease")
+    stem.bend((i * STEM_FACET, 0.0), (i * STEM_FACET, stem_length))
 stem_pts, stem_c0, _ = spiral(stem_n, STEM_FACET, STEM_CORE + stem_t, stem_t + STEM_AIR)
 stem_arr = stem.build()
 STEM_TOP = stem_length                       # the stem stands on the table, top at this height
@@ -251,8 +250,7 @@ def build_carnation():
         for j in range(1, n):
             sh.crease((j * p, depth), (j * p, Hy - depth), "valley" if j % 2 else "mountain",
                       180.0, treatment="crease")
-        sh.crease((0.0, mid), (sheet_length, mid), "flat", 0.0, treatment="crease",
-                  name="tie-line")
+        sh.bend((0.0, mid), (sheet_length, mid), name="tie-line")
         sheets.append(sh)
     rep = pliego.papercut.analyze(sheets[0], min_feature_mm=MIN_TISSUE)
     if not rep.ok:
@@ -377,11 +375,11 @@ def build_cut_petal():
                          label=L4("Petal strip", "Tira de pétalos", "Bande de pétales",
                                   "Tira de pétalas"), front=TINT, back=TINT)
     for j in range(1, n):
-        strip.crease((j * c, 0.0), (j * c, BASE), "flat", 0.0, treatment="crease")
+        strip.bend((j * c, 0.0), (j * c, BASE))
     for j in range(n):
         a, b = j * c + NOTCH / 2.0, (j + 1) * c - NOTCH / 2.0
         for y in (BASE, y1, y2):
-            strip.crease((a, y), (b, y), "flat", 0.0, treatment="crease")
+            strip.bend((a, y), (b, y))
     rep = pliego.papercut.analyze(strip, min_feature_mm=MIN_TISSUE)
     if not rep.ok:
         raise ValueError(f"paper-flowers: the petal strip fails the papercut check: {rep.issues}")
@@ -501,10 +499,4 @@ assembly = pliego.Assembly(
     sequence=pliego.Sequence(steps, mode="kinematic"), initial=initial, targets=frames,
     title="Paper flowers")
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# Every F line is plain paper (spec §4: F + `none`): rolls, curls and the tie line are bends, not
-# creases; the Sheet API authors F lines with a treatment, so they are marked untreated here.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

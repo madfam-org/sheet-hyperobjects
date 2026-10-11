@@ -100,7 +100,7 @@ hat = pliego.Sheet(
 
 
 def ruling(a, b, name=None):
-    hat.crease(local(a), local(b), "flat", 0.0, treatment="crease", name=name)
+    hat.bend(local(a), local(b), name=name)
 
 
 for k in range(1, N):
@@ -255,11 +255,19 @@ def steps_make():
 
 
 if mode == "make":
+    steps = steps_make() + [pliego.Step(
+        "press", L4("Hold the tab until the glue sets",
+                    "Sostén la pestaña hasta que el pegamento agarre",
+                    "Tenez la languette jusqu'à ce que la colle prenne",
+                    "Segure a aba até a cola pegar"), [], duration_ms=800)]
+    # the tab's glue takes hold once it lies under the other edge (spec §5.19)
+    glue = pliego.glue("tab-to-panels", hat, region, hat, glue_map, side="front")
+    glue["active_from"] = "press"
     assembly = pliego.Assembly(
-        [hat], controls=[pliego.sequence_control(label=L4("Roll the hat", "Enrollar el gorro",
+        [hat], joins=[glue], controls=[pliego.sequence_control(label=L4("Roll the hat", "Enrollar el gorro",
                                                           "Rouler le chapeau", "Enrolar o "
                                                           "chapéu"))],
-        sequence=pliego.Sequence(steps_make(), mode="kinematic"),
+        sequence=pliego.Sequence(steps, mode="kinematic"),
         targets={"cone": {"angles": dict(angles)}}, title="Party hat")
 else:
     joins = [pliego.glue("tab-to-panels", hat, region, hat, glue_map, side="front")]
@@ -289,10 +297,4 @@ else:
         title="Party hat")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The rulings are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved surface.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

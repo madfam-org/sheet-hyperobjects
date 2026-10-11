@@ -286,6 +286,38 @@ for k, hs in enumerate(houses):
 # ── the program ──────────────────────────────────────────────────────────────
 
 door_marks = [m for hs in houses for m, _ in hs["doors"]]
+# spec §5.20: the ribbons tied in the displayed state come undone as the book closes; a second
+# pair, active from the `tie` step (§5.19), ties it again once open
+
+
+def lining_glue(margin=2.0, inset=0.5):
+    """Each lining glued behind its cover, clear of the house cut through that cover: the cover's
+    first and last chambers' houses are cut across the covers, and a weld over them would land in
+    a window hole (the engine refuses it) or pin the pop-up flat. An L-shaped region per lining."""
+    out, end = [], strip.offset + 2 * N * W
+    for name, c0, axis in (("front", strip.offset, strip.offset), ("back", end - W, end)):
+        cut = [arr.vertices[v] for e, (a, b) in enumerate(arr.edges)
+               if arr.assignment[e] == "C" or (arr.assignment[e] == "B" and 0.0 < min(
+                   arr.vertices[a].y, arr.vertices[b].y) and max(
+                   arr.vertices[a].y, arr.vertices[b].y) < H) for v in (a, b)
+               if c0 + 1e-6 < arr.vertices[v].x < c0 + W - 1e-6]
+        top = min(H - inset, max(p.y for p in cut) + margin)
+        u0 = 2.0 * axis - (c0 + W) if name == "front" else end   # the lining's left edge
+        if name == "front":                  # the house is near the spine: the lining's left
+            a = 2.0 * axis - min(p.x for p in cut) + margin
+            ring = [(u0 + inset, top), (a, top), (a, inset), (u0 + W - inset, inset),
+                    (u0 + W - inset, H - inset), (u0 + inset, H - inset)]
+        else:                                # the house is near the spine: the lining's right
+            a = 2.0 * axis - max(p.x for p in cut) - margin
+            ring = [(u0 + inset, inset), (a, inset), (a, top), (u0 + W - inset, top),
+                    (u0 + W - inset, H - inset), (u0 + inset, H - inset)]
+        out.append(pliego.glue(f"lining-{name}", sheet, ring, sheet,
+                               (-1.0, 0.0, 0.0, 1.0, 2.0 * axis, 0.0), "back"))
+    return out
+
+
+tied = strip.ribbons()
+ribbons = tied + [dict(j, id=f"{j['id']}-again", active_from="tie") for j in tied]
 
 
 def targets(spine):
@@ -302,22 +334,23 @@ steps += [
                             "Desata los listones y cierra el libro: las casas se aplanan",
                             "Dénouez les rubans et fermez le livre : les maisons se replient",
                             "Desamarre as fitas e feche o livro: as casas se dobram"),
-                targets(SHUT), duration_ms=3000),
+                targets(SHUT), duration_ms=3000, release_joins=[j["id"] for j in tied]),
     pliego.Step("open", L4(f"Open it all the way round: {N} chambers, {N} houses",
                            f"Ábrelo por completo: {N} cámaras, {N} casas",
                            f"Ouvrez-le jusqu'au bout : {N} chambres, {N} maisons",
                            f"Abra-o por inteiro: {N} câmaras, {N} casas"),
                 targets(strip.open_angle), duration_ms=3500,
                 note=L4("Each house is two slits and three folds across a spine fold; it stands "
-                        "up because its walls open. Tie the ribbons at top and bottom.",
+                        "up because its walls open.",
                         "Cada casa son dos cortes y tres dobleces a través de un doblez del lomo; "
-                        "se levanta porque sus paredes se abren. Ata los listones arriba y abajo.",
+                        "se levanta porque sus paredes se abren.",
                         "Chaque maison n'est que deux fentes et trois plis en travers d'un pli du "
-                        "dos ; elle se dresse parce que ses parois s'ouvrent. Nouez les rubans en "
-                        "haut et en bas.",
+                        "dos ; elle se dresse parce que ses parois s'ouvrent.",
                         "Cada casa são dois cortes e três dobras através de uma dobra da "
-                        "lombada; ela se ergue porque suas paredes se abrem. Amarre as fitas em "
-                        "cima e em baixo.")),
+                        "lombada; ela se ergue porque suas paredes se abrem.")),
+    pliego.Step("tie", L4("Tie the ribbons at top and bottom", "Ata los listones arriba y abajo",
+                          "Nouez les rubans en haut et en bas",
+                          "Amarre as fitas em cima e em baixo"), [], duration_ms=800),
 ]
 if door_marks:
     steps.append(pliego.Step("open-doors", L4("Open the doors", "Abre las puertas",
@@ -335,7 +368,7 @@ print(f"village: chambers={N} street={village} page={W:g}x{H:g}mm alpha={strip.a
 
 result = pliego.Assembly(
     [sheet],
-    joins=strip.ribbons() + strip.lining_glue(),
+    joins=ribbons + lining_glue(),
     controls=[pliego.sequence_control(label=L4("Close and open", "Cerrar y abrir",
                                                "Fermer et ouvrir", "Fechar e abrir"),
                                       default=float(len(steps)))],

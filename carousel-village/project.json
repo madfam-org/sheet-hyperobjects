@@ -97,7 +97,7 @@
     {"id": "a5", "label": {"en": "A5 pages (148 × 210 mm)", "es": "Páginas A5 (148 × 210 mm)", "fr": "Pages A5 (148 × 210 mm)", "pt": "Páginas A5 (148 × 210 mm)"}, "values": {"page_width": 148, "page_height": 210}}
   ],
   "controls": [
-    {"id": "sequence", "kind": "sequence", "label": {"en": "Close and open", "es": "Cerrar y abrir", "fr": "Fermer et ouvrir", "pt": "Fechar e abrir"}, "min": 0, "max": 4, "default": 4, "unit": "step"}
+    {"id": "sequence", "kind": "sequence", "label": {"en": "Close and open", "es": "Cerrar y abrir", "fr": "Fermer et ouvrir", "pt": "Fechar e abrir"}, "min": 0, "max": 5, "default": 5, "unit": "step"}
   ],
   "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],
   "stock": {"default": "cardstock-250", "alternatives": ["cardstock-160"]},

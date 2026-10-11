@@ -105,12 +105,16 @@
       "type": "select",
       "group": "model",
       "label": {"en": "Windows and doors", "es": "Ventanas y puertas", "fr": "Fenêtres et portes", "pt": "Janelas e portas"},
-      "tooltip": {"en": "Cut: windows are cut out and doors are cut on three sides so they swing open on a scored hinge. Scored: the outlines are only scored, and the house stays closed. None: plain walls.", "es": "Recortadas: las ventanas se recortan y las puertas se cortan por tres lados para que giren sobre una bisagra marcada. Marcadas: los contornos solo se marcan y la casa queda cerrada. Ninguna: muros lisos.", "fr": "Découpées : les fenêtres sont évidées et les portes découpées sur trois côtés pour pivoter sur une charnière rainée. Rainées : les contours sont seulement rainés et la maison reste fermée. Aucune : murs nus.", "pt": "Recortadas: as janelas são vazadas e as portas são cortadas em três lados para girar numa dobradiça vincada. Vincadas: os contornos são apenas vincados e a casa fica fechada. Nenhuma: paredes lisas."},
+      "tooltip": {"en": "Cut: windows are cut out and doors are cut on three sides so they swing open on a scored hinge. Glazed (fold-up mode only): as cut, with glazing bars that leave four panes per window. Scored: the outlines are only scored, and the house stays closed. None: plain walls.", "es": "Recortadas: las ventanas se recortan y las puertas se cortan por tres lados para que giren sobre una bisagra marcada. Con travesaños (solo en el modo Armar): como recortadas, con travesaños que dejan cuatro vidrios por ventana. Marcadas: los contornos solo se marcan y la casa queda cerrada. Ninguna: muros lisos.", "fr": "Découpées : les fenêtres sont évidées et les portes découpées sur trois côtés pour pivoter sur une charnière rainée. Petits-bois (mode Montage seulement) : comme découpées, avec des petits-bois qui laissent quatre carreaux par fenêtre. Rainées : les contours sont seulement rainés et la maison reste fermée. Aucune : murs nus.", "pt": "Recortadas: as janelas são vazadas e as portas são cortadas em três lados para girar numa dobradiça vincada. Com caixilhos (só no modo Montagem): como recortadas, com caixilhos que deixam quatro vidros por janela. Vincadas: os contornos são apenas vincados e a casa fica fechada. Nenhuma: paredes lisas."},
       "default": "cut",
       "options": [
         {
           "value": "cut",
           "label": {"en": "Cut out (doors open)", "es": "Recortadas (las puertas abren)", "fr": "Découpées (les portes s'ouvrent)", "pt": "Recortadas (as portas abrem)"}
+        },
+        {
+          "value": "glazed",
+          "label": {"en": "Cut out, with glazing bars", "es": "Recortadas, con travesaños", "fr": "Découpées, avec petits-bois", "pt": "Recortadas, com caixilhos"}
         },
         {
           "value": "scored",

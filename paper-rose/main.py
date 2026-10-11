@@ -136,8 +136,7 @@ disc = pliego.Sheet(
     label=L4("Spiral disc", "Disco en espiral", "Disque en spirale", "Disco em espiral"),
     front=FRONT, back=BACK)
 for k in range(M):
-    disc.crease(fl[k][0], fl[k][1], "flat", 0.0, treatment="crease",
-                name="base-hinge" if k == 0 else None)
+    disc.bend(fl[k][0], fl[k][1], name="base-hinge" if k == 0 else None)
 cut_check = pliego.papercut.analyze(disc, min_feature_mm=MIN_FEATURE[stock], cutter_min_mm=0.5)
 if not cut_check.ok:
     raise ValueError(f"paper-rose: the spiral fails the papercut check: {cut_check.issues}")
@@ -366,10 +365,6 @@ assembly = pliego.Assembly(
     sequence=pliego.Sequence(steps, mode="kinematic"),
     targets={"bud": {"angles": bud_a}, "rose": {"angles": rose_a}}, title="Rolled paper rose")
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 
 info = {"turns": round(M / N, 2), "panels": M, "per_turn": N, "strip_mm": round(L, 1),
         "core_mm": round(2 * rho0, 1),
