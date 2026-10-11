@@ -14,11 +14,11 @@ on top of the follower bobs. Two modes:
 Cam profiles (`profile`): `snail` (an Archimedean spiral with a drop: the follower rises steadily
 for a whole turn, then falls), `eccentric` (an off-centre disc: a smooth rise and fall) and `egg`
 (a round cam with one lobe: a long rest and a quick bob). With the snail the follower's height is
-linear in the crank angle, so a `translate` mechanism on the same control carries it exactly in
-the preview. The eccentric and egg lifts are periodic in the crank angle, and a preview mechanism
-moves its sheet linearly in its control, so no mechanism can carry those followers exactly: they
-are physical sheets that ride the cam under gravity in the physics engine, start at the top of the
-stroke (where the cam holds them at crank 0), and `target:crank-…` frames record the exact lift.
+linear in the crank angle, so a plain `translate` mechanism on the same control carries it exactly.
+The eccentric and egg lifts are periodic in the crank angle: their followers ride a `translate`
+keyed by the lift (spec §5.18 `keys` with `period: 360`), sampled finely enough that the foot stays
+within 0.05 mm of the cam between keys, so the studio preview and the physics engine both carry the
+follower on its cam. `target:crank-…` frames record the exact pose every 30°.
 """
 
 import math
@@ -56,6 +56,7 @@ TAB = 10.0                                  # glue tab
 TUCK = 15.0                                 # lid's tuck flap
 SHAFT_D = 4.0                               # bamboo skewer (hardware): holes are a little wider
 SEG = 144
+KEY_GAP = 0.05                              # mm: worst foot-to-cam gap between keys
 BOX, CARD = "cardstock-300", "cardstock-250"
 FLAT_UP = (math.sin(math.pi / 4.0), 0.0, 0.0, math.cos(math.pi / 4.0))   # local (u, v) → (x, y)
 
@@ -259,18 +260,35 @@ if mode == "automaton":
                                   "Eixo (espeto)"), kinematic="turn-shaft",
                          placement=pliego.Placement(origin=(-SHAFT_D / 2.0, YS,
                                                             DB / 2.0 + 10.0)))
-    follower = follower_sheet("follower", FOLLOWER_L,
-                              "lift-follower" if profile == "snail" else None)
-    y_top = H_MIN if profile == "snail" else H_MAX      # where the follower starts
+    follower = follower_sheet("follower", FOLLOWER_L, "lift-follower")
+    y_top = lift_at(0.0)                                # where the cam holds it at crank 0
     follower.placement = pliego.Placement(origin=(0.0, YS + y_top + L_ROD, 0.0),
                                           rotation=FLAT_UP)
     mechanisms += [pliego.rotate("turn-cam", (cam, (0.0, 0.0)), "crank", [cam]),
                    pliego.rotate("turn-handle", (handle, (0.0, 0.0)), "crank", [handle]),
                    pliego.hinge("turn-shaft", (0.0, YS, 0.0), (0.0, 0.0, 1.0), "crank",
                                 [shaft])]
-    if profile == "snail":
-        mechanisms.append(pliego.translate("lift-follower", "crank", (0.0, 1.0, 0.0), LIFT,
-                                           [follower]))
+    lift_mech = pliego.translate("lift-follower", "crank", (0.0, 1.0, 0.0), LIFT, [follower])
+    key_step, key_gap = 0.0, 0.0
+    if profile != "snail":
+        # keyed lift (spec §5.18): the displacement from the crank-0 pose, periodic in the turn;
+        # the finest step needed to keep the foot within KEY_GAP of the cam between keys
+        for key_step in (5.0, 3.0, 2.0, 1.0):
+            n = int(round(360.0 / key_step))
+            keys = [[360.0 * i / n, lift_at(360.0 * i / n) - y_top] for i in range(n)]
+            key_gap = 0.0
+            for i in range(n):
+                v0, h0 = keys[i]
+                h1 = keys[(i + 1) % n][1]
+                for t in (0.25, 0.5, 0.75):
+                    key_gap = max(key_gap, abs(lift_at(v0 + key_step * t) - y_top
+                                               - (h0 + (h1 - h0) * t)))
+            if key_gap <= KEY_GAP:
+                break
+        if key_gap > KEY_GAP:
+            raise ValueError(f"paper-automaton: keyed lift strays {key_gap:.3f} mm from the cam")
+        lift_mech.update({"period": 360.0, "keys": [[v, round(h, 9)] for v, h in keys]})
+    mechanisms.append(lift_mech)
     controls.append(pliego.angle_control("crank", L4("Turn the handle", "Gira la manivela",
                                                      "Tourner la manivelle", "Gire a manivela"),
                                          default=0.0, min=0.0, max=360.0))
@@ -301,7 +319,8 @@ if mode == "automaton":
                                      "shaft": fn_shaft, "follower": fn_follower}
     summary = (f"lift={H_MIN - R_BASE:.1f}..{H_MAX - R_BASE:.1f}mm over the base circle "
                f"pressure_max={pressure:.1f}deg follower="
-               f"{'translate (exact)' if profile == 'snail' else 'physical (rides the cam)'}")
+               + ("translate (exact)" if profile == "snail" else
+                  f"keyed translate every {key_step:g}deg (max_gap_between_keys={key_gap:.3f}mm)"))
 else:
     box, walls, tab, lid, tuck, u_t = box_sheet(
         pliego.Placement(rotation=(1.0, 0.0, 0.0, 0.0)))       # face down: folds come up

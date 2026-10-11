@@ -55,14 +55,19 @@ skewer.
 
 - **`automaton`**: the cam and the handle are kinematic sheets on `rotate` mechanisms about their
   own centres, and the shaft on a `hinge` about its axis, all on the `crank` control (0–360°).
-  With the snail, the follower is on a `translate` mechanism on the same control (travel `lift`
-  over 360°), which is exactly *h*(θ): the studio preview keeps its foot on the cam at every
-  angle. With the eccentric or the egg, *h*(θ) rises and falls, and a preview mechanism moves its
-  sheet linearly in its control, so no mechanism can carry the follower exactly. There it is a
-  physical sheet that starts at the top of its stroke, where the cam holds it at crank 0, and rides
-  the cam under gravity in the physics engine; in the preview it stays at the top while the cam
-  turns beneath it. Twelve `target:crank-000` … `target:crank-330` frames record the exact
-  solved pose every 30° for every profile.
+  The follower rides a `translate` mechanism on the same control. With the snail it moves
+  linearly (travel `lift` over 360°), which is exactly *h*(θ). With the eccentric or the egg,
+  *h*(θ) rises and falls; the `translate` is then **keyed** (sheet-document spec §5.18): a `keys`
+  table maps the crank angle to the displacement *h*(θ) − *h*(0), with `period: 360`, so it repeats
+  every turn and the closing segment runs back to the first key. The keys start every 5° and are
+  refined until the foot stays within 0.05 mm of the cam between keys (0.007 mm for the eccentric,
+  0.013 mm for the egg, both at 5°). The follower starts where the cam holds it at crank 0. The
+  studio preview and the physics engine evaluate the same table: measured over a turn in 2.5°
+  steps, the foot stays 0.007 mm (eccentric) and 0.013 mm (egg) from the top of the cam in both.
+  Before the keys, these followers were physical sheets left to ride the cam under gravity; the
+  preview left them at the top of the stroke (12 mm and 9 mm off the cam) and in the engine they
+  fell off it. Twelve `target:crank-000` … `target:crank-330` frames record the exact solved pose
+  every 30° for every profile.
 - **`nets`**: fold the four walls into a ring, fold the tab inside, close the lid and tuck its
   flap.
 
