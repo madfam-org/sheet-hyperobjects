@@ -12,10 +12,12 @@ with a leaf, each folded from its own square, then put together.
 
 Every fold is a simple fold of a flat stack: `pliego.simplefold` computes, from the folded state,
 the crease each fold leaves in every layer it crosses, with its mountain or valley sense, and
-`pliego.Sequence.kinematic_path` (the kernel's motion solver) turns each fold into exact rigid
-in-between states. After the folds, the `assemble` control slides the blossom down onto the stem
-point (a `translate` mechanism the studio preview can drive). All geometry is computed here; the
-tulip is traditional (no designer's diagram is used).
+the kernel's motion solver (`pliego.kinematics.solve`) turns each fold into exact rigid
+in-between states. The blossom comes down onto the stem's point through the fold program: the
+blossom sheet's presentation (spec §5.16) carries the slide, which a viewer blends in over the
+program, so the last fold ends with the blossom on the stem. Each sheet's presentation also names
+the face its folds hold still. All geometry is computed here; the tulip is traditional (no
+designer's diagram is used).
 """
 
 import math
@@ -239,32 +241,34 @@ bl_steps, bl_final, bl_closure, bl_res, bl_pose = solve(blossom, blossom_keys, B
 bl_arr = blossom.build()
 
 # ── placement and assembly ───────────────────────────────────────────────────
-GAP = 20.0
-blossom.placement = pliego.Placement(origin=(e + d + GAP, 0.0, 0.0))
+# The stem lies at the origin, its point up the table (−z). The blossom starts on the stem's axis,
+# its bottom point LEAD beyond the stem's point, and its presentation brings it down the stem
+# (+z) by LEAD + INSERT. The blend is linear in the sequence position, so with LEAD = 2·INSERT the
+# bottom point passes the stem's point only after the stem's 36 steps (two thirds of 54), while
+# the blossom folds: the flat blossom never crosses the stem as it folds.
 tip = world_of(stem_arr, stem_pose, S_TOP)              # the stem's point (stem at the origin)
 bottom = world_of(bl_arr, bl_pose, B_BOT)               # the blossom's bottom point, local
 INSERT = 0.25 * d                                       # how far the stem goes into the blossom
-goal = (tip[0], tip[1] + 0.5, tip[2] + INSERT)          # world: down the stem is +z
-start = (bottom[0] + e + d + GAP, bottom[1], bottom[2])
-move = tuple(g - s_ for g, s_ in zip(goal, start, strict=True))
-travel = math.sqrt(sum(c * c for c in move))
+LEAD = 2.0 * INSERT
+goal = (tip[0], tip[1] + 0.5, tip[2] + INSERT)          # world: half a millimetre above the stem
+slide = (0.0, 0.0, LEAD + INSERT)
+start = tuple(g - s_ for g, s_ in zip(goal, slide, strict=True))
+blossom.placement = pliego.Placement(
+    origin=tuple(a - b for a, b in zip(start, bottom, strict=True)))
+stem.present(root=STEM_ROOT)
+blossom.present(root=BLOSSOM_ROOT, end=pliego.Placement(origin=slide))
 print(f"flatfold: {flat_line(stem)} {flat_line(blossom)} maekawa=ok kawasaki=ok "
       "big_little_big=ok")
 print(f"kinematics: stem_steps={len(stem_steps)} blossom_steps={len(bl_steps)} "
       f"max_residual_rad={max(stem_res, bl_res):.2e} "
       f"stem_closure_mm={stem_closure:.2e} blossom_closure_mm={bl_closure:.2e} "
-      f"assemble_travel_mm={travel:.1f}")
+      f"assemble_slide_mm={slide[2]:.1f} insert_mm={INSERT:.1f}")
 
 sequence = pliego.Sequence(stem_steps + bl_steps, mode="kinematic")
 result = pliego.Assembly(
     [stem, blossom],
-    mechanisms=[pliego.translate("assemble-slide", "assemble",
-                                 [c / travel for c in move], travel, sheets_moving=[blossom])],
     controls=[pliego.sequence_control(label=L4(
-        "Fold program", "Secuencia de pliegues", "Séquence de pliage", "Sequência de dobras")),
-        pliego.control("assemble", "distance", L4(
-            "Put the blossom on the stem", "Pon la flor en el tallo", "Posez la fleur sur la tige",
-            "Ponha a flor no caule"), 0.0, 0.0, round(travel, 3), "mm")],
+        "Fold program", "Secuencia de pliegues", "Séquence de pliage", "Sequência de dobras"))],
     sequence=sequence,
     targets={"folded": {"stem": {"angles": stem_final, "root": STEM_ROOT},
                         "blossom": {"angles": bl_final, "root": BLOSSOM_ROOT}}},

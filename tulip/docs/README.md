@@ -44,16 +44,17 @@ two on the blossom). Each is a place where a later fold crosses an earlier creas
 folded flat, so both layers turn together.
 
 `pliego.flatfold.check` tests Maekawa, Kawasaki and big-little-big on both folded patterns every
-time the cartridge runs. At one stem vertex the kernel flags big-little-big. There the leaf fold
-crosses the right kite crease, and the two small sectors are equal in exact geometry (39.2894°);
-they differ by 4·10⁻⁶° only because the vertex is snapped to the coordinate grid. The lemma applies
-to a strictly smallest sector, so the cartridge reports such a vertex (`blb_equal_sectors=1`)
-rather than failing on it, and fails on any other error.
+time the cartridge runs. Where the leaf fold crosses the right kite crease, the two small sectors
+are equal in exact geometry (39.2894°), and grid snapping can make them differ by about 10⁻⁵°.
+The lemma applies to a strictly smallest sector, so the cartridge counts such a vertex
+(`blb_equal_sectors`) rather than failing on it, and fails on any other error. With the kernel
+this cartridge was last checked against, no vertex needs that allowance (`blb_equal_sectors=0`).
 
 ## The fold program
 
 The program has 54 kinematic steps: 36 for the stem (six folds of six steps) and 18 for the
-blossom (three folds of six). Then the `assemble` control slides the blossom onto the stem.
+blossom (three folds of six). While it runs, the blossom comes down the stem, and the last fold
+ends with the stem's point inside the blossom.
 
 Each fold is a key pose, and the kernel's motion solver (`pliego.kinematics.solve`) expands it into
 exact rigid states, holding every other crease. A simple fold of a flat stack is a rotation of part
@@ -64,9 +65,22 @@ That floor comes from the grid-snapped crease crossings at irrational positions 
 lines. The folded state of each piece is checked for closure: the stem to about 2·10⁻⁵ mm, the
 blossom to about 10⁻¹³ mm. The document carries `target:folded` with both pieces folded.
 
-`assemble` is a `translate` mechanism on the blossom sheet. Its travel is computed from the folded
-geometry, so that the blossom's bottom point comes down the stem until the stem's point is 0.25·d
-inside the blossom. The studio preview can drive it: a translation needs no physics.
+The slide is the blossom sheet's presentation (spec §5.16): a rigid end transform that a viewer
+blends in over the program, from none at step 0 to all of it at step 54. The studio preview and
+the engine's render both apply it; it moves no physics. The cartridge computes it from the
+folded geometry. The blossom starts on the stem's axis, with its bottom point 0.5·d beyond the
+stem's point (twice the insertion), and slides 0.75·d down the stem, until the stem's point is
+0.25·d inside the blossom. Because the blend is linear in the step position, the bottom point
+reaches the stem's point at step 36, just as the stem's last fold ends, so the flat blossom never
+lies over the stem while the stem is folding. Each sheet's presentation also names its root face,
+the face the preview holds still while that sheet folds: the stem's base layer beside its point
+and the blossom's body. The engine's kinematic program does not read the root face yet; it holds
+each sheet's first face, so its render of the folded pieces, and of where the blossom lands, is
+not the preview's until it does.
+
+Earlier versions moved the blossom with a `translate` mechanism and an `assemble` control. A
+mechanism may move only a rigid (kinematic) sheet (spec §8, rule 15), and a rigid sheet cannot
+fold, so the engine refused the document; the presentation slide replaces it.
 
 What the program does **not** model:
 
