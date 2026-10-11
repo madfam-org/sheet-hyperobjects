@@ -102,7 +102,7 @@
   "stock": {"default": "kraft-120", "alternatives": ["kraftliner-150", "cardstock-300", "greyboard-1500"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "packaging",
     "kernel": "sheet",
     "capabilities": {"kinematic_program": true, "mechanism": true, "glued": true, "structural": true, "density_report": true},
     "societal_benefit": {
