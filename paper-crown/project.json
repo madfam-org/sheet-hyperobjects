@@ -107,7 +107,7 @@
     {"id": "tall-points", "label": {"en": "Tall points", "es": "Picos altos", "fr": "Pointes hautes", "pt": "Pontas altas"}, "values": {"points": 12, "point": 90, "stock": "foil-paper"}}
   ],
   "controls": [
-    {"id": "sequence", "kind": "sequence", "label": {"en": "Roll the crown (make) · Flatten and open (glued)", "es": "Enrollar la corona (hacerla) · Aplanar y abrir (pegada)", "fr": "Rouler la couronne (fabriquer) · Aplatir et ouvrir (collée)", "pt": "Enrolar a coroa (fazer) · Achatar e abrir (colada)"}, "min": 0, "max": 3, "default": 0, "unit": "step"}
+    {"id": "sequence", "kind": "sequence", "label": {"en": "Roll the crown (make) · Flatten and open (glued)", "es": "Enrollar la corona (hacerla) · Aplanar y abrir (pegada)", "fr": "Rouler la couronne (fabriquer) · Aplatir et ouvrir (collée)", "pt": "Enrolar a coroa (fazer) · Achatar e abrir (colada)"}, "min": 0, "max": 4, "default": 0, "unit": "step"}
   ],
   "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],
   "stock": {"default": "cardstock-250", "alternatives": ["cardstock-160", "foil-paper", "kraft-120"]},

@@ -218,8 +218,17 @@ if mode == "make":
                                        "Passe a sobreposição lisa por dentro e cole-a"),
                     [(ref(e), angles[e]) for e in lap_e], duration_ms=2000),
     ]
+    steps.append(pliego.Step("press", L4("Hold the overlap until the glue sets",
+                                         "Sostén el traslape hasta que el pegamento agarre",
+                                         "Tenez le recouvrement jusqu'à ce que la colle prenne",
+                                         "Segure a sobreposição até a cola pegar"),
+                             [], duration_ms=800))
+    # the overlap's glue takes hold once it lies on the band (spec §5.19): flat, then glued
+    glue = pliego.glue("overlap-to-band", crown, region, crown, glue_map, "front")
+    glue["active_from"] = "press"
     assembly = pliego.Assembly(
-        [crown], controls=[pliego.sequence_control(label=L4("Roll the crown", "Enrollar la "
+        [crown], joins=[glue],
+        controls=[pliego.sequence_control(label=L4("Roll the crown", "Enrollar la "
                                                             "corona", "Rouler la couronne",
                                                             "Enrolar a coroa"))],
         sequence=pliego.Sequence(steps, mode="kinematic"),
