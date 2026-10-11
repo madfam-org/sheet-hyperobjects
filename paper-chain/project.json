@@ -124,7 +124,7 @@
     {"id": "tissue", "label": {"en": "Tissue paper", "es": "Papel de china", "fr": "Papier de soie", "pt": "Papel de seda"}, "values": {"stock": "papel-de-china", "strip_width": 20}}
   ],
   "controls": [
-    {"id": "sequence", "kind": "sequence", "label": {"en": "Make the chain (make)", "es": "Hacer la cadena (hacerla)", "fr": "Faire la guirlande (fabriquer)", "pt": "Fazer a corrente (fazer)"}, "min": 0, "max": 8, "default": 0, "unit": "step"},
+    {"id": "sequence", "kind": "sequence", "label": {"en": "Make the chain (make)", "es": "Hacer la cadena (hacerla)", "fr": "Faire la guirlande (fabriquer)", "pt": "Fazer a corrente (fazer)"}, "min": 0, "max": 9, "default": 0, "unit": "step"},
     {"id": "lift", "kind": "distance", "label": {"en": "Lift the chain (glued; physics engine)", "es": "Levantar la cadena (pegada; motor de física)", "fr": "Soulever la guirlande (collée ; moteur physique)", "pt": "Levantar a corrente (colada; motor de física)"}, "min": 0, "max": 100, "default": 0, "unit": "mm"}
   ],
   "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],

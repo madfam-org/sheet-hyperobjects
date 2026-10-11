@@ -241,10 +241,21 @@ if mode == "make":
                     "e cole as pontas"))
         targets = [(pliego.assembly.EdgeRef(s, e), angles[e]) for e in band_e + lap_e]
         steps.append(pliego.Step(f"link-{k + 1}", label, targets, duration_ms=1500))
+    steps.append(pliego.Step("press", L4("Hold the last seam until the glue sets",
+                                         "Sostén la última unión hasta que el pegamento agarre",
+                                         "Tenez la dernière jointure jusqu'à ce que la colle "
+                                         "prenne", "Segure a última junta até a cola pegar"),
+                             [], duration_ms=800))
+    # each ring's seam takes hold once it is closed: from the next link's step (spec §5.19)
+    seams = []
+    for k, s in enumerate(strips):
+        g = pliego.glue(f"seam-{k + 1}", s, region, s, glue_map, "front")
+        g["active_from"] = steps[k + 1].id
+        seams.append(g)
     assembly = pliego.Assembly(
-        strips, controls=[pliego.sequence_control(label=L4("Make the chain", "Hacer la cadena",
-                                                           "Faire la chaîne",
-                                                           "Fazer a corrente"))],
+        strips, joins=seams,
+        controls=[pliego.sequence_control(label=L4("Make the chain", "Hacer la cadena",
+                                                   "Faire la chaîne", "Fazer a corrente"))],
         sequence=pliego.Sequence(steps, mode="kinematic"),
         targets={"chain": {s.id: {"angles": dict(angles)} for s in strips}},
         title="Paper chain")
