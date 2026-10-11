@@ -62,13 +62,17 @@ scored hinge down the other side; the barn's double doors are two leaves with on
 middle. Each piece is checked with `pliego.papercut.analyze`: one part, and no neck of card
 narrower than the card's minimum feature (1.5 mm at 160 g/m², 2 mm at 250 and 300 g/m²).
 
-One workaround is visible in the code. The kernel joins each window (a hole inside a face) to the
-face's edge with an invisible bridge. On a piece turned by the page layout, a bridge laid almost
-along another window's edge can leave a face that is not simple, which the document check
-rejects. Each opening on a wall is therefore moved by its own multiple of 0.1 mm on the card, so
-no two openings share an edge line. The shift is under 1 mm in all. Windows are single openings
-for the same reason: glazing bars (four panes per window) put four holes on one grid, which the
-bridges cannot yet handle reliably.
+**Glazing bars.** With `openings` = `glazed`, every window keeps a cross of card bars and opens as
+four panes, four holes on one grid. The bars are 10 % of the window's smaller side, and never
+thinner than 1.25 × the card's minimum feature (2.5 mm on 250 g/m²); a window too small to keep
+panes at least 1.25 minimum features wide fails loud (the cottage at 1:100). Openings sit where
+the design puts them. An earlier kernel's hole bridging could leave a face that is not simple when
+two openings shared an edge line, so each opening used to be shifted by its own multiple of
+0.1 mm and windows had no bars; the kernel's split cuts made both workarounds unnecessary.
+Glazing bars are for the `fold` mode. In the physics engine, walls with bars are not stable yet:
+the `glued` mode with bars reached strains from 2.6 to 466 (0.14 to 0.53 with plain windows), so
+that mode refuses `glazed`; in the `fold` mode, a piece the program leaves flat stays physical in
+the engine and with bars it strains up to 6.4 (desk cottage), against 0.05 with plain windows.
 
 ## The fold program
 
@@ -118,7 +122,7 @@ The cottage is the easiest build. The townhouse is tall: let each glued edge set
 |---|---|
 | `design` | cottage, townhouse, barn or hip-house |
 | `scale` | 1:100, 1:87 (H0) or 1:50 |
-| `openings` | `cut` (windows cut out, doors open), `scored` (outlines only) or `none` |
+| `openings` | `cut` (windows cut out, doors open), `glazed` (cut, with glazing bars), `scored` (outlines only) or `none` |
 | `chimney` | the chimney on the ridge, on or off (the barn has none) |
 | `page` | A4 or US Letter |
 | `method` | cutting strategy: shortest cuts or steepest edge |

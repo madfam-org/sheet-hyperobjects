@@ -6,7 +6,8 @@ and a house with a hip roof. Each is built here as a polygon mesh (walls, roof p
 chimney straddling the ridge, one closed surface with an open bottom) at a real-world size in
 metres, scaled to the model scale, and unfolded by the kernel (`pliego.unfold.net`) into tabbed,
 numbered pieces on A4 or Letter pages. Windows and doors are then drawn onto the pieces: cut out
-(the doors hinge open), scored only, or left off.
+(the doors hinge open), cut out with glazing bars (four panes per window), scored only, or left
+off.
 
 How the mesh is built (metres; x along the ridge, y up, z toward the front):
 - the end-wall profile (z, y) runs from the front eave over the roof to the back eave: a
@@ -50,12 +51,18 @@ MIN_FEATURE = {"cardstock-160": 1.5, "cardstock-250": 2.0, "cardstock-300": 2.0}
 SCALES = {"100": 100.0, "87": 87.0, "50": 50.0}
 if scale not in SCALES:
     raise ValueError(f"paper-house: scale must be one of {sorted(SCALES)}, got {scale!r}")
-if openings not in ("cut", "scored", "none"):
-    raise ValueError(f"paper-house: openings must be cut, scored or none, got {openings!r}")
+if openings not in ("cut", "glazed", "scored", "none"):
+    raise ValueError(f"paper-house: openings must be cut, glazed, scored or none, got "
+                     f"{openings!r}")
 if stock not in STOCKS:
     raise ValueError(f"paper-house: stock must be one of {STOCKS}, got {stock!r}")
 if mode not in ("fold", "glued"):
     raise ValueError(f"paper-house: mode must be fold or glued, got {mode!r}")
+if mode == "glued" and openings == "glazed":
+    # measured: physical walls with glazing bars are not stable in the engine yet (strain 2.6
+    # to 466 against 0.14 to 0.53 with plain windows), so the physics mode refuses them
+    raise ValueError("paper-house: glazing bars are for the fold mode; the glued (physics) mode "
+                     "takes cut, scored or no openings")
 tab_height = pliego.clamp(tab_height, 3.0, 6.0)
 MM = 1000.0 / SCALES[scale]          # millimetres of card per metre of house
 DOOR_OPEN_DEG = 70.0
@@ -311,17 +318,7 @@ def clearance(f, loc, pts, skip_ground):
 
 
 doors, holes, clear_min = [], 0, math.inf
-# The kernel bridges each window (a hole inside a face) to the face's boundary with J edges.
-# A bridge laid almost along another window's edge (windows in one row or column, on a piece
-# turned by the page layout) can come out as a sliver face that is not simple. Every opening on
-# a wall is therefore shifted by its own multiple of 0.1 mm (on the card), right and down, so
-# no two openings share an edge line; under 1 mm in all, invisible at these scales.
-NUDGE_MM = 0.1
-count = {}
 for wall, kind, u, v, w, h in (D["openings"] if openings != "none" else []):
-    k = count[wall] = count.get(wall, -1) + 1
-    u += k * NUDGE_MM / MM
-    v -= 0.0 if kind != "window" else k * NUDGE_MM / MM
     f = named[wall]
     sheet, put, loc = to_sheet(f)
     corners3 = [tuple(c * MM for c in wall_point(wall, uu, vv))
@@ -337,6 +334,22 @@ for wall, kind, u, v, w, h in (D["openings"] if openings != "none" else []):
     bl, br, tr, tl = (put(p) for p in corners3)
     if openings == "scored":
         sheet.halfcut([bl, br, tr, tl, bl] if kind == "window" else [bl, tl, tr, br])
+        continue
+    if kind == "window" and openings == "glazed":
+        # glazing bars: a cross of card bars leaves four panes, each its own hole
+        wide, tall = math.dist(bl, br), math.dist(bl, tl)
+        bar = max(1.25 * MIN_FEATURE[stock], 0.1 * min(wide, tall))
+        if min(wide, tall) - bar < 2.5 * MIN_FEATURE[stock]:      # panes 1.25 × the feature
+            raise ValueError(f"paper-house: a {wide:.1f} x {tall:.1f} mm window is too small for "
+                             "glazing bars; use a larger scale or cut windows")
+
+        def at(s_, t_):
+            return tuple(bl[i] + s_ * (br[i] - bl[i]) + t_ * (tl[i] - bl[i]) for i in (0, 1))
+        hs, ht = bar / 2.0 / wide, bar / 2.0 / tall
+        for s0, s1 in ((0.0, 0.5 - hs), (0.5 + hs, 1.0)):
+            for t0, t1 in ((0.0, 0.5 - ht), (0.5 + ht, 1.0)):
+                sheet.hole([at(s0, t0), at(s1, t0), at(s1, t1), at(s0, t1)])
+                holes += 1
         continue
     if kind == "window":
         sheet.hole([bl, br, tr, tl])
