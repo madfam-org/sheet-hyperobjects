@@ -15,7 +15,7 @@ circles round a central hole and twists into a saddle by itself. Two modes:
   halves start as valleys and one as a mountain. The script runs `pliego.flatfold.check`.
 - `circular`: `rings` concentric circles, alternating, round a central hole; each circle is a
   regular polygon of `segments` sides (the kernel has no curved crease; this is the
-  segmentation, recorded in `pliego:meta`), inscribed in its true circle.
+  segmentation, stated in the first step's note), inscribed in its true circle.
 
 Neither folds into its saddle with rigid flat panels: Demaine, Demaine, Hart, Price and Tachi
 (2011) proved that the square hypar cannot take that shape with flat faces and only its own
@@ -160,13 +160,18 @@ else:
                        "Pregue os círculos concêntricos, montanha e vale alternados"),
                     [(m, signed(m, 30.0)) for m in circles], duration_ms=3000,
                     note=L4("A pleated ring cannot stay flat: the panels bend and the disc "
-                            "starts to twist.",
+                            f"starts to twist. Each circle is a polygon of {segments} sides, at "
+                            f"most {sagitta:.3f} mm from its true circle.",
                             "Un anillo plisado no puede quedarse plano: los paneles se curvan y "
-                            "el disco empieza a torcerse.",
+                            f"el disco empieza a torcerse. Cada círculo es un polígono de "
+                            f"{segments} lados, a {sagitta:.3f} mm como máximo de su círculo "
+                            "verdadero.",
                             "Un anneau plissé ne peut pas rester plan : les panneaux se courbent "
-                            "et le disque commence à se tordre.",
+                            f"et le disque commence à se tordre. Chaque cercle est un polygone de "
+                            f"{segments} côtés, à {sagitta:.3f} mm au plus de son vrai cercle.",
                             "Um anel plissado não pode ficar plano: os painéis curvam-se e o "
-                            "disco começa a torcer-se.")),
+                            f"disco começa a torcer-se. Cada círculo é um polígono de {segments} "
+                            f"lados, a no máximo {sagitta:.3f} mm do seu círculo verdadeiro.")),
         pliego.Step("press-pleats",
                     L4("Press the pleats together all round",
                        "Junta los pliegues a todo alrededor",
@@ -185,5 +190,4 @@ result = pliego.Assembly(
     sequence=pliego.Sequence(steps, mode="physical"),
     targets=targets,
     title=title,
-    meta={"segmentation": {"circle_segments": segments}} if run_mode == "circular" else {},
 )

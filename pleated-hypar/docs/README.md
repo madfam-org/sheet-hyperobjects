@@ -43,7 +43,8 @@ whole stack is not checked.
 The kernel has no curved crease, so each circle is a regular polygon of `segments` sides inscribed
 in its true circle. The sheet's outline and the hole use the same polygon. The script prints the
 segmentation (the default outer chord is 13.1 mm, and the polygon departs from the circle by at
-most 0.21 mm) and records `circle_segments` in `pliego:meta`.
+most 0.21 mm), and the first step's note states the side count and that deviation in four
+languages. (Cartridge data stays out of `pliego:meta`, which carries only the spec's own keys.)
 
 **Why neither folds rigidly.** Demaine, Demaine, Hart, Price and Tachi proved in 2011 that the
 square hypar cannot take its saddle shape with flat faces and only its own creases. The paper
