@@ -257,7 +257,7 @@
   },
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "stationery",
+    "domain": "paper-electronics",
     "kernel": "sheet",
     "capabilities": {
       "kinematic_program": true,
