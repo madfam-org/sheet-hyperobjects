@@ -25,9 +25,9 @@ The square is turned 45°: `Lh = size/√2` is half its diagonal, and the blintz
 - the **walls** are `q` high (35.4 mm);
 - each **corner square** `q ≤ |x|, |y| ≤ 2q` folds along its diagonal into a gusset.
 
-The program first creases the sheet's two midlines, which are the diagonals of the corner squares.
-It then blintzes the square, creases the four edges to the centre lines and unfolds the top and
-bottom corners.
+The sheet starts creased along its two midlines, which are the diagonals of the corner squares.
+The program blintzes the square, creases the four edges to the centre lines and unfolds the top
+and bottom corners.
 
 **The side walls** rise 90° about the lines `x = ±q`. Everything beyond each line rises with it:
 the wall strip, the blintz flap folded inside it, and the corner squares.
@@ -40,8 +40,8 @@ freedom. The end wall's side edge points along `n(φ) = cos φ · north + sin φ
 
     r₂(φ) = (up + n(φ)) / (√2 · (1 + sin φ)) + √(sin φ / (1 + sin φ)) · (∓x̂).
 
-The sign is the one that folds the gusset inwards, over the end wall. The two corner triangles turn
-rigidly from their current rays to these. At φ = 90° the gusset lies folded flat against the inside
+The sign is the one that folds the gusset inwards, over the end wall. The kernel does not use this
+formula: it solves the motion on the whole crease pattern (below), and its states agree with it. At φ = 90° the gusset lies folded flat against the inside
 of the end wall, and the triangle above it (the corner of the end flap) lies along the wall's top
 edge.
 
@@ -50,15 +50,36 @@ covers the inside of the wall, and the tip turns 90° along the crease at `3q` t
 
 ## The fold program
 
-The program is `kinematic`, 27 steps: two midline creases (fold and unfold), the blintz, four edge
-creases (fold and unfold), unfolding the end corners, raising the side walls, then for each end five
-rigid steps of the end wall rising and one step for the flap. Every state is an exact rigid state
-(worst loop-closure residual about 2 × 10⁻¹³ mm for the box). The finished box keeps all of its
-paper inside the box volume `[−q, q] × [0, q] × [−q, q]`; the cartridge checks this while it is
-written.
+The program is `kinematic`, 23 steps: the blintz, four edge creases (fold and unfold), unfolding
+the end corners, raising the side walls, then for each end five rigid steps of the end wall rising
+and one step for the flap.
 
-The end-wall motion is not linear in the fold angles: a straight blend between two of its steps
-misses closure by up to 8 mm. The cartridge prints the figure.
+- **The square starts creased.** Its two midlines are folded and unfolded before the program
+  starts. Each remembers the sense it was folded in: the document gives it a signed rest angle
+  (`pliego:edges_restAngle`) of the stock's crease yield, 35° valley, which is how far a crease
+  folded flat springs back when it is let go. The physics engine starts from those angles; the
+  preview starts flat.
+- **Flat operations.** The blintz, the edge creases and the opened corners are operations of
+  `pliego.FoldProgram` on a layer-ordered flat state. After each one the kernel checks the layer
+  order (taco and tortilla conditions, transitivity) and Kawasaki and Maekawa at every vertex.
+- **3-D steps.** The side walls are a hinge pose (`hinges`). Each end wall is a rigid step on the
+  whole crease pattern (`kinematic`): the floor edge turns to its angle, the three creases at each
+  floor corner follow, and every other crease holds. The first 18° is its own step, so each gusset
+  leaves the flat sheet folding inwards; the rest, to 90°, is one step that the program shows as
+  four steps of 18°. Each flap is a flat fold inside the wall's plane, with its tip turning 90°
+  onto the floor at the same time. At every sampled state the kernel checks that no moving face
+  passes through paper that stays (none does).
+- **The crease pattern.** The pattern is the flat state unfolded. A crease opened again, or
+  folded only in 3-D (the walls, the gussets, the flaps), is drawn flat (`F`, a scored line); the
+  sequence and the `folded` target drive each one to its angle. Only the side blintz folds, which
+  stay folded throughout, keep their valley.
+- **Closure.** Every state is an exact rigid state (closure about 10⁻⁶ mm; the step angles are
+  written to six decimals). The finished box keeps all of its paper inside the box volume
+  `[−q, q] × [0, q] × [−q, q]`; the cartridge checks this while it is written. The end-wall
+  motion is not linear in the fold angles: a straight blend between two of its steps misses
+  closure by up to 8 mm on the default square. The cartridge prints the figure.
+- **The lid's square** is rounded to a multiple of 8 µm (at most 4 µm off `size + 4√2 · gap`),
+  so every vertex of its pattern lies on the kernel's 10⁻⁶ mm grid.
 
 ## Making one by hand
 
