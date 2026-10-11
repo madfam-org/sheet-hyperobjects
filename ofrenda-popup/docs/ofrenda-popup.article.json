@@ -1,0 +1,29 @@
+{
+  "spec_version": 1,
+  "object": "pliego/ofrenda-popup",
+  "title": {"en": "Ofrenda pop-up", "es": "Ofrenda en pop-up", "fr": "Ofrenda en pop-up", "pt": "Oferenda em pop-up"},
+  "summary": {
+    "en": "A Día de Muertos ofrenda as a 90° pop-up card: an altar of two to seven levels with candles, pan de muerto and a photo frame, cut from the card itself, under an arch of kirigami cempasúchil and a papel picado banner.",
+    "es": "Una ofrenda de Día de Muertos en una tarjeta pop-up de 90°: un altar de dos a siete niveles con velas, pan de muerto y un marco para la foto, cortado de la propia tarjeta, bajo un arco de cempasúchil de kirigami y una tira de papel picado.",
+    "fr": "Une ofrenda du Jour des morts en carte pop-up à 90° : un autel de deux à sept gradins avec bougies, pain des morts et cadre pour la photo, découpé dans la carte elle-même, sous un arc de roses d'Inde en kirigami et une guirlande de papel picado.",
+    "pt": "Uma oferenda do Dia dos Mortos num cartão pop-up de 90°: um altar de dois a sete níveis com velas, pão dos mortos e uma moldura para a foto, cortado do próprio cartão, sob um arco de cravos-de-defunto em kirigami e um varal de papel picado."
+  },
+  "article": {
+    "path": "ofrenda-popup/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "Día de Muertos ofrendas: a living tradition of pre-Hispanic and Catholic roots; papel picado of San Salvador Huixcolotla from the twentieth century",
+  "heritage": true,
+  "sources": [
+    "UNESCO, «Indigenous festivity dedicated to the dead» (Representative List, 2008), https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
+    "Infobae México, «Altar de muertos: qué representan los 7 niveles», 2022, https://www.infobae.com/america/mexico/2022/10/25/altar-de-muertos-que-representan-los-7-niveles/",
+    "Wikipedia, «Tagetes erecta», https://en.wikipedia.org/wiki/Tagetes_erecta",
+    "México Desconocido, «Papel picado de Huixcolotla», https://www.mexicodesconocido.com.mx/papel-picado-huixcolotla.html",
+    "Wikipedia, «Papel picado», https://en.wikipedia.org/wiki/Papel_picado",
+    "Wikipedia, «Origamic architecture», https://en.wikipedia.org/wiki/Origamic_architecture"
+  ],
+  "related": {
+    "objects": ["pliego/papel-picado-banner", "pliego/step-popup", "pliego/paper-flowers", "pliego/tissue-pom-pom", "pliego/origamic-architecture"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W3·D2); awaiting a human editorial pass, ideally by someone who keeps the tradition."}
+}
