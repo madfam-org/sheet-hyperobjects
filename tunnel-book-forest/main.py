@@ -193,7 +193,7 @@ for k in range(N):
             ring.append(p)
     if math.dist(ring[0], ring[-1]) <= 0.05:
         ring.pop()
-    for x, y in ring:
+    for _x, y in ring:
         if y > top + 1e-9 or y < MARGIN - 1e-9:
             raise ValueError(f"tunnel-book-forest: a tree of frame {k + 1} leaves the window")
     windows.append(([ring], len(items)))
@@ -207,7 +207,7 @@ shut = math.degrees(math.acos((PITCH_SHUT - PLEAT) / (2.0 * D)))
 for phi in (shut, (shut + OPEN) / 2.0, OPEN):
     err = tun.pose_error(phi)
     if err > TOL:
-        raise ValueError(f"tunnel-book-forest: the walls do not follow the angle law ({err:.3g} mm)")
+        raise ValueError(f"tunnel-book-forest: the walls miss the angle law ({err:.3g} mm)")
 z = [tun.world("wall-left", tun.frame_u(k)[1] - 1.0, H / 2, OPEN)[2] for k in range(N)]
 zr = [tun.world("wall-right", tun.frame_u(k)[1] - 1.0, H / 2, OPEN)[2] for k in range(N)]
 for k in range(N - 1):
