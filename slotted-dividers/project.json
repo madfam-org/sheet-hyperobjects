@@ -90,7 +90,7 @@
   "stock": {"default": "corrugated-e-flute", "alternatives": ["corrugated-b-flute", "corrugated-c-flute", "greyboard-1500"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "packaging",
     "kernel": "sheet",
     "interfaces": [
       {
