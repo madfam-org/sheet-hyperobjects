@@ -48,16 +48,26 @@ so the front ends up inside.
 
 1. curl the sector into a loose cone (every ruling at half its final angle);
 2. bring the straight edges together: the cone closes;
-3. tuck the glue tab inside and glue it.
+3. tuck the glue tab inside and glue it;
+4. hold the tab until the glue sets.
 
-It ends in the cone, which is also written as the frame `target:cone`. The hat lies on its side
-because the preview keeps the first panel on the table.
+The tab's glue is a `glue` join with `active_from: "press"` (sheet-document spec §5.19): the
+sector starts flat and the program ends glued. It ends in the cone, which is also written as the
+frame `target:cone`. The hat lies on its side because the preview keeps the first panel on the
+table.
 
 **Mode `worn`** is the finished hat for the physics engine: the glue weld, an elastic as a `string`
 join between two points 8 mm above the rim on opposite sides, and an `initial` frame standing upright
 on the table. Its `physical` program presses the hat flat for storage (two layers, with folds at the
 seam and at the opposite ruling) and opens it again. The glue weld holds in both states: the
 flattened state is written as `target:flat`.
+
+**Why two modes.** One physical program that rolls the flat sector, glues it, then presses it
+flat and opens it would need the engine to close the cone by driving its rulings one by one. It
+cannot yet: the same construction on the paper crown's band leaves the ends 37 mm apart, so the
+glue finds nothing to weld when it switches on. A kinematic program closes the cone exactly but
+holds the sheet rigid, so it cannot show the weld holding while the hat is pressed flat. `make`
+shows the making; `worn` shows the glued hat's physics.
 
 **Preview and engine.** The preview plays both programs exactly at their ends. In between, the flat
 press is a straight blend of angles, so the tab drifts off the glue for a moment; the engine keeps

@@ -107,7 +107,7 @@
     {"id": "foil", "label": {"en": "Foil, no elastic", "es": "Metalizado, sin elástico", "fr": "Métallisé, sans élastique", "pt": "Metalizado, sem elástico"}, "values": {"stock": "foil-paper", "elastic": 0, "panels": 64}}
   ],
   "controls": [
-    {"id": "sequence", "kind": "sequence", "label": {"en": "Roll the hat (make) · Flatten and open (worn)", "es": "Enrollar el gorro (hacerlo) · Aplanar y abrir (terminado)", "fr": "Rouler le chapeau (fabriquer) · Aplatir et ouvrir (fini)", "pt": "Enrolar o chapéu (fazer) · Achatar e abrir (pronto)"}, "min": 0, "max": 3, "default": 0, "unit": "step"}
+    {"id": "sequence", "kind": "sequence", "label": {"en": "Roll the hat (make) · Flatten and open (worn)", "es": "Enrollar el gorro (hacerlo) · Aplanar y abrir (terminado)", "fr": "Rouler le chapeau (fabriquer) · Aplatir et ouvrir (fini)", "pt": "Enrolar o chapéu (fazer) · Achatar e abrir (pronto)"}, "min": 0, "max": 4, "default": 0, "unit": "step"}
   ],
   "export_formats": ["svg", "dxf", "pdf", "hpgl", "glb", "fold"],
   "stock": {"default": "cardstock-160", "alternatives": ["cardstock-250", "kraft-120", "foil-paper", "copy-80"]},

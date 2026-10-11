@@ -255,11 +255,19 @@ def steps_make():
 
 
 if mode == "make":
+    steps = steps_make() + [pliego.Step(
+        "press", L4("Hold the tab until the glue sets",
+                    "Sostén la pestaña hasta que el pegamento agarre",
+                    "Tenez la languette jusqu'à ce que la colle prenne",
+                    "Segure a aba até a cola pegar"), [], duration_ms=800)]
+    # the tab's glue takes hold once it lies under the other edge (spec §5.19)
+    glue = pliego.glue("tab-to-panels", hat, region, hat, glue_map, side="front")
+    glue["active_from"] = "press"
     assembly = pliego.Assembly(
-        [hat], controls=[pliego.sequence_control(label=L4("Roll the hat", "Enrollar el gorro",
+        [hat], joins=[glue], controls=[pliego.sequence_control(label=L4("Roll the hat", "Enrollar el gorro",
                                                           "Rouler le chapeau", "Enrolar o "
                                                           "chapéu"))],
-        sequence=pliego.Sequence(steps_make(), mode="kinematic"),
+        sequence=pliego.Sequence(steps, mode="kinematic"),
         targets={"cone": {"angles": dict(angles)}}, title="Party hat")
 else:
     joins = [pliego.glue("tab-to-panels", hat, region, hat, glue_map, side="front")]
