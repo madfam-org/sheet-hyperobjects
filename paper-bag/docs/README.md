@@ -67,11 +67,19 @@ the ear lies between the gusset triangle and the flap, and every crease closes
 `target:erected` frame. **The preview** plays the whole program, from the flat sheet (standing in
 the front panel's plane) to the open bag on the table.
 
+**Glue that takes hold at its step.** The seam and the bottom overlap are `glue` joins with
+`active_from` (sheet-document spec §5.19), their welds read from the erected pose: the seam takes
+hold once the tube is formed (at the first `gussets-in` substep), the overlap in a short final
+*press* step, so the program starts from the flat sheet and ends glued. The front flap's weld is
+declared on the outside of the back flap (the order of making it by hand), because the rigid pose
+alone cannot say which flap is outside.
+
 **Limits: what is not modelled, or needs the physics engine.**
 
-- The glued closure (the seam and the bottom overlap) is given as interfaces, not as `glue` joins.
-- The front and back flaps reach the same angle, so where they overlap they cross; which one lies
-  outside is a thickness question for the engine.
+- In the physics engine a kinematic program poses the sheet rigidly, so the two welds are
+  recorded state there, not forces.
+- The front and back flaps reach the same angle, so where they overlap they cross; the glue join
+  says which one lies outside, and the layer thickness is the engine's question.
 - The bag is not folded flat again, and its self-opening snap is not modelled.
 - The gussets stay flat in the open bag: the pleat in the gusset centre bends the paper, which is
   the engine's job.
