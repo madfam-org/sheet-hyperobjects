@@ -12,16 +12,13 @@ Levers and linkages in card. Three modes:
   joins). Every hinge angle is a linear function of the cells' half-angle, so the program's
   interpolation keeps the chain closed at every instant, not only at the keys.
 * `crank-rocker` — a crank that turns all the way round driving a rocker, with flat card links
-  joined by brads (`pivot` joins), the classic movable-book linkage. Its crank is a kinematic sheet
-  on a `rotate` mechanism (the `crank` control); the coupler and the rocker follow through their
-  pivots, which only the physics engine can solve, so the studio preview leaves the control
-  disabled. `target:crank-…` frames hold the exact solved poses every 30°.
-
-Why not drive the brad linkages from one control in the preview: a mechanism moves its sheet
-linearly in its control (a rotation by the control value, or a translation proportional to it),
-and a kinematic sheet follows one mechanism. A coupler's motion is not linear in the crank angle,
-so no set of mechanisms on one control can carry it exactly. The folded versions avoid that: their
-links are faces of one sheet posed by the fold program.
+  joined by brads (`pivot` joins), the classic movable-book linkage. Every link is a kinematic
+  sheet driven by the one `crank` control (spec §5.18 keyed mechanisms): the crank turns on a
+  `rotate` mechanism; the rocker turns about its ground brad on a `rotate` keyed by its closed-form
+  swing; the coupler turns about the crank's brad on a `rotate` that rides the crank, keyed by its
+  heading minus the crank angle. The keys are refined until the linkage stays within 0.05 mm of
+  closed between them, so the brads stay joined in the studio preview and in the engine.
+  `target:crank-…` frames hold the exact solved poses every 30°.
 """
 
 import math
@@ -53,6 +50,7 @@ POST, FOOT = 8.0, 10.0                       # post width, foot depth (folded mo
 STRIP, BASE = "cardstock-250", "cardstock-300"
 T_BASE = 0.36                                # the base's caliper: the feet stand on it
 MAX_GAP = 0.25                               # mm: the worst mid-step closure gap allowed
+KEY_GAP = 0.05                               # mm: the keyed crank-rocker's worst gap between keys
 HOLE = 3.0                                   # brad hole
 
 
@@ -378,8 +376,10 @@ else:   # crank-rocker with brads
 
     theta0 = 60.0
     b0, c0 = solve(theta0, (A_ + C_ * 0.6, 40.0 * K))
-    rocker, lr = link("rocker", B_, L4("Rocker", "Balancín", "Balancier", "Balancim"), 1)
-    coupler, lc = link("coupler", C_, L4("Coupler", "Biela", "Bielle", "Biela"), 2)
+    rocker, lr = link("rocker", B_, L4("Rocker", "Balancín", "Balancier", "Balancim"), 1,
+                      kin="turn-rocker")
+    coupler, lc = link("coupler", C_, L4("Coupler", "Biela", "Bielle", "Biela"), 2,
+                       kin="turn-coupler")
     crank, lk = link("crank", A_, L4("Crank", "Manivela", "Manivelle", "Manivela"), 3,
                      kin="turn-crank")
     place(rocker, lr, D, c0)
@@ -401,10 +401,64 @@ else:   # crank-rocker with brads
                         placement=pliego.Placement(origin=(x0, 0.0, -y0)))
     for x, y in ((0.0, 0.0), (G, 0.0)):
         brad_mark(base, (x - x0, y - y0))
+    # the crank's and the rocker's ground brads are their `rotate` mechanisms' centres; the
+    # moving brads stay `pivot` joins between two kinematic links
     joins += [pliego.pivot("brad-b", (crank, (r + A_, r)), (coupler, (r + C_, r))),
-              pliego.pivot("brad-c", (coupler, (r, r)), (rocker, (r + B_, r))),
-              pliego.pivot("brad-d", (rocker, (r, r)), (base, (G - x0, -y0)))]
-    mechanisms.append(pliego.rotate("turn-crank", (base, (-x0, -y0)), "crank", [crank]))
+              pliego.pivot("brad-c", (coupler, (r, r)), (rocker, (r + B_, r)))]
+
+    def unwrap(hs):
+        out = [hs[0]]
+        for h in hs[1:]:
+            d = h - out[-1]
+            out.append(out[-1] + d - 360.0 * round(d / 360.0))
+        return out
+
+    def key_tables(step):
+        """Keys every `step` degrees of crank: the coupler's own turn about the crank's brad
+        (its heading's change minus the crank's, ending one whole turn down at 360°) and the
+        rocker's turn about its ground brad; with the worst gap at the moving brads between keys."""
+        vs, cs, rs, prev = [], [], [], c0
+        n = int(round(360.0 / step))
+        for i in range(n + 1):
+            v = 360.0 * i / n
+            b, c = solve(theta0 + v, prev)
+            prev = c
+            vs.append(v)
+            cs.append(heading(c, b))
+            rs.append(heading(D, c))
+        cu, ru = unwrap(cs), unwrap(rs)
+        own = [cu[i] - cu[0] - vs[i] for i in range(n + 1)]
+        rock = [ru[i] - ru[0] for i in range(n + 1)]
+
+        def rot(p, o, deg):
+            cc, ss = math.cos(math.radians(deg)), math.sin(math.radians(deg))
+            return (o[0] + (p[0] - o[0]) * cc - (p[1] - o[1]) * ss,
+                    o[1] + (p[0] - o[0]) * ss + (p[1] - o[1]) * cc)
+        gap, prev = 0.0, c0
+        for i in range(n):
+            for t in (0.25, 0.5, 0.75):
+                v = vs[i] + (vs[i + 1] - vs[i]) * t
+                # the coupler turns about the crank's brad, then rides the crank (T_ride ∘ T_own)
+                cpl = rot(rot(c0, b0, own[i] + (own[i + 1] - own[i]) * t), (0.0, 0.0), v)
+                rkr = rot(c0, D, rock[i] + (rock[i + 1] - rock[i]) * t)
+                gap = max(gap, math.hypot(cpl[0] - rkr[0], cpl[1] - rkr[1]))
+        return vs, own, rock, gap
+
+    for key_step in (5.0, 3.0, 2.0, 1.0):
+        vs, own, rock, key_gap = key_tables(key_step)
+        if key_gap <= KEY_GAP:
+            break
+    if key_gap > KEY_GAP:
+        raise ValueError(f"card-linkages: keyed crank-rocker gap {key_gap:.3f} mm between keys")
+    turn_coupler = pliego.rotate("turn-coupler", (crank, (r + A_, r)), "crank", [coupler])
+    turn_coupler.update({"ride": "turn-crank", "period": 360.0,
+                         "keys": [[v, round(a, 9)] for v, a in zip(vs, own, strict=True)]})
+    turn_rocker = pliego.rotate("turn-rocker", (base, (G - x0, -y0)), "crank", [rocker])
+    turn_rocker.update({"period": 360.0,
+                        "keys": [[v, round(a, 9)] for v, a in zip(vs[:-1], rock[:-1],
+                                                                   strict=True)]})
+    mechanisms += [pliego.rotate("turn-crank", (base, (-x0, -y0)), "crank", [crank]),
+                   turn_coupler, turn_rocker]
     controls.append(pliego.angle_control("crank", L4("Turn the crank", "Girar la manivela",
                                                      "Tourner la manivelle", "Girar a manivela"),
                                          default=0.0, min=0.0, max=360.0))
@@ -424,7 +478,8 @@ else:   # crank-rocker with brads
         targets[f"crank-{k:03d}"] = frame
     sheets += [base, rocker, coupler, crank]
     summary = (f"ground={G:.1f} crank={A_:.1f} coupler={C_:.1f} rocker={B_:.1f}mm "
-               f"rocker_swing={max(swing) - min(swing):.1f}deg targets={len(targets)}")
+               f"rocker_swing={max(swing) - min(swing):.1f}deg keys={len(vs)} every {key_step:g}deg "
+               f"max_gap_between_keys={key_gap:.3f}mm targets={len(targets)}")
 
 print(f"card-linkages: mode={mode} {summary}")
 
