@@ -16,10 +16,14 @@ Two ways of wrapping a box in one sheet of paper, without cutting the paper at t
 - **`diagonal`:** the box sits at 45° in the middle of a square sheet. The sheet's four corners
   come up over the four sides and onto the top.
 
-The box is a rigid reference: a box net folded shut and posed on the table. It is a fixed board
-(a kinematic sheet whose mechanism, `box-held`, does not move it), so the physics engine treats it
-as rigid too. The cartridge folds the paper round it, computes the **minimum paper** for the box,
-checks the paper you give it and trims what the wrap does not use.
+The box is a rigid reference: a box net folded shut and posed on the table. The fold program
+holds it: its first step targets every crease of the box at the 90° the box already has, so the
+kinematic program poses the box rigidly where it stands, in the studio preview and in the engine
+alike, and no crease of it moves. (Earlier versions made the box a fixed board on a `translate`
+mechanism driven by the sequence control; the engine accepts only a distance or angle control on
+a translate, and it poses a board flat, so the program now holds it.) The cartridge folds the
+paper round it, computes the **minimum paper** for the box, checks the paper you give it and
+trims what the wrap does not use.
 
 ## Geometry
 
