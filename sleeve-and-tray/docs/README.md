@@ -42,9 +42,12 @@ Both blanks are face trees (every fold is straight, no hinge meets another insid
 raise the end walls over the ears, then roll the ends in and drop the tabs into the slots; fold
 the sleeve into a tube and glue the joint. The preview poses each blank from its first face, so
 the tray's first long wall starts already raised. The `slide` mode has no fold program: its
-`slide` control drives a rigid translation the preview can show. **Limits.** The sleeve's joint
-is a glue zone (fabrication data); welding it, the tabs' snap into the slots and the friction of
-the tray in the sleeve are the physics engine's part.
+`slide` control drives a rigid translation the preview can show.
+
+In the `fold` mode the sleeve's joint is also a `glue` join with `active_from` (sheet-document
+spec §5.19), its weld read from the closed pose; it takes hold in a short final *press* step,
+after the sleeve is formed, so the blanks start flat and end glued. **Limits.** The tabs' snap
+into the slots and the friction of the tray in the sleeve are the physics engine's part.
 
 ## Making one by hand
 
