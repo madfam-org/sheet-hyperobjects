@@ -108,7 +108,7 @@
   "stock": {"default": "corrugated-b-flute", "alternatives": ["corrugated-e-flute", "corrugated-c-flute", "corrugated-bc-double-wall"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "packaging",
     "kernel": "sheet",
     "interfaces": [
       {
