@@ -107,7 +107,7 @@ pad = math.radians(3.0)
 regions.append([P(r, p) for r, p in edge] + [P(size, alpha + pad), P(size, -pad)])
 
 
-def lace(scale, inset):
+def lace(scale=1.0, inset=1.5):
     """Picots, lace rings and rosette, holes scaled by `scale`, picots `inset` minimum features
     in from the scallops; returns (regions, holes)."""
     out, holes = [], 0
@@ -148,23 +148,9 @@ def lace(scale, inset):
 LABEL = L4("Paper doily", "Carpeta de papel", "Napperon en papier", "Toalhinha de papel")
 
 
-def simple_faces(sheet):
-    arr = sheet.build()
-    return all(pliego.geometry.is_simple_polygon([arr.vertices[v] for v in f]) for f in arr.faces)
-
-
-# The kernel's hole bridging occasionally leaves a self-touching face for some lace layouts (a
-# kernel 0.2.0 issue, reported). Try the layout as designed, then with the picots moved further in
-# and the holes shrunk in 3 % steps, until every face is simple.
-for inset, scale in [(i, 1.0 - 0.03 * k) for i in (1.5, 4.0) for k in range(4)]:
-    lace_regions, holes = lace(scale, inset)
-    cut = pliego.foldcut.cut(state, regions + lace_regions, id="doily", stock=stock,
-                             grain_deg=90.0, label=LABEL, front="#fbf8f1", back="#fbf8f1")
-    if simple_faces(cut.sheet):
-        break
-else:
-    raise ValueError("the lace layout leaves a face the kernel cannot bridge: change the size "
-                     "or the density")
+lace_regions, holes = lace()
+cut = pliego.foldcut.cut(state, regions + lace_regions, id="doily", stock=stock, grain_deg=90.0,
+                         label=LABEL, front="#fbf8f1", back="#fbf8f1")
 regions = regions + lace_regions
 if not cut.connected:
     raise ValueError(f"the cut leaves {len(cut.islands)} loose pieces")
@@ -200,6 +186,5 @@ result = pliego.Assembly(
     title="Paper doily",
     meta={"min_feature_mm": mf},
 )
-print(f"paper-doily: folds={n} density={density} holes_per_wedge={holes} hole_scale={scale:.2f} "
-      f"picot_inset={inset} "
+print(f"paper-doily: folds={n} density={density} holes_per_wedge={holes} "
       f"min_bridge={report.min_bridge_mm}")

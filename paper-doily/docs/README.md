@@ -33,14 +33,11 @@ mirror lines. The lace is laid out in polar coordinates inside the wedge, from t
 must find one connected piece with every bridge at least the stock's minimum feature (1.0 mm for
 copy paper, kami and washi; 1.5 mm for tissue).
 
-**A kernel limit, worked around.** For some lace layouts, kernel 0.2.0's hole bridging (the `J`
-edges that make every face simple) leaves a self-touching face, which the document check rejects.
-The script checks every face before it writes the document. If one is not simple, it tries again
-with the holes shrunk in 3 % steps (up to three times), then with the picots moved further in from
-the scallops and the same shrink steps, and it fails loud if none of these eight layouts works. The
-printed `hole_scale` and `picot_inset` say which layout was used (1.00 and 1.5 at the defaults). A
-sweep over every symmetry, density and five sizes from 120 to 300 mm built a valid document in
-every case. The issue is reported to the kernel.
+**Hole bridging.** An earlier kernel's hole bridging (the `J` edges that make every face simple)
+could leave a self-touching face for some lace layouts, so the script used to retry with smaller
+holes and deeper picots. The kernel's split cuts made the retry unnecessary and it is gone: the
+lace is always the designed layout. A sweep over every symmetry (4, 6, 8), densities 1 and 5 and
+sizes 120 and 300 mm built a valid document every time.
 
 ## The fold program
 
