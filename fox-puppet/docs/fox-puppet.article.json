@@ -1,0 +1,48 @@
+{
+  "spec_version": 1,
+  "object": "pliego/fox-puppet",
+  "title": {
+    "en": "Fox puppet",
+    "es": "Zorro títere",
+    "fr": "Renard marionnette",
+    "pt": "Raposa fantoche"
+  },
+  "summary": {
+    "en": "The talking fox from one square: the traditional organ base folded exactly, a head shaped by this cartridge's own folds, and a pleated mouth that opens and closes as rigid paper in the preview.",
+    "es": "El zorro que habla, con un solo cuadrado: la base de órgano tradicional doblada con exactitud, una cabeza con pliegues propios de este cartucho y una boca plisada que se abre y se cierra como papel rígido en la vista previa.",
+    "fr": "Le renard qui parle, dans un seul carré : la base de l'orgue traditionnelle pliée exactement, une tête façonnée par les plis propres à cette cartouche et une bouche plissée qui s'ouvre et se ferme comme du papier rigide dans l'aperçu.",
+    "pt": "A raposa que fala, com um só quadrado: a base de órgão tradicional dobrada com exatidão, uma cabeça moldada pelas dobras próprias deste cartucho e uma boca pregueada que abre e fecha como papel rígido na pré-visualização."
+  },
+  "article": {
+    "path": "fox-puppet/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "traditional base, original head",
+  "heritage": false,
+  "sources": [
+    "R. Alan Russell, William DeMichele, Nicole Holland, Caroline Lanzarone and Nettie Leepson, The Organ Base in Origami: Teaching Mathematics and Creativity in the Elementary Classroom, Bridges 2019 Conference Proceedings, pp. 651-658",
+    "Gilad Aharoni, Gilad's Origami Page, origami database, entries \"Fox puppet\" (Traditional)",
+    "Marshall Bern and Barry Hayes, The complexity of flat origami, Proc. 7th ACM-SIAM Symposium on Discrete Algorithms, 1996",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.5, §5.6"
+  ],
+  "related": {
+    "objects": [
+      "pliego/squash-fold",
+      "pliego/fortune-teller",
+      "pliego/mouth-popup",
+      "pliego/paper-popper"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
