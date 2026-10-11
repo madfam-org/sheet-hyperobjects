@@ -19,9 +19,12 @@ pulling it makes something on the page move. This cartridge has the two basic fo
 
 ## Geometry
 
-**Straight.** Five sheets stacked 0.3 mm apart, inside the 0.36 mm collision thickness of the
-300 g/m² page stock, so every glue weld holds in the initial frame: from the bottom up, the backing,
-two rails, the strip (between the rails) and the page.
+**Straight.** Five sheets stacked 0.33 mm apart: from the bottom up, the backing, two rails, the
+strip (between the rails) and the page. 0.33 mm is the contact distance between the strip's
+250 g/m² stock and the 300 g/m² page stock (half the sum of their 0.30 and 0.36 mm collision
+thicknesses), so the strip does not start inside the contact distance of the layers above and
+below it. It is also inside the page stock's 0.36 mm collision thickness, so every glue weld holds
+in the initial frame.
 
 - The page has a window `window_width` × `window_height`, at least 4 mm lower than the strip, so
   the strip's edges never show.
@@ -35,7 +38,7 @@ two rails, the strip (between the rails) and the page.
 - Each rail's outer, full-length band is glued to the backing below and to the page above (four
   `glue` joins, all between sheets that do not move).
 
-**Pivoting.** Two sheets: the page and the lever, 0.3 mm above it. The lever is a round paddle
+**Pivoting.** Two sheets: the page and the lever, 0.33 mm above it (the same contact distance). The lever is a round paddle
 (`paddle` across), a neck `lever_width` wide and a wider grip, `lever_length` in all. It turns on a
 brad through a 3 mm hole at the paddle's neck, marked on the page by a kiss-cut cross. The pivot
 is placed so that the grip reaches `grip` past the page's right edge.
@@ -47,16 +50,25 @@ is placed so that the grip reaches `grip` past the page's right edge.
 - **Pivoting**: the lever is a kinematic sheet turned by a `rotate` mechanism about the brad. The
   `swing` control (0 to `swing` degrees) is its angle.
 
-Neither moving sheet has a join of its own. The rails, page and backing are glued to each other,
-and the brad is the rotate mechanism's centre. So **both controls play in the studio preview**.
+Neither moving sheet has a join of its own. In the straight mode the rails, page and backing are
+fixed boards (spec §5.1: kinematic sheets on the strip's mechanism, which does not move them),
+glued to each other, and in the pivoting mode the brad is the rotate mechanism's centre. So **both controls play in the studio preview**.
 The `slide` mechanism and `slider` joins in the spec would also describe a strip on a track, but
 the preview leaves them to the physics engine, and a straight strip in a straight channel is
 exactly a translation. What this cartridge does not include is the classic linkage that turns a
 straight pull into a rotation (a pin running in a slot). That needs a `slider` join, so it waits
 for the engine, and the pivoting lever here is moved at its own tab instead.
 
-**Preview and engine.** The physics engine adds friction in the channel and the slight flex of a
-long strip.
+**Preview and engine.** The moving parts are rigid in both, and in the straight mode so is the
+channel. That is deliberate. The engine's glue welds two layers at zero offset, so physical
+rails, page and backing glued along the rails close round the channel; the strip then rubs on
+them, and friction drags the whole card along with it. Measured in the engine (mesh 10 mm, 8
+substeps, the tab pulled out and pushed back over three seconds), the backing and the page moved
+about 50 mm with a 56 mm pull while they were physical and 0.3 mm apart. Restacked to 0.33 mm but
+still physical, they moved about 53 mm. As fixed boards they do not move (0 mm), the largest
+stretch falls from about 1 % to nothing, and a step takes about 1 ms instead of about 100 ms. The
+engine therefore shows no friction in the channel and no flex of the strip; a card this stiff
+barely flexes in the hand.
 
 ## Making one by hand
 

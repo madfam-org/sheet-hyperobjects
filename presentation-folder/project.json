@@ -109,7 +109,7 @@
   "stock": {"default": "sbs-board-350", "alternatives": ["folding-boxboard-300", "cardstock-300", "cardstock-250"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "stationery",
     "kernel": "sheet",
     "interfaces": [
       {

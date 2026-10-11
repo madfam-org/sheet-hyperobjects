@@ -12,8 +12,9 @@ and the sheet takes a curved, self-supporting shape. Two modes:
 **Segmentation.** The kernel has no curved crease, so every curve is a polyline whose vertices
 lie on the true curve. The number of segments is chosen so that no chord departs from its arc by
 more than `tolerance` (the sagitta r·(1 − cos(Δθ/2)) ≤ tolerance); the script prints the counts
-and the worst deviation, and records them in `pliego:meta`. The disc's rim and hole are regular
-polygons whose vertices are the spirals' end points.
+and the worst deviation, and the first step's note states them (spec rule 16 keeps cartridge
+data out of `pliego:meta`). The disc's rim and hole are regular polygons whose vertices are the
+spirals' end points.
 
 **Physics.** A curved crease cannot fold with flat panels: the paper on both sides bends along
 rulings as the crease closes. There is no rigid motion to follow, so the fold program is physical:
@@ -81,7 +82,15 @@ if run_mode == "arcs":
         creases.append(sheet.path(pts, kind))
         worst = max(worst, sagitta(r, math.pi / n))
         counts.append(n)
-    seg = {"curves": arcs, "segments": counts, "max_deviation_mm": round(worst, 6)}
+    lo, hi, dev = counts[0], counts[-1], f"{worst:.3f}"
+    seg_note = L4(f"Each arc is drawn as a polyline: {arcs} arcs of {lo} to {hi} segments, at "
+                  f"most {dev} mm from the true curve.",
+                  f"Cada arco se traza como una poligonal: {arcs} arcos de {lo} a {hi} "
+                  f"segmentos, a {dev} mm como máximo de la curva verdadera.",
+                  f"Chaque arc est tracé en ligne brisée : {arcs} arcs de {lo} à {hi} segments, "
+                  f"à {dev} mm au plus de la vraie courbe.",
+                  f"Cada arco é traçado como uma poligonal: {arcs} arcos de {lo} a {hi} "
+                  f"segmentos, a no máximo {dev} mm da curva verdadeira.")
     print(f"segmentation: arcs={arcs} segments_per_arc={counts[0]}..{counts[-1]} "
           f"max_deviation_mm={worst:.4f} (tolerance {tolerance:g})")
     title = "Concentric arcs"
@@ -113,8 +122,18 @@ else:
     # a log spiral's chord deviation is bounded by the circle of the larger radius
     worst = max(worst, sagitta(R * math.exp(growth * dth), dth))
     crossing = math.degrees(math.atan(1.0 / growth))
-    seg = {"curves": spirals, "segments": [steps_n] * spirals, "rim_sides": sides,
-           "max_deviation_mm": round(worst, 6)}
+    dev = f"{worst:.3f}"
+    seg_note = L4(f"Each curve is drawn as a polyline: {spirals} spirals of {steps_n} segments "
+                  f"and a rim and hole of {sides} sides, at most {dev} mm from the true curves.",
+                  f"Cada curva se traza como una poligonal: {spirals} espirales de {steps_n} "
+                  f"segmentos y un borde y un agujero de {sides} lados, a {dev} mm como máximo "
+                  "de las curvas verdaderas.",
+                  f"Chaque courbe est tracée en ligne brisée : {spirals} spirales de {steps_n} "
+                  f"segments et un bord et un trou de {sides} côtés, à {dev} mm au plus des "
+                  "vraies courbes.",
+                  f"Cada curva é traçada como uma poligonal: {spirals} espirais de {steps_n} "
+                  f"segmentos e uma borda e um furo de {sides} lados, a no máximo {dev} mm das "
+                  "curvas verdadeiras.")
     print(f"segmentation: spirals={spirals} segments_per_spiral={steps_n} rim_sides={sides} "
           f"sweep={math.degrees(sweep):.1f}° angle_to_radius={crossing:.2f}° "
           f"max_deviation_mm={worst:.4f} (tolerance {tolerance:g})")
@@ -138,7 +157,8 @@ steps = [
                    "Pliega a lo largo de cada curva, monte y valle alternados",
                    "Plier le long de chaque courbe, montagne et vallée tour à tour",
                    "Dobre ao longo de cada curva, montanha e vale alternados"),
-                [(m, signed(m, 30.0)) for m in creases], duration_ms=3000, note=BENDS),
+                [(m, signed(m, 30.0)) for m in creases], duration_ms=3000,
+                note={k: f"{BENDS[k]} {seg_note[k]}" for k in BENDS}),
     pliego.Step("press-curves",
                 L4("Press the curved pleats further: the sheet arches",
                    "Junta más los pliegues curvos: la hoja se arquea",
@@ -169,5 +189,4 @@ result = pliego.Assembly(
                                                "Séquence de pliage", "Sequência de dobras"))],
     sequence=pliego.Sequence(steps, mode="physical"),
     title=title,
-    meta={"segmentation": seg},
 )

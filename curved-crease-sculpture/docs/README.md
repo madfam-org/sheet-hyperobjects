@@ -37,7 +37,8 @@ vertices lie on the true curve. The script chooses the number of segments so tha
 strays from its curve by more than `tolerance`: the sagitta `r · (1 − cos(Δθ/2))` stays below it.
 The rim and the hole of the disc are regular polygons, with sides that are a multiple of the
 spiral count, so that the spirals start and end on their vertices. The script prints the counts
-and the worst deviation, and records them in `pliego:meta.segmentation`:
+and the worst deviation, and the first step's note states them in four languages (cartridge data
+stays out of `pliego:meta`, which carries only the spec's own keys):
 
     segmentation: arcs=7 segments_per_arc=10..25 max_deviation_mm=0.1989 (tolerance 0.2)
     segmentation: spirals=8 segments_per_spiral=28 rim_sides=56 sweep=180.0° angle_to_radius=58.87° max_deviation_mm=0.1852 (tolerance 0.2)

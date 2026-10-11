@@ -1,7 +1,9 @@
 """Gift wrap — sheet-hyperobjects cartridge (Pliego).
 
 Wrapping a box in a sheet of paper. The box is a rigid reference: a box net folded shut and posed
-on the table as a fixed board (a kinematic sheet its mechanism does not move). The wrapping sheet folds round it.
+on the table, held folded by the fold program itself (its first step targets every box crease at
+the angle it already has, so the kinematic program poses the box rigidly in place). The wrapping
+sheet folds round it.
 
 Mode `standard` (the everyday wrap): the paper goes round the box's girth and overlaps on top. At
 each end the side flaps are pushed in first: each carries two 45° creases from the box's corners
@@ -81,7 +83,7 @@ def crease_box_net():
     net = [(0.0, 0.0), (2 * BW + 2 * BH, 0.0), (2 * BW + 2 * BH, BL), (BW + BH, BL),
            (BW + BH, BL + BW), (BW, BL + BW), (BW, BL), (0.0, BL)]
     net = net[:1] + [(BW, 0.0), (BW, -BW), (BW + BH, -BW), (BW + BH, 0.0)] + net[1:]
-    box = pliego.Sheet("box", net, stock="cardstock-300", grain_deg=0.0, kinematic="box-held",
+    box = pliego.Sheet("box", net, stock="cardstock-300", grain_deg=0.0,
                        placement=pliego.Placement(rotation=DOWN_ROT),
                        front=pliego.Face("#d8c6a0"), back=pliego.Face("#8a5a35"),
                        label=L4("Box (rigid reference)", "Caja (referencia rígida)",
@@ -406,11 +408,13 @@ side_note = " (laid on its side)" if ON_SIDE else ""
 print(f"gift-wrap: mode={mode} box={BL:g}x{BW:g}x{BH:g}mm{side_note} "
       f"{report} steps={len(program.steps)}")
 BOX_POSE = {"angles": dict(BOX_ANG), "root": (BW / 2, BL / 2)}
-# The box is a fixed board (spec §5.1): a kinematic sheet whose mechanism does not list it in
-# `sheets_moving`. `box-held` is a translate that moves nothing, so the box stays put, rigid.
+# The box is held by the fold program: its first step targets every box crease at the angle the
+# `initial` frame already gives it, so a kinematic program owns the box and poses it rigidly where
+# it stands (spec §5.6: a crease holds its angle between steps). No mechanism is needed, and the
+# box keeps its folded shape in the engine too (a kinematic board would be posed flat).
+program.steps[0].targets.extend((m, a) for m, a in BOX_ANG.items())
 result = pliego.Assembly(
     [box, paper],
-    mechanisms=[pliego.translate("box-held", "sequence", (0.0, 1.0, 0.0), 1.0)],
     controls=[pliego.sequence_control(label=L4("Wrap the box", "Envolver la caja",
                                                "Emballer la boîte", "Embrulhar a caixa"))],
     sequence=program,

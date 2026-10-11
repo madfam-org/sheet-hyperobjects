@@ -10,10 +10,10 @@
     "version": "0.1.0",
     "engine": "pliego",
     "description": {
-      "en": "The traditional flat tulip of first folding lessons, folded from two squares. The blossom is a triangle with its side corners folded up into petals; the stem is a kite narrowed twice, folded in half, with its wide end folded out as a leaf. Every fold is a simple fold of a flat stack whose creases the kernel derives layer by layer, and the motion solver folds each as an exact rigid motion. The assemble control slides the blossom onto the stem.",
-      "es": "El tulipán plano tradicional de las primeras clases de papiroflexia, doblado con dos cuadrados. La flor es un triángulo con las esquinas laterales dobladas hacia arriba como pétalos; el tallo es una cometa afinada dos veces y doblada a la mitad, con el extremo ancho doblado hacia fuera como hoja. Cada doblez es un pliegue simple de una pila plana cuyos pliegues el núcleo deduce capa por capa, y el solucionador de movimiento los dobla como movimientos rígidos exactos. El control de ensamble desliza la flor sobre el tallo.",
-      "fr": "La tulipe plate traditionnelle des premières leçons de pliage, pliée dans deux carrés. La fleur est un triangle dont les coins latéraux sont relevés en pétales ; la tige est un cerf-volant affiné deux fois et plié en deux, avec son extrémité large repliée vers l'extérieur en feuille. Chaque pli est un pli simple d'une pile plate dont le noyau déduit les plis couche par couche, et le solveur de mouvement les plie en mouvements rigides exacts. La commande d'assemblage glisse la fleur sur la tige.",
-      "pt": "A tulipa plana tradicional das primeiras aulas de dobradura, dobrada com dois quadrados. A flor é um triângulo com os cantos laterais dobrados para cima como pétalas; o caule é uma pipa afinada duas vezes e dobrada ao meio, com a ponta larga dobrada para fora como folha. Cada dobra é uma dobra simples de uma pilha plana cujos vincos o núcleo deduz camada a camada, e o solucionador de movimento dobra cada uma como movimento rígido exato. O controlo de montagem desliza a flor sobre o caule."
+      "en": "The traditional flat tulip of first folding lessons, folded from two squares. The blossom is a triangle with its side corners folded up into petals; the stem is a kite narrowed twice, folded in half, with its wide end folded out as a leaf. Every fold is a simple fold of a flat stack whose creases the kernel derives layer by layer, and the motion solver folds each as an exact rigid motion. The program ends with the blossom slid down onto the stem's point.",
+      "es": "El tulipán plano tradicional de las primeras clases de papiroflexia, doblado con dos cuadrados. La flor es un triángulo con las esquinas laterales dobladas hacia arriba como pétalos; el tallo es una cometa afinada dos veces y doblada a la mitad, con el extremo ancho doblado hacia fuera como hoja. Cada doblez es un pliegue simple de una pila plana cuyos pliegues el núcleo deduce capa por capa, y el solucionador de movimiento los dobla como movimientos rígidos exactos. La secuencia termina con la flor deslizada hasta la punta del tallo.",
+      "fr": "La tulipe plate traditionnelle des premières leçons de pliage, pliée dans deux carrés. La fleur est un triangle dont les coins latéraux sont relevés en pétales ; la tige est un cerf-volant affiné deux fois et plié en deux, avec son extrémité large repliée vers l'extérieur en feuille. Chaque pli est un pli simple d'une pile plate dont le noyau déduit les plis couche par couche, et le solveur de mouvement les plie en mouvements rigides exacts. La séquence se termine avec la fleur glissée sur la pointe de la tige.",
+      "pt": "A tulipa plana tradicional das primeiras aulas de dobradura, dobrada com dois quadrados. A flor é um triângulo com os cantos laterais dobrados para cima como pétalas; o caule é uma pipa afinada duas vezes e dobrada ao meio, com a ponta larga dobrada para fora como folha. Cada dobra é uma dobra simples de uma pilha plana cujos vincos o núcleo deduz camada a camada, e o solucionador de movimento dobra cada uma como movimento rígido exato. A sequência termina com a flor deslizada até à ponta do caule."
     },
     "difficulty": "beginner",
     "tags": [
@@ -224,19 +224,6 @@
       "max": 54,
       "default": 0,
       "unit": "step"
-    },
-    {
-      "id": "assemble",
-      "kind": "distance",
-      "label": {
-        "en": "Put the blossom on the stem",
-        "es": "Pon la flor en el tallo",
-        "fr": "Posez la fleur sur la tige",
-        "pt": "Ponha a flor no caule"
-      },
-      "min": 0,
-      "default": 0,
-      "unit": "mm"
     }
   ],
   "export_formats": [

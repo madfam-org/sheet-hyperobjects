@@ -417,7 +417,7 @@
   },
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "packaging",
     "kernel": "sheet",
     "interfaces": [
       {

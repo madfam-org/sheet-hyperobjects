@@ -109,7 +109,7 @@
   "stock": {"default": "corrugated-e-flute", "alternatives": ["corrugated-b-flute", "sbs-board-350", "folding-boxboard-300"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "packaging",
     "kernel": "sheet",
     "interfaces": [
       {
