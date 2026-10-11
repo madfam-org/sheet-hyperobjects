@@ -59,12 +59,14 @@ The program is kinematic and every pose is exact:
    as a pillow box is popped open by hand. The script checks each pose with
    `pliego.kinematics.closure_residual` (about 3·10⁻⁵ mm, the coordinate grid's floor).
 
-The preview poses the blank from its first face, which is the level half-facet at the seam, so
-the box erects in place and finishes resting on its back. **Limits.** With the rulings fixed,
-one end cannot close on its own once the faces bulge: the motion solver finds no rigid path from
-the open, bulged tube, so in this model both ends close together. Real board also bends a little
-between the rulings and lets one end close first; that, the glue weld and the board's spring
-are the physics engine's part.
+The preview poses the blank from its first face, which is the level half-facet at the seam, so the
+box erects in place and finishes resting on its back. **Limits.** With the rulings fixed, one end
+cannot close on its own once the faces bulge: the motion solver finds no rigid path from the open,
+bulged tube, so in this model both ends close together. Real board also bends a little between the
+rulings and lets one end close first; that and the board's spring are the physics engine's part.
+The seam's lap is a `glue` join with `active_from` (sheet-document spec §5.19), its weld read from
+the closed pose: it takes hold after the front is folded over (the flattened, glued tube) and
+holds while the box is erected.
 
 ## Making one by hand
 
