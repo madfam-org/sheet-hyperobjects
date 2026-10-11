@@ -19,26 +19,44 @@ The sheet is a square of side `s`, centre `O`.
 
 - **The waterbomb base.** Both diagonals are valley-folded and unfolded, the horizontal midline
   mountain-folded and unfolded. Six creases meet at `O` with sectors 45°, 90°, 45°, 45°, 90°, 45°.
-  The collapse is one degree-6 vertex; holding the bottom triangle still and keeping mirror symmetry,
-  it has one degree of freedom. The cartridge turns the lower-left triangle by ψ about its crease and
-  solves the upper rays on the unit sphere (45° to their neighbours, 90° to their mirror images), the
-  same construction as the head of `jumping-frog`. At ψ = 180° the base lies flat: a triangle of base
-  `s` and height `s/2`, apex at `O`.
+  The collapse is one degree-6 vertex: the midline's two rays fold mountain and the four diagonal
+  rays valley, all at once (`pliego.flatvertex.collapse`). The kernel solves the layer order from
+  the side each sector arrives from and checks every ray ends with its sign. The base lies flat as
+  a triangle of base `s` and height `s/2`, apex at `O`.
 - **Each face.** The two bottom corners are folded up to the apex (a diamond), the diamond's side
   points are folded in to the centre line (vertical folds at 3s/8 and 5s/8), and the two top points
-  are folded down along the line at height 3s/8 into the pockets of those side folds. The back face
-  repeats the three folds as mountain folds seen from the front.
+  are folded down along the line at height 3s/8 and tucked into the pockets of those side folds:
+  each lands under the top layer of the side flap. The back face repeats the three steps as
+  mountain folds seen from the front.
 
 ## The fold program
 
-The program is `kinematic`, 18 steps: the two diagonals (fold and unfold), the midline (fold and
-unfold), the collapse in six rigid states, and three steps for each face. Every state is an exact
-rigid state (worst loop-closure residual about 4 × 10⁻⁶ mm, the kernel's grid snapping). A straight
-blend between two states of the collapse misses closure by up to 2.1 mm on the default square; the
-cartridge prints the figure.
+The program is `kinematic`, 12 steps: the collapse in six rigid states, then three steps for each
+face (corners, sides, tuck).
 
-A tucked point and a point folded on top occupy the same place in a model with no paper thickness:
-the program shows where each flap goes, not which layer it slides between.
+- **The square starts creased.** The diagonals and the midline are folded and unfolded before the
+  program starts, so its first frame is a creased square, not a fresh one. Each of those creases
+  remembers the sense it was folded in: the document gives it a signed rest angle
+  (`pliego:edges_restAngle`) of the stock's crease yield, 35°, valley on the diagonals and mountain
+  on the midline, which is how far a crease folded flat springs back when it is let go. The
+  physics engine starts from those angles; the preview starts flat.
+- **The operations.** Every fold is an operation of `pliego.FoldProgram` on a layer-ordered flat
+  state. After each one the kernel checks the layer order (taco and tortilla conditions,
+  transitivity) and Kawasaki and Maekawa at every vertex. The crease pattern is the final flat
+  state unfolded. The six collapse states are even steps along the kernel's rigid path, which
+  follows the straight line from start to end in fold-angle space, projected onto the states that
+  close.
+- **The tucks are real.** `FoldProgram.tuck` folds each top point into its pocket, under the top
+  layer of the side flap. With paper of no thickness, the point travels on the simple fold's path
+  and crosses that layer at the end (the kernel reports one pocket crossing per point; no other
+  paper is crossed). Because each point ends inside the pocket rather than on top, the two layers
+  of the point swap valley and mountain on its crease, compared with a point folded on top. The
+  preview blends each crease's angle from open to its final value, so it turns the point down
+  the other way round, away from the viewer; the fold program's end state, the target and the
+  pattern agree.
+- **Closure.** Every state closes to about 10⁻⁶ mm (the step angles are written to six decimals).
+  A straight blend between two states of the collapse misses closure by up to 2.2 mm on the
+  default square; the cartridge prints the figure.
 
 ## Making one by hand
 

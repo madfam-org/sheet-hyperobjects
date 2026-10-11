@@ -37,11 +37,19 @@ paper curves smoothly; the facet lines are written as flat (`F`) lines.
 
 ## The fold program
 
-`cup` (kinematic, 5 steps): diagonal fold, right corner, left corner, front flap, back flap. Every
-state is an exact rigid state (closure below 10⁻¹² mm). Opening the cup's mouth curves the paper,
-which needs the physics engine; the program ends flat and the studio shows the cup standing upright.
+`cup` (kinematic, 5 steps): diagonal fold, right corner, left corner, front flap, back flap. Each
+fold is an operation of `pliego.FoldProgram` on a layer-ordered flat state; after each one the
+kernel checks the layer order (taco and tortilla conditions, transitivity) and Kawasaki and Maekawa
+at every vertex, and the crease pattern is the final state unfolded. The front flap is a real tuck
+(`FoldProgram.tuck`): it goes into the pocket in front, under the top layer there (the corner folded
+last), instead of lying on top of it. With paper of no thickness it travels on the simple fold's
+path and crosses that layer at the end; the kernel reports the crossing and finds no other paper in
+the way. Every state is an exact rigid state (closure below 10⁻¹² mm). Opening the cup's mouth
+curves the paper, which needs the physics engine; the program ends flat and the studio shows the cup
+standing upright.
 
-`cone` (kinematic, 1 step): every facet line turns together, so the flat square rolls into the
+`cone` (kinematic, 1 step): the facet lines are scored flat first; then every facet turns at once,
+each a hinge pose about its line carrying the paper beyond it, so the flat square rolls into the
 cone. The facet lines are a polygonal model of a smooth roll, not creases.
 
 **Fabrication note.** The kernel exports flat (`F`) lines on the score layer, so the cone's facet

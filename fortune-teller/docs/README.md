@@ -40,10 +40,24 @@ The sheet is a square of side `s`, centre `O`.
 
 The program is `kinematic`: the two blintzes, the four creases (each fold and unfold), six steps of
 shaping, then three steps each to open one way, close, open the other way and close, and, unless
-`rest` is closed, three more to the resting pose. Every state is an exact rigid state (worst
-loop-closure residual about 3 × 10⁻¹³ mm). A straight blend between two neighbouring states misses
-closure by up to 1.1 mm, because the vertex's motion is not linear in the fold angles; the
-cartridge prints the figure.
+`rest` is closed, three more to the resting pose.
+
+- **The flat folds are kernel operations.** Each blintz fold and each crease is an operation of
+  `pliego.FoldProgram` on a layer-ordered flat state. After every fold the kernel checks the layer
+  order (taco and tortilla conditions, transitivity) and Kawasaki and Maekawa at every vertex. The
+  crease pattern is the final flat state unfolded.
+- **The toy is a vertex move.** Shaping, opening and closing are `FoldProgram.vertex_pose` steps
+  on the degree-8 vertex at `O`. The kernel reads the vertex's star (its eight rays and the rigid
+  sector each one bounds, every layer included) and drives the rays to fold angles computed from
+  the ray directions above. Each step ends on an exact rigid state. The kernel holds one sector
+  still; the cartridge turns the finished model so the up axis stands vertical, as the toy is
+  held.
+- **Closure.** Every state closes to about 10⁻⁶ mm (the step angles are written to six decimals). A
+  straight blend between two neighbouring states misses closure by up to 1.1 mm, because the
+  vertex's motion is not linear in the fold angles; the cartridge prints the figure.
+- **The eight creases at `O` are flat (`F`) in the pattern.** They are folded and opened again
+  before the toy is shaped, and the kernel marks a crease left open in the flat state as flat (a
+  scored line). The sequence still drives each one to its angle, valley or mountain.
 
 The preview can drive the toy through the fold program's timeline. A separate `open` slider would
 need either a second program or the physics engine; this is noted as an open question for the
