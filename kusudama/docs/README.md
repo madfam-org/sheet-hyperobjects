@@ -99,10 +99,13 @@ The square passes `pliego.papercut.analyze` at 1 mm.
 2. bring the base corners up to the top corner (the two midlines: 180° on the lower layer, −180°
    on the upper);
 3. curl the diamond (every ruling at half its final angle);
-4. overlap the edges and glue: the cone.
+4. overlap the edges and glue: the cone;
+5. hold the seam until the glue sets.
 
-The rolling steps are exact for a straight blend of angles, because the layered fan has no loop
-of its own. The program ends in the petal, which is also written as `target:petal`.
+The seam is a `glue` join with `active_from: "press"` (sheet-document spec §5.19), so the square
+starts flat and the program ends glued. The rolling steps are exact for a straight blend of
+angles, because the layered fan has no loop of its own. The program ends in the petal, which is
+also written as `target:petal`.
 
 **Mode `flower`** starts from an `initial` frame: the glued flower standing on its tip. It has 10
 glue joins: five seams and five petal-to-petal welds. Its `physical` program presses the flower

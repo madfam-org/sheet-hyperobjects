@@ -198,7 +198,7 @@
       "kind": "sequence",
       "label": {"en": "Fold a petal (petal) · Press the flower or a petal (flower, ball)", "es": "Doblar un pétalo (pétalo) · Presionar la flor o un pétalo (flor, bola)", "fr": "Plier un pétale (pétale) · Presser la fleur ou un pétale (fleur, boule)", "pt": "Dobrar uma pétala (pétala) · Pressionar a flor ou uma pétala (flor, bola)"},
       "min": 0,
-      "max": 4,
+      "max": 5,
       "default": 0,
       "unit": "step"
     }

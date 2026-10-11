@@ -428,8 +428,14 @@ if mode == "petal":
             "que cette bande.", f"As bordas se sobrepõem {DELTA:g}° em torno da ponta; passe "
             "cola só nessa faixa.")),
     ]
+    steps.append(pliego.Step("press", L4("Hold the seam until the glue sets",
+                                         "Sostén la unión hasta que el pegamento agarre",
+                                         "Tenez la jointure jusqu'à ce que la colle prenne",
+                                         "Segure a junta até a cola pegar"), [], duration_ms=800))
+    seam = pliego.glue("seam", base, SEAM, base, SEAM_MAP, side="back")
+    seam["active_from"] = "press"          # spec §5.19: the cone's seam glued at its step
     assembly = pliego.Assembly(
-        [base], controls=[pliego.sequence_control(label=SEQ_LABEL)],
+        [base], joins=[seam], controls=[pliego.sequence_control(label=SEQ_LABEL)],
         sequence=pliego.Sequence(steps, mode="kinematic"),
         targets={"petal": {"angles": dict(angles)}}, title="Kusudama petal")
 
