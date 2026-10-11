@@ -57,17 +57,23 @@ Every spine fold turns about the same axis, so any set of spine-fold angles is a
 a program linear in the angles is exact (the fore-edge folds stay shut). The initial frame is the
 displayed state, the book open and tied; the kinematic program then
 
-1. **closes the book** — every spine fold to 178°, so the walls stack 2° apart, and
-2. **opens it all the way round** again, to α.
+1. **closes the book** — the ribbons are untied as it starts, then every spine fold goes to 178°,
+   so the walls stack 2° apart;
+2. **opens it all the way round** again, to α;
+3. **ties the ribbons** at top and bottom.
 
-The sequence control `Close and open` starts at the end of the program, the book open.
+The sequence control `Close and open` starts at the end of the program, the book open and tied.
 
-**Preview and engine.** The studio preview runs the whole program, the book standing upright. The
-ribbons are joins that only the physics engine resolves. A string join cannot be untied in spec
-v1: in an engine run the ribbons hold the covers together throughout, so the engine shows the tied,
-displayed book and the close-and-open motion stays a preview of what hands do with the ribbons
-untied (an open question for the spec). The engine adds the card's stiffness and its weight
-standing on the table.
+**Untying and tying again.** The ribbons tied in the displayed state are released by the close
+step (`release_joins`, sheet-document spec §5.20): from that step on they no longer hold, so the
+covers are free to part. A released join stays released, so the knots tied at the end are a second
+pair of `string` joins with the same points and length, active from the `tie` step (§5.19).
+Scrubbing back before the close step ties the first pair again.
+
+**Preview and engine.** The studio preview runs the whole program, the book standing upright; the
+ribbons are joins only the physics engine resolves. The engine accepts the program and runs it
+(the program is kinematic, so the engine poses the strip rigidly and the ribbons are recorded
+state); it adds the card's stiffness and its weight standing on the table.
 
 ## Making one by hand
 
