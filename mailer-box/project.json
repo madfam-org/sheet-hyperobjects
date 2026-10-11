@@ -91,7 +91,7 @@
   "stock": {"default": "corrugated-e-flute", "alternatives": ["corrugated-f-flute", "corrugated-b-flute"]},
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "model",
+    "domain": "packaging",
     "kernel": "sheet",
     "capabilities": {"kinematic_program": true, "rigid_foldable": true, "score_treatment": true, "glue_free": true, "dieline": true, "thickness_compensated": true, "branding": true},
     "societal_benefit": {
