@@ -1,0 +1,28 @@
+{
+  "spec_version": 1,
+  "object": "pliego/carousel-village",
+  "title": {"en": "Carousel village", "es": "Aldea carrusel", "fr": "Village carrousel", "pt": "Aldeia carrossel"},
+  "summary": {
+    "en": "A carousel book whose chambers are a village street: each house is a box fold cut from the walls across the spine, with a roof, belfry or parapet and doors that open.",
+    "es": "Un libro carrusel cuyas cámaras son la calle de una aldea: cada casa es un pliegue de caja cortado de las paredes a través del lomo, con techo, espadaña o pretil y puertas que se abren.",
+    "fr": "Un livre carrousel dont les chambres forment la rue d'un village : chaque maison est un pli en boîte découpé dans les parois en travers du dos, avec toit, clocher-mur ou parapet et des portes qui s'ouvrent.",
+    "pt": "Um livro carrossel cujas câmaras são a rua de uma aldeia: cada casa é uma dobra em caixa cortada das paredes através da lombada, com telhado, espadana ou platibanda e portas que se abrem."
+  },
+  "article": {
+    "path": "carousel-village/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "carousel books and cut-and-fold pop-ups, twentieth century to the present",
+  "heritage": false,
+  "sources": [
+    "Smithsonian Libraries and Archives, «A Carousel Holiday Decoration», https://library.si.edu/finding-aid/carousel-holiday-decoration",
+    "Let's Talk Picture Books, «Favorite Carousel Books», 2022, https://www.letstalkpicturebooks.com/2022/02/favorite-carousel-books.html",
+    "Wikipedia, «Origamic architecture», https://en.wikipedia.org/wiki/Origamic_architecture",
+    "Paul Jackson, Cut and Fold Techniques for Pop-Up Designs, Laurence King, 2014",
+    "Duncan Birmingham, Pop-Up Design and Paper Mechanics, GMC Publications, 2010"
+  ],
+  "related": {
+    "objects": ["pliego/carousel-book", "pliego/parallel-fold-popup", "pliego/step-popup", "pliego/origamic-architecture", "pliego/paper-house"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W3·D2); awaiting a human editorial pass."}
+}
