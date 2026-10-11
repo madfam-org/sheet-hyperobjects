@@ -644,7 +644,7 @@
   },
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "technique",
+    "domain": "packaging",
     "kernel": "sheet",
     "capabilities": {
       "kinematic_program": true,
