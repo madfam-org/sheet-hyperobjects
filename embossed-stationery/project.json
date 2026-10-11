@@ -396,7 +396,7 @@
   },
   "hyperobject": {
     "is_hyperobject": true,
-    "domain": "technique",
+    "domain": "stationery",
     "kernel": "sheet",
     "capabilities": {
       "kinematic_program": true,
