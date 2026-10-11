@@ -104,8 +104,7 @@ for k in range(1, N + m):
         h = band
     else:
         h = top(j / sub)
-    crown.crease((k * w, 0.0), (k * w, h), "flat", 0.0, treatment="crease",
-                 name="overlap" if k == N else None)
+    crown.bend((k * w, 0.0), (k * w, h), name="overlap" if k == N else None)
 
 cut_check = pliego.papercut.analyze(crown, min_feature_mm=STOCKS[stock])
 if not cut_check.ok:
@@ -255,10 +254,4 @@ else:
         targets={"crown": ring, "flat": {"angles": flat}}, title="Paper crown")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The panel lines are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved band.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

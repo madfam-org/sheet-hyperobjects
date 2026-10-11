@@ -122,7 +122,7 @@ def make_sheet(k):
     for j in range(1, n):
         sh.crease((j * p, y_low), (j * p, y_high), "valley" if j % 2 else "mountain", 180.0,
                   treatment="crease")
-    sh.crease((0.0, mid), (Lx, mid), "flat", 0.0, treatment="crease", name="tie-line")
+    sh.bend((0.0, mid), (Lx, mid), name="tie-line")
     return sh
 
 
@@ -267,10 +267,4 @@ else:
                                  0.0, 8.0, "m/s")],
         targets={"spread": spread}, title="Tissue pom-pom")
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The tie line is plain paper (spec §4: F + `none`): it is where the thread gathers the stick, not
-# a crease; the Sheet API authors F lines with a treatment, so it is marked untreated here.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

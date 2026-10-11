@@ -121,8 +121,7 @@ def make_ply(k):
         placement=pliego.Placement(origin=(k * width * cb / sb, 0.0, -s * k * width))
         if k else None)
     for j in range(1, N_PANELS):
-        sheet.crease((on_line(j * h, 0.0), 0.0), (on_line(j * h, width), width), "flat", 0.0,
-                     treatment="crease")
+        sheet.bend((on_line(j * h, 0.0), 0.0), (on_line(j * h, width), width))
     return sheet
 
 
@@ -283,10 +282,4 @@ assembly = pliego.Assembly(
     sequence=pliego.Sequence(steps, mode="kinematic"),
     targets={mode: {"angles": dict(angles)}}, title="Paper yarn")
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The generators are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved surface.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

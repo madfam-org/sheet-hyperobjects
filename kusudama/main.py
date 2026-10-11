@@ -230,7 +230,7 @@ for phi in RULE_PHI:
     elif phi > 315.0 + 1e-9:
         ruling_th += [360.0 - phi, phi - 270.0]                          # the C flap
 for th in ruling_th:
-    base.crease(CTR, rim(th), "flat", 0.0, treatment="crease")
+    base.bend(CTR, rim(th))
 cut_check = pliego.papercut.analyze(base, min_feature_mm=1.0)
 if not cut_check.ok:
     raise ValueError(f"kusudama: the square fails the papercut check: {cut_check.issues}")
@@ -567,9 +567,4 @@ else:
                 for k, s in enumerate(sheets)}, title="Kusudama ball")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The rulings are plain paper (spec §4: F + `none`): exporters must not score a rolled surface.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

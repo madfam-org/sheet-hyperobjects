@@ -261,7 +261,7 @@ strip = pliego.Sheet(
     label=L4("Quilling strip", "Tira para filigrana", "Bande de paperolle", "Tira de quilling"),
     front="#f6f1e7", back=colour)
 for u in us[1:-1]:
-    strip.crease((Ls - u, 0.0), (Ls - u, W), "flat", 0.0, treatment="crease")
+    strip.bend((Ls - u, 0.0), (Ls - u, W))
 cut_check = pliego.papercut.analyze(strip, min_feature_mm=MIN_FEATURE[stock])
 if not cut_check.ok:
     raise ValueError(f"quilling: the strip fails the papercut check: {cut_check.issues}")
@@ -413,9 +413,4 @@ assembly = pliego.Assembly(
     sequence=pliego.Sequence(steps, mode="kinematic"),
     targets={name: {"angles": dict(a)} for name, a in angles.items()}, title="Quilling")
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The F lines are plain paper (spec §4: F + `none`): exporters must not score a coiled strip.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

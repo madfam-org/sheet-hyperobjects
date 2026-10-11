@@ -111,8 +111,7 @@ def make_strip(k):
                               f"Elo {k + 1}"),
                      front=colour, back=colour)
     for j in range(1, n + m):
-        s.crease((j * w, 0.0), (j * w, W), "flat", 0.0, treatment="crease",
-                 name="overlap" if j == n else None)
+        s.bend((j * w, 0.0), (j * w, W), name="overlap" if j == n else None)
     return s
 
 
@@ -275,10 +274,4 @@ else:
         targets={"chain": chain}, title="Paper chain")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The panel lines are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved strip.
-tr = doc.data["pliego:edges_treatment"]
-for e, asg in enumerate(doc.data["edges_assignment"]):
-    if asg == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

@@ -100,7 +100,7 @@ hat = pliego.Sheet(
 
 
 def ruling(a, b, name=None):
-    hat.crease(local(a), local(b), "flat", 0.0, treatment="crease", name=name)
+    hat.bend(local(a), local(b), name=name)
 
 
 for k in range(1, N):
@@ -297,10 +297,4 @@ else:
         title="Party hat")
 
 doc = assembly.build(cartridge=SLUG, mode=mode, params=params)
-# The rulings are plain paper (spec §4: F + `none`); the Sheet API authors F lines with a
-# treatment, so they are marked untreated here: exporters must not score a curved surface.
-tr = doc.data["pliego:edges_treatment"]
-for e, a in enumerate(doc.data["edges_assignment"]):
-    if a == "F" and tr[e] == "crease":
-        tr[e] = "none"
 result = doc.stamp()

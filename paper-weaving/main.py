@@ -13,7 +13,7 @@ Over and under is geometry, not a label. Every crossing is a contact: at a cross
 top sits higher than the one beneath by a gap of at least one caliper. Strips bend through the
 crossings as a chain of flat panels (a triangle wave in section, the crimp of a woven mat). The
 bend lines are flat lines (`F`) with treatment `none` — plain paper the program bends, never drawn
-by the exporters — written by building the document here and setting their treatment. The heart's
+by the exporters — authored with `Sheet.bend`. The heart's
 fold is a real crease. Weaving itself (threading a strip under a band) is a topological move a
 rigid fold program cannot play: the program sets each strip's crimp so the layer order appears, and
 a `target:woven` frame records the finished state.
@@ -87,7 +87,7 @@ def rot_y(deg, p):
     return (p[0] * c + p[2] * s, p[1], -p[0] * s + p[2] * c)
 
 
-bends = []          # every crimp mark: its treatment becomes `none` in the document
+bends = []          # every crimp mark: an untreated bend line (`Sheet.bend`, F + `none`)
 steps, sheets, targets_woven, initial = [], [], {}, {}
 LIFT = 75.0                      # an unwoven weft strip stands raised at the loom's edge
 
@@ -133,7 +133,7 @@ if mode == "mat":
             if any(abs(st[q]) > 1e-9 for st in states):
                 x0 = j * p + (SLIT / 2.0 if j > 0 else 0.0)
                 x1 = (j + 1) * p - (SLIT / 2.0 if j < n - 1 else 0.0)
-                mk = loom.crease((x0, v), (x1, v), kind="flat", angle=0.0)
+                mk = loom.bend((x0, v), (x1, v))
                 bends.append(mk)
                 warp_marks[(j, q)] = (mk, [st[q] for st in states])
 
@@ -157,7 +157,7 @@ if mode == "mat":
         lift = None
         for u, rho in zip(u_nodes, ang, strict=True):
             if abs(rho) > 1e-9:
-                mk = weft.crease((u, 0.0), (u, w), kind="flat", angle=0.0)
+                mk = weft.bend((u, 0.0), (u, w))
                 bends.append(mk)
                 targets.append((mk, rho))
                 weft_woven[mk] = rho
@@ -266,7 +266,7 @@ else:
                     mk = sh.crease((u, v0), (u, v1), kind="valley", angle=90.0,
                                    name="fold")
                 elif abs(woven[k]) > 1e-9:
-                    mk = sh.crease((u, v0), (u, v1), kind="flat", angle=0.0)
+                    mk = sh.bend((u, v0), (u, v1))
                     bends.append(mk)
                 else:
                     continue
@@ -321,20 +321,4 @@ assembly = pliego.Assembly(sheets, controls=[pliego.sequence_control(label=clock
                            initial=initial or None, targets={"woven": targets_woven},
                            title="Paper weaving")
 doc = assembly.build()
-# The crimp lines are plain paper the program bends (spec §4: `F` + `none`), not drawn lines.
-bend_edges = set()
-edge_sheet = doc.data["pliego:edges_sheet"]
-sheet_index = {sh.id: k for k, sh in enumerate(sheets)}
-base = {}
-for e, s_idx in enumerate(edge_sheet):
-    base.setdefault(s_idx, e)
-for mk in bends:
-    si = sheet_index[mk.sheet.id]
-    for le in mk.sheet.build().edges_of_tag(mk.index):
-        bend_edges.add(base[si] + le)
-treat = doc.data["pliego:edges_treatment"]
-for e in bend_edges:
-    if doc.data["edges_assignment"][e] != "F" or treat[e] != "crease":
-        raise ValueError(f"paper-weaving: bend edge {e} is not an F crease")
-    treat[e] = "none"
 result = doc.stamp()
