@@ -29,7 +29,10 @@ page itself, the single-sheet form of the
 front cover, N − 1 double walls, the back cover and a lining. Spine folds (valley) join the walls
 on one axis; fore-edge folds (mountain, shut at 180°) make each double wall; each lining folds
 flat behind its cover and is glued to it, so the openings that the first and last houses leave in
-the covers stay hidden. Open, neighbouring walls stand α = (360° − 2°)/N apart and two ribbons
+the covers stay hidden. The lining's glue is an L-shaped region that stays 2 mm clear of the
+house cut through its cover: glue over the house would pin it flat, and a weld over its window
+would land in a hole (the physics engine refused the document while the glue covered the whole
+cover). Open, neighbouring walls stand α = (360° − 2°)/N apart and two ribbons
 (`string` joins) tie the covers' fore-edges, as in `carousel-book`.
 
 **The houses.** Across spine fold k, `cut_fold` cuts one block: two horizontal slits from fold A
@@ -69,23 +72,26 @@ The cut-fold builder makes every fold of a house turn by the same angle as the s
 across (A and B with it, F against it). Every spine fold turns about the book's axis, and the doors
 are free hinges. So every state of the program is rigid, and a linear blend of the angles is exact.
 
-The initial frame is the open book, ribbons tied, doors open. The kinematic program then runs four
+The initial frame is the open book, ribbons tied, doors open. The kinematic program then runs five
 steps:
 
 1. **Close the doors.**
-2. **Close the book.** Every spine fold and every house fold goes to 178°, and the houses fold flat
-   between the walls.
+2. **Untie the ribbons and close the book.** The ribbons are released as the step begins
+   (`release_joins`, sheet-document spec §5.20); every spine fold and every house fold goes to
+   178°, and the houses fold flat between the walls.
 3. **Open it all the way round** again, to the turn 180° − α.
-4. **Open the doors** again (70°).
+4. **Tie the ribbons** at top and bottom: a second pair of `string` joins, active from this step
+   (§5.19), since a released join stays released.
+5. **Open the doors** again (70°).
 
-With `doors` = `none`, only steps 2 and 3 remain. The sequence control starts at the end, with the
-village open.
+With `doors` = `none`, steps 1 and 5 drop out. The sequence control starts at the end, with the
+village open and tied; scrubbing back before step 2 ties the first pair again.
 
 **Preview and engine.** The studio preview plays the whole program, with the book standing upright:
 the strip is one sheet whose face tree carries every house and door. The ribbons and the lining
-glue are joins that only the physics engine resolves. As in `carousel-book`, a string join cannot
-be untied in spec v1, so an engine run keeps the book tied. The engine adds the card's stiffness
-and the weight of the standing book.
+glue are joins that only the physics engine resolves; the engine accepts the document and runs
+the program (kinematic, so it poses the strip rigidly). The engine adds the card's stiffness and
+the weight of the standing book.
 
 ## Making one by hand
 
