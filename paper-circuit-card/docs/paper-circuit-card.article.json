@@ -1,0 +1,47 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-circuit-card",
+  "title": {
+    "en": "Paper circuit card",
+    "es": "Tarjeta con circuito de papel",
+    "fr": "Carte à circuit en papier",
+    "pt": "Cartão com circuito de papel"
+  },
+  "summary": {
+    "en": "A card that lights an LED from a coin cell through copper tape or conductive ink, switched by folding a tab over; flat, or folded with a box pop-up carrying the LED.",
+    "es": "Una tarjeta que enciende un LED con una pila de botón a través de cinta de cobre o tinta conductora, con un interruptor que se acciona doblando una pestaña; plana, o doblada con una caja emergente que lleva el LED.",
+    "fr": "Une carte qui allume une LED grâce à une pile bouton, par du ruban de cuivre ou de l'encre conductrice, avec un interrupteur qu'on actionne en rabattant une languette ; plate, ou pliée avec une boîte pop-up qui porte la LED.",
+    "pt": "Um cartão que acende um LED com uma pilha de botão através de fita de cobre ou tinta condutora, com um interruptor que se aciona dobrando uma aba; plano, ou dobrado com uma caixa pop-up que leva o LED."
+  },
+  "article": {
+    "path": "paper-circuit-card/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary",
+  "heritage": false,
+  "sources": [
+    "Jie Qi and Leah Buechley, Electronic Popables: Exploring Paper-Based Computing through an Interactive Pop-Up Book, Proc. TEI '10, 2010",
+    "Jie Qi and Leah Buechley, Sketching in Circuits: Designing and Building Electronics on Paper, Proc. CHI '14, 2014",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.30 and §8 rule 30"
+  ],
+  "related": {
+    "objects": [
+      "pliego/parallel-fold-popup",
+      "pliego/step-popup",
+      "pliego/greeting-card",
+      "pliego/embossed-stationery"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Assembled from the README by the authoring lane; awaiting a human pass."
+  }
+}
