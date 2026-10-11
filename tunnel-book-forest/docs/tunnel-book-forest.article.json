@@ -1,0 +1,26 @@
+{
+  "spec_version": 1,
+  "object": "pliego/tunnel-book-forest",
+  "title": {"en": "Tunnel book forest", "es": "Bosque en libro túnel", "fr": "Forêt en livre tunnel", "pt": "Floresta em livro túnel"},
+  "summary": {
+    "en": "A tunnel book of layered forest frames between two accordion walls that fold the frames out of themselves; pull the cover and a path through the trees opens in depth.",
+    "es": "Un libro túnel de marcos de bosque en capas entre dos paredes en acordeón que doblan los marcos desde sí mismas; tira de la portada y un sendero entre los árboles se abre en profundidad.",
+    "fr": "Un livre tunnel de cadres de forêt en plans entre deux parois en accordéon qui plient elles-mêmes les cadres ; tirez la couverture et un chemin entre les arbres s'ouvre en profondeur.",
+    "pt": "Um livro túnel de molduras de floresta em camadas entre duas paredes em sanfona que dobram as molduras para fora de si; puxe a capa e uma trilha entre as árvores se abre em profundidade."
+  },
+  "article": {
+    "path": "tunnel-book-forest/docs/README.md",
+    "sections": ["What it is", "Geometry", "The fold program", "Making one by hand", "Parameters", "History and sources", "Provenance and licence"]
+  },
+  "era": "eighteenth-century paper peepshows to the present; a book-arts and classroom staple",
+  "heritage": false,
+  "sources": [
+    "Victoria and Albert Museum, «The Tunnel» (paper peepshow, about 1825), https://collections.vam.ac.uk/item/O1418244/the-tunnel-paper-peepshow",
+    "Smithsonian Libraries, «Martin Engelbrecht», https://library.si.edu/es/tags/martin-engelbrecht",
+    "Topeka & Shawnee County Public Library, «Tunnel books: an easy step by step», https://tscpl.org/articles/tunnel-books-an-easy-step-by-step"
+  ],
+  "related": {
+    "objects": ["pliego/tunnel-book", "pliego/leporello", "pliego/shadow-box", "pliego/paper-theater"]
+  },
+  "review_status": {"state": "generated", "note": "Authored by an agent lane (W3·D2); awaiting a human editorial pass."}
+}
