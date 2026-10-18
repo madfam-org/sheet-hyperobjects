@@ -50,4 +50,6 @@ contributions wait on the CLA-vs-DCO ruling.
 
 GitHub-hosted `ubuntu-24.04`, actions pinned by SHA, `contents: read`. Lanes: triple, manifests
 (`pliego-spec` at `SPEC_PIN`), render (`pliego-kernel` at `PLIEGO_PIN`), byte and file-size gates.
-An unset pin prints `skip: <PIN> not set`.
+An unset pin prints `skip: <PIN> not set`. Nightly (`nightly.yml`): every cartridge in every mode
+and preset through the kernel at `PLIEGO_PIN`, `pliego-spec check sheet-document` at `SPEC_PIN` on
+every document; a red or incomplete night opens or updates one issue labelled `nightly-render`.

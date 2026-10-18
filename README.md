@@ -63,6 +63,18 @@ submodule is an empty directory (an uninitialised submodule would make every glo
 git clone --recurse-submodules https://github.com/madfam-org/pliego   # platform + this commons
 ```
 
+## CI and the nightly
+
+Every pull request runs `.github/workflows/ci.yml`: the cartridge triple, `pliego-spec check
+cartridge` at the keystone pin (`SPEC_PIN`, 0.15.0), each cartridge's default render through the
+Pliego kernel at `PLIEGO_PIN`, and the byte, file-size and secret gates. Every night
+`.github/workflows/nightly.yml` builds every cartridge in every mode and preset with that kernel and
+checks every resulting sheet document with `pliego-spec check sheet-document` (732 documents from
+139 cartridges at 2026-10-18). It is green only when every cartridge in the commons was built and
+every document passed; otherwise it opens or updates the one issue labelled `nightly-render`, and the
+next green night closes it. The job summary lists each problem; the `nightly-render` artifact holds
+the per-cartridge logs. See [AGENTS.md](AGENTS.md#ci-lanes-githubworkflowsciyml).
+
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md). Third-party objects wait
