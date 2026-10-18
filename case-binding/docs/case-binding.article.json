@@ -1,0 +1,73 @@
+{
+  "spec_version": 1,
+  "object": "pliego/case-binding",
+  "title": {
+    "en": "Case binding",
+    "es": "Encuadernación en tapa dura",
+    "fr": "Reliure emboîtée",
+    "pt": "Encadernação em capa dura"
+  },
+  "summary": {
+    "en": "A hardcover book from three commons: Pliego boards, spine strip, endpapers and signatures; a Fashion Cabinet cover cloth used by reference and backed with kraft as a computed laminate; an optional Yantra4D magnetic clasp. The case is turned in and closed as a fold program, and the cased-in book opens and closes.",
+    "es": "Un libro de tapa dura hecho con tres repositorios comunes: cartones, lomera, guardas y cuadernillos de Pliego; una tela de cubierta de Fashion Cabinet usada por referencia y forrada con kraft como un laminado calculado; un broche magnético opcional de Yantra4D. La tapa se forra y se cierra como una secuencia de pliegues, y el libro encajado se abre y se cierra.",
+    "fr": "Un livre à couverture rigide issu de trois communs : plats, carte de dos, gardes et cahiers de Pliego ; une toile de couverture de Fashion Cabinet utilisée par référence et contrecollée sur kraft en un stratifié calculé ; un fermoir aimanté facultatif de Yantra4D. L'emboîtage est rempli et refermé en séquence de pliage, et le livre emboîté s'ouvre et se ferme.",
+    "pt": "Um livro de capa dura feito a partir de três acervos comuns: cartões, lombada, guardas e cadernos da Pliego; um tecido de capa da Fashion Cabinet usado por referência e forrado com kraft como um laminado calculado; um fecho magnético opcional da Yantra4D. A capa é forrada e fechada como uma sequência de dobras, e o livro encaixado abre e fecha."
+  },
+  "article": {
+    "path": "case-binding/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program and the mechanisms",
+      "Making one by hand",
+      "Parameters",
+      "Materials and where they come from",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "Nineteenth century onward; in continuous use",
+  "heritage": true,
+  "provenance": {
+    "tradition": "Case binding (the cased hardcover)",
+    "regions": [
+      "Britain",
+      "worldwide"
+    ],
+    "custodians": [
+      "Bookbinders and publishers' binderies"
+    ],
+    "note": {
+      "en": "The dimensioning rules, the mitres, the fold program, the clasp flap and the laminate stacks are original MADFAM work; the binding and its credit belong to the bookbinding tradition. The cloth's physics is the keystone's mapping of a Fashion Cabinet card and the clasp is a Yantra4D part, both by reference.",
+      "es": "Las reglas de dimensionado, los ingletes, la secuencia de pliegues, la solapa del broche y los laminados son trabajo original de MADFAM; la encuadernación y su crédito pertenecen a la tradición de la encuadernación. La física de la tela es la correspondencia que hace el repositorio clave de una ficha de Fashion Cabinet y el broche es una pieza de Yantra4D, ambos por referencia.",
+      "fr": "Les règles de dimensionnement, les onglets, la séquence de pliage, le rabat du fermoir et les stratifiés sont un travail original de MADFAM ; la reliure et son crédit appartiennent à la tradition de la reliure. La physique de la toile est la correspondance établie par le dépôt de référence à partir d'une fiche de Fashion Cabinet, et le fermoir est une pièce de Yantra4D, tous deux par référence.",
+      "pt": "As regras de dimensionamento, as meias-esquadrias, a sequência de dobras, a aba do fecho e os laminados são trabalho original da MADFAM; a encadernação e o seu crédito pertencem à tradição da encadernação. A física do tecido é a correspondência que o repositório-chave faz de uma ficha da Fashion Cabinet e o fecho é uma peça da Yantra4D, ambos por referência."
+    }
+  },
+  "excludes": [
+    "Any binder's diagram or template: every dimension and line comes from main.py",
+    "Glue, the swelling of the sewn spine, rounding and backing, and headbands: described or left out, not modelled",
+    "The library corner and other corner treatments: the cartridge cuts a plain 45° mitre",
+    "The curl of the coupled laminates: flagged in each stock, not simulated by the engine yet",
+    "The magnetic clasp's solid: it is Yantra4D's part, referenced name-level, never modelled here"
+  ],
+  "sources": [
+    "Etherington, D. and Roberts, M. T., «Bookbinding and the Conservation of Books: A Dictionary of Descriptive Terminology» (1982), Conservation OnLine, https://cool.culturalheritage.org/don/",
+    "Ligatus Research Centre, University of the Arts London, «Language of Bindings», https://www.ligatus.org.uk/lob/",
+    "Encyclopaedia Britannica, «Bookbinding», https://www.britannica.com/art/bookbinding",
+    "Wikipedia, «Bookbinding», https://en.wikipedia.org/wiki/Bookbinding",
+    "Wikipedia, «Hardcover», https://en.wikipedia.org/wiki/Hardcover"
+  ],
+  "related": {
+    "objects": [
+      "pliego/stab-binding",
+      "pliego/codex-signatures",
+      "pliego/page-turn",
+      "pliego/leporello"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Authored by an agent lane (geo-stab T3); awaiting a human editorial pass."
+  }
+}

@@ -122,25 +122,25 @@ def build_case():
                             label=L4("Cover cloth", "Tela de la cubierta", "Toile de couverture",
                                      "Tecido da capa"), front="#b08d5b", back=front_hex)
     lay = L4("Lay the boards and the spine strip on the glued cloth: crease the joints",
-             "Coloca los cartones y la lomera sobre la tela encolada: marca las cajas",
+             "Coloca los cartones y la lomera sobre la tela encolada: marca los cajos",
              "Posez les cartons et la carte de dos sur la toile encollée : marquez les mors",
              "Coloque os cartões e a lombada sobre o tecido colado: vinque os encaixes")
     for k, x in enumerate((x2, x3, x4, x5)):
         fp.crease(f"joint-{k + 1}", lay, ((x, 0.0), (x, ch)), "valley")
-    fp.fold("turn-in-head", L4("Turn in the head", "Remete la cabeza", "Rempliez la tête",
+    fp.fold("turn-in-head", L4("Turn in the head", "Dobla hacia dentro la cabeza", "Rempliez la tête",
                                "Dobre a cabeça para dentro"), ((cw, y1), (0.0, y1)), "valley")
-    fp.fold("turn-in-tail", L4("Turn in the tail", "Remete el pie", "Rempliez la queue",
+    fp.fold("turn-in-tail", L4("Turn in the tail", "Dobla hacia dentro el pie", "Rempliez la queue",
                                "Dobre o pé para dentro"), ((0.0, y2), (cw, y2)), "valley")
     fore = L4("Turn in the fore-edge: the mitred corner tucks under",
-              "Remete el canal: la esquina en inglete queda debajo",
+              "Dobla hacia dentro el corte delantero: la esquina en inglete queda debajo",
               "Rempliez la gouttière : le coin en onglet passe dessous",
               "Dobre o corte da frente para dentro: o canto em meia-esquadria fica por baixo")
     fp.fold("turn-in-fore-edge-back", fore, ((x1, 0.0), (x1, ch)), "valley")
     fp.fold("turn-in-fore-edge-front", fore, ((x6, ch), (x6, 0.0)), "valley")
     close = L4("Case in: the spine stands up round the text block",
-               "Encaja el libro: el lomo se levanta alrededor del bloque de texto",
+               "Encaja el libro: el lomo se levanta alrededor del cuerpo del libro",
                "Emboîtez : le dos se dresse autour du corps d'ouvrage",
-               "Encaixe o miolo: a lombada levanta-se em volta do miolo")
+               "Encaixe o miolo: a lombada ergue-se em volta do miolo")
     fp.hinges("case-in", close, [{"line": ((x3, 0.0), (x3, ch)), "turn": 90.0,
                                   "at": ((x3 + x4) / 2.0, ch / 2.0)}])
     fp.hinges("close", L4("Close the book", "Cierra el libro", "Fermez le livre",
@@ -184,11 +184,11 @@ def build_book():
     front = kin("board-front", L4("Front board", "Tapa delantera", "Plat supérieur",
                                   "Pasta da frente"), bw, bh, "covered-board",
                 (joint_w, S, 0.0), "cover")
-    paste_b = kin("pastedown-back", L4("Back pastedown", "Guarda trasera pegada",
-                                       "Contregarde inférieure", "Guarda de trás colada"),
+    paste_b = kin("pastedown-back", L4("Back pastedown", "Contraguarda trasera",
+                                       "Contregarde inférieure", "Guarda colada de trás"),
                   page_w + x_tb - joint_w, page_h, ENDPAPER, (joint_w, PAD, -sq), "cover")
-    paste_f = kin("pastedown-front", L4("Front pastedown", "Guarda delantera pegada",
-                                        "Contregarde supérieure", "Guarda da frente colada"),
+    paste_f = kin("pastedown-front", L4("Front pastedown", "Contraguarda delantera",
+                                        "Contregarde supérieure", "Guarda colada da frente"),
                   page_w + x_tb - joint_w, page_h, ENDPAPER, (joint_w, S - PAD, -sq), "cover")
     fly_b = kin("flyleaf-back", L4("Back flyleaf", "Guarda volante trasera",
                                    "Garde volante inférieure", "Guarda volante de trás"),
