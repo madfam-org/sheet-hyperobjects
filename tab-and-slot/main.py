@@ -4,7 +4,9 @@ Two cards that interlock through complementary slits. Card A has a slit cut from
 its top edge down to the meeting point; card B has a slit cut from the middle of its bottom edge
 up to the same height. Turned 90° to each other and pushed together, each card's solid half runs
 through the other's slit, and the pair stands on its edges as a cross. Nothing is glued: contact
-between the cards holds them.
+between the cards holds them. Both slits are named `interlock-slot`: an edge name that starts
+with `interlock` opts into the engine's edge-face contact, so the lips of each slit hold the other
+card between them.
 
 The script builds both cards with their slits (`C` cuts from an edge to the meeting point) and
 places them rigidly in the world (card A in the plane z = 0, card B in the plane x = 0, both
@@ -47,7 +49,8 @@ card_a = pliego.Sheet(
            "fr": "Carte A (fente par le haut)", "pt": "Cartão A (fenda por cima)"},
     placement=pliego.Placement(origin=(-half, 0.0, 0.0), rotation=(s45, 0.0, 0.0, s45)))
 slot = card_a.cut([(half, card_height), (half, meet)],
-                  label={"en": "Slot", "es": "Ranura", "fr": "Fente", "pt": "Fenda"})
+                  label={"en": "Slot", "es": "Ranura", "fr": "Fente", "pt": "Fenda"},
+                  name="interlock-slot")
 
 # Card B: slit from the bottom edge up to the meeting point. Placement: the rotation taking
 # (u, 0, -v) to (0, v, -u), then +W/2 on z, so the card stands in the plane x = 0 with its
@@ -58,7 +61,8 @@ card_b = pliego.Sheet(
            "fr": "Carte B (fente par le bas)", "pt": "Cartão B (fenda por baixo)"},
     placement=pliego.Placement(origin=(0.0, 0.0, half), rotation=(0.5, 0.5, -0.5, 0.5)))
 tab = card_b.cut([(half, 0.0), (half, meet)],
-                 label={"en": "Slot", "es": "Ranura", "fr": "Fente", "pt": "Fenda"})
+                 label={"en": "Slot", "es": "Ranura", "fr": "Fente", "pt": "Fenda"},
+                 name="interlock-slot")
 
 
 def placed(sheet, u, v):
