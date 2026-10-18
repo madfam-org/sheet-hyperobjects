@@ -33,9 +33,10 @@ env:
   # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
   # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
   # The nightly reads this line too, and runs that commit's scripts/qa/sim_corpus.py. This is the merge of
-  # madfam-org/pliego#37 (RFC 0045 phase 2 minimum: laminate stocks, material_ref layers, hardware_ref checked by
-  # name against the vendored yantra4d snapshot the manifests job passes to --resolve).
-  PLIEGO_PIN: "c4589df451c5917b9296e921d036a1ad7cd54a1c"
+  # madfam-org/pliego#40 (engine: adaptive stretch guard, easing hand, edge-face contact for slit edges named
+  # `interlock…`, narrow-glue warning; after #37, RFC 0045 phase 2 minimum: laminate stocks, material_ref layers,
+  # hardware_ref checked by name against the vendored yantra4d snapshot the manifests job passes to --resolve).
+  PLIEGO_PIN: "285f7d6f4c57e7d509317f36c1796cd87e4bcf92"
 
 jobs:
   triple:
