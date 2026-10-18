@@ -1,0 +1,150 @@
+# Nightly render sweep for the sheet commons (public repository).
+#
+# Per pull request, ci.yml renders every cartridge's DEFAULT document. This sweep builds every cartridge in EVERY
+# mode and preset with the Pliego kernel at PLIEGO_PIN (Pliego's own scripts/qa/sim_corpus.py at that commit), then
+# checks every document it built with `pliego-spec check sheet-document` at SPEC_PIN. Both pins are read from
+# ci.yml, the one place they live, so a pin bump moves the nightly with it.
+#
+# A red night reaches a human: the report job opens ONE issue labelled `nightly-render` (rewritten on every red
+# night, closed by the next green one). The verdict is .github/scripts/nightly_report.py and it reads the rows the
+# sweep wrote, not only the job result: green needs the sweep job green AND every cartridge in the scope built
+# (completeness) AND every corpus row clean AND the pliego-spec summary at failures=0 over exactly the documents
+# built. A missing input is red. (Mirrors the solid commons' nightly; see its run 34023334942 for why the rows
+# decide.)
+#
+# GitHub-hosted runners only, pinned to ubuntu-24.04 (ruling R116). Every action is pinned to a full commit SHA (tag
+# in the comment); top-level permissions are read-only and only the report job widens them, to issues: write.
+
+name: Nightly render sweep
+
+on:
+  schedule:
+    # 09:17Z daily (03:17 in Mexico City), off the top of the hour.
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: >-
+          Comma-separated slugs to build instead of the whole commons. The scope stays the whole commons, so the run
+          is DELIBERATELY incomplete and must come out red (proves the completeness check and the issue path).
+          Leave empty for a real sweep.
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nightly-render
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    name: Every cartridge, every mode and preset (kernel at PLIEGO_PIN, pliego-spec at SPEC_PIN)
+    runs-on: ubuntu-24.04
+    # 139 cartridges took 8.5 min on 4 jobs on a loaded workstation (2026-10-18); a 4-core runner is in that range.
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Pins (read from ci.yml) and the scope
+        id: pins
+        run: |
+          set -euo pipefail
+          spec=$(sed -nE 's/^  SPEC_PIN: "([0-9a-f]{40})"$/\1/p' .github/workflows/ci.yml)
+          pliego=$(sed -nE 's/^  PLIEGO_PIN: "([0-9a-f]{40})"$/\1/p' .github/workflows/ci.yml)
+          [ "$(printf '%s' "$spec" | grep -c .)" = 1 ] || { echo "nightly: FAIL ci.yml has no single 40-hex SPEC_PIN"; exit 1; }
+          [ "$(printf '%s' "$pliego" | grep -c .)" = 1 ] || { echo "nightly: FAIL ci.yml has no single 40-hex PLIEGO_PIN"; exit 1; }
+          echo "spec=$spec" >> "$GITHUB_OUTPUT"
+          echo "pliego=$pliego" >> "$GITHUB_OUTPUT"
+          OUT="$RUNNER_TEMP/nightly"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+          mkdir -p "$OUT"
+          for f in */project.json; do [ -f "$f" ] && dirname "$f"; done > "$OUT/scope.txt"
+          n=$(wc -l < "$OUT/scope.txt" | tr -d ' ')
+          echo "nightly: scope=${n} cartridges spec=${spec:0:12} kernel=${pliego:0:12}"
+          [ "$n" -gt 0 ] || { echo "nightly: FAIL 0 cartridges in the scope"; exit 1; }
+      - name: Pliego at PLIEGO_PIN (kernel, materials, scripts/qa)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: madfam-org/pliego
+          ref: ${{ steps.pins.outputs.pliego }}
+          path: .pliego
+          sparse-checkout: |
+            packages/kernel
+            materials
+            scripts/qa
+          persist-credentials: false
+      - name: Build every document (sim_corpus.py, every mode and preset)
+        id: corpus
+        env:
+          ONLY: ${{ inputs.only }}
+        # pipefail: without it `sim_corpus.py | tee` exits with tee's 0 and a failing build reads green.
+        run: |
+          set -euo pipefail
+          test -f .pliego/scripts/qa/sim_corpus.py || { echo "nightly: FAIL the pinned Pliego has no scripts/qa/sim_corpus.py"; exit 1; }
+          args=(--commons . --out "$OUT/corpus" --jobs 4)
+          if [ -n "${ONLY}" ]; then echo "nightly: --only ${ONLY} (deliberately incomplete; must be red)"; args+=(--only "${ONLY}"); fi
+          python .pliego/scripts/qa/sim_corpus.py "${args[@]}" 2>&1 | tee "$OUT/corpus.log"
+      - name: pliego-spec check sheet-document (every document built)
+        id: spec
+        # Runs after a failed build too: the documents that were built still get checked, and the report needs the log.
+        if: always() && steps.pins.outcome == 'success'
+        env:
+          SPEC_PIN: ${{ steps.pins.outputs.spec }}
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet "hyperobjects-spec @ git+https://github.com/madfam-org/hyperobjects-spec@${SPEC_PIN}"
+          mapfile -t docs < <(find "$OUT/corpus" -mindepth 2 -maxdepth 2 -name '*.fold' 2>/dev/null | sort)
+          echo "nightly: documents=${#docs[@]} spec=${SPEC_PIN:0:12}"
+          [ "${#docs[@]}" -gt 0 ] || { echo "nightly: FAIL 0 documents to check"; exit 1; }
+          pliego-spec check sheet-document "${docs[@]}" 2>&1 | tee "$OUT/spec.log"
+      - name: Upload the evidence (scope, corpus.json, per-cartridge logs, spec log)
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: nightly-render
+          path: |
+            ${{ env.OUT }}/scope.txt
+            ${{ env.OUT }}/corpus.log
+            ${{ env.OUT }}/spec.log
+            ${{ env.OUT }}/corpus/corpus.json
+            ${{ env.OUT }}/corpus/*.log
+          retention-days: 14
+          if-no-files-found: warn
+
+  report:
+    name: Verdict (rows, completeness) and the tracking issue
+    needs: sweep
+    # always(): a red or cancelled sweep is exactly the one that has to be reported.
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Download the evidence
+        # A sweep that uploaded nothing makes this step fail; the reporter then finds no files and the verdict is
+        # red (missing input), so continuing here never turns a lost artifact into a green night.
+        continue-on-error: true
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: nightly-render
+          path: evidence
+      - name: Verdict, then open, update or close the tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SWEEP_RESULT: ${{ needs.sweep.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 .github/scripts/nightly_report.py \
+            --scope evidence/scope.txt --corpus evidence/corpus/corpus.json --spec-log evidence/spec.log \
+            --sweep-result "$SWEEP_RESULT" --run-url "$RUN_URL"
