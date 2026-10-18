@@ -66,7 +66,7 @@ git clone --recurse-submodules https://github.com/madfam-org/pliego   # platform
 ## CI and the nightly
 
 Every pull request runs `.github/workflows/ci.yml`: the cartridge triple, `pliego-spec check
-cartridge` at the keystone pin (`SPEC_PIN`, 0.15.0), each cartridge's default render through the
+cartridge` at the keystone pin (`SPEC_PIN`, 0.18.0), each cartridge's default render through the
 Pliego kernel at `PLIEGO_PIN`, and the byte, file-size and secret gates. Every night
 `.github/workflows/nightly.yml` builds every cartridge in every mode and preset with that kernel and
 checks every resulting sheet document with `pliego-spec check sheet-document` (732 documents from

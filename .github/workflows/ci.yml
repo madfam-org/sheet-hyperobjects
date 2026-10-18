@@ -24,14 +24,18 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA on its main: package 0.15.0, the merge of
-  # madfam-org/hyperobjects-spec#64 (all 28 Pliego stock cards, boards and foam, seven fabric bend classes) plus #65
-  # (its own CI runners only). .github/workflows/nightly.yml reads this line; it is the one place the pin lives.
-  SPEC_PIN: "70fe8213de20bc9a699b2bde2c32ee0b02a6d52d"
+  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA on its main: package 0.18.0, the merge of
+  # madfam-org/hyperobjects-spec#68 (Pliego's laminate schemas re-vendored, RFC 0045 phase 2; `check cartridge
+  # --resolve CATALOG` resolves a linked hardware_ref name-level), after #66 (0.16.0) and #67 (0.17.0, mesh oracle).
+  # Pliego pins the same SHA in its ci.yml and nightly.yml: move them together. .github/workflows/nightly.yml reads
+  # this line; it is the one place the pin lives.
+  SPEC_PIN: "b9823ee6c3bbc916d9d9a13799c707a9818c615b"
   # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
   # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
-  # The nightly reads this line too, and runs that commit's scripts/qa/sim_corpus.py.
-  PLIEGO_PIN: "43e1c757857171099a75acdbace5ec0f1694adef"
+  # The nightly reads this line too, and runs that commit's scripts/qa/sim_corpus.py. This is the merge of
+  # madfam-org/pliego#37 (RFC 0045 phase 2 minimum: laminate stocks, material_ref layers, hardware_ref checked by
+  # name against the vendored yantra4d snapshot the manifests job passes to --resolve).
+  PLIEGO_PIN: "c4589df451c5917b9296e921d036a1ad7cd54a1c"
 
 jobs:
   triple:
@@ -67,6 +71,15 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
+      - name: Pliego's vendored yantra4d hardware snapshot at PLIEGO_PIN (for --resolve)
+        if: env.PLIEGO_PIN != ''
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: madfam-org/pliego
+          ref: ${{ env.PLIEGO_PIN }}
+          path: .pliego
+          sparse-checkout: packages/kernel/src/pliego/data
+          persist-credentials: false
       - name: Check every cartridge
         run: |
           set -euo pipefail
@@ -76,7 +89,16 @@ jobs:
           mapfile -t dirs < <(for f in */project.json; do [ -f "$f" ] && dirname "$f"; done)
           echo "manifests: cartridges=${#dirs[@]} spec=${SPEC_PIN:0:12}"
           if [ "${#dirs[@]}" -eq 0 ]; then echo "skip: 0 cartridges in the commons yet"; exit 0; fi
-          pliego-spec check cartridge "${dirs[@]}" -v
+          # A linked hardware_ref (bridge handshake rule 1) resolves name-level against the yantra4d catalog slice
+          # Pliego vendors at PLIEGO_PIN: the slug exists, its mode is one of the part's modes, every params_map key
+          # is one of its parameters. Without a PLIEGO_PIN the manifests are still checked, unresolved.
+          resolve=()
+          if [ -n "${PLIEGO_PIN}" ]; then
+            snap="$GITHUB_WORKSPACE/.pliego/packages/kernel/src/pliego/data/yantra4d-hardware.snapshot.json"
+            test -f "$snap" || { echo "manifests: FAIL yantra4d hardware snapshot missing at PLIEGO_PIN"; exit 1; }
+            resolve=(--resolve "$snap")
+          fi
+          pliego-spec check cartridge "${dirs[@]}" -v "${resolve[@]}"
 
   render:
     name: Render (every cartridge through pliego-kernel at PLIEGO_PIN)
