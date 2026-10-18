@@ -1,0 +1,46 @@
+{
+  "spec_version": 1,
+  "object": "pliego/paper-bridge-load",
+  "title": {
+    "en": "Paper bridge under load",
+    "es": "Puente de papel con carga",
+    "fr": "Pont de papier sous charge",
+    "pt": "Ponte de papel com carga"
+  },
+  "summary": {
+    "en": "A strip of paper spans a gap and a weight is let go over its middle. Flat, the strip gives way; folded into a channel, the same paper carries the weight.",
+    "es": "Una tira de papel cruza un claro y se suelta un peso sobre su centro. Plana, la tira cede; doblada en canal, el mismo papel sostiene el peso.",
+    "fr": "Une bande de papier franchit un vide et l'on lâche un poids en son milieu. À plat, la bande cède ; pliée en gouttière, le même papier porte le poids.",
+    "pt": "Uma tira de papel atravessa um vão e solta-se um peso sobre o meio. Plana, a tira cede; dobrada em calha, o mesmo papel sustenta o peso."
+  },
+  "article": {
+    "path": "paper-bridge-load/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The load test",
+      "Why the folds help",
+      "Making one",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "contemporary demonstration",
+  "heritage": false,
+  "sources": [
+    "Wikipedia, «Euler–Bernoulli beam theory», https://en.wikipedia.org/wiki/Euler%E2%80%93Bernoulli_beam_theory",
+    "Wikipedia, «Second moment of area», https://en.wikipedia.org/wiki/Second_moment_of_area",
+    "Pliego sheet-document spec v1 (docs/spec/v1/sheet-document.md), §5.3 and §5.20"
+  ],
+  "related": {
+    "objects": [
+      "pliego/corrugated-board",
+      "pliego/score-vs-crease"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Written by the authoring lane; awaiting a human pass."
+  }
+}

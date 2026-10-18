@@ -42,6 +42,17 @@ plane z = 0, card B in the plane x = 0, both on the ground — so that in the `i
 slits lie on the cards' common line and meet. From there the engine's paper physics and contact
 take over: gravity and the contact between the cards are what keep the cross standing.
 
+**Edge–face contact (opt-in).** Both slits are named `interlock-slot`. An edge name that starts with
+`interlock` asks the engine for edge–face contact: each lip of a slit (the two boundary edges the cut
+leaves) is kept on its own paper's side of the other card, over the lip's whole length rather than
+only at mesh vertices. The two lips of a slit therefore hold the other card between them, a contact
+distance apart, and a push on the top of one card is carried through the slot into the other card.
+Measured in the engine (cardstock 250, 100 × 120 mm, studio mesh 10 mm, a sideways push of 1.5 mN
+at the top of card A for one second, then let go): with edge contact the card is back upright
+within about 1 mm and the peak stretch during the push is 3.9 %; without it the card ends about
+7 mm out of plumb and the peak stretch is 8.5 % (engine test `edge-contact`). A 4 mN push tips the
+cross over either way: the slot holds the cards together, it does not fix them to the table.
+
 Honest limit: in sheet-document v1 a cut's two sides share their vertices, so a slit has no width
 in the model. The cards therefore touch along the slit lines at t = 0 instead of resting in a slot
 with clearance; the cut file carries the slit as a single line.
@@ -63,8 +74,8 @@ top edge, and fails otherwise.
 
 ## Interfaces
 
-- `slot` (female) — card A's slit, from its top edge.
-- `tab` (male) — card B's complementary slit, from its bottom edge.
+- `slot` (female) — card A's slit, from its top edge (edge name `interlock-slot`).
+- `tab` (male) — card B's complementary slit, from its bottom edge (edge name `interlock-slot`).
 
 Both carry a frame in the assembled state: the slit mouth, the card's normal and the slit
 direction.

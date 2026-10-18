@@ -2,7 +2,7 @@
   "project": {
     "name": {"en": "Tab and slot", "es": "Lengüeta y ranura", "fr": "Tenon et fente", "pt": "Lingueta e fenda"},
     "slug": "tab-and-slot",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "engine": "pliego",
     "description": {
       "en": "Two cards that lock together without glue: each has a slit from one edge to the meeting point, and turned a quarter turn to each other they slide into a standing cross held only by contact.",
@@ -78,7 +78,7 @@
         "id": "slot",
         "type": "slot",
         "label": {"en": "Slot in card A (from the top edge)", "es": "Ranura de la tarjeta A (desde el borde superior)", "fr": "Fente de la carte A (depuis le bord supérieur)", "pt": "Fenda do cartão A (a partir da borda superior)"},
-        "edges": [{"sheet": "card-a", "edge": "slot"}],
+        "edges": [{"sheet": "card-a", "edge": "interlock-slot"}],
         "parameters": ["card_width", "card_height", "slit_ratio"],
         "polarity": "female",
         "symmetry": 2,
@@ -88,14 +88,14 @@
         "id": "tab",
         "type": "tab",
         "label": {"en": "Complementary slit in card B (from the bottom edge)", "es": "Ranura complementaria de la tarjeta B (desde el borde inferior)", "fr": "Fente complémentaire de la carte B (depuis le bord inférieur)", "pt": "Fenda complementar do cartão B (a partir da borda inferior)"},
-        "edges": [{"sheet": "card-b", "edge": "slot"}],
+        "edges": [{"sheet": "card-b", "edge": "interlock-slot"}],
         "parameters": ["card_width", "card_height", "slit_ratio"],
         "polarity": "male",
         "symmetry": 2,
         "frame": {"sheet": "card-b", "origin": [0, 0, 0], "normal": [1, 0, 0], "x_axis": [0, 1, 0]}
       }
     ],
-    "capabilities": {"glue_free": true, "held_by_contact": true},
+    "capabilities": {"glue_free": true, "held_by_contact": true, "edge_contact": true},
     "societal_benefit": {
       "en": "A joint that needs no glue and comes apart again: the first lesson in building with card, and the basis of flat-packed toys and stands.",
       "es": "Una unión que no necesita pegamento y se vuelve a desarmar: la primera lección para construir con cartulina y la base de juguetes y soportes que se guardan planos.",
