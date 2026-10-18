@@ -49,9 +49,9 @@ only at mesh vertices. The two lips of a slit therefore hold the other card betw
 distance apart, and a push on the top of one card is carried through the slot into the other card.
 Measured in the engine (cardstock 250, 100 × 120 mm, studio mesh 10 mm, a sideways push of 1.5 mN
 at the top of card A for one second, then let go): with edge contact the card is back upright
-within 1 mm and the paper stays under 1.5 % stretch; without it the card ends 7 mm out of plumb
-with about 3 % stretch. A 4 mN push tips the cross over either way: the slot holds the cards
-together, it does not fix them to the table.
+within about 1 mm and the peak stretch during the push is 3.9 %; without it the card ends about
+7 mm out of plumb and the peak stretch is 8.5 % (engine test `edge-contact`). A 4 mN push tips the
+cross over either way: the slot holds the cards together, it does not fix them to the table.
 
 Honest limit: in sheet-document v1 a cut's two sides share their vertices, so a slit has no width
 in the model. The cards therefore touch along the slit lines at t = 0 instead of resting in a slot
