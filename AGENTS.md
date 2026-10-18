@@ -1,6 +1,6 @@
 # sheet-hyperobjects — agent operating guide
 
-> Last Updated: 2026-10-10
+> Last Updated: 2026-10-18
 
 <!-- MADFAM-AGENTS-CANONICAL v1 -->
 
@@ -76,6 +76,18 @@ cartridge` at `env.SPEC_PIN`), `render` (every cartridge through `pliego-kernel`
 `env.PLIEGO_PIN`), `quality-gates` (byte gate, file-size gate 600/800). A lane whose pin is not set
 prints `skip: <PIN> not set` — a printed skip, never a silent pass. Every lane prints how many
 cartridges it read.
+
+**Nightly** (`.github/workflows/nightly.yml`, daily 09:17Z and on dispatch): builds every cartridge
+in every mode and preset with the kernel at `PLIEGO_PIN` (Pliego's `scripts/qa/sim_corpus.py` at that
+commit), then runs `pliego-spec check sheet-document` at `SPEC_PIN` over every document built. Both
+pins are read from `ci.yml`. The verdict is `.github/scripts/nightly_report.py` and reads the rows:
+green needs the sweep job green, every cartridge in the scope built, every corpus row clean (rc 0,
+verify errors 0, documents == runs) and the spec summary at `failures=0` over exactly the documents
+built; a missing input is red. A red night opens or rewrites ONE issue labelled `nightly-render`; the
+next green night closes it. To read a night: the job summary prints `scope= cartridges= documents=
+spec-files= spec-failures= problems=` and one line per problem; the `nightly-render` artifact holds
+`corpus.json`, every cartridge's log and the spec log. Dispatching with `only` builds a subset on
+purpose and must come out red (proves the completeness check).
 
 ## Rulings
 

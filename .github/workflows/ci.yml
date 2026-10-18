@@ -24,12 +24,13 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA on its main: the merge of
-  # madfam-org/hyperobjects-spec#63 (0.13.0: the sheet-document digest per Pliego §5.15, the schema vendored at
-  # kernel 0.3.0, sheet vocabulary and the reader's third commons).
-  SPEC_PIN: "4bb2d0f7cec2caea39e66d0250d7d0dc46ac3666"
+  # The keystone (madfam-org/hyperobjects-spec) at a full commit SHA on its main: package 0.15.0, the merge of
+  # madfam-org/hyperobjects-spec#64 (all 28 Pliego stock cards, boards and foam, seven fabric bend classes) plus #65
+  # (its own CI runners only). .github/workflows/nightly.yml reads this line; it is the one place the pin lives.
+  SPEC_PIN: "70fe8213de20bc9a699b2bde2c32ee0b02a6d52d"
   # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
   # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
+  # The nightly reads this line too, and runs that commit's scripts/qa/sim_corpus.py.
   PLIEGO_PIN: "43e1c757857171099a75acdbace5ec0f1694adef"
 
 jobs:
