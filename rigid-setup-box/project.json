@@ -1,0 +1,602 @@
+{
+  "project": {
+    "name": {
+      "en": "Rigid set-up box",
+      "es": "Caja rígida armada",
+      "fr": "Coffret rigide",
+      "pt": "Caixa rígida montada"
+    },
+    "slug": "rigid-setup-box",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "The wrapped greyboard box of luxury packaging, generated from inside dimensions: a board tray raised and stayed at the corners, covered by a printed wrap with corner ears and turn-ins over the rim. One wrapped tray, a telescope (base and lid) or a shoulder box with a neck. The lid's clearance is a parameter, because it sets how the lid slides and falls.",
+      "es": "La caja de cartón gris forrada del empaque de lujo, generada a partir de las medidas interiores: una charola de cartón con paredes levantadas y esquinas reforzadas, cubierta por un forro impreso con orejas en las esquinas y dobleces hacia dentro sobre el borde. Una charola forrada, una telescópica (base y tapa) o una caja con cuello. La holgura de la tapa es un parámetro, porque decide cómo se desliza y cae la tapa.",
+      "fr": "Le coffret en carton gris habillé de l'emballage de luxe, généré à partir des dimensions intérieures : un plateau de carton aux parois relevées et aux angles renforcés, couvert d'un habillage imprimé avec oreilles d'angle et remplis sur le chant. Un plateau habillé, un coffret télescopique (fond et couvercle) ou un coffret à hausse. Le jeu du couvercle est un paramètre, car il décide comment le couvercle glisse et descend.",
+      "pt": "A caixa de cartão cinza forrada da embalagem de luxo, gerada a partir das medidas internas: uma bandeja de cartão com paredes levantadas e cantos reforçados, coberta por um forro impresso com orelhas nos cantos e dobras internas sobre a borda. Uma bandeja forrada, uma telescópica (base e tampa) ou uma caixa com colarinho. A folga da tampa é um parâmetro, porque decide como a tampa desliza e desce."
+    },
+    "thumbnail": "/projects/rigid-setup-box.svg",
+    "difficulty": "intermediate",
+    "tags": [
+      "packaging",
+      "rigid-box",
+      "setup-box",
+      "greyboard",
+      "wrap",
+      "dieline",
+      "luxury",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "The set-up (rigid) paper box: a board shell covered with a pasted paper wrap, an industrial craft since the nineteenth century; the geometry is generated here from inside dimensions and the stock calipers — no manufacturer's drawing is reproduced",
+          "license": "public-domain"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "tray",
+      "label": {
+        "en": "One wrapped tray",
+        "es": "Una charola forrada",
+        "fr": "Un plateau habillé",
+        "pt": "Uma bandeja forrada"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "base-board",
+        "base-wrap"
+      ]
+    },
+    {
+      "id": "telescope",
+      "label": {
+        "en": "Telescope (base and lid)",
+        "es": "Telescópica (base y tapa)",
+        "fr": "Télescopique (fond et couvercle)",
+        "pt": "Telescópica (base e tampa)"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "base-board",
+        "base-wrap",
+        "lid-board",
+        "lid-wrap"
+      ]
+    },
+    {
+      "id": "shoulder",
+      "label": {
+        "en": "Shoulder box (base, neck, lid)",
+        "es": "Caja con cuello (base, cuello, tapa)",
+        "fr": "Coffret à hausse (fond, hausse, couvercle)",
+        "pt": "Caixa com colarinho (base, colarinho, tampa)"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "base-board",
+        "base-wrap",
+        "neck-board",
+        "neck-wrap",
+        "lid-board",
+        "lid-wrap"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "base-board",
+      "label": {
+        "en": "Base tray (board)",
+        "es": "Charola base (cartón)",
+        "fr": "Fond (carton)",
+        "pt": "Bandeja base (cartão)"
+      },
+      "stock": "greyboard-1500"
+    },
+    {
+      "id": "base-wrap",
+      "label": {
+        "en": "Base wrap",
+        "es": "Forro de la base",
+        "fr": "Habillage du fond",
+        "pt": "Forro da base"
+      },
+      "stock": "elephant-hide-110"
+    },
+    {
+      "id": "neck-board",
+      "label": {
+        "en": "Neck (board)",
+        "es": "Cuello (cartón)",
+        "fr": "Hausse (carton)",
+        "pt": "Colarinho (cartão)"
+      },
+      "stock": "greyboard-1500"
+    },
+    {
+      "id": "neck-wrap",
+      "label": {
+        "en": "Neck wrap",
+        "es": "Forro del cuello",
+        "fr": "Habillage de la hausse",
+        "pt": "Forro do colarinho"
+      },
+      "stock": "elephant-hide-110"
+    },
+    {
+      "id": "lid-board",
+      "label": {
+        "en": "Lid (board)",
+        "es": "Tapa (cartón)",
+        "fr": "Couvercle (carton)",
+        "pt": "Tampa (cartão)"
+      },
+      "stock": "greyboard-1500"
+    },
+    {
+      "id": "lid-wrap",
+      "label": {
+        "en": "Lid wrap",
+        "es": "Forro de la tapa",
+        "fr": "Habillage du couvercle",
+        "pt": "Forro da tampa"
+      },
+      "stock": "elephant-hide-110"
+    }
+  ],
+  "parameter_groups": [
+    {
+      "id": "box",
+      "label": {
+        "en": "Inside dimensions",
+        "es": "Medidas interiores",
+        "fr": "Dimensions intérieures",
+        "pt": "Medidas internas"
+      }
+    },
+    {
+      "id": "lid",
+      "label": {
+        "en": "Lid and neck",
+        "es": "Tapa y cuello",
+        "fr": "Couvercle et hausse",
+        "pt": "Tampa e colarinho"
+      }
+    },
+    {
+      "id": "build",
+      "label": {
+        "en": "Construction",
+        "es": "Construcción",
+        "fr": "Construction",
+        "pt": "Construção"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "length",
+      "type": "slider",
+      "group": "box",
+      "unit": "mm",
+      "label": {
+        "en": "Inside length (mm)",
+        "es": "Largo interior (mm)",
+        "fr": "Longueur intérieure (mm)",
+        "pt": "Comprimento interno (mm)"
+      },
+      "default": 160,
+      "min": 40,
+      "max": 500,
+      "step": 1
+    },
+    {
+      "id": "width",
+      "type": "slider",
+      "group": "box",
+      "unit": "mm",
+      "label": {
+        "en": "Inside width (mm)",
+        "es": "Ancho interior (mm)",
+        "fr": "Largeur intérieure (mm)",
+        "pt": "Largura interna (mm)"
+      },
+      "default": 120,
+      "min": 30,
+      "max": 400,
+      "step": 1,
+      "tooltip": {
+        "en": "Never more than the length (it is clamped to it): the long sides carry the corner ears.",
+        "es": "Nunca mayor que el largo (se limita a él): los lados largos llevan las orejas de esquina.",
+        "fr": "Jamais plus que la longueur (elle y est limitée) : les grands côtés portent les oreilles d'angle.",
+        "pt": "Nunca maior que o comprimento (fica limitada a ele): os lados longos levam as orelhas de canto."
+      }
+    },
+    {
+      "id": "depth",
+      "type": "slider",
+      "group": "box",
+      "unit": "mm",
+      "label": {
+        "en": "Inside depth (mm)",
+        "es": "Alto interior (mm)",
+        "fr": "Hauteur intérieure (mm)",
+        "pt": "Altura interna (mm)"
+      },
+      "default": 60,
+      "min": 15,
+      "max": 250,
+      "step": 1
+    },
+    {
+      "id": "lid_depth",
+      "type": "slider",
+      "group": "lid",
+      "unit": "mm",
+      "label": {
+        "en": "Telescope lid depth (mm)",
+        "es": "Alto de la tapa telescópica (mm)",
+        "fr": "Hauteur du couvercle télescopique (mm)",
+        "pt": "Altura da tampa telescópica (mm)"
+      },
+      "default": 25,
+      "min": 10,
+      "max": 250,
+      "step": 1,
+      "tooltip": {
+        "en": "Telescope mode; at most the base depth (a full telescope).",
+        "es": "Modo telescópico; como máximo el alto de la base (telescópica completa).",
+        "fr": "Mode télescopique ; au plus la hauteur du fond (télescopique complet).",
+        "pt": "Modo telescópico; no máximo a altura da base (telescópica completa)."
+      }
+    },
+    {
+      "id": "neck_height",
+      "type": "slider",
+      "group": "lid",
+      "unit": "mm",
+      "label": {
+        "en": "Neck above the rim (mm)",
+        "es": "Cuello sobre el borde (mm)",
+        "fr": "Hausse au-dessus du chant (mm)",
+        "pt": "Colarinho acima da borda (mm)"
+      },
+      "default": 20,
+      "min": 8,
+      "max": 80,
+      "step": 1,
+      "tooltip": {
+        "en": "Shoulder mode: how far the neck stands above the base; it is also the lid's depth.",
+        "es": "Modo con cuello: cuánto sobresale el cuello de la base; también es el alto de la tapa.",
+        "fr": "Mode à hausse : de combien la hausse dépasse du fond ; c'est aussi la hauteur du couvercle.",
+        "pt": "Modo com colarinho: quanto o colarinho sobressai da base; é também a altura da tampa."
+      }
+    },
+    {
+      "id": "clearance",
+      "type": "slider",
+      "group": "lid",
+      "unit": "mm",
+      "label": {
+        "en": "Lid clearance per side (mm)",
+        "es": "Holgura de la tapa por lado (mm)",
+        "fr": "Jeu du couvercle par côté (mm)",
+        "pt": "Folga da tampa por lado (mm)"
+      },
+      "default": 0.3,
+      "min": 0.1,
+      "max": 1.5,
+      "step": 0.05,
+      "tooltip": {
+        "en": "Gap between the lid's inside and what it slides over. A tighter gap traps more air: the lid falls slower and lifts harder.",
+        "es": "Espacio entre el interior de la tapa y lo que cubre. Una holgura menor atrapa más aire: la tapa baja más lento y cuesta más levantarla.",
+        "fr": "Espace entre l'intérieur du couvercle et ce qu'il recouvre. Un jeu plus serré retient plus d'air : le couvercle descend plus lentement et se lève plus difficilement.",
+        "pt": "Espaço entre o interior da tampa e o que ela cobre. Uma folga menor prende mais ar: a tampa desce mais devagar e custa mais a levantar."
+      }
+    },
+    {
+      "id": "board",
+      "type": "select",
+      "group": "build",
+      "label": {
+        "en": "Board",
+        "es": "Cartón",
+        "fr": "Carton",
+        "pt": "Cartão"
+      },
+      "default": "greyboard-1500",
+      "options": [
+        {
+          "value": "greyboard-1500",
+          "label": {
+            "en": "Greyboard 1.5 mm",
+            "es": "Cartón gris 1.5 mm",
+            "fr": "Carton gris 1,5 mm",
+            "pt": "Cartão cinza 1,5 mm"
+          }
+        },
+        {
+          "value": "folding-boxboard-300",
+          "label": {
+            "en": "Folding boxboard 300 g/m²",
+            "es": "Cartulina plegadiza 300 g/m²",
+            "fr": "Carton plat 300 g/m²",
+            "pt": "Cartão dobrável 300 g/m²"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wrap",
+      "type": "select",
+      "group": "build",
+      "label": {
+        "en": "Wrap paper",
+        "es": "Papel de forro",
+        "fr": "Papier d'habillage",
+        "pt": "Papel de forro"
+      },
+      "default": "elephant-hide-110",
+      "options": [
+        {
+          "value": "elephant-hide-110",
+          "label": {
+            "en": "Elephant hide 110 g/m²",
+            "es": "Elephant hide 110 g/m²",
+            "fr": "Elephant hide 110 g/m²",
+            "pt": "Elephant hide 110 g/m²"
+          }
+        },
+        {
+          "value": "kraft-120",
+          "label": {
+            "en": "Kraft 120 g/m²",
+            "es": "Kraft 120 g/m²",
+            "fr": "Kraft 120 g/m²",
+            "pt": "Kraft 120 g/m²"
+          }
+        },
+        {
+          "value": "foil-paper",
+          "label": {
+            "en": "Foil paper",
+            "es": "Papel metalizado",
+            "fr": "Papier métallisé",
+            "pt": "Papel metalizado"
+          }
+        },
+        {
+          "value": "washi-kozo-30",
+          "label": {
+            "en": "Washi (kozo) 30 g/m²",
+            "es": "Washi (kozo) 30 g/m²",
+            "fr": "Washi (kozo) 30 g/m²",
+            "pt": "Washi (kozo) 30 g/m²"
+          }
+        }
+      ]
+    },
+    {
+      "id": "turn_in",
+      "type": "slider",
+      "group": "build",
+      "unit": "mm",
+      "label": {
+        "en": "Turn-in over the rim (mm)",
+        "es": "Doblez interior sobre el borde (mm)",
+        "fr": "Rempli sur le chant (mm)",
+        "pt": "Dobra interna sobre a borda (mm)"
+      },
+      "default": 15,
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "tooltip": {
+        "en": "How far the wrap reaches down inside the walls; never closer than 3 mm to the base.",
+        "es": "Cuánto baja el forro por dentro de las paredes; nunca a menos de 3 mm de la base.",
+        "fr": "Jusqu'où l'habillage descend à l'intérieur des parois ; jamais à moins de 3 mm du fond.",
+        "pt": "Até onde o forro desce por dentro das paredes; nunca a menos de 3 mm da base."
+      }
+    },
+    {
+      "id": "ear",
+      "type": "slider",
+      "group": "build",
+      "unit": "mm",
+      "label": {
+        "en": "Corner ear width (mm)",
+        "es": "Ancho de la oreja de esquina (mm)",
+        "fr": "Largeur de l'oreille d'angle (mm)",
+        "pt": "Largura da orelha de canto (mm)"
+      },
+      "default": 12,
+      "min": 6,
+      "max": 25,
+      "step": 1,
+      "tooltip": {
+        "en": "The tab of the long side's wrap that turns round each corner under the end's wrap.",
+        "es": "La pestaña del forro del lado largo que da vuelta a cada esquina bajo el forro de la cabecera.",
+        "fr": "La patte de l'habillage du grand côté qui tourne chaque angle sous l'habillage du petit côté.",
+        "pt": "A aba do forro do lado longo que contorna cada canto sob o forro da cabeceira."
+      }
+    }
+  ],
+  "presets": [
+    {
+      "id": "watch",
+      "label": {
+        "en": "Watch box",
+        "es": "Caja de reloj",
+        "fr": "Coffret de montre",
+        "pt": "Caixa de relógio"
+      },
+      "values": {
+        "length": 110,
+        "width": 110,
+        "depth": 75,
+        "lid_depth": 30,
+        "clearance": 0.25
+      }
+    },
+    {
+      "id": "jewellery-shoulder",
+      "label": {
+        "en": "Jewellery shoulder box",
+        "es": "Caja de joyería con cuello",
+        "fr": "Coffret à bijoux à hausse",
+        "pt": "Caixa de joias com colarinho"
+      },
+      "values": {
+        "length": 90,
+        "width": 90,
+        "depth": 35,
+        "neck_height": 15,
+        "turn_in": 10,
+        "ear": 10
+      }
+    },
+    {
+      "id": "apparel",
+      "label": {
+        "en": "Apparel box",
+        "es": "Caja de prenda",
+        "fr": "Boîte à vêtement",
+        "pt": "Caixa de roupa"
+      },
+      "values": {
+        "length": 380,
+        "width": 280,
+        "depth": 80,
+        "lid_depth": 40,
+        "clearance": 0.5,
+        "wrap": "kraft-120"
+      }
+    },
+    {
+      "id": "card",
+      "label": {
+        "en": "Card or token box",
+        "es": "Caja de tarjeta o ficha",
+        "fr": "Boîte à carte ou jeton",
+        "pt": "Caixa de cartão ou ficha"
+      },
+      "values": {
+        "length": 95,
+        "width": 65,
+        "depth": 20,
+        "lid_depth": 20,
+        "turn_in": 8,
+        "ear": 8,
+        "wrap": "foil-paper"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Fold program",
+        "es": "Secuencia de armado",
+        "fr": "Séquence de montage",
+        "pt": "Sequência de montagem"
+      },
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "fold",
+    "glb"
+  ],
+  "stock": {
+    "default": "greyboard-1500",
+    "alternatives": [
+      "folding-boxboard-300",
+      "elephant-hide-110",
+      "kraft-120",
+      "foil-paper",
+      "washi-kozo-30"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "packaging",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "turn_in_glue",
+        "type": "glue_zone",
+        "label": {
+          "en": "Wrap glue",
+          "es": "Pegado del forro",
+          "fr": "Collage de l'habillage",
+          "pt": "Colagem do forro"
+        },
+        "edges": [
+          {
+            "sheet": "base-wrap",
+            "edge": "front-turn-in"
+          },
+          {
+            "sheet": "base-wrap",
+            "edge": "back-turn-in"
+          }
+        ],
+        "parameters": [
+          "turn_in",
+          "depth"
+        ],
+        "polarity": "neutral"
+      },
+      {
+        "id": "corner_ears",
+        "type": "glue_flap",
+        "label": {
+          "en": "Corner ears",
+          "es": "Orejas de esquina",
+          "fr": "Oreilles d'angle",
+          "pt": "Orelhas de canto"
+        },
+        "edges": [
+          {
+            "sheet": "base-wrap",
+            "edge": "front-ear-left"
+          }
+        ],
+        "parameters": [
+          "ear",
+          "depth"
+        ],
+        "polarity": "male"
+      }
+    ],
+    "capabilities": {
+      "kinematic_program": true,
+      "rigid_foldable": true,
+      "score_treatment": true,
+      "glued": true,
+      "dieline": true,
+      "thickness_compensated": true,
+      "multi_sheet": true
+    },
+    "societal_benefit": {
+      "en": "A box worth keeping is packaging that is not thrown away: a sturdy wrapped box sized to its contents from the real board and paper thickness, reusable for years.",
+      "es": "Una caja que vale la pena guardar es empaque que no se tira: una caja forrada y firme, a la medida de su contenido con el grosor real del cartón y del papel, reutilizable por años.",
+      "fr": "Une boîte qu'on garde est un emballage qu'on ne jette pas : un coffret habillé et solide, à la mesure de son contenu avec l'épaisseur réelle du carton et du papier, réutilisable pendant des années.",
+      "pt": "Uma caixa que vale guardar é embalagem que não vai para o lixo: uma caixa forrada e firme, à medida do conteúdo com a espessura real do cartão e do papel, reutilizável por anos."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}

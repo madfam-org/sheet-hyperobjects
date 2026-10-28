@@ -1,0 +1,45 @@
+{
+  "spec_version": 1,
+  "object": "pliego/rigid-setup-box",
+  "title": {
+    "en": "Rigid set-up box",
+    "es": "Caja rígida armada",
+    "fr": "Coffret rigide",
+    "pt": "Caixa rígida montada"
+  },
+  "summary": {
+    "en": "The wrapped greyboard box of luxury packaging — one tray, a telescope or a shoulder box with a neck — generated from inside dimensions and the real board and paper calipers.",
+    "es": "La caja de cartón gris forrada del empaque de lujo —una charola, una telescópica o una caja con cuello— generada a partir de las medidas interiores y del calibre real del cartón y del papel.",
+    "fr": "Le coffret en carton gris habillé de l'emballage de luxe — un plateau, un télescopique ou un coffret à hausse — généré à partir des dimensions intérieures et de l'épaisseur réelle du carton et du papier.",
+    "pt": "A caixa de cartão cinza forrada da embalagem de luxo — uma bandeja, uma telescópica ou uma caixa com colarinho — gerada a partir das medidas internas e da espessura real do cartão e do papel."
+  },
+  "article": {
+    "path": "rigid-setup-box/docs/README.md",
+    "sections": [
+      "What it is",
+      "Geometry",
+      "The fold program",
+      "Making one by hand",
+      "Parameters",
+      "History and sources",
+      "Provenance and licence"
+    ]
+  },
+  "era": "industrial packaging, nineteenth century to the present",
+  "sources": [
+    "Wikipedia, Paperboard",
+    "Wikipedia, Robert Gair"
+  ],
+  "related": {
+    "objects": [
+      "pliego/corrugated-shipper",
+      "pliego/case-binding",
+      "pliego/folding-carton",
+      "pliego/masu-box"
+    ]
+  },
+  "review_status": {
+    "state": "generated",
+    "note": "Authored by an agent lane; awaiting a human editorial pass."
+  }
+}
