@@ -127,7 +127,13 @@
     {"id": "a5", "label": {"en": "A5 booklet (148 × 210 mm)", "es": "Cuadernillo A5 (148 × 210 mm)", "fr": "Livret A5 (148 × 210 mm)", "pt": "Livreto A5 (148 × 210 mm)"}, "values": {"page_width": 148, "page_height": 210}},
     {"id": "a6", "label": {"en": "A6 booklet (105 × 148 mm)", "es": "Cuadernillo A6 (105 × 148 mm)", "fr": "Livret A6 (105 × 148 mm)", "pt": "Livreto A6 (105 × 148 mm)"}, "values": {"page_width": 105, "page_height": 148}},
     {"id": "us-half-letter", "label": {"en": "US half-letter (5½ × 8½ in)", "es": "Media carta (5½ × 8½ pulg.)", "fr": "Demi-lettre US (5½ × 8½ po)", "pt": "Meia carta americana (5½ × 8½ pol.)"}, "values": {"page_width": 139.7, "page_height": 215.9}},
-    {"id": "a5-card-cover-64", "label": {"en": "A5, 64 pages, 250 g/m² cover", "es": "A5, 64 páginas, cubierta de 250 g/m²", "fr": "A5, 64 pages, couverture 250 g/m²", "pt": "A5, 64 páginas, capa de 250 g/m²"}, "values": {"page_width": 148, "page_height": 210, "pages": 64, "cover_stock": "cardstock-250"}}
+    {"id": "a5-card-cover-64", "label": {"en": "A5, 64 pages, 250 g/m² cover", "es": "A5, 64 páginas, cubierta de 250 g/m²", "fr": "A5, 64 pages, couverture 250 g/m²", "pt": "A5, 64 páginas, capa de 250 g/m²"}, "values": {"page_width": 148, "page_height": 210, "pages": 64, "cover_stock": "cardstock-250"}},
+    {"id": "archetype-game-manual-compact",
+     "label": {"en": "Archetype: compact blank game manual", "es": "Arquetipo: manual de juego compacto sin arte", "fr": "Archétype : manuel de jeu compact vierge", "pt": "Arquétipo: manual de jogo compacto sem arte"},
+     "values": {"pages": 24, "page_width": 100, "page_height": 145, "stock": "copy-80", "cover_stock": "cardstock-160", "creep_rule": "pressed", "staples": 2, "binding": "left"}},
+    {"id": "archetype-game-manual-tall",
+     "label": {"en": "Archetype: tall blank game manual", "es": "Arquetipo: manual de juego alto sin arte", "fr": "Archétype : manuel de jeu haut vierge", "pt": "Arquétipo: manual de jogo alto sem arte"},
+     "values": {"pages": 32, "page_width": 115, "page_height": 170, "stock": "copy-80", "cover_stock": "self", "creep_rule": "pressed", "staples": 2, "binding": "left"}}
   ],
   "controls": [
     {"id": "sequence", "kind": "sequence", "label": {"en": "Stitch the booklet", "es": "Engrapar el cuadernillo", "fr": "Piquer le livret", "pt": "Grampear o livrinho"}, "min": 0, "max": 3, "default": 0, "unit": "step"}
