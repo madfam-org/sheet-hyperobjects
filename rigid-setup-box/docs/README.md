@@ -107,3 +107,36 @@ generated from the parameters.
 
 Original MADFAM geometry, computed with `pliego.dieline` from the parameters; the construction is
 an industry craft attributed to that tradition. Licence CERN-OHL-W-2.0 (both manifest fields).
+
+## Content-envelope packing examples
+
+Two presets derive their inside cavity from evaluated native contents, rather
+than inventing an original game's inside measurements.
+
+- `atari-2600-media-pocket-pack` contains the retention-insert family's sourced
+  Atari 2600 media-envelope pocket. It is a new packing example, not an original
+  Atari retail box or insert.
+- `archetype-media-and-manual-pack` also stacks the saddle-stitch family's
+  authored tall blank manual. That manual's trim and 32 pages are archetype choices,
+  not title-edition facts.
+
+The native closed-state AABBs are expanded by the maximum sheet caliper to bound
+unmeshed thickness, given 1 mm outside clearance on each side (and 1 mm between
+the stacked contents), then rounded upward to whole millimetres. Media-only
+required spans in the content's X/Y/Z frame are 88/30/101 mm; the manual-stack
+example is 118/38/173 mm. The native booklet's preview fan is included, so this
+is a conservative model-packing example, not a physical booklet-thickness
+measurement or collision-checked assembly.
+
+The exact document digests, source commits, stock allowance, axis mapping and
+generated values are in `packing-preset-sources.json`. The source geometry is
+[retention-insert](https://github.com/madfam-org/sheet-hyperobjects/pull/43) and
+[saddle-stitch manual archetypes](https://github.com/madfam-org/sheet-hyperobjects/pull/48);
+the media facts originate in the pinned public keystone catalog. Place the
+contents in the declared mapped orientation; this preset does not author an
+assembly or a SKU/experience binding.
+
+All added examples are blank, without game artwork or branding. Exact-edition
+inside dimensions, wall/tray stock, trim and physical fit remain unresolved
+until measured or explicitly published. An outer package envelope alone does
+not establish that internal fit.

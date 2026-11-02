@@ -496,7 +496,13 @@
         "ear": 8,
         "wrap": "foil-paper"
       }
-    }
+    },
+    {"id": "atari-2600-media-pocket-pack",
+     "label": {"en": "Packing example: Atari 2600 media pocket", "es": "Ejemplo de empaque: alojamiento para medio Atari 2600", "fr": "Exemple d’emballage : logement de support Atari 2600", "pt": "Exemplo de embalagem: encaixe da mídia Atari 2600"},
+     "values": {"length": 101, "width": 88, "depth": 30, "lid_depth": 20, "neck_height": 20, "clearance": 0.5, "board": "greyboard-1500", "wrap": "kraft-120", "turn_in": 10, "ear": 10}},
+    {"id": "archetype-media-and-manual-pack",
+     "label": {"en": "Archetype: media pocket and blank manual", "es": "Arquetipo: alojamiento del medio y manual sin arte", "fr": "Archétype : logement de support et manuel vierge", "pt": "Arquétipo: encaixe da mídia e manual sem arte"},
+     "values": {"length": 173, "width": 118, "depth": 38, "lid_depth": 20, "neck_height": 20, "clearance": 0.5, "board": "greyboard-1500", "wrap": "kraft-120", "turn_in": 10, "ear": 10}}
   ],
   "controls": [
     {
