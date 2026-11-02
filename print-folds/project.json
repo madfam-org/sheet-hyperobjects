@@ -113,7 +113,13 @@
     {"id": "us-letter", "label": {"en": "US Letter (11 × 8½ in)", "es": "Carta (11 × 8½ pulg.)", "fr": "Lettre US (11 × 8½ po)", "pt": "Carta americana (11 × 8½ pol.)"}, "values": {"sheet_width": 279.4, "sheet_height": 215.9}},
     {"id": "us-legal", "label": {"en": "US Legal (14 × 8½ in)", "es": "Oficio de EE. UU. (14 × 8½ pulg.)", "fr": "Legal US (14 × 8½ po)", "pt": "Ofício americano (14 × 8½ pol.)"}, "values": {"sheet_width": 355.6, "sheet_height": 215.9}},
     {"id": "tabloid", "label": {"en": "Tabloid (17 × 11 in)", "es": "Tabloide (17 × 11 pulg.)", "fr": "Tabloïd (17 × 11 po)", "pt": "Tabloide (17 × 11 pol.)"}, "values": {"sheet_width": 431.8, "sheet_height": 279.4}},
-    {"id": "a3", "label": {"en": "A3 (420 × 297 mm)", "es": "A3 (420 × 297 mm)", "fr": "A3 (420 × 297 mm)", "pt": "A3 (420 × 297 mm)"}, "values": {"sheet_width": 420, "sheet_height": 297}}
+    {"id": "a3", "label": {"en": "A3 (420 × 297 mm)", "es": "A3 (420 × 297 mm)", "fr": "A3 (420 × 297 mm)", "pt": "A3 (420 × 297 mm)"}, "values": {"sheet_width": 420, "sheet_height": 297}},
+    {"id": "archetype-game-leaflet",
+     "label": {"en": "Archetype: blank game leaflet", "es": "Arquetipo: folleto de juego sin arte", "fr": "Archétype : dépliant de jeu vierge", "pt": "Arquétipo: folheto de jogo sem arte"},
+     "values": {"style": "z-fold", "sheet_width": 345, "sheet_height": 170, "stock": "copy-80", "display_open": 60}},
+    {"id": "archetype-game-map",
+     "label": {"en": "Archetype: blank game map", "es": "Arquetipo: mapa de juego sin arte", "fr": "Archétype : carte de jeu vierge", "pt": "Arquétipo: mapa de jogo sem arte"},
+     "values": {"style": "map", "panels": 4, "cross_panels": 2, "sheet_width": 460, "sheet_height": 340, "stock": "copy-80", "display_open": 60}}
   ],
   "controls": [
     {"id": "sequence", "kind": "sequence", "label": {"en": "Fold and display", "es": "Doblar y exhibir", "fr": "Plier et présenter", "pt": "Dobrar e expor"}, "min": 0, "max": 12, "default": 0, "unit": "step"}
