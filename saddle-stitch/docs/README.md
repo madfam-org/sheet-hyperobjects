@@ -208,9 +208,9 @@ prove a commercial case's paper-channel or booklet clearance.
 
 Here `pages` includes the outer cover's four pages. `cover_stock`, `stock`,
 `staples`, imposition and creep remain the existing native construction. FOLD
-retains its close/open programme; animated GLB requires
-`pliego.export.to_glb(document, animate=True)`. The ordinary CLI GLB is static. This programme closes and reopens the nested
-booklet together; it does not add a page-by-page reading sequence.
+retains its nest/staple/shut programme; animated GLB requires
+`pliego.export.to_glb(document, animate=True)`. The ordinary CLI GLB is static. The native programme nests, staples and shuts the booklet; opening requires
+reverse playback. It does not add a page-by-page reading sequence.
 
 An exact title-edition preset needs a complete trim, a covers-inclusive page
 count, binding and stock evidence in the reference catalog. Library extents
