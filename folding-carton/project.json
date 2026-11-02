@@ -93,7 +93,13 @@
   "presets": [
     {"id": "cosmetic-box", "label": {"en": "Cosmetic box (SBS)", "es": "Estuche de cosmético (SBS)", "fr": "Étui cosmétique (SBS)", "pt": "Cartucho de cosmético (SBS)"}, "values": {"length": 45, "width": 45, "depth": 140, "stock": "sbs-board-350"}},
     {"id": "tea-box", "label": {"en": "Tea box with window", "es": "Caja de té con ventana", "fr": "Boîte à thé à fenêtre", "pt": "Caixa de chá com janela"}, "values": {"length": 120, "width": 70, "depth": 70, "window": true}},
-    {"id": "kraft-sleeve", "label": {"en": "Kraft carton", "es": "Estuche de kraft", "fr": "Étui en kraft", "pt": "Cartucho de kraft"}, "values": {"length": 100, "width": 50, "depth": 100, "stock": "kraftliner-150", "branding": false}}
+    {"id": "kraft-sleeve", "label": {"en": "Kraft carton", "es": "Estuche de kraft", "fr": "Étui en kraft", "pt": "Cartucho de kraft"}, "values": {"length": 100, "width": 50, "depth": 100, "stock": "kraftliner-150", "branding": false}},
+    {"id": "atari-2600-media-pocket-pack",
+     "label": {"en": "Packing example: Atari2600 media pocket", "es": "Ejemplo de empaque: alojamiento para medio Atari2600", "fr": "Exemple d’emballage : logement de support Atari2600", "pt": "Exemplo de embalagem: encaixe da mídia Atari2600"},
+     "values": {"length": 88, "width": 30, "depth": 101, "style": "reverse-tuck", "stock": "folding-boxboard-300", "window": false, "branding": false}},
+    {"id": "archetype-media-and-manual-pack",
+     "label": {"en": "Archetype: media pocket and blank manual", "es": "Arquetipo: alojamiento del medio y manual sin arte", "fr": "Archétype : logement de support et manuel vierge", "pt": "Arquétipo: encaixe da mídia e manual sem arte"},
+     "values": {"length": 118, "width": 38, "depth": 173, "style": "reverse-tuck", "stock": "folding-boxboard-300", "window": false, "branding": false}}
   ],
   "controls": [
     {"id": "sequence", "kind": "sequence", "label": {"en": "Fold program", "es": "Secuencia de armado", "fr": "Séquence de montage", "pt": "Sequência de montagem"}, "min": 0, "default": 0, "unit": "step"}

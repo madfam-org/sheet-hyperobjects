@@ -1,0 +1,81 @@
+{
+  "kind": "authored model-packing examples, not retail package measurements",
+  "keystone_commit": "316287c00db2914c4b46b7c611e8a2af08e2c6ff",
+  "pliego_kernel_commit": "285f7d6f4c57e7d509317f36c1796cd87e4bcf92",
+  "retention": {
+    "source_commit": "ac5fedf94bbcd6b9964ad18c4b7716633cc0d71f",
+    "cartridge": "retention-insert",
+    "preset": "atari-2600-envelope",
+    "document_digest": "sha256:5805d5c92ca293c25bdb6f38c5a761c8395dc9efcca2e5e0f02e54282ef34f74",
+    "state": "target:closed",
+    "caliper_expanded_aabb_xyz_mm": [
+      85.53999999999999,
+      27.575,
+      98.14000000000001
+    ]
+  },
+  "manual": {
+    "source_commit": "4151813de22213b7a16253ff85a3af79b3688d29",
+    "cartridge": "saddle-stitch",
+    "preset": "archetype-game-manual-tall",
+    "document_digest": "sha256:c426a4c20b27307589319422d76db3d95a972549028ad49f6c9e345f1b7c5c03",
+    "state": "last native fold-program key (shut)",
+    "caliper_expanded_preview_aabb_xyz_mm": [
+      115.1,
+      6.719863100350247,
+      170.10000000000002
+    ]
+  },
+  "authored_clearance_per_side_mm": 1.0,
+  "method": "Evaluate native closed states, expand each AABB by the maximum sheet caliper to bound unmeshed thickness, add 1 mm outside clearance per side, plus 1 mm separation when stacking the booklet. Round every required cavity span upward to the next whole millimetre. This is a model-packing convention, not a physical fit result.",
+  "media_pocket_cavity_xyz_mm": [
+    88,
+    30,
+    101
+  ],
+  "media_and_manual_cavity_xyz_mm": [
+    118,
+    38,
+    173
+  ],
+  "family": "folding-carton",
+  "parameter_mapping": "length←source X; width←source Y; depth←source Z (rotate content so native Z becomes carton height)",
+  "presets": [
+    {
+      "id": "atari-2600-media-pocket-pack",
+      "label": {
+        "en": "Packing example: Atari2600 media pocket",
+        "es": "Ejemplo de empaque: alojamiento para medio Atari2600",
+        "fr": "Exemple d’emballage : logement de support Atari2600",
+        "pt": "Exemplo de embalagem: encaixe da mídia Atari2600"
+      },
+      "values": {
+        "length": 88,
+        "width": 30,
+        "depth": 101,
+        "style": "reverse-tuck",
+        "stock": "folding-boxboard-300",
+        "window": false,
+        "branding": false
+      }
+    },
+    {
+      "id": "archetype-media-and-manual-pack",
+      "label": {
+        "en": "Archetype: media pocket and blank manual",
+        "es": "Arquetipo: alojamiento del medio y manual sin arte",
+        "fr": "Archétype : logement de support et manuel vierge",
+        "pt": "Arquétipo: encaixe da mídia e manual sem arte"
+      },
+      "values": {
+        "length": 118,
+        "width": 38,
+        "depth": 173,
+        "style": "reverse-tuck",
+        "stock": "folding-boxboard-300",
+        "window": false,
+        "branding": false
+      }
+    }
+  ]
+}
