@@ -195,3 +195,24 @@ sheet sizes, creep trims, page order and staple positions are computed by this c
 Original MADFAM geometry, creep model, imposition check and fold program for a common
 print-finishing format. Published under CERN-OHL-W-2.0 like every object in the commons (see the
 commons root `LICENSE`).
+
+## Blank game-manual archetypes
+
+Two presets exercise the existing family for a game-unboxing scene without
+copying game text or artwork: a compact 100 ×145 mm, 24-page booklet with a
+cardstock cover, and a tall 115 ×170 mm, 32-page self-cover booklet. These are
+authored archetype dimensions; they are not measurements of any title, regional
+edition or retail case. The tall example is a design companion to the case-insert
+family's 120 ×180 mm blank-paper example, with authored margins. It does not
+prove a commercial case's paper-channel or booklet clearance.
+
+Here `pages` includes the outer cover's four pages. `cover_stock`, `stock`,
+`staples`, imposition and creep remain the existing native construction. FOLD
+retains its nest/staple/shut programme; animated GLB requires
+`pliego.export.to_glb(document, animate=True)`. The ordinary CLI GLB is static. The native programme nests, staples and shuts the booklet; opening requires
+reverse playback. It does not add a page-by-page reading sequence.
+
+An exact title-edition preset needs a complete trim, a covers-inclusive page
+count, binding and stock evidence in the reference catalog. Library extents
+such as 40 pages/18.5 cm, cropped scans and PDF page boxes do not by themselves
+establish those physical facts. Unknowns remain in the measurement queue.
