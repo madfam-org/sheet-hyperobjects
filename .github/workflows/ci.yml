@@ -25,10 +25,10 @@ concurrency:
 
 env:
   # The keystone (madfam-org/hyperobjects-spec), package 0.20.0: reference objects,
-  # standard parts, edition contents/fit checks and home-console data through #73.
+  # standard parts, edition contents/fit checks and sourced reference data through #78.
   # Pliego pins the same SHA in ci.yml and nightly.yml; move them together.
   # The commons nightly reads this single SPEC_PIN line.
-  SPEC_PIN: "316287c00db2914c4b46b7c611e8a2af08e2c6ff"
+  SPEC_PIN: "43ae9ae1f6d539123b95fd7ab77c3e8829ea49bd"
   # The platform (madfam-org/pliego) at a full commit SHA: pliego-kernel and its cartridge runner
   # (`python -m pliego.cartridge <dir>`) plus the stock cards in materials/ (which the kernel package does not ship).
   # The nightly reads this line too, and runs that commit's scripts/qa/sim_corpus.py. This is the merge of
