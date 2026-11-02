@@ -1,0 +1,426 @@
+{
+  "project": {
+    "name": {
+      "en": "Overlay card",
+      "es": "Tarjeta superpuesta",
+      "fr": "Carte de superposition",
+      "pt": "Cartão de sobreposição"
+    },
+    "slug": "overlay-card",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "A blank card or PET overlay with keypad, display-window or explicit rectangular cutouts, checked for connected material and minimum bridges.",
+      "es": "Tarjeta de cartulina o PET sin arte, con aberturas de teclado, ventana de pantalla o rectángulos explícitos, verificada por continuidad del material y puentes mínimos.",
+      "fr": "Une carte vierge en bristol ou PET avec ouvertures de clavier, fenêtre d’écran ou rectangles explicites, vérifiée pour la continuité de la matière et les ponts minimaux.",
+      "pt": "Cartão de cartolina ou PET sem arte, com aberturas de teclado, janela de tela ou retângulos explícitos, verificado quanto à continuidade do material e às pontes mínimas."
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "papercut",
+      "gaming",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM geometry computed by this cartridge; example dimensions are labelled archetypes, not commercial product measurements.",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "overlay",
+      "label": {
+        "en": "Overlay card",
+        "es": "Tarjeta superpuesta",
+        "fr": "Carte de superposition",
+        "pt": "Cartão de sobreposição"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "overlay"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "overlay",
+      "label": {
+        "en": "Overlay card",
+        "es": "Tarjeta superpuesta",
+        "fr": "Carte de superposition",
+        "pt": "Cartão de sobreposição"
+      },
+      "stock": "cardstock-250"
+    }
+  ],
+  "parameters": [
+    {
+      "id": "outline",
+      "type": "select",
+      "label": {
+        "en": "Outline",
+        "es": "Contorno",
+        "fr": "Contour",
+        "pt": "Contorno"
+      },
+      "default": "rounded",
+      "options": [
+        {
+          "value": "rectangle",
+          "label": {
+            "en": "Rectangle",
+            "es": "Rectángulo",
+            "fr": "Rectangle",
+            "pt": "Retângulo"
+          }
+        },
+        {
+          "value": "rounded",
+          "label": {
+            "en": "Rounded rectangle",
+            "es": "Rectángulo redondeado",
+            "fr": "Rectangle arrondi",
+            "pt": "Retângulo arredondado"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern",
+      "type": "select",
+      "label": {
+        "en": "Openings",
+        "es": "Aberturas",
+        "fr": "Ouvertures",
+        "pt": "Aberturas"
+      },
+      "default": "keypad",
+      "options": [
+        {
+          "value": "keypad",
+          "label": {
+            "en": "Keypad grid",
+            "es": "Retícula de teclado",
+            "fr": "Grille de clavier",
+            "pt": "Grade de teclado"
+          }
+        },
+        {
+          "value": "window",
+          "label": {
+            "en": "Display window",
+            "es": "Ventana de pantalla",
+            "fr": "Fenêtre d’écran",
+            "pt": "Janela de tela"
+          }
+        },
+        {
+          "value": "custom",
+          "label": {
+            "en": "Custom rectangles",
+            "es": "Rectángulos personalizados",
+            "fr": "Rectangles personnalisés",
+            "pt": "Retângulos personalizados"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel_w",
+      "type": "slider",
+      "label": {
+        "en": "Card width",
+        "es": "Ancho de tarjeta",
+        "fr": "Largeur de carte",
+        "pt": "Largura do cartão"
+      },
+      "default": 80,
+      "min": 40,
+      "max": 300,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "panel_h",
+      "type": "slider",
+      "label": {
+        "en": "Card height",
+        "es": "Alto de tarjeta",
+        "fr": "Hauteur de carte",
+        "pt": "Altura do cartão"
+      },
+      "default": 120,
+      "min": 40,
+      "max": 300,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "corner_radius",
+      "type": "slider",
+      "label": {
+        "en": "Corner radius",
+        "es": "Radio de esquina",
+        "fr": "Rayon des angles",
+        "pt": "Raio dos cantos"
+      },
+      "default": 4,
+      "min": 0,
+      "max": 15,
+      "step": 0.5,
+      "unit": "mm"
+    },
+    {
+      "id": "rows",
+      "type": "slider",
+      "label": {
+        "en": "Keypad rows",
+        "es": "Filas del teclado",
+        "fr": "Rangées du clavier",
+        "pt": "Linhas do teclado"
+      },
+      "default": 4,
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "count"
+    },
+    {
+      "id": "columns",
+      "type": "slider",
+      "label": {
+        "en": "Keypad columns",
+        "es": "Columnas del teclado",
+        "fr": "Colonnes du clavier",
+        "pt": "Colunas do teclado"
+      },
+      "default": 3,
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "count"
+    },
+    {
+      "id": "pitch_x",
+      "type": "slider",
+      "label": {
+        "en": "Horizontal pitch",
+        "es": "Paso horizontal",
+        "fr": "Pas horizontal",
+        "pt": "Passo horizontal"
+      },
+      "default": 20,
+      "min": 5,
+      "max": 60,
+      "step": 0.5,
+      "unit": "mm"
+    },
+    {
+      "id": "pitch_y",
+      "type": "slider",
+      "label": {
+        "en": "Vertical pitch",
+        "es": "Paso vertical",
+        "fr": "Pas vertical",
+        "pt": "Passo vertical"
+      },
+      "default": 22,
+      "min": 5,
+      "max": 60,
+      "step": 0.5,
+      "unit": "mm"
+    },
+    {
+      "id": "cutout_w",
+      "type": "slider",
+      "label": {
+        "en": "Opening width",
+        "es": "Ancho de abertura",
+        "fr": "Largeur d’ouverture",
+        "pt": "Largura da abertura"
+      },
+      "default": 12,
+      "min": 3,
+      "max": 250,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "cutout_h",
+      "type": "slider",
+      "label": {
+        "en": "Opening height",
+        "es": "Alto de abertura",
+        "fr": "Hauteur d’ouverture",
+        "pt": "Altura da abertura"
+      },
+      "default": 12,
+      "min": 3,
+      "max": 250,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "cutouts",
+      "type": "text",
+      "advanced": true,
+      "label": {
+        "en": "Custom openings: centre x,y,width,height",
+        "es": "Aberturas: centro x,y,ancho,alto",
+        "fr": "Ouvertures : centre x,y,largeur,hauteur",
+        "pt": "Aberturas: centro x,y,largura,altura"
+      },
+      "tooltip": {
+        "en": "Millimetres; separate rectangles with semicolons.",
+        "es": "Milímetros; separa los rectángulos con punto y coma.",
+        "fr": "Millimètres ; séparer les rectangles par des points-virgules.",
+        "pt": "Milímetros; separe os retângulos por ponto e vírgula."
+      },
+      "default": "20,30,12,10;50,60,14,14"
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "label": {
+        "en": "Material",
+        "es": "Material",
+        "fr": "Matériau",
+        "pt": "Material"
+      },
+      "default": "cardstock-250",
+      "options": [
+        {
+          "value": "cardstock-250",
+          "label": {
+            "en": "Cardstock 250 g/m²",
+            "es": "Cartulina 250 g/m²",
+            "fr": "Bristol 250 g/m²",
+            "pt": "Cartolina 250 g/m²"
+          }
+        },
+        {
+          "value": "pet-125",
+          "label": {
+            "en": "PET film 125 µm",
+            "es": "Lámina de PET 125 µm",
+            "fr": "Film PET 125 µm",
+            "pt": "Filme PET 125 µm"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "archetype-keypad",
+      "label": {
+        "en": "Archetype: blank keypad card",
+        "es": "Arquetipo: tarjeta de teclado sin arte",
+        "fr": "Archétype : carte de clavier vierge",
+        "pt": "Arquétipo: cartão de teclado sem arte"
+      },
+      "values": {
+        "pattern": "keypad",
+        "rows": 4,
+        "columns": 3
+      }
+    },
+    {
+      "id": "archetype-display-window",
+      "label": {
+        "en": "Archetype: blank display surround",
+        "es": "Arquetipo: marco de pantalla sin arte",
+        "fr": "Archétype : entourage d’écran vierge",
+        "pt": "Arquétipo: moldura de tela sem arte"
+      },
+      "values": {
+        "pattern": "window",
+        "panel_w": 200,
+        "panel_h": 150,
+        "cutout_w": 160,
+        "cutout_h": 110,
+        "stock": "pet-125"
+      }
+    },
+    {
+      "id": "archetype-custom-cutouts",
+      "label": {
+        "en": "Archetype: two custom openings",
+        "es": "Arquetipo: dos aberturas personalizadas",
+        "fr": "Archétype : deux ouvertures personnalisées",
+        "pt": "Arquétipo: duas aberturas personalizadas"
+      },
+      "values": {
+        "pattern": "custom",
+        "outline": "rectangle",
+        "cutouts": "20,30,12,10;50,60,14,14",
+        "panel_w": 100,
+        "panel_h": 120
+      }
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "glb",
+    "fold"
+  ],
+  "stock": {
+    "default": "cardstock-250",
+    "alternatives": [
+      "pet-125"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "papercut",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "overlay_outline",
+        "type": "custom",
+        "label": {
+          "en": "Overlay outline",
+          "es": "Contorno de la tarjeta",
+          "fr": "Contour de la carte",
+          "pt": "Contorno do cartão"
+        },
+        "edges": [
+          {
+            "sheet": "overlay",
+            "edge": "outline"
+          }
+        ],
+        "parameters": [
+          "panel_w",
+          "panel_h",
+          "corner_radius"
+        ],
+        "polarity": "neutral"
+      }
+    ],
+    "capabilities": {
+      "kinematic_program": false,
+      "dieline": false,
+      "artwork": false,
+      "papercut": true,
+      "minimum_bridge_checked": true,
+      "static_overlay": true
+    },
+    "societal_benefit": {
+      "en": "Build and size blank paper parts around documented contents.",
+      "es": "Construye y dimensiona piezas de papel sin arte a partir del contenido documentado.",
+      "fr": "Construire et dimensionner des pièces en papier vierges autour de contenus documentés.",
+      "pt": "Construa e dimensione peças de papel sem arte em torno de conteúdos documentados."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  }
+}
