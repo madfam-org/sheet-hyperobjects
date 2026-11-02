@@ -1,0 +1,368 @@
+{
+  "project": {
+    "name": {
+      "en": "Case insert",
+      "es": "Inserto para estuche",
+      "fr": "Insert de boîtier",
+      "pt": "Inserto para estojo"
+    },
+    "slug": "case-insert",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "Blank case wraps, tray inlays and front panels generated from paper-channel dimensions, with bleed, an optional flap and a native folding sequence.",
+      "es": "Fundas de papel, insertos de bandeja y paneles frontales sin arte, generados a partir del canal del estuche, con sangrado, solapa opcional y secuencia nativa de doblado.",
+      "fr": "Jaquettes, inserts de plateau et panneaux avant vierges générés à partir du logement papier du boîtier, avec fond perdu, rabat facultatif et séquence native de pliage.",
+      "pt": "Capas, insertos de bandeja e painéis frontais sem arte, gerados a partir do canal de papel do estojo, com sangria, aba opcional e sequência nativa de dobra."
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "packaging",
+      "gaming",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM geometry computed by this cartridge; example dimensions are labelled archetypes, not commercial product measurements.",
+          "license": "original"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "insert",
+      "label": {
+        "en": "Case insert",
+        "es": "Inserto para estuche",
+        "fr": "Insert de boîtier",
+        "pt": "Inserto para estojo"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "insert"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "insert",
+      "label": {
+        "en": "Case insert",
+        "es": "Inserto para estuche",
+        "fr": "Insert de boîtier",
+        "pt": "Inserto para estojo"
+      },
+      "stock": "copy-80"
+    }
+  ],
+  "parameters": [
+    {
+      "id": "style",
+      "type": "select",
+      "label": {
+        "en": "Insert style",
+        "es": "Tipo de inserto",
+        "fr": "Type d’insert",
+        "pt": "Tipo de inserto"
+      },
+      "default": "wrap",
+      "options": [
+        {
+          "value": "wrap",
+          "label": {
+            "en": "Case wrap",
+            "es": "Funda envolvente",
+            "fr": "Jaquette enveloppante",
+            "pt": "Capa envolvente"
+          }
+        },
+        {
+          "value": "tray-inlay",
+          "label": {
+            "en": "Tray inlay",
+            "es": "Inserto de bandeja",
+            "fr": "Insert de plateau",
+            "pt": "Inserto de bandeja"
+          }
+        },
+        {
+          "value": "front",
+          "label": {
+            "en": "Front panel",
+            "es": "Panel frontal",
+            "fr": "Panneau avant",
+            "pt": "Painel frontal"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel_w",
+      "type": "slider",
+      "label": {
+        "en": "Panel width",
+        "es": "Ancho del panel",
+        "fr": "Largeur du panneau",
+        "pt": "Largura do painel"
+      },
+      "default": 120,
+      "min": 50,
+      "max": 250,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "panel_h",
+      "type": "slider",
+      "label": {
+        "en": "Panel height",
+        "es": "Alto del panel",
+        "fr": "Hauteur du panneau",
+        "pt": "Altura do painel"
+      },
+      "default": 180,
+      "min": 50,
+      "max": 300,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "spine_w",
+      "type": "slider",
+      "label": {
+        "en": "Spine width",
+        "es": "Ancho del lomo",
+        "fr": "Largeur du dos",
+        "pt": "Largura da lombada"
+      },
+      "default": 15,
+      "min": 2,
+      "max": 40,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "bleed",
+      "type": "slider",
+      "label": {
+        "en": "Print bleed",
+        "es": "Sangrado de impresión",
+        "fr": "Fond perdu",
+        "pt": "Sangria de impressão"
+      },
+      "default": 3,
+      "min": 0,
+      "max": 6,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "flap",
+      "type": "slider",
+      "label": {
+        "en": "Extra flap width",
+        "es": "Ancho de solapa adicional",
+        "fr": "Largeur du rabat supplémentaire",
+        "pt": "Largura da aba adicional"
+      },
+      "default": 0,
+      "min": 0,
+      "max": 30,
+      "step": 0.5,
+      "unit": "mm"
+    },
+    {
+      "id": "fold_angle",
+      "type": "slider",
+      "label": {
+        "en": "Fold angle",
+        "es": "Ángulo de doblado",
+        "fr": "Angle de pliage",
+        "pt": "Ângulo de dobra"
+      },
+      "default": 90,
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "unit": "deg"
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "label": {
+        "en": "Paper",
+        "es": "Papel",
+        "fr": "Papier",
+        "pt": "Papel"
+      },
+      "default": "copy-80",
+      "options": [
+        {
+          "value": "copy-80",
+          "label": {
+            "en": "copy-80",
+            "es": "copy-80",
+            "fr": "copy-80",
+            "pt": "copy-80"
+          }
+        },
+        {
+          "value": "elephant-hide-110",
+          "label": {
+            "en": "elephant-hide-110",
+            "es": "elephant-hide-110",
+            "fr": "elephant-hide-110",
+            "pt": "elephant-hide-110"
+          }
+        },
+        {
+          "value": "cardstock-160",
+          "label": {
+            "en": "cardstock-160",
+            "es": "cardstock-160",
+            "fr": "cardstock-160",
+            "pt": "cardstock-160"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "archetype-wrap",
+      "label": {
+        "en": "Archetype: tall blank wrap",
+        "es": "Arquetipo: funda alta sin arte",
+        "fr": "Archétype : jaquette haute vierge",
+        "pt": "Arquétipo: capa alta sem arte"
+      },
+      "values": {
+        "style": "wrap",
+        "panel_w": 120,
+        "panel_h": 180,
+        "spine_w": 15
+      }
+    },
+    {
+      "id": "archetype-square-inlay",
+      "label": {
+        "en": "Archetype: square tray inlay",
+        "es": "Arquetipo: inserto cuadrado de bandeja",
+        "fr": "Archétype : insert carré de plateau",
+        "pt": "Arquétipo: inserto quadrado de bandeja"
+      },
+      "values": {
+        "style": "tray-inlay",
+        "panel_w": 120,
+        "panel_h": 120,
+        "spine_w": 6,
+        "stock": "cardstock-160"
+      }
+    },
+    {
+      "id": "archetype-front",
+      "label": {
+        "en": "Archetype: blank front panel",
+        "es": "Arquetipo: panel frontal sin arte",
+        "fr": "Archétype : panneau avant vierge",
+        "pt": "Arquétipo: painel frontal sem arte"
+      },
+      "values": {
+        "style": "front",
+        "panel_w": 90,
+        "panel_h": 120,
+        "bleed": 2
+      }
+    },
+    {
+      "id": "archetype-flap",
+      "label": {
+        "en": "Archetype: wrap with extra flap",
+        "es": "Arquetipo: funda con solapa adicional",
+        "fr": "Archétype : jaquette avec rabat supplémentaire",
+        "pt": "Arquétipo: capa com aba adicional"
+      },
+      "values": {
+        "style": "wrap",
+        "flap": 12,
+        "fold_angle": 60
+      }
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "glb",
+    "fold"
+  ],
+  "stock": {
+    "default": "copy-80",
+    "alternatives": [
+      "elephant-hide-110",
+      "cardstock-160"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "packaging",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "paper_panel",
+        "type": "custom",
+        "label": {
+          "en": "Paper panel",
+          "es": "Panel de papel",
+          "fr": "Panneau de papier",
+          "pt": "Painel de papel"
+        },
+        "edges": [
+          {
+            "sheet": "insert",
+            "edge": "panel"
+          }
+        ],
+        "parameters": [
+          "panel_w",
+          "panel_h",
+          "spine_w",
+          "flap"
+        ],
+        "polarity": "neutral"
+      }
+    ],
+    "capabilities": {
+      "kinematic_program": true,
+      "dieline": true,
+      "artwork": false
+    },
+    "societal_benefit": {
+      "en": "Build and size blank paper parts around documented contents.",
+      "es": "Construye y dimensiona piezas de papel sin arte a partir del contenido documentado.",
+      "fr": "Construire et dimensionner des pièces en papier vierges autour de contenus documentés.",
+      "pt": "Construa e dimensione peças de papel sem arte em torno de conteúdos documentados."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  },
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Fold program",
+        "es": "Secuencia de armado",
+        "fr": "Séquence de montage",
+        "pt": "Sequência de montagem"
+      },
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ]
+}
