@@ -1,0 +1,56 @@
+{
+  "kind": "authored-archetype-derivation",
+  "source_repository": "madfam-org/sheet-hyperobjects",
+  "source_commit": "4151813de22213b7a16253ff85a3af79b3688d29",
+  "source_path": "saddle-stitch/project.json",
+  "source_preset": "archetype-game-manual-tall",
+  "authored_panel_mm": {
+    "width": 115,
+    "height": 170
+  },
+  "formulas": {
+    "archetype-game-leaflet": "sheet_width = 3 × panel width; sheet_height = panel height",
+    "archetype-game-map": "sheet_width = 4 × panel width; sheet_height = 2 × panel height"
+  },
+  "limits": [
+    "These are authored blank companion archetypes, not measured title-edition inserts.",
+    "The native program ends with the outermost fold partly open by display_open; set 0 for its fully folded end state.",
+    "No artwork, printing template, physical internal-fit proof or SKU/experience binding is included."
+  ],
+  "presets": [
+    {
+      "id": "archetype-game-leaflet",
+      "label": {
+        "en": "Archetype: blank game leaflet",
+        "es": "Arquetipo: folleto de juego sin arte",
+        "fr": "Archétype : dépliant de jeu vierge",
+        "pt": "Arquétipo: folheto de jogo sem arte"
+      },
+      "values": {
+        "style": "z-fold",
+        "sheet_width": 345,
+        "sheet_height": 170,
+        "stock": "copy-80",
+        "display_open": 60
+      }
+    },
+    {
+      "id": "archetype-game-map",
+      "label": {
+        "en": "Archetype: blank game map",
+        "es": "Arquetipo: mapa de juego sin arte",
+        "fr": "Archétype : carte de jeu vierge",
+        "pt": "Arquétipo: mapa de jogo sem arte"
+      },
+      "values": {
+        "style": "map",
+        "panels": 4,
+        "cross_panels": 2,
+        "sheet_width": 460,
+        "sheet_height": 340,
+        "stock": "copy-80",
+        "display_open": 60
+      }
+    }
+  ]
+}

@@ -186,3 +186,23 @@ The book-signature folds belong to the `codex-signatures` object.
 Original MADFAM layouts and fold programs, computed by `main.py`; the fold styles and sheet sizes
 are generic print-trade formats and no printer's template is copied. Published under
 CERN-OHL-W-2.0 like every object in the commons (see the commons root `LICENSE`).
+
+## Blank game leaflet and map archetypes
+
+Two explicitly labelled archetypes share the authored tall blank manual's
+115 × 170 mm panel size from `saddle-stitch`. These dimensions are design
+choices, not measured facts about any title or edition.
+
+- `archetype-game-leaflet`: a 345 × 170 mm Z-fold, three equal panels.
+- `archetype-game-map`: a 460 × 340 mm map fold, four columns and two rows.
+
+Both use blank 80 g/m² text paper. `game-preset-sources.json` records the full
+source commit and dimension formulas. No game artwork or printer's template is
+copied. Case internal dimensions and complete title-specific trim remain
+measurement work; this common panel size alone does not establish physical fit.
+
+The existing native program folds the piece and then opens its outermost fold
+by `display_open` (60° in these presets); set 0 to end fully folded. This is
+folding/display motion, not a complete unboxing or reading experience. The
+CLI's ordinary GLB is static; an animated GLB requires the native exporter with
+`animate=True`. Product and experience bindings belong to consumers.
