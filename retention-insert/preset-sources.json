@@ -1,0 +1,24 @@
+{
+  "spec_version": 1,
+  "keystone_commit": "316287c00db2914c4b46b7c611e8a2af08e2c6ff",
+  "preset": "atari-2600-envelope",
+  "object": "atari-2600-cartridge",
+  "field_map": {
+    "pocket_w": "dimensions_mm.states.shell.width",
+    "pocket_h": "dimensions_mm.states.shell.depth",
+    "pocket_d": "dimensions_mm.states.shell.height"
+  },
+  "values": {
+    "pocket_w": 82.6,
+    "pocket_h": 95.2,
+    "pocket_d": 25.4,
+    "clearance": 1,
+    "stock": "folding-boxboard-300",
+    "wall_folds": true,
+    "lock_tabs": true
+  },
+  "authored_allowances": {
+    "clearance": 1
+  },
+  "meaning": "A fit around a sourced media envelope, not a measurement or reproduction of its retail box or original insert."
+}

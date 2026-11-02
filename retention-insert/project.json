@@ -1,0 +1,310 @@
+{
+  "project": {
+    "name": {
+      "en": "Retention insert",
+      "es": "Inserto de retención",
+      "fr": "Insert de maintien",
+      "pt": "Inserto de retenção"
+    },
+    "slug": "retention-insert",
+    "version": "0.1.0",
+    "engine": "pliego",
+    "description": {
+      "en": "An open paperboard pocket sized from a content envelope and clearance, with a native wall-fold program and optional rolled locking ends. No artwork.",
+      "es": "Alojamiento abierto de cartulina dimensionado a partir de la envolvente del contenido y la holgura, con secuencia nativa para armar las paredes y cabeceras enrolladas opcionales. Sin arte.",
+      "fr": "Un logement ouvert en carton dimensionné d’après l’enveloppe du contenu et le jeu, avec un programme natif de pliage des parois et des extrémités roulées facultatives. Sans illustration.",
+      "pt": "Encaixe aberto de cartolina dimensionado a partir do envelope do conteúdo e da folga, com sequência nativa de montagem das paredes e cabeceiras enroladas opcionais. Sem arte."
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "packaging",
+      "gaming",
+      "hyperobject",
+      "commons"
+    ],
+    "attribution": {
+      "author": "Innovaciones MADFAM",
+      "license": "CERN-OHL-W-2.0",
+      "lineage": [
+        {
+          "source": "Original MADFAM media-pocket geometry; rolled locking ends adapt the existing sleeve-and-tray cartridge, without its sleeve. No commercial die line is copied.",
+          "url": "https://github.com/madfam-org/sheet-hyperobjects/tree/main/sleeve-and-tray",
+          "license": "CERN-OHL-W-2.0"
+        }
+      ]
+    }
+  },
+  "modes": [
+    {
+      "id": "insert",
+      "label": {
+        "en": "Retention insert",
+        "es": "Inserto de retención",
+        "fr": "Insert de maintien",
+        "pt": "Inserto de retenção"
+      },
+      "script_file": "main.py",
+      "sheets": [
+        "insert"
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "id": "insert",
+      "label": {
+        "en": "Retention insert",
+        "es": "Inserto de retención",
+        "fr": "Insert de maintien",
+        "pt": "Inserto de retenção"
+      },
+      "stock": "folding-boxboard-300"
+    }
+  ],
+  "parameters": [
+    {
+      "id": "pocket_w",
+      "type": "slider",
+      "label": {
+        "en": "Content width",
+        "es": "Ancho del contenido",
+        "fr": "Largeur du contenu",
+        "pt": "Largura do conteúdo"
+      },
+      "default": 85,
+      "min": 30,
+      "max": 240,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "pocket_h",
+      "type": "slider",
+      "label": {
+        "en": "Content height",
+        "es": "Alto del contenido",
+        "fr": "Hauteur du contenu",
+        "pt": "Altura do conteúdo"
+      },
+      "default": 100,
+      "min": 30,
+      "max": 300,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "pocket_d",
+      "type": "slider",
+      "label": {
+        "en": "Content thickness",
+        "es": "Espesor del contenido",
+        "fr": "Épaisseur du contenu",
+        "pt": "Espessura do conteúdo"
+      },
+      "default": 25,
+      "min": 3,
+      "max": 80,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "clearance",
+      "type": "slider",
+      "label": {
+        "en": "Clearance per side",
+        "es": "Holgura por lado",
+        "fr": "Jeu par côté",
+        "pt": "Folga por lado"
+      },
+      "default": 1,
+      "min": 0.5,
+      "max": 5,
+      "step": 0.1,
+      "unit": "mm"
+    },
+    {
+      "id": "wall_folds",
+      "type": "checkbox",
+      "label": {
+        "en": "Erect the walls",
+        "es": "Armar las paredes",
+        "fr": "Monter les parois",
+        "pt": "Montar as paredes"
+      },
+      "default": true
+    },
+    {
+      "id": "lock_tabs",
+      "type": "checkbox",
+      "label": {
+        "en": "Rolled locking ends",
+        "es": "Cabeceras enrolladas con cierre",
+        "fr": "Extrémités roulées à verrouillage",
+        "pt": "Cabeceiras enroladas com trava"
+      },
+      "default": true
+    },
+    {
+      "id": "stock",
+      "type": "select",
+      "label": {
+        "en": "Board",
+        "es": "Cartulina",
+        "fr": "Carton",
+        "pt": "Cartolina"
+      },
+      "default": "folding-boxboard-300",
+      "options": [
+        {
+          "value": "folding-boxboard-300",
+          "label": {
+            "en": "folding-boxboard-300",
+            "es": "folding-boxboard-300",
+            "fr": "folding-boxboard-300",
+            "pt": "folding-boxboard-300"
+          }
+        },
+        {
+          "value": "sbs-board-350",
+          "label": {
+            "en": "sbs-board-350",
+            "es": "sbs-board-350",
+            "fr": "sbs-board-350",
+            "pt": "sbs-board-350"
+          }
+        },
+        {
+          "value": "cardstock-300",
+          "label": {
+            "en": "cardstock-300",
+            "es": "cardstock-300",
+            "fr": "cardstock-300",
+            "pt": "cardstock-300"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "atari-2600-envelope",
+      "label": {
+        "en": "Fit to Atari 2600 media envelope",
+        "es": "Ajuste a la envolvente del medio Atari 2600",
+        "fr": "Ajustement à l’enveloppe du support Atari 2600",
+        "pt": "Ajuste ao envelope da mídia Atari 2600"
+      },
+      "values": {
+        "pocket_w": 82.6,
+        "pocket_h": 95.2,
+        "pocket_d": 25.4,
+        "clearance": 1,
+        "stock": "folding-boxboard-300",
+        "wall_folds": true,
+        "lock_tabs": true
+      }
+    },
+    {
+      "id": "archetype-wide-pocket",
+      "label": {
+        "en": "Archetype: wide shallow pocket",
+        "es": "Arquetipo: alojamiento ancho y poco profundo",
+        "fr": "Archétype : logement large et peu profond",
+        "pt": "Arquétipo: encaixe largo e raso"
+      },
+      "values": {
+        "pocket_w": 140,
+        "pocket_h": 90,
+        "pocket_d": 8,
+        "lock_tabs": false
+      }
+    },
+    {
+      "id": "archetype-flat-blank",
+      "label": {
+        "en": "Archetype: flat locking blank",
+        "es": "Arquetipo: suaje plano con cierre",
+        "fr": "Archétype : flan de verrouillage à plat",
+        "pt": "Arquétipo: corte plano com trava"
+      },
+      "values": {
+        "pocket_w": 65,
+        "pocket_h": 95,
+        "pocket_d": 12,
+        "wall_folds": false,
+        "stock": "cardstock-300"
+      }
+    }
+  ],
+  "export_formats": [
+    "svg",
+    "dxf",
+    "pdf",
+    "glb",
+    "fold"
+  ],
+  "stock": {
+    "default": "folding-boxboard-300",
+    "alternatives": [
+      "sbs-board-350",
+      "cardstock-300"
+    ]
+  },
+  "hyperobject": {
+    "is_hyperobject": true,
+    "domain": "packaging",
+    "kernel": "sheet",
+    "interfaces": [
+      {
+        "id": "content_pocket",
+        "type": "custom",
+        "label": {
+          "en": "Content pocket",
+          "es": "Alojamiento del contenido",
+          "fr": "Logement du contenu",
+          "pt": "Encaixe do conteúdo"
+        },
+        "edges": [
+          {
+            "sheet": "insert",
+            "edge": "side-1-fold"
+          }
+        ],
+        "parameters": [
+          "pocket_w",
+          "pocket_h",
+          "pocket_d",
+          "clearance"
+        ],
+        "polarity": "female"
+      }
+    ],
+    "capabilities": {
+      "kinematic_program": true,
+      "dieline": true,
+      "artwork": false
+    },
+    "societal_benefit": {
+      "en": "Build and size blank paper parts around documented contents.",
+      "es": "Construye y dimensiona piezas de papel sin arte a partir del contenido documentado.",
+      "fr": "Construire et dimensionner des pièces en papier vierges autour de contenus documentés.",
+      "pt": "Construa e dimensione peças de papel sem arte em torno de conteúdos documentados."
+    },
+    "commons_license": "CERN-OHL-W-2.0"
+  },
+  "controls": [
+    {
+      "id": "sequence",
+      "kind": "sequence",
+      "label": {
+        "en": "Fold program",
+        "es": "Secuencia de armado",
+        "fr": "Séquence de montage",
+        "pt": "Sequência de montagem"
+      },
+      "min": 0,
+      "default": 0,
+      "unit": "step"
+    }
+  ]
+}
