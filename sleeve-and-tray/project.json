@@ -90,7 +90,13 @@
   "presets": [
     {"id": "matchbox", "label": {"en": "Matchbox size", "es": "Tamaño caja de cerillos", "fr": "Taille boîte d'allumettes", "pt": "Tamanho caixa de fósforos"}, "values": {"length": 52, "width": 36, "depth": 14, "clearance": 0.6}},
     {"id": "jewellery", "label": {"en": "Jewellery box (SBS)", "es": "Caja de joyería (SBS)", "fr": "Écrin à bijoux (SBS)", "pt": "Caixa de bijuteria (SBS)"}, "values": {"length": 90, "width": 70, "depth": 30, "stock": "sbs-board-350"}},
-    {"id": "greyboard", "label": {"en": "Rigid greyboard drawer", "es": "Cajón rígido de cartón gris", "fr": "Tiroir rigide en carton gris", "pt": "Gaveta rígida de cartão cinza"}, "values": {"length": 160, "width": 110, "depth": 45, "clearance": 1.5, "stock": "greyboard-1500"}}
+    {"id": "greyboard", "label": {"en": "Rigid greyboard drawer", "es": "Cajón rígido de cartón gris", "fr": "Tiroir rigide en carton gris", "pt": "Gaveta rígida de cartão cinza"}, "values": {"length": 160, "width": 110, "depth": 45, "clearance": 1.5, "stock": "greyboard-1500"}},
+    {"id": "atari-2600-media-pocket-pack",
+     "label": {"en": "Packing example: Atari 2600 media pocket", "es": "Ejemplo de empaque: alojamiento para medio Atari 2600", "fr": "Exemple d’emballage : logement de support Atari 2600", "pt": "Exemplo de embalagem: encaixe da mídia Atari 2600"},
+     "values": {"length": 101, "width": 88, "depth": 30, "clearance": 1, "stock": "folding-boxboard-300", "branding": false}},
+    {"id": "archetype-media-and-manual-pack",
+     "label": {"en": "Archetype: media pocket and blank manual", "es": "Arquetipo: alojamiento del medio y manual sin arte", "fr": "Archétype : logement de support et manuel vierge", "pt": "Arquétipo: encaixe da mídia e manual sem arte"},
+     "values": {"length": 173, "width": 118, "depth": 38, "clearance": 1, "stock": "folding-boxboard-300", "branding": false}}
   ],
   "controls": [
     {"id": "slide", "kind": "distance", "label": {"en": "Slide the tray out", "es": "Desliza la charola hacia fuera", "fr": "Faire glisser le tiroir", "pt": "Deslize a gaveta para fora"}, "min": 0, "default": 0, "unit": "mm"},
